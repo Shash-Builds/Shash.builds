@@ -17,7 +17,8 @@ YouTube, analytics, replies and campaigns.
 | ai-visuals | AI-made images and clips for posts: fixed prompt and scorecard |
 | harsh-buyer-review | Posts and ads that sell a product |
 | humanizer | Every post, caption and script sounds like the founder; facts unchanged |
-| linkedin | Everything on LinkedIn: posts, profile, comments, messages, plan |
+| linkedin | LinkedIn posts, profile, DMs, plan |
+| comment-drafter | Comment drafts only |
 | transcriber | Video, podcast or voice note into text, captions and quotes |
 | clipper | Clipping campaigns, and Shorts, Reels and TikToks cut from a long video |
 

@@ -1,0 +1,18 @@
+{
+  "name": "comment-drafter",
+  "displayName": "Comment Drafter by shash.builds",
+  "description": "shash.builds Comment Drafter: thoughtful comment drafts for a batch of LinkedIn, X or Instagram posts, two options each in your voice, with no filler or pitch. Drafts only: it never posts, likes, logs in or automates.",
+  "author": {
+    "name": "Shashwat Jain",
+    "url": "https://github.com/Shash-Builds"
+  },
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "linkedin",
+    "comments",
+    "networking",
+    "social media",
+    "engagement"
+  ]
+}

@@ -266,6 +266,18 @@
       }
     },
     {
+      "name": "Comment Drafter",
+      "slug": "comment-drafter",
+      "kind": "skill",
+      "path": "skills/comment-drafter",
+      "summary": "Comment drafts for LinkedIn, X or Instagram posts. Never posts.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install comment-drafter@shashbuilds",
+        "claude_ai": "comment-drafter-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
       "name": "One-Page Starter",
       "slug": "one-page-starter",
       "kind": "tool",

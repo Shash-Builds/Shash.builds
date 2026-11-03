@@ -19,6 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS = [
+    "comment-drafter",
     "ai-resume",
     "site-audit",
     "lead-finder",

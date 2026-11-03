@@ -1,6 +1,6 @@
 {
   "name": "shashbuilds",
-  "description": "shash.builds: 21 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "description": "shash.builds: 22 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
   "owner": {
     "name": "Shashwat Jain",
     "url": "https://github.com/Shash-Builds"
@@ -110,6 +110,11 @@
       "name": "brutal-review",
       "source": "./skills/brutal-review",
       "description": "shash.builds Brutal Review: a blunt second opinion from a different AI model on a plan, pitch, resume or code: verdict, score out of 100, ranked weaknesses with fixes, and the likeliest reason it fails. Keys from environment variables only; personal details removed before sending."
+    },
+    {
+      "name": "comment-drafter",
+      "source": "./skills/comment-drafter",
+      "description": "shash.builds Comment Drafter: thoughtful comment drafts for a batch of LinkedIn, X or Instagram posts, two options each in your voice, with no filler or pitch. Drafts only: it never posts, likes, logs in or automates."
     }
   ]
 }

@@ -4,6 +4,7 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-04. Comment Drafter skill** ([`skills/comment-drafter`](skills/comment-drafter)): two comment drafts per post for LinkedIn, X or Instagram, in the user's voice; drafts only, never posts or logs in. Routed from the Marketing head. 22 skills now.
 - **2026-11-04. Brutal Review skill** ([`skills/brutal-review`](skills/brutal-review)): a blunt second opinion from a different model, original code and prompts, privacy redaction, tests and chaos inputs. 21 skills now.
 - **2026-11-04. AI Resume skill** ([`skills/ai-resume`](skills/ai-resume)): true, one-page, ATS-safe resumes with Hallmark and humanizer checks; sample resume with made-up data; routed by the Master Design head. 20 skills now.
 - **2026-11-04. Level-Up Game 15-day plan panel** and **email instead of LinkedIn** across the site and docs.
