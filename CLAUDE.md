@@ -122,7 +122,17 @@ or its wording without the owner's explicit decision.
   OpenAI checkpoint, checked against OpenAI's published SHA-256, converted,
   split under PyPI's size limit, uploaded with `PYPI_TOKEN`). Until they're
   published, `models.json` has `published: false` and the script falls back to
-  faster-whisper's own download, then to phone instructions.
+  faster-whisper's own download, then to phone instructions. `--size medium`
+  and `large-v3` have no packages and always use faster-whisper's download.
+  It joins Whisper's split word pieces and keeps cues within `--max-chars`.
+  `tools/toolbox/transcribe` is a thin CLI over this engine (its skill zip
+  bundles it as `engine/`); don't fork the engine.
+- **Toolbox:** `tools/toolbox/<tool>/` are local CLI tools that double as
+  skills (README, `SKILL.md`, `requirements.txt`, `agensi/` listing and
+  cover). `tools/toolbox/package.py` checks listings, draws covers and builds
+  `dist/toolbox/<tool>-skill.zip`; its `BUNDLE` map pulls in files from
+  elsewhere in the repo. Tests live in `tests/toolbox_tests.py`. Agensi
+  listings go live only after Shashwat approves each one.
 - **Humanizer:** `humanizer.md` is the method (ground rules, process,
   pattern catalogue, rewriting moves, a guide per channel, Hindi and
   Hinglish, voice matching, examples, hand-back), read by section.
