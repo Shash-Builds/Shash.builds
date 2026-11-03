@@ -171,6 +171,32 @@ def text_tools():
     run("ledger sample --pct 0", [P, str(C / "ledger.py"), "sample", str(lf), "--pct", "0"])
     run("ledger sample --pct 500", [P, str(C / "ledger.py"), "sample", str(lf), "--pct", "500"])
 
+    # niche research ledger
+    N = R / "niche-research/skills/niche-research/scripts/niche_ledger.py"
+    run("niche check missing folder", [P, str(N), "check", missing])
+    nf = spaced_dir / "niche"; run("niche init spaced path", [P, str(N), "init", str(nf)])
+    for cmd in ("check", "merge", "sample", "tables", "rank", "report"):
+        run(f"niche {cmd} fresh", [P, str(N), cmd, str(nf)])
+    if (nf / "accounts.csv").exists():
+        (nf / "accounts.csv").write_text("id;name\nshort;row\n")
+        run("niche check semicolon wrong shape", [P, str(N), "check", str(nf)])
+        (nf / "accounts.csv").write_bytes(bytes(range(256)))
+        run("niche check binary csv", [P, str(N), "check", str(nf)])
+        (nf / "accounts.csv").write_text("id,name\n")
+        hdr = (nf / "topics.csv").read_text().splitlines()[0]
+        (nf / "topics.csv").write_text(hdr + "\n" + ",".join(["9999999999"] * len(hdr.split(","))) + "\nshort\n")
+        run("niche rank garbage scores", [P, str(N), "rank", str(nf)])
+        run("niche report garbage", [P, str(N), "report", str(nf)])
+        (nf / "voices-a.csv").write_text((nf / "voices.csv").read_text())
+        run("niche merge header-only part", [P, str(N), "merge", str(nf)])
+        (nf / "brief.md").write_text("run_date: not-a-date")
+        run("niche check bad run date", [P, str(N), "check", str(nf)])
+
+    Y = R / "niche-research/skills/niche-research/scripts/youtube_read.cjs"
+    if shutil.which("node"):
+        for bad in ("", "not a url", "https://example.com/", "http://youtube.com/watch?v=x", "javascript:alert(1)"):
+            run(f"youtube_read {bad!r}", ["node", str(Y), bad], timeout=60)
+
     # ecom economics
     fees = {"fe_empty.json": "", "fe_bad.json": "{", "fe_obj.json": "{}", "fe_nofees.json": json.dumps({"channel": "x", "fees": []}),
             "fe_wrongtype.json": json.dumps({"channel": "x", "fees": [{"name": "r", "type": "percent", "value": "ten"}]}),

@@ -690,6 +690,66 @@ def check_research(tmp: Path) -> None:
         assert results["forbidden"]["blocked"] is True and results["forbidden"]["status"] == 403
 
 
+def check_niche_research(tmp: Path) -> None:
+    ledger = PLUGINS / "niche-research/skills/niche-research/scripts/niche_ledger.py"
+
+    @test
+    def test_niche_research_ledger_checks_ranks_and_reports():
+        if not ledger.exists():
+            raise Skip("no niche-research")
+        import csv
+        folder = tmp / "niche"
+        run([sys.executable, str(ledger), "init", str(folder)])
+        brief = (folder / "brief.md").read_text()
+        brief = re.sub(r"run_date: .*", "run_date: 2026-11-03", brief).replace("depth: full", "depth: quick")
+        (folder / "brief.md").write_text(brief)
+        u, d = "https://example.com/x", "2026-11-03"
+
+        def add(name, rows):
+            with open(folder / f"{name}.csv", "a", newline="") as fh:
+                csv.writer(fh).writerows(rows)
+        add("accounts", [[f"a-{i:03}", f"Acc {i}", "youtube", u, "a", "12400", d, "2 per week", "video", "w", u, d]
+                         for i in range(1, 11)])
+        add("posts", [[f"p-{i:03}", "youtube", u, "Acc", "2026-10-01", "views", str(1000 * i), "question",
+                       "2-min video", "60s", "w", u, d] for i in range(1, 11)])
+        for aud, start in (("a", 1), ("b", 201)):  # two helpers, two part files
+            with open(folder / f"voices-{aud}.csv", "w", newline="") as fh:
+                w = csv.writer(fh)
+                w.writerow(["id", "kind", "text", "audience", "where", "quote", "posted", "source_url", "checked"])
+                w.writerows([[f"v-{start + i:03}", "question", "What does a site cost?", aud, "r/x", "how much", d, u, d]
+                             for i in range(10)])
+        add("terms", [["t-001", "#webdesign", "hashtag", "instagram", "on 4 posts", u, d]])
+        add("times", [["h-001", "linkedin", "Tue-Thu", "09:00-11:00", "study, ET", u, d]])
+        add("gaps", [["g-001", "Prices nobody shows", "a", "v-001 p-001", "agencies hide prices"]])
+        add("topics", [[f"k-{i:03}", f"Topic {i}", "What a $400 site gets you", "a", "youtube", "2-min video",
+                        str(i % 5 + 1), "3", "4", "v-001"] for i in range(1, 21)])
+        for cmd in ("merge", "check", "tables", "rank", "report", "check"):
+            run([sys.executable, str(ledger), cmd, str(folder)])
+        tables = (folder / "tables.md").read_text()
+        assert "| question | What does a site cost? | 20 |" in tables, tables[:600]
+        topics = list(csv.DictReader(open(folder / "topics.csv")))
+        assert topics[0]["rank"] == "1" and topics[0]["score"] == "60", topics[0]
+        assert [int(t["score"]) for t in topics] == sorted((int(t["score"]) for t in topics), reverse=True)
+        report = (folder / "report.md").read_text()
+        assert "[source](https://example.com/x) 2026-11-03" in report and "12,400 (2026-11-03)" in report
+        # Bad rows are caught: a rounded count, no source, a post outside the window, a named commenter.
+        add("accounts", [["a-099", "X", "instagram", u, "a", "12.4K", d, "", "", "", "", d]])
+        add("posts", [["p-099", "youtube", u, "A", "2025-01-01", "views", "1", "story", "f", "1", "w", u, d]])
+        add("voices", [["v-999", "pain", "t", "a", "r/x", "as u/someone said", d, u, d]])
+        bad = subprocess.run([sys.executable, str(ledger), "check", str(folder)], capture_output=True, text=True)
+        assert bad.returncode == 1, bad.stdout
+        for needle in ("plain number", "source_url must be a link", "outside the 90 days", "names a person"):
+            assert needle in bad.stdout, (needle, bad.stdout)
+
+    @test
+    def test_niche_research_youtube_reader_refuses_other_sites():
+        reader = PLUGINS / "niche-research/skills/niche-research/scripts/youtube_read.cjs"
+        if not shutil.which("node"):
+            raise Skip("no node")
+        r = subprocess.run(["node", str(reader), "https://example.com/"], capture_output=True, text=True, timeout=60)
+        assert r.returncode == 2 and "youtube.com" in r.stdout and "Error" not in r.stderr, (r.stdout, r.stderr)
+
+
 def check_memory(tmp: Path) -> None:
     memory = PLUGINS / "economy-mode/skills/economy-mode/scripts/memory.py"
 
@@ -1573,6 +1633,8 @@ def main() -> None:
         check_scripts(Path(tmp))
     with tempfile.TemporaryDirectory(prefix="shash_research_") as tmp:
         check_research(Path(tmp))
+    with tempfile.TemporaryDirectory(prefix="shash_niche_") as tmp:
+        check_niche_research(Path(tmp))
     with tempfile.TemporaryDirectory(prefix="shash_memory_") as tmp:
         check_memory(Path(tmp))
     with tempfile.TemporaryDirectory(prefix="shash_ecom_") as tmp:

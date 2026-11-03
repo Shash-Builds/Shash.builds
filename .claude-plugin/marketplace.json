@@ -1,6 +1,6 @@
 {
   "name": "shashbuilds",
-  "description": "shash.builds: 14 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "description": "shash.builds: 15 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
   "owner": {
     "name": "Shashwat Jain",
     "url": "https://github.com/ShashwatBuilds"
@@ -75,6 +75,11 @@
       "name": "clipper",
       "source": "./skills/clipper",
       "description": "shash.builds Clipper: long videos into vertical Shorts, Reels and TikToks for paid clipping campaigns or your own channel, with word-by-word captions, a hook and the campaign brief followed."
+    },
+    {
+      "name": "niche-research",
+      "source": "./skills/niche-research",
+      "description": "shash.builds Niche Research: researches a content niche and turns it into a posting plan (top accounts, best posts of the last 90 days, audience questions, content gaps, 50 ranked video topics with hooks, posting times in ET, hashtags), every row sourced and dated, run on Haiku helpers."
     }
   ]
 }

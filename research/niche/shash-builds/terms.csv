@@ -1,0 +1,32 @@
+id,term,kind,platform,evidence,source_url,checked
+t-001,#freelance,hashtag,linkedin,"Trending (30) list on flick.social #webdesign page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdesign,2026-11-03
+t-002,#webdesign,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-003,#webdesigner,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-004,#websitedesign,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-005,#webdevelopment,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-006,#freelancer,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-007,#websitedevelopment,hashtag,linkedin,"Trending (30) list on flick.social #webdesign page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdesign,2026-11-03
+t-008,#website,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-009,#web,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-010,#ux,hashtag,linkedin,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-011,freelance (in job titles),keyword,linkedin,"Search snippet only (page not opened): advice that many freelancers put freelance in their job titles, so title search is more precise",https://www.jobbers.io/?p=124375,2026-11-03
+t-012,#socialmedia,hashtag,instagram,"Trending (30) list on flick.social #webdesign page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdesign,2026-11-03
+t-013,#freelance,hashtag,instagram,"Trending (30) list on flick.social #webdesign page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdesign,2026-11-03
+t-014,#branddesign,hashtag,instagram,"Trending (30) list on flick.social #webdesign page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdesign,2026-11-03
+t-015,#graphicdesigner,hashtag,instagram,"Popular (30) list on flick.social #webdesign page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdesign,2026-11-03
+t-016,#smallbusinessmarketing,hashtag,instagram,"Trending (30) list on flick.social #freelancer page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/freelancer,2026-11-03
+t-017,#socialmediaagency,hashtag,instagram,"Trending (30) list on flick.social #freelancer page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/freelancer,2026-11-03
+t-018,#website,hashtag,instagram,"Popular (30) list on flick.social #webdeveloper page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/webdeveloper,2026-11-03
+t-019,#websitedevelopment,hashtag,instagram,"Trending (30) list on flick.social #freelancer page; cross-platform hashtag tool list, not platform-specific; no counts shown",https://www.flick.social/learn/hashtags/freelancer,2026-11-03
+t-020,Wix business website tutorial,search,youtube,"Example search phrasing named in a Cal Poly guide (search snippet only); not a YouTube autocomplete suggestion. YouTube results page was blocked, so no autocomplete data",https://grandavehousing.calpoly.edu/news/create-your-website-a-youtube,2026-11-03
+t-021,Create Your Website,keyword,youtube,Title of a YouTube guide listed on a Cal Poly page (search snippet); no YouTube view or search count,https://grandavehousing.calpoly.edu/news/create-your-website-a-youtube,2026-11-03
+t-022,Best Time to Post on YouTube,keyword,youtube,Repeated in result titles for the YouTube timing search (search snippet); not a search count,https://www.socialpilot.co/insights/best-time-to-post-on-youtube,2026-11-03
+t-023,YouTube Shorts,keyword,youtube,"Separate Shorts section on SocialPilot YouTube timing page (sample 301k+ videos, no date given)",https://www.socialpilot.co/insights/best-time-to-post-on-youtube,2026-11-03
+t-024,claude-skills,keyword,github,GitHub topic page shows 14172 public repositories,https://github.com/topics/claude-skills,2026-11-03
+t-025,agent-skills,keyword,github,GitHub topic page shows 41266 public repositories,https://github.com/topics/agent-skills,2026-11-03
+t-026,claude-code,keyword,github,Related tag listed on the agent-skills topic page,https://github.com/topics/agent-skills,2026-11-03
+t-027,ai-agents,keyword,github,Related tag listed on the agent-skills topic page,https://github.com/topics/agent-skills,2026-11-03
+t-028,mcp,keyword,github,Related tag listed on the agent-skills topic page,https://github.com/topics/agent-skills,2026-11-03
+t-029,coding-agents,keyword,github,Related tag listed on the agent-skills topic page,https://github.com/topics/agent-skills,2026-11-03
+t-030,agent-harness,keyword,github,Related tag listed on the agent-skills topic page,https://github.com/topics/agent-skills,2026-11-03
+t-031,claude-skills-creator,keyword,github,GitHub topic page exists (search result); repository count not read,https://github.com/topics/claude-skills-creator,2026-11-03

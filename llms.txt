@@ -23,6 +23,7 @@ Install in Claude Code: `/plugin marketplace add ShashwatBuilds/shash.builds` th
 - [AI Visuals](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/ai-visuals): Fixes AI images and video for where they will be used.
 - [Harsh Buyer Review](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/harsh-buyer-review): A real buyer compares you with 3 to 5 competitors.
 - [Competitor Research](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/competitor-research): Sourced, dated, double-checked competitor research.
+- [Niche Research](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/niche-research): A content niche into a sourced posting plan and 50 ranked video topics.
 - [Ecom](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/ecom): Listings, images and profit per order from your real fees.
 - [Careful Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/careful-mode): Every piece of work checked three times before you see it.
 - [Economy Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/economy-mode): Cheap models for simple work, and a memory sheet.
