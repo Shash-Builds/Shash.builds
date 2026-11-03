@@ -153,7 +153,7 @@ def convert(pt, work, size):
     subprocess.run([sys.executable, str(CONVERTER), "--checkpoint_path", str(pt),
                     "--pytorch_dump_folder_path", str(hf), "--convert_preprocessor", "True"],
                    check=True, env={**os.environ, "TIKTOKEN_CACHE_DIR": str(cache),
-                                    "shash.builds_GENERATION_CONFIG": str(generation_config(pt, size, work))})
+                                    "SHASHBUILDS_GENERATION_CONFIG": str(generation_config(pt, size, work))})
     import ctranslate2
     out = work / "ct2"
     copy = [f for f in ("tokenizer.json", "preprocessor_config.json") if (hf / f).exists()]

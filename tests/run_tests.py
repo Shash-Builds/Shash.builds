@@ -1093,7 +1093,7 @@ class WhisperModel:
 """)
 
     def transcribe(*args, env=None):
-        full = {**os.environ, "PYTHONPATH": str(fake), "shash.builds_WHISPER_CACHE": str(tmp / "cache"), **(env or {})}
+        full = {**os.environ, "PYTHONPATH": str(fake), "SHASHBUILDS_WHISPER_CACHE": str(tmp / "cache"), **(env or {})}
         return subprocess.run([sys.executable, str(script), *map(str, args)], capture_output=True, text=True, env=full)
 
     @test
@@ -1138,7 +1138,7 @@ class WhisperModel:
             f.write_text(json.dumps({"default": "base", "models": {"base": {
                 "published": True, "packages": [{"name": "shash-test-model", "version": "1", "module": "shash_test_model"}],
                 "files": {"model.bin": digest}}}}))
-            return {"shash.builds_WHISPER_REGISTRY": str(f), "shash.builds_WHISPER_CACHE": str(tmp / f"cache-{digest[:6]}")}
+            return {"SHASHBUILDS_WHISPER_REGISTRY": str(f), "SHASHBUILDS_WHISPER_CACHE": str(tmp / f"cache-{digest[:6]}")}
         note = tmp / "silence.wav"
         need("ffmpeg")
         ffmpeg("-f", "lavfi", "-i", "anullsrc=r=16000:cl=mono", "-t", "1", str(note))

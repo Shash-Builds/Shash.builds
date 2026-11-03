@@ -88,7 +88,7 @@ class WhisperModel:
 ''')
         note = tmp / "tb_note.wav"
         run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=f=300:d=4", str(note)])
-        env = {**os.environ, "PYTHONPATH": str(fake), "shash.builds_WHISPER_CACHE": str(tmp / "tb_cache")}
+        env = {**os.environ, "PYTHONPATH": str(fake), "SHASHBUILDS_WHISPER_CACHE": str(tmp / "tb_cache")}
         r = subprocess.run([sys.executable, str(TOOLBOX / "transcribe/transcribe.py"), str(note), "--out-dir",
                             str(tmp / "tb_out"), "--model-dir", str(tmp)], capture_output=True, text=True, env=env)
         assert r.returncode == 0, r.stdout + r.stderr

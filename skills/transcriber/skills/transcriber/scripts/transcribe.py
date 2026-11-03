@@ -38,9 +38,9 @@ for _stream in (sys.stdout, sys.stderr):
         _stream.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = Path(__file__).resolve().parent
-REGISTRY = json.loads(Path(os.environ.get("shash.builds_WHISPER_REGISTRY", HERE / "models.json"))
+REGISTRY = json.loads(Path(os.environ.get("SHASHBUILDS_WHISPER_REGISTRY", HERE / "models.json"))
                       .read_text(encoding="utf-8"))
-CACHE = Path(os.environ.get("shash.builds_WHISPER_CACHE",
+CACHE = Path(os.environ.get("SHASHBUILDS_WHISPER_CACHE",
                             Path.home() / ".cache" / "shashbuilds-whisper"))
 
 # A short Roman-script Hinglish example steers Whisper to write Hindi in Roman letters and keep
