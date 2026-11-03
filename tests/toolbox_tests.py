@@ -136,3 +136,74 @@ class WhisperModel:
         r = subprocess.run([sys.executable, str(TOOLBOX / "cut-silence/cut_silence.py"), str(src), "-o", str(src)],
                            capture_output=True, text=True)
         assert r.returncode != 0 and "overwrite" in r.stderr, "must refuse to overwrite the input"
+
+    VIDEO_MD = """---
+title: Test day
+voice: voice.wav   # a comment
+face: face.mp4
+music: bed.wav | Generated tone, test only
+---
+## Script
+Hello.
+
+## Shots
+| at | shot | on-screen text |
+|---|---|---|
+| 0:00 | face | Day 1 |
+| 0:01.5 | screen: shot.png | A label |
+| 0:02.5 | title | The end |
+
+## Captions
+burn: yes
+style: brand
+"""
+
+    @test
+    def test_toolbox_video_build_reads_video_md_and_plans_overlays():
+        t = load("video-build", "video_build.py")
+        md = tmp / "vb_parse.md"
+        md.write_text(VIDEO_MD, encoding="utf-8")
+        spec = t.parse_md(md)
+        assert spec["meta"]["voice"] == "voice.wav" and spec["meta"]["music"].startswith("bed.wav |"), spec["meta"]
+        assert [(s["at"], s["kind"], s["src"], s["text"]) for s in spec["shots"]] == [
+            (0.0, "face", None, "Day 1"), (1.5, "screen", "shot.png", "A label"), (2.5, "title", None, "The end")]
+        assert spec["captions"] == {"burn": "yes", "style": "brand"}
+        assert t.parse_time("1:02.5") == 62.5
+        words = [{"word": w, "start": i * 0.4, "end": i * 0.4 + 0.3} for i, w in enumerate("We build sites. Fast and clean".split())]
+        groups = t.caption_groups(words)
+        assert [[w["word"] for w in g] for g in groups] == [["We", "build", "sites."], ["Fast", "and", "clean"]], groups
+        slices = t.states(words, spec["shots"], 3.0, True)
+        assert slices[0][0] == 0.0 and abs(slices[-1][1] - 3.0) < 1e-9
+        assert all(a < b for a, b, *_ in slices)
+        at_1 = next(s for s in slices if s[0] <= 0.85 < s[1])
+        assert [w["word"] for w in at_1[2]] == ["We", "build", "sites."] and at_1[3] == 2 and at_1[4] == "Day 1", at_1
+
+    @test
+    def test_toolbox_video_build_renders_a_vertical_video():
+        if fast:
+            raise Skip("full mode only")
+        need("ffmpeg", "ffprobe")
+        try:
+            import PIL  # noqa: F401
+        except ImportError:
+            raise Skip("Pillow not installed")
+        d = tmp / "vb"
+        d.mkdir()
+        run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=f=300:d=3.5", str(d / "voice.wav")])
+        run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=f=200:d=2", str(d / "bed.wav")])
+        run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=s=320x568:r=30:d=4",
+             "-c:v", "libx264", "-pix_fmt", "yuv420p", str(d / "face.mp4")])
+        run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=white:s=640x400", "-frames:v", "1", str(d / "shot.png")])
+        (d / "video.md").write_text(VIDEO_MD, encoding="utf-8")
+        words = [{"word": w, "start": i * 0.5, "end": i * 0.5 + 0.4} for i, w in enumerate("Day one we build a site".split())]
+        (d / "w.json").write_text(json.dumps({"words": words}), encoding="utf-8")
+        out = d / "out.mp4"
+        run([sys.executable, str(TOOLBOX / "video-build/video_build.py"), str(d / "video.md"), "-o", str(out),
+             "--words", str(d / "w.json")])
+        r = run(["ffprobe", "-v", "error", "-show_entries", "stream=width,height,r_frame_rate:format=duration",
+                 "-of", "json", str(out)])
+        info = json.loads(r.stdout)
+        v = [s for s in info["streams"] if s.get("width")][0]
+        assert (v["width"], v["height"], v["r_frame_rate"]) == (1080, 1920, "30/1"), v
+        assert abs(float(info["format"]["duration"]) - 3.5) < 0.2, info["format"]
+        assert "Generated tone" in Path(f"{out}.credits.txt").read_text(encoding="utf-8")

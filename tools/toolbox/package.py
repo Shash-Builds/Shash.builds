@@ -31,6 +31,9 @@ BUNDLE = {
                    "engine/models.json": TRANSCRIBER / "scripts/models.json",
                    "THIRD_PARTY_NOTICES.md": TRANSCRIBER / "THIRD_PARTY_NOTICES.md"},
 }
+# video-build carries the transcribe tool (and its engine) for captions.
+BUNDLE["video-build"] = {"transcribe/transcribe.py": HERE / "transcribe/transcribe.py",
+                         **{f"transcribe/{k}": v for k, v in BUNDLE["transcribe"].items()}}
 KEYS = {"title", "summary", "tags", "price", "cover_line", "command"}
 
 
