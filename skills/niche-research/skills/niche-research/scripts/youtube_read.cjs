@@ -63,12 +63,13 @@ if (!url || !/^https:\/\/(www\.|m\.)?youtube\.com\//.test(url)) {
       for (let i = 0; i < 2; i++) { await page.mouse.wheel(0, 4000); await page.waitForTimeout(1200); }
       out.videos = await page.evaluate(() => {
         const seen = new Set(), rows = [];
-        for (const a of document.querySelectorAll('a#video-title, a#video-title-link, a[href*="/shorts/"]')) {
+        for (const a of document.querySelectorAll('a#video-title, a#video-title-link, a.ytLockupMetadataViewModelTitle, a[href*="/shorts/"]')) {
           const href = a.href.split("&")[0];
           if (!/\/(watch\?v=|shorts\/)[\w-]{6,}/.test(href) || seen.has(href)) continue;
           seen.add(href);
-          const box = a.closest("ytd-video-renderer, ytd-rich-item-renderer, ytd-grid-video-renderer, ytd-reel-item-renderer") || a.parentElement;
-          const meta = box ? [...box.querySelectorAll("#metadata-line span, .inline-metadata-item")].map((s) => s.textContent.trim()) : [];
+          const box = a.closest("yt-lockup-view-model, ytd-video-renderer, ytd-rich-item-renderer, ytd-grid-video-renderer, ytd-reel-item-renderer") || a.parentElement;
+          let meta = box ? [...box.querySelectorAll("#metadata-line span, .inline-metadata-item, .ytContentMetadataViewModelMetadataText")].map((s) => s.textContent.trim()) : [];
+          if (!meta.length && box && box.tagName === "YT-LOCKUP-VIEW-MODEL") meta = box.innerText.split("\n").map((t) => t.trim()).filter((t) => /views?$|ago$|^\d[\d.,]*[KMB]?$|^\d+:\d\d/.test(t));
           const ch = box && box.querySelector("ytd-channel-name a, #channel-name a");
           rows.push({ title: (a.getAttribute("title") || a.textContent || "").trim(), url: href,
                       channel: ch ? ch.textContent.trim() : null, shown: meta.filter(Boolean) });
