@@ -19,3 +19,6 @@ node_modules/
 # lead lists stay private, never commit them
 leads/
 *.leads.csv
+
+# Portfolio scroll videos (silent, small) are deliverables
+!portfolio/*/shots/scroll.mp4
