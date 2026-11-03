@@ -140,6 +140,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .hero-art svg { width: 100%; height: auto; display: block; }
 .gal figure { min-width: 0; }
 
+/* picker (plumber) and menu (barber) */
+.picks { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.pick { width: 100%; min-height: 64px; padding: 14px 18px; text-align: left; font-weight: 700; font-size: 1.05rem; background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius); cursor: pointer; }
+.pick:hover { background: var(--accent); color: var(--on-accent); }
+.menu-list { display: grid; gap: 4px 56px; }
+.menu-list li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 12px; padding-block: 16px; }
+.menu-list p { color: var(--muted); font-size: .95rem; }
+.menu-list .dots { border-bottom: 1px dotted var(--rule); transform: translateY(-6px); min-width: 24px; }
+.menu-list b { font-family: var(--f-display); font-size: 1.5rem; font-weight: var(--display-weight); font-variant-numeric: tabular-nums; }
+@media (min-width: 60rem) { .menu-list { grid-template-columns: 1fr 1fr; } }
+
 /* estimator (cleaners) */
 .est-card { display: grid; gap: 28px; }
 .est { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); align-items: end; }

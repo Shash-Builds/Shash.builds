@@ -74,7 +74,7 @@ def build(slug):
     facts = "".join(f"<li>{e(f)}</li>" for f in site["hero"]["facts"])
     services = "".join(
         f'<li><span class="n" aria-hidden="true">{i + 1:02d}</span><h3>{e(s[0])}</h3><p>{e(s[1])}</p></li>'
-        for i, s in enumerate(site["services"]))
+        for i, s in enumerate(site.get("services", [])))
     steps = "".join(f"<li><h3>{e(s[0])}</h3><p>{e(s[1])}</p></li>" for s in site["steps"])
     towns = "".join(f"<li>{e(t)}</li>" for t in site["area"]["towns"])
     faq = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in site["faq"])
@@ -112,6 +112,20 @@ def build(slug):
         extra = (f'<section class="extra block" aria-labelledby="x-h"><div class="wrap">'
                  f'<div class="head"><p class="eyebrow">{e(x["eyebrow"])}</p><h2 id="x-h">{e(x["title"])}</h2></div>'
                  f'<ul class="xl">{items}</ul></div></section>')
+    picker = ""
+    if site.get("picker"):
+        pk = site["picker"]
+        btns = "".join(f'<li><button type="button" class="pick" data-need="{e(t)}">{e(t)}</button></li>' for t in pk["items"])
+        picker = (f'<section class="picker block" aria-labelledby="pk-h"><div class="wrap pk-in">'
+                  f'<div class="head"><p class="eyebrow">{e(pk["eyebrow"])}</p><h2 id="pk-h">{e(pk["title"])}</h2><p>{e(pk["note"])}</p></div>'
+                  f'<ul class="picks">{btns}</ul></div></section>')
+    menu = ""
+    if site.get("menu"):
+        mn = site["menu"]
+        rows = "".join(f'<li><div><h3>{e(r[0])}</h3><p>{e(r[1])}</p></div><span class="dots" aria-hidden="true"></span><b>{e(r[2])}</b></li>' for r in mn["items"])
+        menu = (f'<section class="menu block" id="services" aria-labelledby="menu-h"><div class="wrap menu-in">'
+                f'<div class="head"><p class="eyebrow">{e(mn["eyebrow"])}</p><h2 id="menu-h">{e(mn["title"])}</h2><p>{e(mn["note"])}</p></div>'
+                f'<ul class="menu-list">{rows}</ul></div></section>')
     preload = ""
     if layout != "visual":
         h = site["photos"]["hero"]
@@ -130,7 +144,7 @@ def build(slug):
 {hero_visual}
 </div></section>""",
         "services": f"""<section class="services block" id="services" aria-labelledby="svc-h"><div class="wrap">
-<div class="head"><p class="eyebrow">Services</p><h2 id="svc-h">{e(site["services_title"])}</h2></div>
+<div class="head"><p class="eyebrow">Services</p><h2 id="svc-h">{e(site.get("services_title", ""))}</h2></div>
 <ul class="svc">{services}</ul>
 </div></section>""",
         "how": f"""<section class="how block" aria-labelledby="how-h"><div class="wrap how-in">
@@ -161,7 +175,7 @@ def build(slug):
 <form class="quote" id="quote-form" novalidate>
 <label>Your name<input name="name" autocomplete="name" required></label>
 <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
-<label>{e(site["form"]["where"])}<input name="where" autocomplete="postal-code"></label>
+<label>{e(site["form"]["where"])}<input name="where" autocomplete="{e(site["form"].get("where_ac", "postal-code"))}"></label>
 <label>What do you need?<select name="need">{options}</select></label>
 <label>Anything else?<textarea name="msg" rows="3"></textarea></label>
 <button class="btn btn-call" type="submit">{e(site["form"]["button"])}</button>
@@ -170,7 +184,11 @@ def build(slug):
 </div></section>""",
         "estimator": estimator,
         "extra": extra,
+        "picker": picker,
+        "menu": menu,
     }
+    if not site.get("services"):
+        sections["services"] = ""
     order = site.get("order", ["hero", "services", "estimator", "how", "gallery", "area", "about", "promise", "faq", "contact"])
     body = "\n\n".join(sections[k] for k in order if sections.get(k))
 
@@ -210,13 +228,14 @@ def build(slug):
 
 <footer class="foot"><div class="wrap foot-in">
 <div><p class="logo">{e(b["name"])}</p><p>{e(b["trade_title"])} in {e(b["city"])}, {e(b["state"])}.</p><p><a href="tel:{tel(phone)}">{e(phone)}</a></p></div>
-<div class="small"><p>A made-up business. Name, phone (a 555 number) and copy are sample content.{" " + e(site["art_note"]) if site.get("art_note") else ""}</p>{f"<p>Photos: {credits} (CC0).</p>" if credits else ""}</div>
+<div class="small"><p>A made-up business. Name, phone (a 555 number) and copy are sample content.{" " + e(site["art_note"]) if site.get("art_note") else ""}</p>{f"<p>Photos: {credits} (CC0 or public domain).</p>" if credits else ""}</div>
 <a class="badge" href="{GALLERY}">Concept site by <b>shash.builds</b></a>
 </div></footer>
 <div class="callbar">{call.replace(e(call_label), "Call now")}<a class="btn btn-book" href="#quote">{e(site["form"]["short"])}</a></div>
 <script>
 document.getElementById('quote-form').addEventListener('submit',ev=>{{ev.preventDefault();document.getElementById('form-note').textContent='Thanks! This is a demo, so nothing was sent. On a live site, this lands in the owner\\'s inbox and lead sheet.';}});
 {est_js}
+document.querySelectorAll('[data-need]').forEach(b=>b.addEventListener('click',()=>{{const s=document.querySelector('select[name=need]');[...s.options].forEach(o=>{{if(o.text===b.dataset.need)s.value=o.value;}});document.getElementById('quote').scrollIntoView({{behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}});setTimeout(()=>s.focus({{preventScroll:true}}),400);}}));
 </script>
 </body>
 </html>

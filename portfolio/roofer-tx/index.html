@@ -128,6 +128,21 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .quote input:hover, .quote select:hover, .quote textarea:hover { border-color: var(--muted); }
 .quote .btn { justify-self: start; }
 .form-note { font-size: .88rem; color: var(--muted); }
+.xl { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.xl li { display: grid; gap: 8px; align-content: start; padding: 24px; background: var(--surface); border-radius: var(--radius); }
+.xl b { font-family: var(--f-display); font-weight: var(--display-weight); font-size: clamp(1.8rem, 2vw + 1rem, 2.6rem); line-height: 1; letter-spacing: var(--tracking); color: var(--accent-ink); }
+.xl p { color: var(--muted); }
+.hero-art svg { width: 100%; height: auto; display: block; }
+.gal figure { min-width: 0; }
+.picks { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.pick { width: 100%; min-height: 64px; padding: 14px 18px; text-align: left; font-weight: 700; font-size: 1.05rem; background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius); cursor: pointer; }
+.pick:hover { background: var(--accent); color: var(--on-accent); }
+.menu-list { display: grid; gap: 4px 56px; }
+.menu-list li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 12px; padding-block: 16px; }
+.menu-list p { color: var(--muted); font-size: .95rem; }
+.menu-list .dots { border-bottom: 1px dotted var(--rule); transform: translateY(-6px); min-width: 24px; }
+.menu-list b { font-family: var(--f-display); font-size: 1.5rem; font-weight: var(--display-weight); font-variant-numeric: tabular-nums; }
+@media (min-width: 60rem) { .menu-list { grid-template-columns: 1fr 1fr; } }
 .est-card { display: grid; gap: 28px; }
 .est { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); align-items: end; }
 .est label { display: grid; gap: 6px; font-size: .92rem; font-weight: 600; }
@@ -150,6 +165,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media (min-width: 48rem) { .g1 .gal { grid-template-columns: 1fr; } .g3 .gal { grid-template-columns: 1.4fr 1fr 1fr; } }
 .s1 {
 --bg: #fcfcfa; --surface: #f1f1ee; --ink: #111; --muted: #4a4a4a; --rule: #111;
 --accent: #d81e14; --on-accent: #fff; --accent-ink: #c01a11;
@@ -256,13 +272,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 <footer class="foot"><div class="wrap foot-in">
 <div><p class="logo">Caliche Ridge Roofing</p><p>Roofing in San Antonio, TX.</p><p><a href="tel:+12105550147">(210) 555-0147</a></p></div>
-<div class="small"><p>A made-up business. Name, phone (a 555 number) and copy are sample content.</p><p>Photos: <a href="https://stocksnap.io/photo/house-roof-KJMQM11A8G">Oliur Rahman via StockSnap</a>; <a href="https://stocksnap.io/photo/roof-skyscraper-2DQ6K6PY2K">Megan Branson via StockSnap</a>; <a href="https://stocksnap.io/photo/roof-shingle-RIUJONCXNY">Bernard Spragg via StockSnap</a> (CC0).</p></div>
+<div class="small"><p>A made-up business. Name, phone (a 555 number) and copy are sample content.</p><p>Photos: <a href="https://stocksnap.io/photo/house-roof-KJMQM11A8G">Oliur Rahman via StockSnap</a>; <a href="https://stocksnap.io/photo/roof-skyscraper-2DQ6K6PY2K">Megan Branson via StockSnap</a>; <a href="https://stocksnap.io/photo/roof-shingle-RIUJONCXNY">Bernard Spragg via StockSnap</a> (CC0 or public domain).</p></div>
 <a class="badge" href="../">Concept site by <b>shash.builds</b></a>
 </div></footer>
 <div class="callbar"><a class="btn btn-call" href="tel:+12105550147">Call now</a><a class="btn btn-book" href="#quote">Free inspection</a></div>
 <script>
 document.getElementById('quote-form').addEventListener('submit',ev=>{ev.preventDefault();document.getElementById('form-note').textContent='Thanks! This is a demo, so nothing was sent. On a live site, this lands in the owner\'s inbox and lead sheet.';});
 
+document.querySelectorAll('[data-need]').forEach(b=>b.addEventListener('click',()=>{const s=document.querySelector('select[name=need]');[...s.options].forEach(o=>{if(o.text===b.dataset.need)s.value=o.value;});document.getElementById('quote').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});setTimeout(()=>s.focus({preventScroll:true}),400);}));
 </script>
 </body>
 </html>
