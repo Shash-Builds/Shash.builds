@@ -11,7 +11,7 @@ Every tool is a folder with its own README, a command-line script and a `SKILL.m
 | 1 | [transcribe](transcribe) | Audio or video to transcript, SRT and VTT captions, word timestamps (local Whisper, English, Hindi, Hinglish) | 0.1.0 |
 | 2 | [cut-silence](cut-silence) | Removes silences and "umm" gaps from a face recording, keeping a 0.15 s pad (ffmpeg only) | 0.1.0 |
 | 3 | [video-build](video-build) | A day's `video.md`, voice and face clip to a 1080x1920 reel with brand captions, on-screen text and music, -14 LUFS | 0.1.0 |
-| 4 | repurpose | Transcript to LinkedIn post, Instagram caption, X thread, YouTube title and chapters | building |
+| 4 | [repurpose](repurpose) | Transcript to LinkedIn post, Instagram caption with 3 hashtags, X thread, YouTube title and chapters, every limit checked | 0.1.0 |
 | 5 | photo-kit | Background removal, every platform size, compression, EXIF and GPS stripped | building |
 | 6 | thumb-maker | YouTube and reel covers from a title and a face cutout | next |
 | 7 | carousel-maker | Markdown to Instagram and LinkedIn carousel PNGs and PDF | next |

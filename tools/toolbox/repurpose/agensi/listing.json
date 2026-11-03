@@ -1,0 +1,9 @@
+{
+  "title": "Repurpose by shash.builds",
+  "summary": "One transcript to a LinkedIn post, Instagram caption with 3 hashtags, X thread and YouTube title and chapters. Human tone, no em dashes, limits checked.",
+  "tags": ["repurposing", "linkedin", "instagram", "youtube chapters", "x thread", "content creation"],
+  "price": "free",
+  "cover_line": "One video, four posts that sound like you wrote them.",
+  "result": "ok: all four pieces pass",
+  "command": "python repurpose.py check day-01.repurpose.md"
+}

@@ -207,3 +207,28 @@ style: brand
         assert (v["width"], v["height"], v["r_frame_rate"]) == (1080, 1920, "30/1"), v
         assert abs(float(info["format"]["duration"]) - 3.5) < 0.2, info["format"]
         assert "Generated tone" in Path(f"{out}.credits.txt").read_text(encoding="utf-8")
+
+    @test
+    def test_toolbox_repurpose_builds_a_timed_prompt_and_checks_answers():
+        t = load("repurpose", "repurpose.py")
+        srt = tmp / "rp.srt"
+        srt.write_text("1\n00:00:00,000 --> 00:00:04,000\nDay one. Today I built a one page website for a plumber.\n\n"
+                       "2\n00:00:12,000 --> 00:00:16,000\nIt has a big call button, real reviews and the service area.\n\n"
+                       "3\n00:00:25,000 --> 00:00:29,000\nTomorrow I send it to the owner and see what they say.\n",
+                       encoding="utf-8")
+        run([sys.executable, str(TOOLBOX / "repurpose/repurpose.py"), "prompt", str(srt), "--out", str(tmp / "rp")])
+        prompt = (tmp / "rp/rp.repurpose-prompt.md").read_text(encoding="utf-8")
+        assert "[00:12] It has a big call button" in prompt and "## YouTube" in prompt, prompt[-400:]
+        good = (TOOLBOX / "repurpose/example.repurpose.md").read_text(encoding="utf-8")
+        assert t.check(good) == [], t.check(good)
+        bad = good.replace("#buildinpublic", "#buildinpublic #web").replace("00:20", "00:15") + "\nA " + chr(0x2014) + " dash"
+        errs = " | ".join(t.check(bad))
+        for want in ("dash", "4 hashtags", "under 10 seconds"):
+            assert want in errs, errs
+        assert any("missing section: ## X thread" in e for e in t.check(good.replace("## X thread", "## Twitter")))
+        long_post = good.replace("2/ It has", "2/ " + "word " * 60 + "It has")
+        assert any("post 2 is" in e for e in t.check(long_post))
+        r = subprocess.run([sys.executable, str(TOOLBOX / "repurpose/repurpose.py"), "prompt", str(srt), "--out",
+                            str(tmp / "rp2"), "--ollama", "none", "--ollama-host", "http://127.0.0.1:9"],
+                           capture_output=True, text=True)
+        assert r.returncode == 0 and "not reachable" in r.stderr, r.stderr
