@@ -4,6 +4,7 @@ Status: DRAFT. Shashwat posts it himself. Humanizer 100/100 for LinkedIn; Linked
 Image: `2026-11-05-level-up-game.jpg` (sample data only, never the real dashboard).
 Alt text for the image: "The Level-Up Game with sample data on a laptop and a phone: Level 1, 1,919 XP, an 11-day streak, $850 earned, a mini-boss and a money chart. Labeled Sample data."
 Agensi link: add it once the listing is approved and live.
+Optional second link (live sample, made-up data): https://shash-builds.github.io/Shash.builds/docs/level-up-game/#sample (drop `/docs` if Pages is switched to the docs folder).
 Optional: move the GitHub link to the first comment if reach matters (LinkedIn hasn't confirmed a penalty for links).
 
 ---

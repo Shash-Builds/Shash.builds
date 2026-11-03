@@ -168,6 +168,24 @@ a{color:var(--orange)}
         <ul class="quests" id="quests"></ul>
       </section>
 
+      <section class="panel" id="planPanel" aria-label="Plan">
+        <div class="row between"><h2 id="planTitle">15-day plan</h2><span class="pill" id="planPill">0/0</span></div>
+        <div class="row between" style="flex-wrap:nowrap">
+          <button id="planPrev" type="button" aria-label="Previous plan day">Prev</button>
+          <b id="planDay" style="text-align:center;min-width:0">No plan yet</b>
+          <button id="planNext" type="button" aria-label="Next plan day">Next</button>
+        </div>
+        <ul class="quests" id="planList"></ul>
+        <details>
+          <summary>Add or edit a plan day</summary>
+          <div class="fields" style="margin-top:10px">
+            <div class="field full"><label for="planDate">Date</label><input id="planDate" type="date"></div>
+            <div class="field full"><label for="planTasks">Tasks, one per line</label><textarea id="planTasks" rows="4" placeholder="Send 20 cold emails&#10;Finish the pricing page"></textarea></div>
+          </div>
+          <button id="planSave" style="margin-top:10px">Save plan day</button>
+        </details>
+      </section>
+
       <section class="panel" id="log" aria-label="Daily log">
         <div class="row between"><h2>Log the day</h2><input id="logDate" type="date" style="width:auto"></div>
         <div class="fields" id="counters"></div>
@@ -264,6 +282,7 @@ const CONFIG = {
   },
   miniBoss: { title: "First $1,000", day: 21, target: 1000,      // due on this day number
               note: "A short first fight: any sale counts." },   // set to null to hide
+  plan: { enabled: true, title: "15-day plan" },   // a day-by-day task list you tick off (no XP); set enabled: false to hide
   contentLabel: "post",
   products: [["main", "Main offer", 400], ["addon", "Add-on", 50], ["other", "Other", 0]],
   channels: ["Cold email", "DM", "Marketplace", "Referral", "Other"],
@@ -321,7 +340,7 @@ const dateOf = n => new Date(START + (n - 1) * DAY).toISOString().slice(0, 10);
 const shortDate = s => new Date(s + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
 const prodName = k => (CONFIG.products.find(p => p[0] === k) || [k, k])[1];
 
-const state = { days: {}, sales: [], content: [], reviews: [], cfg: {} };
+const state = { days: {}, sales: [], content: [], reviews: [], plan: [], cfg: {} };
 setStart(CONFIG.startDate || today());
 let db = null, mode = "none";
 
@@ -439,9 +458,29 @@ function render() {
     const v = qv[q.k] || 0, done = v >= q.target, extra = v > q.target && q.target > 1 ? ` (+${v - q.target} bonus)` : "";
     return `<li class="${done ? "done" : ""}"><span class="chk" aria-hidden="true"></span><div><div>${esc(q.label)}${extra}</div><div class="qbar"><i style="width:${Math.min(v / q.target, 1) * 100}%"></i></div></div><span class="muted num" style="font-size:.82rem">${q.target > 1 ? v + "/" + q.target + " · " : ""}${esc(q.xp)}</span></li>`;
   }).join("");
-  renderMini(c); renderMoney(c); renderFunnel(c); renderRevenue(); renderWeek(c); renderContent(); renderLevels(c);
+  renderPlan(c); renderMini(c); renderMoney(c); renderFunnel(c); renderRevenue(); renderWeek(c); renderContent(); renderLevels(c);
 }
 
+let planDate = null;
+function renderPlan(c) {
+  const P = CONFIG.plan, box = $("planPanel");
+  if (!P || !P.enabled) { box.hidden = true; return; }
+  $("planTitle").textContent = P.title || "Plan";
+  const ids = state.plan.map(r => r.id).filter(id => /^\d{4}-\d{2}-\d{2}$/.test(id)).sort();
+  if (!ids.length) {
+    $("planDay").textContent = "No plan yet"; $("planPill").textContent = "0/0"; $("planPill").className = "pill";
+    $("planList").innerHTML = '<li class="muted">No plan yet. Add a day below, one task per line, or import a backup that has one.</li>';
+    $("planPrev").disabled = $("planNext").disabled = true; return;
+  }
+  if (!planDate || !ids.includes(planDate)) planDate = ids.find(id => id >= c.today) || ids[ids.length - 1];
+  const i = ids.indexOf(planDate), row = state.plan.find(r => r.id === planDate), tasks = row.tasks || [];
+  const done = tasks.filter(t => t.done).length;
+  $("planPrev").disabled = i === 0; $("planNext").disabled = i === ids.length - 1;
+  $("planDay").textContent = (planDate === c.today ? "Today · " : "") + shortDate(planDate) + " · Day " + dnum(planDate);
+  $("planPill").textContent = `${done}/${tasks.length}`;
+  $("planPill").className = "pill " + (tasks.length && done === tasks.length ? "good" : "");
+  $("planList").innerHTML = tasks.length ? tasks.map((t, k) => `<li class="${t.done ? "done" : ""}"><button class="chk" data-plan="${k}" aria-label="${t.done ? "Untick" : "Tick"}: ${esc(t.t)}" style="padding:0;background:${t.done ? "var(--good)" : "none"}"></button><span>${esc(t.t)}</span><span></span></li>`).join("") : '<li class="muted">No tasks on this day.</li>';
+}
 function renderMini(c) {
   const M = CONFIG.miniBoss, box = $("mini");
   if (!M) { box.hidden = true; return; }
@@ -543,7 +582,7 @@ function buildForm() {
   $("c_plat").innerHTML = CONFIG.platforms.map(t => `<option>${esc(t)}</option>`).join("");
   $("saleLabel").textContent = `Add a sale (+${CONFIG.xp.sale} XP)`;
   $("postLabel").textContent = `Add a ${CONFIG.contentLabel} (+${CONFIG.xp.post} XP)`;
-  $("logDate").value = today(); $("logDate").max = today();
+  $("logDate").value = today(); $("logDate").max = today(); $("planDate").value = today();
 }
 function fillForm() {
   const d = $("logDate").value, v = state.days[d] || {};
@@ -570,6 +609,13 @@ document.addEventListener("click", e => {
     inp.value = Math.max(0, Math.round(((+inp.value || 0) + +b.dataset.by) * 10) / 10); formDirty = true;
   } else if (b.dataset.flag) {
     const k = b.dataset.flag; guard(b, () => db.doc("config/main").set({ ...state.cfg, [k]: !state.cfg[k] }), "Saved");
+  } else if (b.dataset.plan !== undefined) {
+    const row = state.plan.find(r => r.id === planDate); if (!row) return;
+    const tasks = (row.tasks || []).map((t, k) => k === +b.dataset.plan ? { ...t, done: !t.done } : t);
+    guard(b, () => db.doc("plan/" + planDate).update({ tasks }), tasks[+b.dataset.plan].done ? "Ticked" : "Unticked");
+  } else if (b.id === "planPrev" || b.id === "planNext") {
+    const ids = state.plan.map(r => r.id).sort(), i = ids.indexOf(planDate);
+    planDate = ids[Math.max(0, Math.min(ids.length - 1, i + (b.id === "planNext" ? 1 : -1)))]; render();
   } else if (b.dataset.del) {
     if (!b.classList.contains("arm")) { b.classList.add("arm"); b.textContent = "Sure?"; setTimeout(() => { b.classList.remove("arm"); b.textContent = "Delete"; }, 3000); return; }
     guard(b, () => db.doc(b.dataset.del).delete(), "Deleted");
@@ -595,6 +641,17 @@ $("addPost").addEventListener("click", e => {
   const link = $("c_link").value.trim().slice(0, 500);
   guard(e.currentTarget, async () => { await db.collection("content").add({ date: $("logDate").value || today(), platform: $("c_plat").value, link, ts: Date.now() }); $("c_link").value = ""; }, `Added: +${CONFIG.xp.post} XP`);
 });
+$("planSave").addEventListener("click", e => {
+  const d = $("planDate").value, lines = $("planTasks").value.split("\n").map(x => x.trim()).filter(Boolean).slice(0, 30);
+  if (!d || !lines.length) { toast("Pick a date and add at least one task"); return; }
+  const old = (state.plan.find(r => r.id === d) || {}).tasks || [];
+  const tasks = lines.map(t => ({ t: t.slice(0, 200), done: !!(old.find(o => o.t === t) || {}).done }));
+  guard(e.currentTarget, async () => { await db.collection("plan").doc(d).set({ tasks }); planDate = d; $("planTasks").value = ""; }, "Plan day saved");
+});
+$("planDate").addEventListener("change", () => {
+  const row = state.plan.find(r => r.id === $("planDate").value);
+  $("planTasks").value = row ? (row.tasks || []).map(t => t.t).join("\n") : "";
+});
 $("saveReview").addEventListener("click", e => {
   const id = sundayOf(today());
   const r = { best: $("r_best").value.trim(), double: $("r_double").value.trim(), drop: $("r_drop").value.trim(), ts: Date.now() };
@@ -609,7 +666,10 @@ function sampleData() {
   [[9, "main", 400, "Cold email"], [5, "main", 400, "Marketplace"], [2, "addon", 50, "DM"]].forEach(([n, p, a, ch], i) => { sales["s" + i] = { date: d(n), product: p, amount: a, channel: ch }; });
   for (let i = 0; i < 9; i++) content["c" + i] = { date: d(i), platform: CONFIG.platforms[i % 3], link: "" };
   const flags = {}; (LEVELS[0].needs || []).filter(r => r.metric === "flags").forEach(r => r.flags.forEach(([k]) => { flags[k] = true; }));
-  return { days, sales, content, reviews: {}, config: { main: flags } };
+  const plan = {};
+  [["Send 50 cold emails", "Post the day's update", "Fix the pricing section"], ["Follow up with 10 leads", "Record one testimonial", "Ship the new offer page"], ["Review the week", "Plan the next 5 days"]]
+    .forEach((list, i) => { plan[shiftDays(t, i)] = { tasks: list.map((x, k) => ({ t: x, done: i === 0 && k < 2 })) }; });
+  return { days, sales, content, reviews: {}, plan, config: { main: flags } };
 }
 
 /* ---------- boot ---------- */
@@ -624,6 +684,7 @@ function attach(source) {
   live("sales", rows => { state.sales = rows.filter(r => r.date); });
   live("content", rows => { state.content = rows.filter(r => r.date); });
   live("reviews", rows => { state.reviews = rows; });
+  live("plan", rows => { state.plan = rows; });
   db.doc("config/main").onSnapshot(s => {
     state.cfg = s.exists ? s.data() : {};
     if (!CONFIG.startDate) {

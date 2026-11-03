@@ -24,6 +24,7 @@ Open `game/level-up-game.html` next to this SKILL.md (Claude Code: `${CLAUDE_SKI
 - `counters`, `quests` and `xp`: the daily habits, their targets and points.
 - `money`: goal, deadline day, unit price and a one-line "math" note with real numbers from the user.
 - `miniBoss`: a short first fight (or `null`).
+- `plan`: the 15-day plan panel. Keep `enabled: true` and offer to write their first 15 days of tasks; they add them in the panel's editor (one task per line) or you include them in a backup file they import.
 - Leave `startDate` empty to start on the day they first open it.
 
 `game/examples/one-page-studio.config.js` is a filled example for a one-page website studio.
