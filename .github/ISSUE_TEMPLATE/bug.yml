@@ -1,0 +1,31 @@
+name: Bug report
+description: Something in a skill, tool or template doesn't work.
+title: "[bug] "
+labels: [bug]
+body:
+  - type: input
+    id: item
+    attributes:
+      label: Which skill or tool?
+      placeholder: skills/example-skill
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, what you got. Paste errors as text.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where did you run it?
+      placeholder: Claude Code 2.x on macOS, Claude.ai web, Netlify...
+  - type: checkboxes
+    id: safe
+    attributes:
+      label: Before you post
+      options:
+        - label: I removed API keys, emails, phone numbers and client data from this report.
+          required: true

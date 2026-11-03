@@ -1,0 +1,31 @@
+# Push a tag like `lead-tracker-v1.0.0` and this publishes a GitHub Release.
+# Notes come from .github/releases/<tag>.md (start from templates/release/NOTES.md).
+# If the tag names a folder in skills/ or tools/, that folder is zipped and attached.
+name: release
+on:
+  push:
+    tags: ["*-v*", "v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build zip and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          notes=".github/releases/${TAG}.md"
+          [ -f "$notes" ] || { echo "Missing $notes"; exit 1; }
+          name="${TAG%-v*}"
+          assets=()
+          for dir in skills tools; do
+            if [ -d "$dir/$name" ]; then
+              (cd "$dir" && zip -rq "../${name}.zip" "$name" -x "*/media/*")
+              assets+=("${name}.zip")
+            fi
+          done
+          gh release create "$TAG" --title "$TAG" --notes-file "$notes" "${assets[@]}"

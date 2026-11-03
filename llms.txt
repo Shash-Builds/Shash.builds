@@ -1,0 +1,23 @@
+# shash.builds
+
+> shash.builds is Shashwat Jain's public build-in-public repo: free Claude skills and open-source web tools for US service businesses and web designers. Shashwat is a web designer in India who works US hours (8:30 am to 6:30 pm ET) and builds one-page websites for US service businesses: $400 flat, live in 7 days.
+
+Code is MIT. Content in content/ and media/ is CC BY 4.0.
+
+## Start here
+- [README](https://github.com/ShashwatBuilds/shash.builds/blob/main/README.md): what's here, quick start, how to hire Shashwat
+- [catalog.json](https://github.com/ShashwatBuilds/shash.builds/blob/main/catalog.json): machine-readable list of every skill and tool
+- [AGENTS.md](https://github.com/ShashwatBuilds/shash.builds/blob/main/AGENTS.md): how an AI agent should find, install and contribute to things here
+- [STATUS.md](https://github.com/ShashwatBuilds/shash.builds/blob/main/STATUS.md): public build log, backlog of upcoming drops
+
+## Skills
+- None released yet. Each release adds a line here: name, one-line purpose, link.
+
+## Tools
+- None released yet. Each release adds a line here: name, one-line purpose, link.
+
+## Research
+- [Communities map](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/communities.md): where to share free Claude skills and web tools, with rules and sources
+
+## Hire
+- One-page website for a US service business, $400 flat, live in 7 days: https://github.com/ShashwatBuilds/shash.builds#hire-me

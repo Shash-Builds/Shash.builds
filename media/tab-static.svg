@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="t d"><title id="t">Tab, the shash.builds mascot</title><desc id="d">A cream browser window with an orange title bar and two dots, two calendar rings on top, a smiling face and an orange AI spark on its corner.</desc><g>
+  <rect x="24" y="40" width="152" height="136" rx="20" fill="#f6efe3"/>
+  <path d="M44 40h112a20 20 0 0 1 20 20v14H24V60a20 20 0 0 1 20-20z" fill="#e8572c"/>
+  <rect x="24" y="40" width="152" height="136" rx="20" fill="none" stroke="#15120f" stroke-width="8"/>
+  <path d="M24 74h152" stroke="#15120f" stroke-width="8"/>
+  <circle cx="44" cy="57" r="5" fill="#15120f"/><circle cx="60" cy="57" r="5" fill="#15120f"/>
+  <rect x="88" y="20" width="14" height="38" rx="7" fill="#15120f"/>
+  <rect x="132" y="20" width="14" height="38" rx="7" fill="#15120f"/>
+  <ellipse cx="80" cy="116" rx="9" ry="11" fill="#15120f"/>
+  <ellipse cx="120" cy="116" rx="9" ry="11" fill="#15120f"/>
+  <path d="M84 142q16 14 32 0" fill="none" stroke="#15120f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M176,8 C180.8,33.2 180.8,33.2 206,38 C180.8,42.8 180.8,42.8 176,68 C171.2,42.8 171.2,42.8 146,38 C171.2,33.2 171.2,33.2 176,8Z" fill="#e8572c" stroke="#15120f" stroke-width="6" stroke-linejoin="round"/>
+</g></svg>

@@ -1,0 +1,17 @@
+# media kit font cache (downloaded by media/build.py)
+media/.fonts/
+
+# big binaries live in GitHub Releases, never in git
+*.mp4
+*.mov
+*.m4a
+*.wav
+*.mp3
+*.zip
+
+# local and OS junk
+.env
+.env.*
+.DS_Store
+__pycache__/
+node_modules/

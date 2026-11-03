@@ -1,0 +1,16 @@
+name: Idea or question
+description: Ask for a skill or tool, or ask a question.
+title: "[idea] "
+labels: [idea]
+body:
+  - type: textarea
+    id: job
+    attributes:
+      label: What job should it do?
+      description: One real task for a small service business or a web designer. Who does it today and how?
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: What would "it works" look like?

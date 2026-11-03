@@ -1,0 +1,8 @@
+{
+  "name": "shash.builds",
+  "description": "Free Claude skills and open-source web tools for US service businesses and web designers, built in public by Shashwat Jain.",
+  "repo": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": {"code": "MIT", "content": "CC BY 4.0"},
+  "hire": {"offer": "One-page website for a US service business", "price_usd": 400, "delivery_days": 7, "link": "https://github.com/ShashwatBuilds/shash.builds#hire-me"},
+  "items": []
+}
