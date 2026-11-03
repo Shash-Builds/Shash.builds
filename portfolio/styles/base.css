@@ -132,6 +132,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .quote .btn { justify-self: start; }
 .form-note { font-size: .88rem; color: var(--muted); }
 
+/* extra: a stats band or a seasons strip, styled per sample */
+.xl { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.xl li { display: grid; gap: 8px; align-content: start; padding: 24px; background: var(--surface); border-radius: var(--radius); }
+.xl b { font-family: var(--f-display); font-weight: var(--display-weight); font-size: clamp(1.8rem, 2vw + 1rem, 2.6rem); line-height: 1; letter-spacing: var(--tracking); color: var(--accent-ink); }
+.xl p { color: var(--muted); }
+.hero-art svg { width: 100%; height: auto; display: block; }
+.gal figure { min-width: 0; }
+
 /* estimator (cleaners) */
 .est-card { display: grid; gap: 28px; }
 .est { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); align-items: end; }
@@ -160,3 +168,4 @@ button, input, select, textarea { font: inherit; color: inherit; }
   @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media (min-width: 48rem) { .g1 .gal { grid-template-columns: 1fr; } .g3 .gal { grid-template-columns: 1.4fr 1fr 1fr; } }

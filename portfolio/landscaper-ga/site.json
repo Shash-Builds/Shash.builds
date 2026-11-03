@@ -1,0 +1,85 @@
+{
+  "style": "s3",
+  "fonts": "family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;600",
+  "theme_color": "#eef0e6",
+  "ig_bg": "#b4532a",
+  "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2323301f'/%3E%3Cpath d='M16 25V12M16 18c-5 0-7-4-7-8 5 0 7 3 7 8zm0-2c4 0 7-3 7-7-4 0-7 3-7 7z' fill='%23d9a46c' stroke='%23d9a46c'/%3E%3C/svg%3E",
+  "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' rx='16' fill='#23301f'/><path d='M16 25V12M16 18c-5 0-7-4-7-8 5 0 7 3 7 8zm0-2c4 0 7-3 7-7-4 0-7 3-7 7z' fill='#d9a46c' stroke='#d9a46c'/></svg>",
+  "hero_layout": "stacked",
+  "business": {"name": "Red Clay & Fern Landscapes", "trade_title": "Landscaping", "city": "Athens", "state": "GA", "phone": "(706) 555-0183"},
+  "meta": "Concept site for Red Clay & Fern Landscapes, a made-up Athens, Georgia landscaper: design, native planting, lawn care and drainage for clay soil. Designed by shash.builds.",
+  "book_first": true,
+  "book_label": "Book a free yard walk",
+  "hero": {
+    "eyebrow": "Landscaping in Athens, Georgia",
+    "title": "A yard you'll actually want to sit in.",
+    "sub": "Design, planting and year-round care for Athens and Oconee County homes, with plants that can take Georgia clay and August heat.",
+    "facts": ["Free yard walk and sketch", "Native, heat-tough plants", "Weekly or seasonal care"]
+  },
+  "services_title": "From bare clay to a finished yard.",
+  "services": [
+    ["Landscape design", "A plan drawn for your yard, your light and how you actually use the space."],
+    ["Planting and beds", "Trees, shrubs and perennials picked to thrive here, not just look good at the nursery."],
+    ["Lawn care", "Mowing, edging, aeration and overseeding on a schedule that fits the season."],
+    ["Paths, patios and edging", "Stone, brick and gravel work that ties the yard together."],
+    ["Drainage for clay soil", "French drains, dry creek beds and grading so rain stops pooling by the house."],
+    ["Seasonal cleanup", "Leaves, pruning, fresh mulch and bed edging, spring and fall."]
+  ],
+  "extra": {
+    "eyebrow": "Through the year",
+    "title": "What we do, season by season.",
+    "items": [
+      ["Spring", "Planting season", "New beds, fresh mulch, aeration and the first mow."],
+      ["Summer", "Keep it alive", "Mowing, watering checks and weed control through the heat."],
+      ["Fall", "Best time to plant", "Trees and shrubs, overseeding and leaf cleanup."],
+      ["Winter", "Plan and prune", "Pruning, design work and patio or path builds."]
+    ]
+  },
+  "steps_title": "How a new yard comes together.",
+  "steps": [
+    ["Yard walk", "We walk the yard with you, check the soil and light, and ask how you want to use it."],
+    ["Sketch and price", "You get a simple drawing and a written price within a week."],
+    ["Plant and care", "We build it, then keep it healthy with weekly or seasonal visits."]
+  ],
+  "photos": {
+    "hero": {"file": "hero", "w": 960, "h": 502, "alt": "A green lawn with white wrought-iron garden chairs and a table, framed by curved clipped hedges.", "credit": "Daria Nepriakhina via StockSnap", "credit_url": "https://stocksnap.io/photo/garden-shrubs-77AD8564CC"},
+    "g1": {"file": "paths", "w": 960, "h": 452, "alt": "A formal garden from above: curving gravel paths between clipped lawns and cone-shaped shrubs.", "credit": "Daria Nepriakhina via StockSnap", "credit_url": "https://stocksnap.io/photo/castle-garden-6323BD73E9"},
+    "g2": {"file": "soil", "w": 960, "h": 640, "alt": "A green garden scoop in dark potting soil next to a small planter and pruning shears.", "credit": "Neslihan Gunaydin via StockSnap", "credit_url": "https://stocksnap.io/photo/gardening-pots-WV6Q25F8ZJ"},
+    "g3": {"file": "hydrangeas", "w": 960, "h": 640, "alt": "Close-up of deep blue hydrangea blooms.", "credit": "Gaetano Cessati via StockSnap", "credit_url": "https://stocksnap.io/photo/flowers-garden-WE6XFLLXAA"}
+  },
+  "gallery": ["g1", "g2", "g3"],
+  "area": {
+    "title": "Athens, Oconee County and nearby.",
+    "note": "We keep our routes close so your crew isn't stuck in traffic between yards.",
+    "towns": ["Athens", "Five Points", "Normaltown", "Watkinsville", "Bogart", "Winterville", "Bishop", "Jefferson", "Comer"]
+  },
+  "about": {
+    "title": "We learned on our own red clay.",
+    "body": [
+      "Athens clay is hard in August and soup in March. Most plants from a big-box store don't make it through their first summer here.",
+      "We plant what works: natives and tough perennials that handle the heat, feed the pollinators and need less water once they're settled."
+    ]
+  },
+  "promise": {
+    "title": "Every plant we install is covered for a year.",
+    "body": "If a tree, shrub or perennial we planted dies within twelve months, we replace it. You just keep it watered."
+  },
+  "faq": [
+    ["When is the best time to plant?", "Fall. Roots grow through the mild winter, so plants are ready before the summer heat. Spring works too with more watering."],
+    ["Can you work with our clay soil?", "Yes. We amend beds with compost and pick plants that like clay, so you're not fighting it every year."],
+    ["Do you offer weekly mowing?", "Yes, weekly or every other week from April to October, with edging and blowing included."],
+    ["Can you fix water pooling by the house?", "Usually. A French drain, a dry creek bed or regrading moves the water where it should go. We'll show you options on the yard walk."],
+    ["How much does a design cost?", "The yard walk and sketch are free. You get a written price for the full project before anything is planted."]
+  ],
+  "form": {
+    "eyebrow": "Free yard walk",
+    "title": "Book a walk around your yard.",
+    "note": "Tell us a little about the yard. We'll call to set a time that works, usually within the week.",
+    "where": "Address or ZIP",
+    "options": ["New design", "Planting and beds", "Lawn care", "Patio or path", "Drainage", "Seasonal cleanup"],
+    "button": "Book my yard walk",
+    "short": "Yard walk"
+  },
+  "hours": [["Mon to Fri", "7am to 5pm"], ["Saturday", "Yard walks by appointment"], ["Sunday", "Closed"]],
+  "order": ["hero", "services", "extra", "gallery", "how", "about", "area", "promise", "faq", "contact"]
+}

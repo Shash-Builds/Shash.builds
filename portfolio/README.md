@@ -6,8 +6,10 @@ Sample one-page websites for made-up US service businesses, built the way a paid
 | --- | --- | --- | --- |
 | [Caliche Ridge Roofing](roofer-tx/) | Roofing | San Antonio, TX | S-01 Swiss grid |
 | [Saltbreeze Home Cleaning](cleaner-fl/) | House cleaning | Tampa, FL | S-05 Glass |
+| [Coolwash Air Co.](hvac-az/) | AC and heating | Mesa, AZ | S-02 Night glow |
+| [Red Clay & Fern Landscapes](landscaper-ga/) | Landscaping | Athens, GA | S-03 Organic |
 
-More samples are on the way (HVAC, landscaping, plumbing, barber, dentist, auto repair). Each folder's `README.md` is its case card.
+More samples are on the way (plumbing, barber, dentist, auto repair). Each folder's `README.md` is its case card.
 
 ## How they're built
 

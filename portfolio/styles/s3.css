@@ -1,0 +1,61 @@
+/* S-03 Organic (lookbook): sage paper, deep green ink, Fraunces serif headlines, soft curves.
+ * Accent for this sample: red-clay terracotta. Layout signature: a centred serif hero over a wide
+ * arch-topped photo, a four-season strip, a three-photo gallery with an arch in the middle,
+ * and services as a quiet two-column list instead of cards. */
+.s3 {
+  --bg: #eef0e6; --surface: #f7f7f0; --ink: #23301f; --muted: #4f5c49; --rule: #c9cfba;
+  --accent: #23301f; --on-accent: #f6f5ec; --accent-ink: #a14a24;
+  --f-display: "Fraunces", Georgia, serif; --f-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --display-weight: 400; --tracking: -0.025em;
+  --radius: 28px; --btn-radius: 999px; --photo-radius: 28px;
+}
+.s3 .concept-strip { background: #23301f; color: #eef0e6; }
+.s3 .nav { background: #eef0e6; border-bottom: 0; }
+.s3 .logo span { font-weight: 600; }
+.s3 h1 { font-weight: 400; font-size: clamp(2.6rem, 7vw + .4rem, 6rem); line-height: .98; }
+.s3 h1, .s3 h2 { font-variation-settings: "opsz" 120; }
+.s3 h2 { font-weight: 400; }
+.s3 .btn { font-weight: 600; }
+.s3 .btn-book { background: #a14a24; color: #fbf6ee; border-color: #a14a24; }
+.s3 .btn-call { background: transparent; color: var(--ink); border-color: var(--ink); }
+.s3 .nav-cta.btn-call { background: #23301f; color: #f6f5ec; }
+.s3 .eyebrow { letter-spacing: .14em; font-size: .74rem; }
+/* stacked hero: centred copy, then a wide arch photo */
+.s3 .hero--stacked .hero-in { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; padding-block: 40px 56px; gap: 40px; }
+.s3 .hero--stacked .hero-copy { justify-items: center; max-width: 52rem; }
+.s3 .hero--stacked .lede { margin-inline: auto; }
+.s3 .hero--stacked .actions { justify-content: center; }
+.s3 .hero--stacked .facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+.s3 .facts li::before { width: 8px; height: 8px; border-radius: 50%; background: #a14a24; transform: translateY(-1px); }
+.s3 .hero--stacked .hero-photo { order: 0; width: 100%; }
+.s3 .hero--stacked .hero-photo img { aspect-ratio: 16 / 9; border-radius: 999px 999px 28px 28px; }
+@media (min-width: 60rem) { .s3 .hero--stacked .hero-photo img { aspect-ratio: 21 / 9; border-radius: 600px 600px 32px 32px; } }
+/* services as a two-column list */
+.s3 .svc { gap: 0 48px; }
+.s3 .svc li { background: none; border-radius: 0; padding: 22px 0; border-top: 1px solid var(--rule); grid-template-columns: 56px 1fr; gap: 6px 12px; }
+.s3 .svc li .n { grid-row: span 2; font-family: var(--f-display); font-style: italic; font-size: 1.6rem; font-weight: 400; color: #a14a24; }
+.s3 .svc h3 { font-family: var(--f-display); font-weight: 400; font-size: 1.45rem; }
+@media (min-width: 60rem) { .s3 .svc { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* seasons strip */
+.s3 .extra { background: #23301f; color: #eef0e6; --muted: #b9c2ac; --accent-ink: #e0a874; border-radius: 40px; margin-inline: clamp(8px, 2vw, 24px); }
+.s3 .xl li { background: rgba(238, 240, 230, .06); border-radius: 22px; border-top: 4px solid #d9a46c; }
+.s3 .xl b { font-style: italic; font-weight: 400; color: #e0a874; }
+.s3 .xl h3 { font-family: var(--f-body); font-weight: 600; font-size: 1rem; letter-spacing: 0; }
+/* gallery with a middle arch */
+.s3 .gallery { padding-top: clamp(56px, 8vw, 96px); }
+.s3 .gal img { aspect-ratio: 4 / 3; }
+@media (min-width: 48rem) { .s3 .g3 .gal { grid-template-columns: 1fr 1fr 1fr; align-items: end; } .s3 .gal img { height: 340px; } .s3 .gal figure:nth-child(2) img { height: 420px; border-radius: 999px 999px 28px 28px; } }
+.s3 .steps li { border-top: 0; background: var(--surface); border-radius: 28px; }
+.s3 .steps li::before { font-style: italic; font-weight: 400; color: #a14a24; }
+.s3 .about { background: #e3e7d6; }
+.s3 .about-body { font-family: var(--f-display); font-size: clamp(1.2rem, 1vw + 1rem, 1.5rem); line-height: 1.45; }
+.s3 .towns li { background: transparent; border-color: #23301f; }
+.s3 .guarantee { background: #a14a24; color: #fbf6ee; }
+.s3 .reviews-slot { border-color: #b7bfa5; }
+.s3 .rs-title { font-weight: 400; }
+.s3 .quote { background: #f7f7f0; }
+.s3 .quote .btn-call { background: #a14a24; color: #fbf6ee; border-color: #a14a24; }
+.s3 .big-call a { color: #a14a24; }
+.s3 .foot { border-top: 0; background: #23301f; color: #eef0e6; --muted: #b9c2ac; }
+.s3 .foot .badge:hover { background: #eef0e6; color: #23301f; }
+.s3 .callbar .btn-call { background: #23301f; color: #f6f5ec; }

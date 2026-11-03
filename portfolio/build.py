@@ -97,38 +97,29 @@ def build(slug):
     if site.get("estimator"):
         est_js = """const est=document.getElementById('est');if(est){const run=()=>{const f=new FormData(est);const p=Math.round((+f.get('beds')+ +f.get('baths'))*(+f.get('freq')));est.querySelector('b').textContent='$'+p;};est.addEventListener('change',run);run();}"""
 
-    page = f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{e(b["name"])}: {e(b["trade_title"])} in {e(b["city"])}, {e(b["state"])} (concept site)</title>
-<meta name="description" content="{e(site["meta"])}">
-<meta name="theme-color" content="{e(site["theme_color"])}">
-<meta property="og:title" content="{e(b["name"])}, a concept site by shash.builds">
-<meta property="og:description" content="{e(site["meta"])}">
-<meta property="og:type" content="website">
-<meta property="og:image" content="shots/desktop-1280x720.png">
-<link rel="icon" href="data:image/svg+xml,{e(site["favicon"])}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="img/{e(site["photos"]["hero"]["file"])}-640.webp" imagesrcset="img/{e(site["photos"]["hero"]["file"])}-640.webp 640w, img/{e(site["photos"]["hero"]["file"])}.webp {site["photos"]["hero"]["w"]}w" imagesizes="(min-width: 60rem) 50vw, 100vw">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{fonts}&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?{fonts}&display=swap"></noscript>
-<style>
-{css_for(site["style"])}
-</style>
-</head>
-<body class="{e(site["style"])}">
-<a class="skip" href="#main">Skip to content</a>
-<p class="concept-strip">Concept site for a made-up business. <a href="{GALLERY}">See all samples by shash.builds</a></p>
-<header class="nav"><div class="wrap nav-in">
-<a class="logo" href="#main">{site.get("logo_svg", "")}<span>{e(b["name"])}</span></a>
-<nav aria-label="Sections">{nav}</nav>
-<a class="btn btn-call nav-cta" href="tel:{tel(phone)}"><span class="narrow">Call</span><span class="wide">Call {e(phone)}</span></a>
-</div></header>
-<main id="main">
-<section class="hero"><div class="wrap hero-in">
+    layout = site.get("hero_layout", "split")
+    hero_visual = (f'<figure class="hero-photo hero-art" aria-hidden="true">{site["hero_svg"]}</figure>' if layout == "visual"
+                   else f'<figure class="hero-photo">{img(site, "hero", eager=True)}</figure>')
+    gkeys = site.get("gallery", [k for k in ("g1", "g2") if k in site["photos"]])
+    gallery = ""
+    if gkeys:
+        figs = "".join(f'<figure>{img(site, k, sizes="(min-width: 60rem) 50vw, 100vw")}</figure>' for k in gkeys)
+        gallery = f'<section class="gallery g{len(gkeys)}" aria-label="Photos"><div class="wrap gal">{figs}</div></section>'
+    extra = ""
+    if site.get("extra"):
+        x = site["extra"]
+        items = "".join(f'<li><b>{e(i[0])}</b><h3>{e(i[1])}</h3><p>{e(i[2])}</p></li>' for i in x["items"])
+        extra = (f'<section class="extra block" aria-labelledby="x-h"><div class="wrap">'
+                 f'<div class="head"><p class="eyebrow">{e(x["eyebrow"])}</p><h2 id="x-h">{e(x["title"])}</h2></div>'
+                 f'<ul class="xl">{items}</ul></div></section>')
+    preload = ""
+    if layout != "visual":
+        h = site["photos"]["hero"]
+        preload = (f'<link rel="preload" as="image" href="img/{e(h["file"])}-640.webp" imagesrcset="img/{e(h["file"])}-640.webp 640w, '
+                   f'img/{e(h["file"])}.webp {h["w"]}w" imagesizes="(min-width: 60rem) 50vw, 100vw">')
+
+    sections = {
+        "hero": f"""<section class="hero hero--{layout}"><div class="wrap hero-in">
 <div class="hero-copy">
 <p class="eyebrow">{e(site["hero"]["eyebrow"])}</p>
 <h1>{e(site["hero"]["title"])}</h1>
@@ -136,45 +127,34 @@ def build(slug):
 <div class="actions">{primary}{secondary}</div>
 <ul class="facts" aria-label="Quick facts">{facts}</ul>
 </div>
-<figure class="hero-photo">{img(site, "hero", eager=True)}</figure>
-</div></section>
-
-<section class="services block" id="services" aria-labelledby="svc-h"><div class="wrap">
+{hero_visual}
+</div></section>""",
+        "services": f"""<section class="services block" id="services" aria-labelledby="svc-h"><div class="wrap">
 <div class="head"><p class="eyebrow">Services</p><h2 id="svc-h">{e(site["services_title"])}</h2></div>
 <ul class="svc">{services}</ul>
-</div></section>
-{estimator}
-<section class="how block" aria-labelledby="how-h"><div class="wrap how-in">
+</div></section>""",
+        "how": f"""<section class="how block" aria-labelledby="how-h"><div class="wrap how-in">
 <div class="head"><p class="eyebrow">How it works</p><h2 id="how-h">{e(site["steps_title"])}</h2></div>
 <ol class="steps">{steps}</ol>
-</div></section>
-
-<section class="gallery" aria-label="Photos"><div class="wrap gal">
-<figure>{img(site, "g1", sizes="(min-width: 60rem) 60vw, 100vw")}</figure>
-<figure>{img(site, "g2", sizes="(min-width: 60rem) 40vw, 100vw")}</figure>
-</div></section>
-
-<section class="area block" id="area" aria-labelledby="area-h"><div class="wrap area-in">
+</div></section>""",
+        "gallery": f"""{gallery}""",
+        "area": f"""<section class="area block" id="area" aria-labelledby="area-h"><div class="wrap area-in">
 <div class="head"><p class="eyebrow">Service area</p><h2 id="area-h">{e(site["area"]["title"])}</h2><p>{e(site["area"]["note"])}</p></div>
 <ul class="towns">{towns}</ul>
-</div></section>
-
-<section class="about block" id="about" aria-labelledby="about-h"><div class="wrap about-in">
+</div></section>""",
+        "about": f"""<section class="about block" id="about" aria-labelledby="about-h"><div class="wrap about-in">
 <div class="head"><p class="eyebrow">About</p><h2 id="about-h">{e(site["about"]["title"])}</h2></div>
 <div class="about-body">{"".join(f"<p>{e(p)}</p>" for p in site["about"]["body"])}</div>
-</div></section>
-
-<section class="promise block" aria-labelledby="promise-h"><div class="wrap promise-in">
+</div></section>""",
+        "promise": f"""<section class="promise block" aria-labelledby="promise-h"><div class="wrap promise-in">
 <div class="guarantee"><p class="eyebrow">Our promise</p><h2 id="promise-h">{e(site["promise"]["title"])}</h2><p>{e(site["promise"]["body"])}</p></div>
 <div class="reviews-slot" role="note"><p class="eyebrow">Reviews</p><p class="rs-title">Reviews go here.</p><p>On a live site, this panel shows the business's own Google reviews. A concept site has no customers yet, so it shows none. We never make reviews up.</p></div>
-</div></section>
-
-<section class="faq block" id="faq" aria-labelledby="faq-h"><div class="wrap faq-in">
+</div></section>""",
+        "faq": f"""<section class="faq block" id="faq" aria-labelledby="faq-h"><div class="wrap faq-in">
 <div class="head"><p class="eyebrow">FAQ</p><h2 id="faq-h">Questions people ask first</h2></div>
 <div class="qs">{faq}</div>
-</div></section>
-
-<section class="contact block" id="quote" aria-labelledby="quote-h"><div class="wrap contact-in">
+</div></section>""",
+        "contact": f"""<section class="contact block" id="quote" aria-labelledby="quote-h"><div class="wrap contact-in">
 <div class="head"><p class="eyebrow">{e(site["form"]["eyebrow"])}</p><h2 id="quote-h">{e(site["form"]["title"])}</h2><p>{e(site["form"]["note"])}</p>
 <p class="big-call"><a href="tel:{tel(phone)}">{e(phone)}</a></p>
 <dl class="hours">{hours}</dl></div>
@@ -187,12 +167,50 @@ def build(slug):
 <button class="btn btn-call" type="submit">{e(site["form"]["button"])}</button>
 <p class="form-note" id="form-note" role="status">Demo form: it isn't connected, so nothing you type is sent.</p>
 </form>
-</div></section>
+</div></section>""",
+        "estimator": estimator,
+        "extra": extra,
+    }
+    order = site.get("order", ["hero", "services", "estimator", "how", "gallery", "area", "about", "promise", "faq", "contact"])
+    body = "\n\n".join(sections[k] for k in order if sections.get(k))
+
+    page = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(b["name"])}: {e(b["trade_title"])} in {e(b["city"])}, {e(b["state"])} (concept site)</title>
+<meta name="description" content="{e(site["meta"])}">
+<meta name="theme-color" content="{e(site["theme_color"])}">
+<meta property="og:title" content="{e(b["name"])}, a concept site by shash.builds">
+<meta property="og:description" content="{e(site["meta"])}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="shots/desktop-1280x720.jpg">
+<link rel="icon" href="data:image/svg+xml,{e(site["favicon"])}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{preload}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{fonts}&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?{fonts}&display=swap"></noscript>
+<style>
+{css_for(site["style"])}
+</style>
+</head>
+<body class="{e(site["style"])} {e(slug)}">
+<a class="skip" href="#main">Skip to content</a>
+<p class="concept-strip">Concept site for a made-up business. <a href="{GALLERY}">See all samples by shash.builds</a></p>
+<header class="nav"><div class="wrap nav-in">
+<a class="logo" href="#main">{site.get("logo_svg", "")}<span>{e(b["name"])}</span></a>
+<nav aria-label="Sections">{nav}</nav>
+<a class="btn btn-call nav-cta" href="tel:{tel(phone)}"><span class="narrow">Call</span><span class="wide">Call {e(phone)}</span></a>
+</div></header>
+<main id="main">
+{body}
 </main>
 
 <footer class="foot"><div class="wrap foot-in">
 <div><p class="logo">{e(b["name"])}</p><p>{e(b["trade_title"])} in {e(b["city"])}, {e(b["state"])}.</p><p><a href="tel:{tel(phone)}">{e(phone)}</a></p></div>
-<div class="small"><p>A made-up business. Name, phone (a 555 number) and copy are sample content.</p><p>Photos: {credits} (CC0).</p></div>
+<div class="small"><p>A made-up business. Name, phone (a 555 number) and copy are sample content.{" " + e(site["art_note"]) if site.get("art_note") else ""}</p>{f"<p>Photos: {credits} (CC0).</p>" if credits else ""}</div>
 <a class="badge" href="{GALLERY}">Concept site by <b>shash.builds</b></a>
 </div></footer>
 <div class="callbar">{call.replace(e(call_label), "Call now")}<a class="btn btn-book" href="#quote">{e(site["form"]["short"])}</a></div>
