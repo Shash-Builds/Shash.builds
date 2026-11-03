@@ -2,9 +2,37 @@
 
 # Level-Up Dashboard
 
-**One Google Sheet that tracks a build-in-public run day by day: hours, what shipped, outreach, sales, posts, followers and real reviews.**
+**Turn your 365-day business goal into a game you log every night: levels, boss fights, daily quests, XP, streaks and money against your pace.**
 
-It has two parts:
+<p align="center"><img src="game/sample.jpg" width="100%" alt="The Level-Up Game with sample data on a laptop and a phone: Level 1 Afloat on day 12 of 365, 1,919 XP, an 11-day streak, $850 earned, a mini-boss First $1,000 with 9 days left, quests, and a money chart behind its pace line. The page is labeled Sample data."></p>
+
+<p align="center"><sub>Sample data. <a href="https://shash-builds.github.io/Shash.builds/level-up-game/#sample">Try the sample</a> (nothing is saved).</sub></p>
+
+Three pieces, one idea. Pick the one that fits:
+
+| Piece | What it is | Where your data lives |
+| --- | --- | --- |
+| **[Level-Up Game](game/level-up-game.html)** (main) | The full game: levels with deadlines, boss fights, daily quests, XP, streaks, money against pace, funnel, revenue, content log and a Sunday review. One HTML file with a `CONFIG` block. | Your own private Claude artifact (best), or this browser with Export and Import |
+| **Phone logger** ([`docs/level-up/`](../../docs/level-up/index.html)) | A lighter page to log the day from your phone, with tap counters, networking quests and a Network card. | Your Google Sheet, through the script in [`apps-script/`](apps-script/Code.gs), behind a passphrase |
+| **Sheet template** (below) | The Google Sheet the phone logger reads and writes. | Your Google Drive |
+
+## Level-Up Game
+
+### Install in 3 steps
+
+1. **With the skill (easiest):** install [`SKILL.md`](SKILL.md) as a Claude skill (or paste it into a chat with `game/level-up-game.html`). Tell Claude your goal, what you sell and your daily habits.
+2. Claude fills in the `CONFIG` block at the top of the file. Your top level is named after the role model you chase. It's a label only: never a real person's likeness or brand.
+3. Claude publishes it as your own private artifact with storage turned on. Or open the file in any browser: it saves on that device only, with Export and Import for backups.
+
+Want to see it first? Open the page with `#sample` at the end of the address. The numbers are made up and nothing is saved.
+
+### What you can change in `CONFIG`
+
+`roleModel`, `startDate` (empty means the day you first open it), `totalDays`, `timezone`, `currency`, the money goal and its pace, a `miniBoss`, `products`, `channels`, `counters`, `quests`, the `xp` rules, the `funnel` steps, and the `levels`. Each level has a day it's due and `needs`, which must all be met: `flags`, `sales`, `total`, `bestMonth`, `productSales`, `counter` or `followers`.
+
+[`game/examples/one-page-studio.config.js`](game/examples/one-page-studio.config.js) is a filled example for a one-page website studio, the setup shash.builds uses, with personal targets removed.
+
+## Phone logger and Sheet
 
 - **The Sheet template** (below): where your numbers live.
 - **The app** ([`docs/level-up/`](../../docs/level-up/index.html)): a phone-first page to log your day and see your level, XP, streak, and money against your pace. It talks to your Sheet through a small script you paste into it ([`apps-script/Code.gs`](apps-script/Code.gs)), protected by a passphrase you choose.
@@ -78,7 +106,8 @@ If your Sheet is missing a column the app sends, the script adds it at the end o
 
 ## Changelog
 
-- **0.2.0** (2026-11-03): the app (daily log with tap counters and quests, level, XP, streak, money vs pace, Network card) and the Apps Script API.
+- **0.3.0** (2026-11-04): the Level-Up Game (one config block, Claude artifact or browser storage, sample mode), its skill and an example config.
+- **0.2.0** (2026-11-03): the phone logger (daily log with tap counters and quests, level, XP, streak, money vs pace, Network card) and the Apps Script API.
 - **0.1.0** (2026-11-03): the Sheet template.
 
 ---

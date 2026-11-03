@@ -264,14 +264,16 @@
       }
     },
     {
-      "name": "Level-Up Dashboard",
+      "name": "Level-Up Game Dashboard",
       "slug": "level-up-dashboard",
       "kind": "tool",
       "path": "tools/level-up-dashboard",
-      "summary": "Log your day from your phone and level up: XP, streak, and money vs pace, stored in your own Google Sheet.",
-      "version": "0.2.0",
+      "summary": "Turn your 365-day business goal into a game: levels, boss fights, quests, XP, streaks and money against pace. Claude artifact, browser or Google Sheet storage.",
+      "version": "0.3.0",
       "install": {
-        "run": "Upload sheet-template/level-up-dashboard.xlsx to Google Drive"
+        "skill": "tools/level-up-dashboard/SKILL.md",
+        "file": "tools/level-up-dashboard/game/level-up-game.html",
+        "sample": "https://shash-builds.github.io/Shash.builds/level-up-game/#sample"
       }
     },
     {

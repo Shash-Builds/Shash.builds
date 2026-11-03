@@ -35,7 +35,7 @@ Install in Claude Code: `/plugin marketplace add Shash-Builds/shash.builds` then
 ## Tools
 - [One-Page Starter](https://github.com/Shash-Builds/shash.builds/tree/main/tools/one-page-starter): a one-page site for a local service business from one CSV row (Python 3, no dependencies)
 - [Lead Tracker](https://github.com/Shash-Builds/shash.builds/tree/main/tools/lead-tracker): website form leads into a Google Sheet with their source, plus a Dashboard
-- [Level-Up Dashboard](https://github.com/Shash-Builds/shash.builds/tree/main/tools/level-up-dashboard): Google Sheet template for a build-in-public run
+- [Level-Up Game Dashboard](https://github.com/Shash-Builds/shash.builds/tree/main/tools/level-up-dashboard): turn a 365-day business goal into a game (levels, quests, XP, streaks, money vs pace); Claude artifact, browser or Google Sheet storage
 
 ## Research
 - [Cold email for US small businesses](https://github.com/Shash-Builds/shash.builds/blob/main/research/cold-email-us.md): CAN-SPAM, Gmail limits, deliverability

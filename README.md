@@ -105,7 +105,7 @@ Plain HTML, CSS and JavaScript. Free hosting, no monthly fees.
 | --- | --- |
 | [One-Page Starter](tools/one-page-starter) | A one-page site for a local service business, from one CSV row. Call button, reviews, quote form. |
 | [Lead Tracker](tools/lead-tracker) | Every website lead in a Google Sheet, with where it came from, and a Dashboard by source. |
-| [Level-Up Dashboard](tools/level-up-dashboard) | A Google Sheet template to track a build-in-public run: days, sales, content, followers, reviews. |
+| [Level-Up Game Dashboard](tools/level-up-dashboard) | Turn your 365-day business goal into a game: levels, boss fights, quests, XP, streaks and money against pace. [Try the sample](https://shash-builds.github.io/Shash.builds/level-up-game/#sample). |
 
 What's coming next lives in the backlog in [STATUS.md](STATUS.md). Machines can read the same list in [`catalog.json`](catalog.json) and [`llms.txt`](llms.txt).
 

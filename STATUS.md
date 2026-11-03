@@ -4,6 +4,7 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-04. Level-Up Game Dashboard open-sourced** in [`tools/level-up-dashboard/`](tools/level-up-dashboard): one HTML file with a `CONFIG` block (levels, quests, XP, money pace, mini-boss, products, channels, role model label), storage in the user's private Claude artifact or the browser (Export/Import), and a sample mode. Personal parts left out (job-hunt tab, personal targets, names). Skill: [`SKILL.md`](tools/level-up-dashboard/SKILL.md). Example config: [`one-page-studio.config.js`](tools/level-up-dashboard/game/examples/one-page-studio.config.js). Live sample: `docs/level-up-game/` (needs Pages on). Agensi listing and cover in `agensi/`, **not published** until Shashwat approves. LinkedIn draft: [`content/drops/2026-11-05-level-up-game.md`](content/drops/2026-11-05-level-up-game.md).
 - **2026-11-03. Level-Up Dashboard app v1:** phone-first page in [`docs/level-up/`](docs/level-up/index.html) (daily log, level, XP, streak, money vs pace) on top of Shashwat's Sheet through [`apps-script/Code.gs`](tools/level-up-dashboard/apps-script/Code.gs). Passphrase on every read and write; nothing personal in the repo. Goals, pace and XP weights come from the Sheet's `config` tab, ready for the generic "Role Model" version. Served by GitHub Pages from `/docs` on this branch.
 - **2026-11-03. Seed export + Niche Research** (from branch chat 2), merged after a privacy, brand and size review (30 binaries, 2.7 MB total, none over 500 KB).
   - [`briefs/seed/`](briefs/seed): the site (index, lookbook, skills page), the booked-one-pager skill draft, Tab mascot stills and loops, trailer scenes, Built in Bed graphics. See its `MANIFEST.md` for sources and the 5 open items.
@@ -32,7 +33,7 @@ Last update: 2026-11-03
 
 ## Next
 
-- **Role Model**: the open-source, config-driven version of the Level-Up Dashboard (anyone sets the role model they chase).
+- **Role Model avatar**: a stylized 3D figure on the desktop game that evolves with level (queued, waits for HEAD's go).
 Open-sourcing everything, in waves:
 
 - Wave 3 (needs Shashwat to create empty repos): the reel engine, the OSE web platform, the Instagram client.
