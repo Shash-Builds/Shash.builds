@@ -64,12 +64,15 @@ On claude.ai: download `transcriber-skill.zip` from [Releases](https://github.co
 
 **How accurate is it?** Whisper mishears names, brands, numbers and mixed languages. The default model suits clear English drafts. Use the larger one for Hindi, numbers, noisy audio or anything you will quote.
 
+**Which models?** `base` (default) and `small` come from verified shash.builds packages once they're published. `medium` and `large-v3` (`--size medium`) are more accurate and are downloaded by faster-whisper from Hugging Face (about 1.5 GB and 3 GB), so they need a sandbox or computer that can reach it.
+
 **Which languages?** English, Hindi, Hinglish and 90+ languages.
 
 **What can I do with the transcript?** The Master Skill can rough-cut a video from it, and Social Media can make chapters, Shorts picks and posts.
 
 ## Changelog
 
+- **1.1.0** (2026-11-03): `--size medium` and `large-v3`, `--max-chars` for shorter caption lines, split words joined ("one -page" is now "one-page"), cues never pass the width limit. The Toolbox's transcribe tool uses this engine.
 - **1.0.0** (2026-11-03): first release in shash.builds.
 
 ---
