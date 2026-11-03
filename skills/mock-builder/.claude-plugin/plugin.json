@@ -4,9 +4,9 @@
   "description": "shash.builds Mock Builder: a one-page website mock for a local service business as a single HTML file, with a shareable preview path. Every placeholder is marked as sample; no fake reviews or claims about the business.",
   "author": {
     "name": "Shashwat Jain",
-    "url": "https://github.com/ShashwatBuilds"
+    "url": "https://github.com/Shash-Builds"
   },
-  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
   "license": "MIT",
   "keywords": [
     "website mockup",

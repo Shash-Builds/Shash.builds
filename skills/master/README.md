@@ -22,11 +22,11 @@ Claude: Master: Design head, using the video workflow.
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install master@shashbuilds`
 3. Ask: "Make a 20 second reel that explains how UPI works."
 
-On claude.ai: download `master-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](../../dist/master-full.md).
+On claude.ai: download `master-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](../../dist/master-full.md).
 
 ## Before and after
 

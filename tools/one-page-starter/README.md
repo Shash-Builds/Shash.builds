@@ -10,7 +10,7 @@ See the built sample: [`demo/sample-cleaning/index.html`](demo/sample-cleaning/i
 
 ## Install in 3 steps
 
-1. Copy this folder, or `git clone https://github.com/ShashwatBuilds/shash.builds` and `cd tools/one-page-starter`.
+1. Copy this folder, or `git clone https://github.com/Shash-Builds/shash.builds` and `cd tools/one-page-starter`.
 2. Fill a CSV with the columns in [`sample.csv`](sample.csv), one row per business.
 3. Run `python3 build.py businesses.csv out`. Each business gets `out/<slug>/index.html`. Drag the folder onto [Netlify Drop](https://app.netlify.com/drop) or any static host.
 

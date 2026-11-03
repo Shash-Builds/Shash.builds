@@ -3,12 +3,12 @@
 Five free command-line tools that make the daily video, each also a Claude skill:
 transcribe, cut-silence, video-build, repurpose, photo-kit. MIT licensed, run locally, no API keys.
 
-Repo: https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/toolbox
+Repo: https://github.com/Shash-Builds/shash.builds/tree/main/tools/toolbox
 
 Install (macOS or Linux):
 
 ```
-git clone https://github.com/ShashwatBuilds/shash.builds
+git clone https://github.com/Shash-Builds/shash.builds
 bash shash.builds/tools/toolbox/install.sh
 ```
 
@@ -42,7 +42,7 @@ repurpose: transcript to LinkedIn, Instagram, X thread and YouTube chapters, the
 photo-kit: every platform size from one photo, EXIF and GPS always stripped
 
 No API keys. Tested on Linux so far.
-https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/toolbox
+https://github.com/Shash-Builds/shash.builds/tree/main/tools/toolbox
 ```
 
 ## 2. r/SideProject (map row 11, launch posts welcome)
@@ -61,7 +61,7 @@ Every day I record a 2-minute video. These five tools turn the raw recording int
 5. photo-kit: one photo to 8 platform sizes, location data stripped
 
 All free, MIT, no paid APIs, everything runs on your machine. Each one is also a Claude skill.
-Repo: https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/toolbox
+Repo: https://github.com/Shash-Builds/shash.builds/tree/main/tools/toolbox
 
 What would you add to the kit?
 ```
@@ -85,7 +85,7 @@ Link in the first comment.
 Which step of your content takes the longest?
 ```
 
-First comment: `https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/toolbox`
+First comment: `https://github.com/Shash-Builds/shash.builds/tree/main/tools/toolbox`
 
 ## 4. X (time is a guess: weekday, 9 am to noon ET)
 
@@ -99,7 +99,7 @@ First comment: `https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/t
 4/ video-build: a markdown shot list + voice + face clip to a 1080x1920 reel with brand captions.
 
 5/ repurpose writes the posts, photo-kit makes every image size and strips GPS.
-https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/toolbox
+https://github.com/Shash-Builds/shash.builds/tree/main/tools/toolbox
 ```
 
 ## 5. Agensi (map row 17): not yet

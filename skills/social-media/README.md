@@ -29,11 +29,11 @@ Claude: Social: create, Instagram reel.
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install social-media@shashbuilds`
 3. Ask: "Plan my next 2 weeks of Instagram posts." Claude asks about your brand, audience and goal the first time.
 
-On claude.ai: download `social-media-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/social-media/social-media.md).
+On claude.ai: download `social-media-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/social-media/social-media.md).
 
 ## Before and after
 

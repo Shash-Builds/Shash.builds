@@ -22,11 +22,11 @@ The numbers come from your inputs and fee profile. A real run of the same questi
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install ecom@shashbuilds`
 3. Ask: "What do I make per order on this product?" and give the price, your cost and where you sell.
 
-On claude.ai: download `ecom-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/ecom/ecom.md), plus the module you need from [modules](skills/ecom/modules) and the marketplace's section of [marketplaces.md](skills/ecom/marketplaces.md).
+On claude.ai: download `ecom-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/ecom/ecom.md), plus the module you need from [modules](skills/ecom/modules) and the marketplace's section of [marketplaces.md](skills/ecom/marketplaces.md).
 
 ## Before and after
 

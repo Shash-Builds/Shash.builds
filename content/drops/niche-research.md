@@ -5,8 +5,8 @@ Ready-to-post copy for the launch. Every number below comes from the real run in
 and read each community's rules first (see `research/communities.md`).
 
 Links:
-- Skill: https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/niche-research
-- Real report: https://github.com/ShashwatBuilds/shash.builds/blob/main/research/niche/shash-builds/report.md
+- Skill: https://github.com/Shash-Builds/shash.builds/tree/main/skills/niche-research
+- Real report: https://github.com/Shash-Builds/shash.builds/blob/main/research/niche/shash-builds/report.md
 
 ## LinkedIn (daily log)
 
@@ -56,8 +56,8 @@ Search terms come from YouTube and Google search suggestions, so they're what pe
 
 Honest limits: Instagram, LinkedIn and Reddit block most logged-out reads, so those tables come out thin. It never logs in or gets around blocks.
 
-Repo (MIT): https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/niche-research
-My own run, so you can see the output: https://github.com/ShashwatBuilds/shash.builds/blob/main/research/niche/shash-builds/report.md
+Repo (MIT): https://github.com/Shash-Builds/shash.builds/tree/main/skills/niche-research
+My own run, so you can see the output: https://github.com/Shash-Builds/shash.builds/blob/main/research/niche/shash-builds/report.md
 
 Happy to hear what breaks.
 

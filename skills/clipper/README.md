@@ -29,11 +29,11 @@ That is the shape of the hand-back: the file, the hook, the caption with the req
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install clipper@shashbuilds`
 3. Ask: "Clip this video into three Shorts" and give it the file, plus the campaign brief if there is one.
 
-On claude.ai: download `clipper-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/clipper/clipper.md).
+On claude.ai: download `clipper-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/clipper/clipper.md).
 
 ## Before and after
 

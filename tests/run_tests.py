@@ -239,7 +239,7 @@ def check_structure() -> None:
     @test
     def test_raw_github_links_point_at_real_files():
         problems = []
-        prefix = "https://raw.githubusercontent.com/ShashwatBuilds/shash.builds/main/"
+        prefix = "https://raw.githubusercontent.com/Shash-Builds/shash.builds/HEAD/"
         for doc in [ROOT / "README.md", ROOT / "skills/PROMPTS.md"]:
             for path in re.findall(re.escape(prefix) + r"([\w./-]+\w)", doc.read_text(encoding="utf-8")):
                 if not (ROOT / path).exists():
@@ -350,23 +350,14 @@ def check_structure() -> None:
         assert not problems, "\n".join(problems)
 
     @test
-    def test_master_welcomes_the_founder_once():
+    def test_master_never_scripts_a_reaction():
         hooks = PLUGINS / "master/hooks/hooks.json"
         if not hooks.exists():
             raise Skip("no master plugin")
-        need("sh")
-        cmd = next(h["command"] for g in json.loads(hooks.read_text())["hooks"]["SessionStart"]
-                   for h in g["hooks"] if "welcome" in h["command"])
-        cmd = cmd.replace("${CLAUDE_PLUGIN_ROOT}", str(PLUGINS / "master"))
-        with tempfile.TemporaryDirectory() as data:
-            def start(**env):
-                full = {k: v for k, v in os.environ.items() if k != "CLAUDE_PLUGIN_DATA"}
-                return subprocess.run(["sh", "-c", cmd], capture_output=True, text=True,
-                                      env={**full, **env}, timeout=30).stdout
-            first = json.loads(start(CLAUDE_PLUGIN_DATA=data))
-            assert "Oh my god, this is gold." in first["hookSpecificOutput"]["additionalContext"], first
-            assert start(CLAUDE_PLUGIN_DATA=data) == "", "the welcome must only come once"
-            assert start() == "", "without a plugin data folder there is nowhere to remember it: say nothing"
+        text = hooks.read_text() + "".join(p.read_text(encoding="utf-8") for p in (PLUGINS / "master").rglob("*.md"))
+        assert "welcome.json" not in hooks.read_text() and not (PLUGINS / "master/hooks/welcome.json").exists(), \
+            "no scripted first-reply line: Claude must never be told to fake a reaction"
+        assert "this is gold" not in text.lower()
 
     @test
     def test_master_is_on_by_default_cheap_and_switchable():

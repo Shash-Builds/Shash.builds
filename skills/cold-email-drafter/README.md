@@ -82,11 +82,11 @@ It fails the sequence if email 1's body is over 90 words, or if any email has an
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install cold-email-drafter@shashbuilds`
 3. Say "write the cold email for Demo Plumbing Co" with the audit and the mock link.
 
-On claude.ai: download `cold-email-drafter-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/cold-email-drafter/SKILL.md).
+On claude.ai: download `cold-email-drafter-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/cold-email-drafter/SKILL.md).
 
 ## Before and after
 

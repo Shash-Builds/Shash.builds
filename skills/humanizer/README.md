@@ -24,11 +24,11 @@ Claude: Our joggers kept bagging at the knee. So we changed the fabric.
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install humanizer@shashbuilds`
 3. Ask: "Humanize this caption for Instagram" and paste your draft.
 
-On claude.ai: download `humanizer-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/humanizer/humanizer.md).
+On claude.ai: download `humanizer-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/humanizer/humanizer.md).
 
 ## Before and after
 

@@ -34,11 +34,11 @@ A lead list is your work and it names real businesses. Never commit it or publis
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install lead-finder@shashbuilds`
 3. Say "find 25 roofers in Tulsa, OK" and save the CSV under `leads/`.
 
-Install [site-audit](../site-audit) too, because the audit step needs it next to this skill. Or pass `--no-audit` to skip it. On claude.ai: download `lead-finder-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/lead-finder/SKILL.md).
+Install [site-audit](../site-audit) too, because the audit step needs it next to this skill. Or pass `--no-audit` to skip it. On claude.ai: download `lead-finder-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/lead-finder/SKILL.md).
 
 ## Before and after
 

@@ -51,7 +51,7 @@ The Master Skill's Sales head runs them in order. Lead lists stay private: save 
 Add the catalog once:
 
 ```
-/plugin marketplace add ShashwatBuilds/shash.builds
+/plugin marketplace add Shash-Builds/shash.builds
 ```
 
 Then install the skills you want:
@@ -94,7 +94,7 @@ Research need web search, which Claude Code has built in.
 
 ### Option 2: claude.ai, Claude Desktop or Claude Mobile
 
-1. Download the skill's zip from the latest [Release](https://github.com/ShashwatBuilds/shash.builds/releases).
+1. Download the skill's zip from the latest [Release](https://github.com/Shash-Builds/shash.builds/releases).
 2. In Claude's settings, turn on code execution, then upload the zip as a custom skill.
 3. Start a chat and ask for the job. Upload the Master Skill with the others: it uses them.
 

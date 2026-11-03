@@ -2,8 +2,8 @@
   "name": "clipper",
   "displayName": "Clipper by shash.builds",
   "description": "shash.builds Clipper: turns long videos into vertical Shorts, Reels and TikToks for paid clipping campaigns or the founder's own channel. Finds moments that work on their own, cuts them with word-by-word captions and a hook, follows the campaign brief, and tracks what each clip earned.",
-  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
-  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/Shash-Builds"},
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
   "license": "MIT",
   "keywords": [
     "clipping",

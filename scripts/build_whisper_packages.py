@@ -55,7 +55,7 @@ TIKTOKEN_URLS = {  # what the converter asks tiktoken for; served from the PyPI 
     "https://raw.githubusercontent.com/openai/whisper/main/whisper/assets/gpt2.tiktoken": "gpt2.tiktoken",
 }
 LIMIT = 90 * 1024 * 1024  # PyPI's default limit is 100 MB per file; stay well under it
-HOMEPAGE = "https://github.com/ShashwatBuilds/shash.builds"
+HOMEPAGE = "https://github.com/Shash-Builds/shash.builds"
 
 
 def sha256(path):

@@ -8,8 +8,8 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT for code, CC BY 4.0 for content" src="https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-e8572c?style=flat-square&labelColor=15120f"></a>
-  <a href="https://github.com/ShashwatBuilds/shash.builds/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/ShashwatBuilds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
-  <a href="https://github.com/ShashwatBuilds/shash.builds/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/ShashwatBuilds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
+  <a href="https://github.com/Shash-Builds/shash.builds/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Shash-Builds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
+  <a href="https://github.com/Shash-Builds/shash.builds/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Shash-Builds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
   <a href="STATUS.md"><img alt="Built in public: read the build log" src="https://img.shields.io/badge/built%20in-public-f6efe3?style=flat-square&labelColor=15120f"></a>
 </p>
 
@@ -47,7 +47,7 @@ Install the skills in under a minute.
 **Claude Code**
 
 ```
-/plugin marketplace add ShashwatBuilds/shash.builds
+/plugin marketplace add Shash-Builds/shash.builds
 /plugin install master@shashbuilds
 /plugin install humanizer@shashbuilds
 ```
@@ -57,7 +57,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 **Claude.ai (web, desktop or mobile)**
 
-1. Download a skill's `.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases).
+1. Download a skill's `.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases).
 2. Turn on code execution in Settings, then upload the zip as a custom skill.
 3. Ask Claude for the job the skill does.
 
@@ -137,8 +137,9 @@ Meet <img src="media/tab-static.svg" width="22" alt="Tab, the mascot"> **Tab**, 
 
 Cleaners, landscapers, painters, contractors, detailers, coaches. If customers find you on Google and call you, you need one clean page that turns that visit into a call.
 
+- Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com),
 - Message me on [LinkedIn](https://www.linkedin.com/in/shashbuilds), or
-- [Open a hire request](https://github.com/ShashwatBuilds/shash.builds/issues/new?template=hire.yml) with your business name and current site. Keep phone numbers and emails out of it: issues are public. I'll reply there.
+- [Open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml) with your business name and current site. Keep phone numbers and emails out of it: issues are public. I'll reply there.
 
 ## Follow the build
 

@@ -194,7 +194,7 @@ def social():
     body.append(wordmark(150, 80, 300))
     body.append(text(BODY, "One-page websites for US service businesses.", 38, 84, 384, CREAM))
     body.append(text(BODY, "Free Claude skills and web tools, built in public.", 38, 84, 436, MUTED))
-    body.append(text(BODY_BOLD, "github.com/ShashwatBuilds/shash.builds", 28, 84, 548, ORANGE))
+    body.append(text(BODY_BOLD, "github.com/Shash-Builds/shash.builds", 28, 84, 548, ORANGE))
     body.append(f'<g transform="translate(910 150) scale(1.6)">{tab_group(False)}</g>')
     body.append(f'<rect y="{h-12}" width="{w}" height="12" fill="{ORANGE}"/>')
     return svg(w, h, "".join(body), "shash.builds social preview",

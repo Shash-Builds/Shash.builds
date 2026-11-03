@@ -30,11 +30,11 @@ The banner reads: "Sample mock by shash.builds for Demo Roofing Co. Services and
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install mock-builder@shashbuilds`
 3. Say "mock up a site for Demo Roofing Co, a roofer in Tulsa, OK".
 
-On claude.ai: download `mock-builder-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/mock-builder/SKILL.md).
+On claude.ai: download `mock-builder-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/mock-builder/SKILL.md).
 
 ## Sharing a mock
 

@@ -1,7 +1,7 @@
 {
   "name": "shash.builds",
   "description": "Free Claude skills and open-source web tools for US service businesses and web designers, built in public by Shashwat Jain.",
-  "repo": "https://github.com/ShashwatBuilds/shash.builds",
+  "repo": "https://github.com/Shash-Builds/shash.builds",
   "license": {
     "code": "MIT",
     "content": "CC BY 4.0"
@@ -10,7 +10,7 @@
     "offer": "One-page website for a US service business",
     "price_usd": 400,
     "delivery_days": 7,
-    "link": "https://github.com/ShashwatBuilds/shash.builds#hire-me"
+    "link": "https://github.com/Shash-Builds/shash.builds#hire-me"
   },
   "items": [
     {
@@ -21,7 +21,7 @@
       "summary": "Routes every task to the right specialists. Runs the video workflow.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install master@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install master@shashbuilds",
         "claude_ai": "master-skill.zip from the latest GitHub Release"
       }
     },
@@ -33,7 +33,7 @@
       "summary": "Makes writing sound like you, not a model. Every fact kept.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install humanizer@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install humanizer@shashbuilds",
         "claude_ai": "humanizer-skill.zip from the latest GitHub Release"
       }
     },
@@ -45,7 +45,7 @@
       "summary": "Your head of social: strategy, posts, hooks, a 100-point check.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install social-media@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install social-media@shashbuilds",
         "claude_ai": "social-media-skill.zip from the latest GitHub Release"
       }
     },
@@ -57,7 +57,7 @@
       "summary": "A LinkedIn ghostwriter that never makes up a story.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install linkedin@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install linkedin@shashbuilds",
         "claude_ai": "linkedin-skill.zip from the latest GitHub Release"
       }
     },
@@ -69,7 +69,7 @@
       "summary": "Scores a video out of 100 like a senior motion designer.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install motion-design-taste@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install motion-design-taste@shashbuilds",
         "claude_ai": "motion-design-taste-skill.zip from the latest GitHub Release"
       }
     },
@@ -81,7 +81,7 @@
       "summary": "A senior audio designer's review, with a ranked fix list.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install audio-review@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install audio-review@shashbuilds",
         "claude_ai": "audio-review-skill.zip from the latest GitHub Release"
       }
     },
@@ -93,7 +93,7 @@
       "summary": "Whisper transcripts and timed captions, right in the chat.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install transcriber@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install transcriber@shashbuilds",
         "claude_ai": "transcriber-skill.zip from the latest GitHub Release"
       }
     },
@@ -105,7 +105,7 @@
       "summary": "Long videos into captioned vertical clips. Permission first.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install clipper@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install clipper@shashbuilds",
         "claude_ai": "clipper-skill.zip from the latest GitHub Release"
       }
     },
@@ -117,7 +117,7 @@
       "summary": "Fixes AI images and video for where they will be used.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install ai-visuals@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install ai-visuals@shashbuilds",
         "claude_ai": "ai-visuals-skill.zip from the latest GitHub Release"
       }
     },
@@ -129,7 +129,7 @@
       "summary": "A real buyer compares you with 3 to 5 competitors.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install harsh-buyer-review@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install harsh-buyer-review@shashbuilds",
         "claude_ai": "harsh-buyer-review-skill.zip from the latest GitHub Release"
       }
     },
@@ -141,7 +141,7 @@
       "summary": "Sourced, dated, double-checked competitor research.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install competitor-research@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install competitor-research@shashbuilds",
         "claude_ai": "competitor-research-skill.zip from the latest GitHub Release"
       }
     },
@@ -153,7 +153,7 @@
       "summary": "A content niche into a sourced posting plan and 50 ranked video topics.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install niche-research@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install niche-research@shashbuilds",
         "claude_ai": "niche-research-skill.zip from the latest GitHub Release"
       }
     },
@@ -165,7 +165,7 @@
       "summary": "Listings, images and profit per order from your real fees.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install ecom@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install ecom@shashbuilds",
         "claude_ai": "ecom-skill.zip from the latest GitHub Release"
       }
     },
@@ -177,7 +177,7 @@
       "summary": "Every piece of work checked three times before you see it.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install careful-mode@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install careful-mode@shashbuilds",
         "claude_ai": "careful-mode-skill.zip from the latest GitHub Release"
       }
     },
@@ -189,7 +189,7 @@
       "summary": "Cheap models for simple work, and a memory sheet.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install economy-mode@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install economy-mode@shashbuilds",
         "claude_ai": null
       }
     },
@@ -201,7 +201,7 @@
       "summary": "Local businesses by trade and city, audited.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install lead-finder@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install lead-finder@shashbuilds",
         "claude_ai": "lead-finder-skill.zip from the latest GitHub Release"
       }
     },
@@ -213,7 +213,7 @@
       "summary": "A weak-site score and 3 provable problems.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install site-audit@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install site-audit@shashbuilds",
         "claude_ai": "site-audit-skill.zip from the latest GitHub Release"
       }
     },
@@ -225,7 +225,7 @@
       "summary": "A one-page mock in one file, marked sample.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install mock-builder@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install mock-builder@shashbuilds",
         "claude_ai": "mock-builder-skill.zip from the latest GitHub Release"
       }
     },
@@ -237,7 +237,7 @@
       "summary": "Three short, honest emails. CAN-SPAM ready.",
       "version": "1.0.0",
       "install": {
-        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install cold-email-drafter@shashbuilds",
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install cold-email-drafter@shashbuilds",
         "claude_ai": "cold-email-drafter-skill.zip from the latest GitHub Release"
       }
     },
@@ -287,7 +287,7 @@
     }
   ],
   "install": {
-    "claude_code_catalog": "/plugin marketplace add ShashwatBuilds/shash.builds",
+    "claude_code_catalog": "/plugin marketplace add Shash-Builds/shash.builds",
     "marketplace_name": "shashbuilds"
   }
 }

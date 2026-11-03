@@ -4,9 +4,9 @@
   "description": "shash.builds Lead Finder: finds US service businesses by trade and city from OpenStreetMap (or Google Places with your own key), runs each website through Site Audit, and writes a private CSV ranked weakest site first.",
   "author": {
     "name": "Shashwat Jain",
-    "url": "https://github.com/ShashwatBuilds"
+    "url": "https://github.com/Shash-Builds"
   },
-  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
   "license": "MIT",
   "keywords": [
     "lead generation",

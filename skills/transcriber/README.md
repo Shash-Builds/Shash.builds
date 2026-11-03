@@ -20,11 +20,11 @@ Claude: [full transcript, Hindi in Roman letters, English words kept,
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install transcriber@shashbuilds`
 3. Ask: "Transcribe this" and upload the file.
 
-On claude.ai: download `transcriber-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/transcriber/transcriber.md).
+On claude.ai: download `transcriber-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/transcriber/transcriber.md).
 
 ## Before and after
 

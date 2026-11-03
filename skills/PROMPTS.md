@@ -27,4 +27,4 @@ subagents.
 **Shortcut for a Claude that can browse the web:** instead of pasting, send it
 the prompt's raw link and ask it to follow it. For example:
 
-> Read https://raw.githubusercontent.com/ShashwatBuilds/shash.builds/main/skills/harsh-buyer-review/skills/harsh-buyer-review/harsh-buyer-reviewer.md and follow it for this conversation.
+> Read https://raw.githubusercontent.com/Shash-Builds/shash.builds/HEAD/skills/harsh-buyer-review/skills/harsh-buyer-review/harsh-buyer-reviewer.md and follow it for this conversation.

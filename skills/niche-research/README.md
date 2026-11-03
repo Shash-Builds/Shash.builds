@@ -27,11 +27,11 @@ What that run found, all in the report with links and dates: 33 accounts, the 24
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install niche-research@shashbuilds`
 3. Ask: "Research my niche" and give the niche, your audiences, your platforms and your goal.
 
-On claude.ai: download `niche-research-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the method](skills/niche-research/niche-research.md). Pick Haiku as the model to save credits.
+On claude.ai: download `niche-research-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the method](skills/niche-research/niche-research.md). Pick Haiku as the model to save credits.
 
 ## Before and after
 

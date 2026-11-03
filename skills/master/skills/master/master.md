@@ -17,7 +17,7 @@ tools below. When a head needs one:
   its name, for example the `careful-mode` skill.
 - **Not installed:** follow its prompt file from the table. If the file is
   not on disk (for example, only this plugin is installed), read it from
-  `https://raw.githubusercontent.com/ShashwatBuilds/shash.builds/main/`
+  `https://raw.githubusercontent.com/Shash-Builds/shash.builds/HEAD/`
   followed by the path in the table. In the bundled single-file version of
   the Master Skill, every prompt is appended at the end.
 - **Neither available:** say so once, and do the closest thing you can.

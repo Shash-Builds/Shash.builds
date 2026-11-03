@@ -74,15 +74,15 @@ Rough estimate: about 22% of the weekly limit used this week (front door, media 
 - **Windows test of the toolbox** (checklist in the toolbox branch chat).
 - **Releases to cut after the rename:** `skills-v1.0.0`, `one-page-starter-v1.0.0`, `lead-tracker-v1.0.0`, and `transcribe`, `cut-silence`, `video-build`, `repurpose`, `photo-kit` at `-v0.1.0`.
 - **Dashboard columns.** The Sheet template uses default headers (listed in its README). Send the dashboard's real column list if it differs.
-- **Offer page leftovers** in `research/offer-page.md`: payment method, call length, intake list, post-launch changes, and whether site files are handed over at launch or on cancelling hosting. Still marked `[[REAL: ...]]`.
+- **Offer page leftovers** in `research/offer-page.md`: call length, intake list, post-launch changes, and whether site files are handed over at launch or on cancelling hosting. Still marked `[[REAL: ...]]`.
 - **Contra fees** conflict between Contra's own help pages (0% vs $15 per payment under $500). Check with Contra support before listing.
 
-1. **Rename OK?** Can the GitHub account become `ShashwatBuilds` and this repo `shash.builds`? All badges and links already point there and go live after the rename.
-2. **Website URL.** What's the shash.builds site address? The README's hire section uses LinkedIn and an issue form until then.
-3. **Public business email.** Is there one to list? Until then, contact is LinkedIn only.
+1. **Rename:** done. The account is `Shash-Builds`; every link points to github.com/Shash-Builds/shash.builds.
+2. **Website URL:** waiting for Mother chat's temporary Netlify address.
+3. **Public business email:** shash.builds@gmail.com, now in the README, the profile README and the offer page.
 4. **Needs Shashwat's clicks** (no API access from here): in repo Settings, set the description, topics, social preview (`media/social-preview.png`), turn on Actions and private vulnerability reporting. Text is below.
-5. **Publish the skills release:** after the rename, push the tags: `skills-v1.0.0`, `one-page-starter-v1.0.0`, `lead-tracker-v1.0.0`. The workflow builds and attaches every zip. (I can push them once Actions is on.)
-6. **Profile README:** the profile repo must be named exactly like the account (`ShashwatBuilds/ShashwatBuilds`). OK to rename the existing profile repo to that after the account rename? The README is ready in `profile/README.md`.
+5. **Publish the skills release:** after the rename, push the tags: `skills-v1.0.0`, `one-page-starter-v1.0.0`, `lead-tracker-v1.0.0`. The workflow builds and attaches every zip. (I can push them once Actions is on. Waiting for the go.)
+6. **Profile README:** the profile repo must be named exactly like the account (`Shash-Builds/Shash-Builds`). The README is ready in `profile/README.md`.
 
 ### Paste-ready repo settings
 

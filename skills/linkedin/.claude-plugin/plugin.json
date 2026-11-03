@@ -2,8 +2,8 @@
   "name": "linkedin",
   "displayName": "LinkedIn by shash.builds",
   "description": "shash.builds LinkedIn: Claude becomes the founder's LinkedIn ghostwriter and editor. Finds the post only the founder could write, writes the hook for the 'see more' fold, edits every draft through the humanizer, and covers profiles, comments, messages and a posting plan. Never invents a story.",
-  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
-  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/Shash-Builds"},
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
   "license": "MIT",
   "keywords": [
     "linkedin",
