@@ -123,7 +123,7 @@ def build(slug):
     if site.get("menu"):
         mn = site["menu"]
         rows = "".join(f'<li><div><h3>{e(r[0])}</h3><p>{e(r[1])}</p></div><span class="dots" aria-hidden="true"></span><b>{e(r[2])}</b></li>' for r in mn["items"])
-        menu = (f'<section class="menu block" id="services" aria-labelledby="menu-h"><div class="wrap menu-in">'
+        menu = (f'<section class="menu block" id="{e(mn.get("id", "services"))}" aria-labelledby="menu-h"><div class="wrap menu-in">'
                 f'<div class="head"><p class="eyebrow">{e(mn["eyebrow"])}</p><h2 id="menu-h">{e(mn["title"])}</h2><p>{e(mn["note"])}</p></div>'
                 f'<ul class="menu-list">{rows}</ul></div></section>')
     preload = ""

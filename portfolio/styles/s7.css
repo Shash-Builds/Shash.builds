@@ -1,0 +1,75 @@
+/* S-07 Brutal (lookbook): safety yellow, raw black, monospace text, heavy rules, no softness.
+ * Type: Anton for display, JetBrains Mono for text. Layout signature for this sample: a poster
+ * hero (a full-width condensed headline over a wide photo strip), a price board right under it
+ * like the sign over a service counter, and boxed services. */
+.s7 {
+  --bg: #f2f2ee; --surface: #fcfcfa; --ink: #0b0b0b; --muted: #333; --rule: #0b0b0b;
+  --accent: #ffe600; --on-accent: #0b0b0b; --accent-ink: #0b0b0b;
+  --f-display: "Anton", "Impact", "Arial Narrow", sans-serif; --f-body: "JetBrains Mono", ui-monospace, monospace;
+  --display-weight: 400; --display-case: uppercase; --tracking: 0;
+  --radius: 0px; --btn-radius: 0px; --photo-radius: 0px;
+}
+.s7 body, .s7 { font-size: .95rem; }
+.s7 .concept-strip { background: #0b0b0b; color: #ffe600; }
+.s7 .nav { background: #ffe600; border-bottom: 4px solid #0b0b0b; }
+.s7 .logo span { font-family: var(--f-display); text-transform: uppercase; font-size: 1.3rem; letter-spacing: .01em; font-weight: 400; }
+.s7 .nav nav { text-transform: uppercase; font-weight: 700; font-size: .85rem; }
+.s7 .btn { border: 3px solid #0b0b0b; text-transform: uppercase; font-size: .9rem; letter-spacing: .02em; }
+.s7 .btn-call { background: #0b0b0b; color: #ffe600; }
+.s7 .btn-book { background: #ffe600; color: #0b0b0b; }
+.s7 .nav-cta.btn-call { background: #0b0b0b; color: #ffe600; }
+.s7 .eyebrow { display: inline-block; justify-self: start; background: #0b0b0b; color: #ffe600; padding: 4px 8px; letter-spacing: .06em; }
+.s7 h1, .s7 h2 { text-transform: uppercase; font-weight: 400; line-height: .92; }
+.s7 h2 { font-size: clamp(2.4rem, 4vw + 1rem, 4.4rem); }
+.s7 h3 { font-family: var(--f-body); text-transform: uppercase; font-weight: 700; font-size: 1rem; letter-spacing: 0; }
+.s7 .lede { color: #222; }
+.s7 .facts li::before { content: "->"; width: auto; height: auto; background: none; font-weight: 700; transform: none; }
+/* poster hero */
+.s7 .hero { background: #ffe600; border-bottom: 4px solid #0b0b0b; }
+.s7 .hero--poster h1 { font-size: clamp(3.6rem, 14vw, 13rem); line-height: .86; letter-spacing: -0.005em; }
+.s7 .hero--poster .hero-photo { order: 1; }
+.s7 .hero--poster .hero-photo img { border: 4px solid #0b0b0b; aspect-ratio: 16 / 9; filter: grayscale(1) contrast(1.15); }
+@media (min-width: 60rem) {
+  .s7 .hero--poster .hero-in { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px 32px; padding-block: 40px 56px; }
+  .s7 .hero--poster .hero-copy { display: contents; }
+  .s7 .hero--poster .eyebrow { grid-column: 1 / -1; }
+  .s7 .hero--poster h1 { grid-column: 1 / -1; }
+  .s7 .hero--poster .hero-photo { grid-column: 1 / -1; grid-row: 3; }
+  .s7 .hero--poster .hero-photo img { aspect-ratio: 32 / 9; }
+  .s7 .hero--poster .lede { grid-column: 1 / span 5; grid-row: 4; }
+  .s7 .hero--poster .actions { grid-column: 6 / span 4; grid-row: 4; align-self: start; }
+  .s7 .hero--poster .facts { grid-column: 10 / -1; grid-row: 4; }
+}
+/* price board */
+.s7 .menu { background: #0b0b0b; color: #f2f2ee; --muted: #b8b8b0; --rule: #555; }
+.s7 .menu .eyebrow { background: #ffe600; color: #0b0b0b; }
+.s7 .menu-in { display: grid; gap: 32px; }
+.s7 .menu-list li { border-bottom: 2px solid #333; }
+.s7 .menu-list b { font-family: var(--f-display); font-weight: 400; color: #ffe600; font-size: 2.2rem; }
+.s7 .menu-list .dots { border-bottom: 2px dashed #555; }
+/* boxed services */
+.s7 .svc { gap: 0; border: 4px solid #0b0b0b; }
+.s7 .svc li { background: #fcfcfa; border-radius: 0; border-bottom: 2px solid #0b0b0b; }
+@media (min-width: 40rem) { .s7 .svc li:nth-child(odd) { border-right: 2px solid #0b0b0b; } }
+@media (min-width: 60rem) { .s7 .svc li:nth-child(odd) { border-right: 0; } .s7 .svc li:not(:nth-child(3n)) { border-right: 2px solid #0b0b0b; } .s7 .svc li:nth-last-child(-n+3) { border-bottom: 0; } }
+.s7 .svc .n { font-family: var(--f-display); font-weight: 400; font-size: 2.6rem; line-height: 1; }
+.s7 .svc li:hover { background: #ffe600; }
+.s7 .how { background: #ffe600; border-block: 4px solid #0b0b0b; }
+.s7 .steps li { border-top: 4px solid #0b0b0b; padding-inline: 0; }
+.s7 .steps li::before { font-family: var(--f-display); font-weight: 400; font-size: 3.6rem; color: #0b0b0b; }
+.s7 .gal img { border: 4px solid #0b0b0b; filter: grayscale(1) contrast(1.1); }
+.s7 .towns li { border: 3px solid #0b0b0b; text-transform: uppercase; font-weight: 700; font-size: .82rem; background: #fcfcfa; }
+.s7 .guarantee { background: #0b0b0b; color: #ffe600; }
+.s7 .reviews-slot { border: 4px dashed #0b0b0b; color: #333; }
+.s7 .rs-title { text-transform: uppercase; }
+.s7 .qs { border-top: 4px solid #0b0b0b; }
+.s7 .qs details { border-bottom: 2px solid #0b0b0b; }
+.s7 .qs summary { text-transform: uppercase; font-size: .95rem; }
+.s7 .quote { background: #fcfcfa; border: 4px solid #0b0b0b; }
+.s7 .quote input, .s7 .quote select, .s7 .quote textarea { border: 3px solid #0b0b0b; }
+.s7 .quote .btn-call { background: #ffe600; color: #0b0b0b; }
+.s7 .big-call a { background: #ffe600; padding: 0 10px; box-shadow: 6px 6px 0 #0b0b0b; border: 3px solid #0b0b0b; display: inline-block; }
+.s7 .foot { border-top: 4px solid #0b0b0b; text-transform: uppercase; font-size: .82rem; }
+.s7 .badge { border: 3px solid #0b0b0b; border-radius: 0; background: #ffe600; }
+.s7 .callbar { border-top: 4px solid #0b0b0b; background: #ffe600; }
+.s7 :focus-visible { outline: 4px solid #0b0b0b; outline-offset: 3px; }

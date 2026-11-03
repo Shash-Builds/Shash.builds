@@ -10,8 +10,10 @@ Sample one-page websites for made-up US service businesses, built the way a paid
 | [Red Clay & Fern Landscapes](landscaper-ga/) | Landscaping | Athens, GA | S-03 Organic |
 | [Bluejay Plumbing Co.](plumber-oh/) | Plumbing | Dayton, OH | S-04 Playful blocks |
 | [Lantern Row Barbershop](barber-ca/) | Barbershop | Long Beach, CA | S-08 Luxe |
+| [Wrenfield Family Dentistry](dentist-nc/) | Dentist | Raleigh, NC | S-06 Editorial |
+| [Quarter Turn Auto Repair](auto-repair-mi/) | Auto repair | Grand Rapids, MI | S-07 Brutal |
 
-More samples are on the way (dentist, auto repair). Each folder's `README.md` is its case card.
+Each folder's `README.md` is its case card. Browse them all on the [gallery page](index.html).
 
 ## How they're built
 
