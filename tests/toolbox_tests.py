@@ -232,3 +232,36 @@ style: brand
                             str(tmp / "rp2"), "--ollama", "none", "--ollama-host", "http://127.0.0.1:9"],
                            capture_output=True, text=True)
         assert r.returncode == 0 and "not reachable" in r.stderr, r.stderr
+
+    @test
+    def test_toolbox_photo_kit_strips_gps_rotates_and_keeps_the_subject():
+        try:
+            from PIL import Image, ImageDraw
+        except ImportError:
+            raise Skip("Pillow not installed")
+        src = tmp / "pk.jpg"
+        im = Image.new("RGB", (1500, 1000), (210, 200, 190))
+        ImageDraw.Draw(im).ellipse((1100, 300, 1400, 600), fill=(232, 87, 44))
+        ex = Image.Exif()
+        ex[0x0110] = "Test Camera"
+        ex[0x8825] = {1: "N", 2: (28.0, 36.0, 50.0), 3: "E", 4: (77.0, 12.0, 30.0)}
+        im.save(src, quality=90, exif=ex)
+        out = tmp / "pk_out"
+        run([sys.executable, str(TOOLBOX / "photo-kit/photo_kit.py"), str(src), "--sizes", "ig-story,yt-thumb", "--out", str(out)])
+        story = Image.open(out / "pk-ig-story.jpg")
+        assert story.size == (1080, 1920) and len(story.getexif()) == 0, (story.size, dict(story.getexif()))
+        r, g, b = story.convert("RGB").getpixel((540, 960))
+        assert r > 200 and g < 120, f"the orange subject should be in the middle of the story crop, got {(r, g, b)}"
+        report = json.loads((out / "photo-kit.json").read_text(encoding="utf-8"))
+        assert report[0]["metadata_removed"]["gps"] is True, report
+        # a sideways phone photo (EXIF orientation 6) comes out upright, still with no metadata
+        side = tmp / "pk_side.jpg"
+        ex2 = Image.Exif()
+        ex2[0x0112] = 6
+        Image.new("RGB", (400, 300), "white").save(side, exif=ex2)
+        run([sys.executable, str(TOOLBOX / "photo-kit/photo_kit.py"), str(side), "--strip-only", "--out", str(out)])
+        clean = Image.open(out / "pk_side-clean.jpg")
+        assert clean.size == (300, 400) and len(clean.getexif()) == 0, (clean.size, dict(clean.getexif()))
+        bad = subprocess.run([sys.executable, str(TOOLBOX / "photo-kit/photo_kit.py"), str(src), "--sizes", "tiktok"],
+                             capture_output=True, text=True)
+        assert bad.returncode != 0 and "unknown size" in bad.stderr and "Traceback" not in bad.stderr, bad.stderr

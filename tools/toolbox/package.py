@@ -4,6 +4,7 @@
     python tools/toolbox/package.py                 # every tool
     python tools/toolbox/package.py transcribe      # one tool
     python tools/toolbox/package.py --check         # validate listings only, no files written
+    python tools/toolbox/package.py --no-cover NAME # zip only (what the release workflow runs)
 
 For each tool with an agensi/listing.json it:
   1. checks the listing (title, summary of 160 characters or fewer, tags, price "free", no em dashes);
@@ -136,7 +137,9 @@ def main() -> int:
         print(f"{len(chosen)} listing(s) ok")
         return 0
     for t in chosen:
-        print(cover(t).relative_to(ROOT), build_zip(t).relative_to(ROOT))
+        if "--no-cover" not in sys.argv:  # CI release builds skip the cover (needs Pillow and fonts)
+            print(cover(t).relative_to(ROOT))
+        print(build_zip(t).relative_to(ROOT))
     return 0
 
 

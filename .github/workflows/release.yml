@@ -1,6 +1,7 @@
 # Push a tag and this publishes a GitHub Release with notes and downloads.
 #   skills-v1.2.0     all claude.ai skill zips (built by scripts/build_skill_zip.py)
 #   <tool>-v1.0.0     a zip of tools/<tool>/
+#   <tool>-v0.1.0     for a toolbox tool (tools/toolbox/<tool>/): its skill zip, built by package.py
 # Notes come from .github/releases/<tag>.md (start from templates/release/NOTES.md).
 name: release
 on:
@@ -29,6 +30,9 @@ jobs:
           if [ "$name" = "skills" ]; then
             python3 scripts/build_skill_zip.py
             assets+=(dist/*-skill.zip dist/master-full.md)
+          elif [ -f "tools/toolbox/$name/SKILL.md" ]; then
+            python3 tools/toolbox/package.py --no-cover "$name"
+            assets+=("dist/toolbox/${name}-skill.zip")
           elif [ -d "tools/$name" ]; then
             (cd tools && zip -rq "../${name}.zip" "$name")
             assets+=("${name}.zip")
