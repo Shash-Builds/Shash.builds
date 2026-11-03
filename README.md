@@ -21,6 +21,9 @@
   <a href="CONTRIBUTING.md">Contribute</a>
 </p>
 
+<p align="center"><img src="tools/one-page-starter/demo.jpg" width="100%" alt="A site built with the free One-Page Starter: Bright Oak Cleaning, a made-up Austin house cleaner, on a laptop and a phone, with call and quote buttons and a 4.9 Google rating."></p>
+<p align="center"><sub>Built from one CSV row with the free <a href="tools/one-page-starter">One-Page Starter</a>. Sample business.</sub></p>
+
 ---
 
 ## What this is
@@ -91,9 +94,12 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 ### Web tools and templates
 
-| Tool | What it does | Status |
-| --- | --- | --- |
-| *The first tools land here this week.* | One-page site starters and small tools for service businesses. | Shipping |
+Plain HTML, CSS and JavaScript. Free hosting, no monthly fees.
+
+| Tool | What it does |
+| --- | --- |
+| [One-Page Starter](tools/one-page-starter) | A one-page site for a local service business, from one CSV row. Call button, reviews, quote form. |
+| [Lead Tracker](tools/lead-tracker) | Every website lead in a Google Sheet, with where it came from, and a Dashboard by source. |
 
 What's coming next lives in the backlog in [STATUS.md](STATUS.md). Machines can read the same list in [`catalog.json`](catalog.json) and [`llms.txt`](llms.txt).
 

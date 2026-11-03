@@ -28,7 +28,8 @@ Install in Claude Code: `/plugin marketplace add ShashwatBuilds/shash.builds` th
 - [Economy Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/economy-mode): Cheap models for simple work, and a memory sheet.
 
 ## Tools
-- None released yet. Each release adds a line here: name, one-line purpose, link.
+- [One-Page Starter](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/one-page-starter): a one-page site for a local service business from one CSV row (Python 3, no dependencies)
+- [Lead Tracker](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/lead-tracker): website form leads into a Google Sheet with their source, plus a Dashboard
 
 ## Research
 - [Communities map](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/communities.md): where to share free Claude skills and web tools, with rules and sources

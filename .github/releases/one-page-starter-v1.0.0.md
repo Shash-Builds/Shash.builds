@@ -1,0 +1,10 @@
+## One-Page Starter 1.0.0
+
+Turn one row of a spreadsheet into a fast one-page website for a local service business: name, call button, services, hours, service area, Google rating, real reviews and a quote form.
+
+Download `one-page-starter.zip` below, or read the 3-step setup: https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/one-page-starter
+
+---
+
+Free and open source by shash.builds. Need a one-page website for your service business?
+$400 flat, live in 7 days: https://github.com/ShashwatBuilds/shash.builds#hire-me

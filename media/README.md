@@ -16,7 +16,7 @@ python3 media/build.py
 | `social-preview.png` / `.svg` | 1280 x 640 | GitHub social preview and link cards |
 | `profile-header.svg` | 1280 x 360 | GitHub profile README |
 | `tab.svg`, `tab-static.svg` | 200 x 200 | Tab the mascot, animated and still |
-| `header-example.svg` | 1280 x 300 | Shows the per-item header. Make one with `python3 media/build.py header "Name" --kind skill --line "One line" --out path/header.svg` |
+| `header-skills.svg` | 1280 x 300 | The skills guide header. Make one for any item with `python3 media/build.py header "Name" --kind skill --line "One line" --out path/header.svg` |
 | `icons/*.svg` | 48 x 48 | skill, tool, template, video, content, research, hire, log |
 
 ## Brand

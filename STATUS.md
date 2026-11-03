@@ -4,6 +4,7 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-03. Two web tools open-sourced:** [One-Page Starter](tools/one-page-starter) (one-page site per business from a CSV, optional preview ribbon, `--sheet-url` live form) and [Lead Tracker](tools/lead-tracker) (form leads into a Google Sheet with source and a Dashboard). Both with demos. The starter's demo is now in the README's first screen.
 - **2026-11-03. 14 Claude skills open-sourced** in [`skills/`](skills/): Master, Humanizer, Social Media, LinkedIn, Motion Design Taste, Audio Review, Transcriber, Clipper, AI Visuals, Harsh Buyer Review, Competitor Research, Ecom, Careful Mode, Economy Mode. Installable as a Claude Code plugin catalog (`shashbuilds`), each with its own README and header, relicensed to Shashwat Jain, full test suite in CI. Release notes ready for tag `skills-v1.0.0`.
 - **2026-11-03. Front door.** README, media kit (banner, animated Tab, icons, social preview, per-item headers, all built by `media/build.py`), LICENSE (MIT) plus LICENSE-CONTENT (CC BY 4.0), CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue forms (bug, idea, hire), PR template, `llms.txt`, `AGENTS.md`, `catalog.json`, a repo check (`scripts/check.py`, runs in CI) and a release workflow (push a tag, get a Release with notes and a zip).
 - **2026-11-03. Communities map.** [`research/communities.md`](research/communities.md): 59 places, ranked, with rules, sources and a launch-day playbook.
@@ -17,7 +18,6 @@ Last update: 2026-11-03
 
 Open-sourcing everything, in waves:
 
-- Wave 2: tools in this hub: the one-page preview template and the lead tracker Sheets kit.
 - Wave 3 (needs Shashwat to create empty repos): the reel engine, the OSE web platform, the Instagram client.
 - A new shash.builds demo video for the README, made with the Master Skill's video workflow.
 
@@ -32,7 +32,6 @@ Standing jobs:
 
 | # | Drop | Kind | Who it helps |
 | --- | --- | --- | --- |
-| 1 | One-page starter: a single-file site for a local service business (hero, services, reviews, service area, call button, form) | tool | Service businesses, web designers |
 | 2 | Homepage teardown skill: scores a homepage and drafts a before/after redesign brief | skill | Web designers |
 | 3 | Local business schema generator: JSON-LD for LocalBusiness, services and FAQ | tool | Anyone with a local site |
 | 4 | Review link and QR maker for a Google Business Profile | tool | Service businesses |
@@ -58,7 +57,7 @@ Rough estimate: about 12% of the weekly limit used this week (front door, media 
 2. **Website URL.** What's the shash.builds site address? The README's hire section uses LinkedIn and an issue form until then.
 3. **Public business email.** Is there one to list? Until then, contact is LinkedIn only.
 4. **Needs Shashwat's clicks** (no API access from here): in repo Settings, set the description, topics, social preview (`media/social-preview.png`), turn on Actions and private vulnerability reporting. Text is below.
-5. **Publish the skills release:** after the rename, push the tag: `git tag skills-v1.0.0 && git push origin skills-v1.0.0`. The workflow builds and attaches every zip.
+5. **Publish the skills release:** after the rename, push the tags: `skills-v1.0.0`, `one-page-starter-v1.0.0`, `lead-tracker-v1.0.0`. The workflow builds and attaches every zip. (I can push them once Actions is on.)
 6. **Profile README:** the profile repo must be named exactly like the account (`ShashwatBuilds/ShashwatBuilds`). OK to rename the existing profile repo to that after the account rename? The README is ready in `profile/README.md`.
 
 ### Paste-ready repo settings

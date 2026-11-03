@@ -180,6 +180,28 @@
         "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install economy-mode@shashbuilds",
         "claude_ai": null
       }
+    },
+    {
+      "name": "One-Page Starter",
+      "slug": "one-page-starter",
+      "kind": "tool",
+      "path": "tools/one-page-starter",
+      "summary": "A one-page site for a local service business, from one CSV row.",
+      "version": "1.0.0",
+      "install": {
+        "run": "python3 tools/one-page-starter/build.py businesses.csv out"
+      }
+    },
+    {
+      "name": "Lead Tracker",
+      "slug": "lead-tracker",
+      "kind": "tool",
+      "path": "tools/lead-tracker",
+      "summary": "Every website lead in a Google Sheet, with where it came from.",
+      "version": "1.0.0",
+      "install": {
+        "run": "Google Sheet + Apps Script + capture.js, see README"
+      }
     }
   ],
   "install": {
