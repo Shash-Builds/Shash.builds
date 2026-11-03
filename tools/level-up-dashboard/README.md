@@ -21,9 +21,11 @@ Six tabs, one header row each, frozen and styled. Nothing else to set up.
 
 ## Install in 3 steps
 
-1. Download [`sheet-template/level-up-dashboard.xlsx`](sheet-template/level-up-dashboard.xlsx).
-2. Upload it to Google Drive and open it with Google Sheets (File, Save as Google Sheets).
-3. Set your `start_date` and `goal_usd` in the `config` tab, then add a row to `days` every evening.
+1. **[Make a copy of the Google Sheet](https://docs.google.com/spreadsheets/d/14H1zb1JAfK5d10UuI4kJBvFVKrOCVYIU_aScMdlTp5A/copy)** (you need a Google account).
+2. Set your `start_date` and `goal_usd` in the `config` tab.
+3. Add a row to `days` every evening.
+
+No Google account? Download [`sheet-template/level-up-dashboard.xlsx`](sheet-template/level-up-dashboard.xlsx) and open it in Excel or any spreadsheet app.
 
 Prefer plain files? Each tab is also a CSV in [`sheet-template/`](sheet-template).
 

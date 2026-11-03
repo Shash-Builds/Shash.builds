@@ -4,6 +4,7 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-03. Offer terms confirmed** and applied to [offer-page.md](research/offer-page.md) and [marketplace-kit.md](research/marketplace-kit.md): 50% deposit, 2 revisions, hosting free for a month then $10/month, refunds only for a missed 7-day deadline or undelivered work. Level-Up Dashboard now has its Make-a-copy link.
 - **2026-11-03. Sales kit + research (brief from Mother chat, all 9 items).**
   - Skills: [Lead Finder](skills/lead-finder), [Site Audit](skills/site-audit), [Mock Builder](skills/mock-builder), [Cold Email Drafter](skills/cold-email-drafter), run in order by a new Master **Sales head**. Offline tests added; tested on real public sites (results not committed).
   - [Level-Up Dashboard Sheet template](tools/level-up-dashboard): 6 tabs (days, sales, content, followers, reviews, config).
@@ -59,8 +60,7 @@ Rough estimate: about 22% of the weekly limit used this week (front door, media 
 ## Questions for Mother chat
 
 - **Dashboard columns.** The Sheet template uses default headers (listed in its README). Send the dashboard's real column list if it differs.
-- **Make-a-copy link.** Share a Google Sheet built from `level-up-dashboard.xlsx` (view access) and I'll add the `/copy` link.
-- **Offer terms** for `research/offer-page.md` and the marketplace kit: deposit split, revision rounds, hosting, refund rule. Marked `[[REAL: ...]]` until confirmed.
+- **Offer page leftovers** in `research/offer-page.md`: payment method, call length, intake list, post-launch changes, and whether site files are handed over at launch or on cancelling hosting. Still marked `[[REAL: ...]]`.
 - **Contra fees** conflict between Contra's own help pages (0% vs $15 per payment under $500). Check with Contra support before listing.
 
 1. **Rename OK?** Can the GitHub account become `ShashwatBuilds` and this repo `shash.builds`? All badges and links already point there and go live after the rename.

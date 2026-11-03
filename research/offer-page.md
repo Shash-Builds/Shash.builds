@@ -2,7 +2,7 @@
 
 Draft for Shashwat Jain. Offer: one-page website for US service businesses, $400 flat, live in 7 days.
 
-Items marked [[REAL: confirm ...]] are not yet confirmed by Shashwat. Do not publish those lines until he confirms or changes them.
+Confirmed by Shashwat on 2026-11-03: 50% deposit, the rest at launch; 2 revisions included; hosting free for the first month, then $10/month, cancel any time; the refund rule in section 7. Items still marked [[REAL: confirm ...]] are not confirmed. Do not publish those lines until he confirms or changes them.
 
 ---
 
@@ -47,11 +47,11 @@ Note on Option 4: the lead tracker records form fills only. It does not track ph
 - A 15-minute walkthrough of how to read the lead sheet. [[REAL: confirm length and whether it is live or recorded]]
 - Basic search setup: a page title, a meta description, clear headings, and your city and service area written on the page. No ranking guarantee is included.
 - A link to your Google Business Profile on the site. You claim the profile; I add the link. [[REAL: confirm this is in scope]]
-- Hosting on Netlify's free tier, in your own Netlify account. [[REAL: confirm the plan is the free tier, that the client owns the account, and that no monthly fee is charged by Shashwat]]
+- Hosting: the first month is free, then $10/month. Cancel any time. A month already started is not refunded.
 - Domain: you buy it, in your name. It is usually about $12 a year at most registrars. [[REAL: confirm the domain cost estimate and who sets up DNS]]
-- Two rounds of changes after your first review. A round covers text, photos, colors and layout within the agreed page. New pages or new features cost extra. [[REAL: confirm the number of revision rounds]]
-- Payment: half to start, half when the site is live. [[REAL: confirm the deposit split]]
-- Ownership: you get the site files and the accounts. Everything is in your name. [[REAL: confirm handover terms, including when the files are sent]]
+- Two rounds of changes after your first review. A round covers text, photos, colors and layout within the agreed page. New pages or new features cost extra.
+- Payment: 50% ($200) to start, the rest ($200) when the site is live.
+- Ownership: the domain and the Google Sheet are in your name. [[REAL: confirm whether the site files are handed over at launch or on cancelling hosting]]
 - Post-launch: [[REAL: confirm what happens after launch, for example 30 days of free fixes for broken links or form errors, then optional paid help]]
 
 ---
@@ -83,17 +83,17 @@ The 7 days start when Shashwat has your materials. Late materials stop the clock
 - The domain is connected and the Google Business Profile link is tested.
 
 **Day 7: Live**
-- The site goes live on your domain, in your Netlify account.
-- Shashwat sends you the files, the logins and the walkthrough time.
+- The site goes live on your domain. I host it: the first month is free.
+- Shashwat sends you the lead sheet, the logins for anything in your name and the walkthrough time.
 
 ---
 
 ## 4. Process
 
 1. **Call (30 minutes).** We confirm your trade, city and services, and check that the offer fits. [[REAL: confirm call length and that the call is free]]
-2. **Deposit.** Half of $400 starts the build. [[REAL: confirm the split and how payment is taken]]
+2. **Deposit.** 50% ($200) starts the build. [[REAL: confirm how payment is taken]]
 3. **Build.** I build the page and the lead sheet. You review it and send changes in two rounds.
-4. **Live.** I publish to your Netlify account, connect your domain, test the form, and hand everything over. The second half is due once the site is live.
+4. **Live.** I publish the site, connect your domain, test the form and hand over the lead sheet. The other 50% is due once the site is live. Hosting is free for the first month, then $10/month.
 
 ---
 
@@ -118,7 +118,10 @@ I cannot promise that. A website gives people a place to contact you. The lead s
 Yes. You buy it in your name. It is usually about $12 a year. [[REAL: confirm the cost estimate]]
 
 **Who hosts the site?**
-Netlify's free tier, in your own account. I set it up with you. You can keep it, move it, or leave it.
+I do. The first month is free, then it is $10/month. Cancel any time. A month already started is not refunded.
+
+**Can I get my money back?**
+Yes, in two cases: the site is not live in 7 days, or something on the "What's included" list is not delivered. Then you get back everything you have paid. See section 7 for the details.
 
 **Can you track phone calls?**
 No. The lead sheet records quote form submissions only. Calls are not tracked.
@@ -134,54 +137,46 @@ I set up basic search details: page titles, descriptions, headings, your city an
 ## 6. Objection answers
 
 **"$400 is too cheap. Is this a scam?"**
-A low price does not prove a scam. A few things you can check before you pay: the sample page is live (it is a made-up cleaning business, labeled as a sample), the lead sheet demo is live, and you get half the fee back only if the work is not done. You own the site and the accounts, so you can take them to any other designer. [[REAL: confirm the sample links and the refund rule before using this]]
+A low price does not prove a scam. A few things you can check before you pay: the sample page is live (it is a made-up cleaning business, labeled as a sample), and the lead sheet demo is live. You only pay 50% to start. If the site is not live in 7 days, or anything on the included list is missing, you get back everything you paid. [[REAL: confirm the sample links before using this]]
 
 **"You are overseas. Can I trust you?"**
-Yes, and I will say so up front. I work from outside the US. Your site is built in your own Netlify account, on your own domain, with your own Google Sheet. You can check all of it. You pay the second half only after the site is live.
+Yes, and I will say so up front. I work from outside the US. Your site goes on your own domain, with your own Google Sheet. You see the draft before launch. You pay the second 50% only after the site is live, and if I miss the 7-day deadline or leave out anything on the included list, you get back everything you paid.
 
 **"What time zone are you in?"**
 I work US Eastern hours: 8:30 am to 6:30 pm ET, Monday to Friday. [[REAL: confirm working days and the reply time]] Calls are booked inside that window.
 
 **"How many revisions do I get?"**
-Two rounds of changes. A round is a set of changes to text, photos, colors or layout within the agreed page. New pages and new features are extra. [[REAL: confirm the number of rounds]]
+Two rounds of changes. A round is a set of changes to text, photos, colors or layout within the agreed page. New pages and new features are extra.
 
 **"What about hosting?"**
-The site runs on Netlify's free tier, in your account. There is no monthly fee from me. Netlify's free tier has its own limits, which are unlikely to matter for a one-page business site. [[REAL: confirm Netlify's current free-tier terms before publishing]]
+I host it for you. The first month is free, then it is $10/month. Cancel any time. A month already started is not refunded.
 
 **"Who owns the site?"**
-You do. The files, the Netlify account, the domain and the Google Sheet are all in your name. I keep no ownership of your site.
+Your domain and your Google Sheet are in your name from day one. [[REAL: confirm whether the site files are handed over at launch or when hosting is cancelled]]
 
 **"What if I hate it?"**
-You get two rounds of changes, and you see the draft before it goes live. Pick one guarantee from section 7 and write it here. [[REAL: confirm the guarantee chosen in section 7]]
+You see the draft before it goes live, and two rounds of changes are included to get it right. Refunds are tied to the deadline and the deliverables, not to taste: if the site is live on time with everything on the list, there is no refund for a change of mind.
 
 **"Do you do SEO?"**
 Basic setup only: page titles, descriptions, headings, your city and service area on the page, and a link to your Google Business Profile. I do not promise a ranking. Rankings depend on many things, including your reviews and your competitors.
 
 ---
 
-## 7. Guarantee options
+## 7. Guarantee and refund rule (confirmed)
 
-Each option is one Shashwat can honor. The risk to him is written in the last line.
+**Guarantee line:**
+> Live in 7 days with everything listed included, or you get your money back.
 
-**Option A: Live-in-7-days guarantee (recommended)**
-Exact wording:
-> Live in 7 days after I get your materials, or you pay nothing more. Late materials stop the clock.
+**The rule.** Refunds happen only in two cases:
 
-Risk to Shashwat: low. He keeps the first half ($200), and the only cost is the extra build time past day 7. He controls most of the timeline, and the clock-stop rule covers the parts he does not control. He can honor this with a calendar and a fixed intake date.
+1. **The 7-day deadline is missed.** The 7 days start once the deposit is paid and you have sent your content (logo, text, photos, or "use sample text"). If you are late sending content or feedback, the clock pauses for those days.
+2. **Promised work is not delivered.** Promised work is exactly the "What's included" list in section 2, plus 2 revisions. If an item on the list is missing at handover and isn't fixed within 2 days of you pointing it out, it counts as not delivered.
 
-**Option B: Two-round revision guarantee**
-Exact wording:
-> Two rounds of changes are included. If you are not happy with the layout after round two, I fix it once more at no charge.
+**Refund amount:** everything you have paid so far.
 
-Risk to Shashwat: medium-low. He may spend a few unpaid hours on one more round. This is limited because it is one extra round, not unlimited changes.
+**No refunds for:** a change of mind, a change in taste after you approve the design, or requests outside the included list.
 
-**Option C: Money-back guarantee**
-Exact wording:
-> If you are not happy within 14 days of launch, I refund what you paid, less $50 for setup.
-
-Risk to Shashwat: high. He could refund up to $350 after the work is done, and "not happy" is subjective. Only consider this after he has real clients and a clear list of what counts as a fix.
-
-**Recommendation: Option A.** It is the one he controls best, it costs him little if he hits the 7-day plan, and it matches the offer's core promise. Add Option B only if he wants a second safety line later.
+**Hosting:** $10/month after the free first month, cancel any time. A month already started is not refunded.
 
 ---
 

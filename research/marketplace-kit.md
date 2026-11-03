@@ -7,6 +7,12 @@ Prepared 2026-11-03 for Shashwat Jain (shash.builds). Offer: one-page website fo
 - **Proof and repo.** The repo links use github.com/ShashwatBuilds/shash.builds, which goes live when the GitHub account is renamed to ShashwatBuilds. Until then, items marked **[[AFTER RENAME]]** point at the future address.
 - **Official pages.** Upwork and Fiverr help pages returned HTTP 403 to the fetch tool. Their facts below come from search-result excerpts of the official pages. Those are marked "excerpt". Anything not confirmed on an official page is marked **unverified**. Contra pages were opened directly, so their facts are marked "opened".
 - **Placeholders.** Anything in [[double brackets]] needs your input before posting.
+- **Terms (confirmed by Shashwat, 2026-11-03).** Use these in every listing and proposal:
+  - Payment: 50% to start, the rest at launch.
+  - 2 revision rounds included.
+  - Hosting: first month free, then $10/month, cancel any time. A month already started is not refunded.
+  - Guarantee: "Live in 7 days with everything listed included, or you get your money back." Refunds only if the 7-day deadline is missed (the clock starts when the deposit and the client's content arrive, and pauses while the client is late) or an included item is not delivered and not fixed within 2 days of being pointed out. Refund = everything paid so far. No refunds for a change of mind or taste after approval, or for requests outside the included list. Full wording: [offer-page.md](offer-page.md), section 7.
+  - On marketplaces, the platform's own payment and dispute rules apply on top of these terms (milestones on Upwork and Contra, packages on Fiverr).
 - **Proof rule.** No client names, reviews, ratings or testimonials appear anywhere in this kit. Add them only when real ones exist.
 
 ---
@@ -24,7 +30,7 @@ Prepared 2026-11-03 for Shashwat Jain (shash.builds). Offer: one-page website fo
 > I build one-page websites for service businesses in the US, such as cleaning, landscaping, painting, contracting and consulting.
 >
 > What you get for a flat $400:
-> - A one-page website that you own
+> - A one-page website on your own domain
 > - Live in 7 days
 > - Basic SEO setup so search engines can read your page
 > - A lead tracker in Google Sheets that records where each lead came from
@@ -54,7 +60,7 @@ Upwork service listings are a separate product, and their availability for your 
 > **Title:** I will build a one-page website for your service business in 7 days
 > **Price:** $400 flat
 > **Delivery:** 7 days
-> **Description:** One-page website you own, live in 7 days, for a flat $400. Basic SEO setup included. Send your business name and trade, and I will reply with a short plan before you hire me.
+> **Description:** One-page website on your own domain, live in 7 days, for a flat $400. Basic SEO setup included. Send your business name and trade, and I will reply with a short plan before you hire me.
 
 ### 1b. Fees and payout
 
@@ -97,7 +103,7 @@ Upwork service listings are a separate product, and their availability for your 
 
 **Bio** (238 characters; Contra limit 400, opened: [Bios on Contra](https://help.contra.com/en/articles/9322626-bios-on-contra))
 
-> I build one-page websites for service businesses in the US. You own the site. The price is a flat $400, and it goes live in 7 days. I started from my own open-source site starter, and I also built the online side of my own clothing brand.
+> I build one-page websites for service businesses in the US. Your site goes on your own domain. The price is a flat $400, and it goes live in 7 days. I started from my own open-source site starter, and I also built the online side of my own clothing brand.
 
 **Skill tags**
 
@@ -164,7 +170,7 @@ Service tags, per Contra's service guide (excerpt): 1 to 3 role tags, 1 to 5 too
 
 > Most small service businesses spend on ads and cannot tell which ones bring jobs. I build the site that makes that clear.
 >
-> You get a one-page website that you own. Every lead can go into a Google Sheet with where it came from.
+> You get a one-page website on your own domain. Every lead can go into a Google Sheet with where it came from.
 >
 > Live in 7 days. Flat price of $400 for the one-page site.
 >
@@ -193,7 +199,7 @@ one page website, website design, landing page, local business, small business
 
 **What each tier adds over the one below**
 
-- **Basic ($400):** one-page website you own, live in 7 days, basic SEO setup.
+- **Basic ($400):** one-page website on your own domain, live in 7 days, basic SEO setup.
 - **Standard:** adds pages, up to 3 in total.
 - **Premium:** adds up to 5 pages and Google Business Profile setup. Optional extra: post-launch support, if you confirm it.
 
