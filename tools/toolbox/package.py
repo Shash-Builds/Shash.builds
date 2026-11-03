@@ -24,6 +24,13 @@ ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE / "_shared"))
 EM = chr(0x2014)
 SKIP = {"agensi", "__pycache__", ".DS_Store"}
+TRANSCRIBER = ROOT / "skills/transcriber/skills/transcriber"
+# Files from elsewhere in the repo that a tool's zip needs: {tool: {path in zip: source}}.
+BUNDLE = {
+    "transcribe": {"engine/transcribe.py": TRANSCRIBER / "scripts/transcribe.py",
+                   "engine/models.json": TRANSCRIBER / "scripts/models.json",
+                   "THIRD_PARTY_NOTICES.md": TRANSCRIBER / "THIRD_PARTY_NOTICES.md"},
+}
 KEYS = {"title", "summary", "tags", "price", "cover_line", "command"}
 
 
@@ -107,6 +114,8 @@ def build_zip(tool: Path) -> Path:
                 z.write(f, f"{tool.name}/{rel.as_posix()}")
         for f in sorted((HERE / "_shared").glob("*.py")):
             z.write(f, f"{tool.name}/_shared/{f.name}")
+        for inner, src in BUNDLE.get(tool.name, {}).items():
+            z.write(src, f"{tool.name}/{inner}")
         z.write(ROOT / "LICENSE", f"{tool.name}/LICENSE.md")
     return out
 

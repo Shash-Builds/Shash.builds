@@ -4,6 +4,8 @@
 
 **Audio or video in, transcript and captions out, on your own computer.** Local Whisper (faster-whisper), English, Hindi and Hinglish. No API key, nothing uploaded.
 
+It's the command-line front end of the [Transcriber skill](../../../skills/transcriber): the same engine, with reel-sized captions (42 characters a line), a choice of model by name, and a flat word list that [cut-silence](../cut-silence) and video-build read.
+
 ## Install in 3 steps
 
 1. Install Python 3.9 or newer and ffmpeg (or run the [toolbox installer](../README.md#install-everything), which does both).
@@ -55,7 +57,9 @@ demo.srt
 
 demo.words.json
   {"language": "en", "duration": 7.805, "model": "small",
-   "words": [{"word": "Hello", "start": 0.0, "end": 0.4, "probability": 0.91}, ...]}
+   "words": [{"start": 0.0, "end": 0.4, "word": "Hello", "probability": 0.91}, ...]}
+
+demo.json   the engine's segments, same format as the Transcriber skill
 ```
 
 Make the same test file yourself (needs an ffmpeg build with flite, which most Linux builds have):
@@ -68,16 +72,19 @@ ffmpeg -f lavfi -i "flite=text='Hello and welcome to shash dot builds.':voice=sl
 
 | Where | Command | Result |
 | --- | --- | --- |
-| Linux, Python 3.13, faster-whisper 1.2.1 | `python3 transcribe.py demo.wav --model small` | works, 10 s on CPU |
+| Linux, Python 3.13, faster-whisper 1.2.1 | `python3 transcribe.py demo.wav --model small` | works, about 10 s on CPU |
+| Linux, same, unzipped skill zip (engine bundled) | `python3 transcribe/transcribe.py demo.wav` | works |
 | Linux, same | `python3 transcribe.py demo.wav --model medium --language en` | works |
 | Linux, same | `python3 transcribe.py demo.wav --hinglish` | runs; needs a real Hindi recording to judge quality |
 | Windows | the PowerShell command above | not tested yet |
 
-Known issue, handled: PyAV 19 breaks faster-whisper 1.2's built-in decoder. The script reads audio with ffmpeg when it's installed, and `requirements.txt` pins `av<19` for the fallback.
+Known issue, handled: PyAV 19 breaks faster-whisper 1.2's built-in decoder. The engine reads audio with ffmpeg when it's installed, and `requirements.txt` pins `av<19` for the fallback.
+
+The `small` model is fetched from the verified shash.builds packages once they're published, otherwise from Hugging Face. `medium` and `large-v3` always come from Hugging Face.
 
 ## Use it as a Claude skill
 
-`SKILL.md` next to this README tells Claude how to run the script. In Claude Code, copy this folder (with `../_shared`) into `.claude/skills/transcribe/`, or install the zip from the release.
+`SKILL.md` next to this README tells Claude how to run the script. Install the zip from the release (it bundles the engine), or use the [Transcriber skill](../../../skills/transcriber) in Claude Code.
 
 ## Licenses
 

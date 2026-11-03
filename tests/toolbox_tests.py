@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -56,24 +57,45 @@ def register(test, frontmatter, run, need, tmp: Path, fast: bool, Skip=Exception
                 assert im.size == (1600, 1200), f"{d.name}: cover is {im.size}"
 
     @test
-    def test_toolbox_transcribe_writes_captions_from_word_timings():
+    def test_toolbox_transcribe_wraps_the_transcriber_engine():
         t = load("transcribe", "transcribe.py")
-        words = [{"word": w, "start": i * 0.3, "end": i * 0.3 + 0.25, "probability": 0.9}
-                 for i, w in enumerate("Hello and welcome. Today we build a one-page site".split())]
-        words[-1]["start"] += 2  # a long pause before the last word starts a new cue
-        words[-1]["end"] += 2
-        out = tmp / "transcribe"
-        out.mkdir()
-        paths = t.write_outputs(words, out / "demo", {"language": "en"}, 42)
-        srt = (out / "demo.srt").read_text(encoding="utf-8")
-        assert srt.startswith("1\n00:00:00,000 --> "), srt[:60]
-        lines = (out / "demo.txt").read_text(encoding="utf-8").splitlines()
-        assert lines[0] == "Hello and welcome.", lines
-        assert lines[-1] == "site", lines
-        assert (out / "demo.vtt").read_text(encoding="utf-8").startswith("WEBVTT\n\n00:00:00.000")
-        data = json.loads((out / "demo.words.json").read_text(encoding="utf-8"))
-        assert len(data["words"]) == len(words) and len(paths) == 4
-        assert t.ts(3661.5, ",") == "01:01:01,500"
+        assert t.engine().name == "transcribe.py", "engine not found"
+        try:
+            import numpy  # noqa: F401
+        except ImportError:
+            raise Skip("numpy not installed")
+        need("ffmpeg")
+        # A stand-in for faster-whisper (no model download) that splits "one-page" into pieces.
+        fake = tmp / "fake_tb"
+        (fake / "faster_whisper").mkdir(parents=True)
+        (fake / "faster_whisper/__init__.py").write_text('''
+import types
+import numpy as np
+
+def decode_audio(path, sampling_rate=16000):
+    return np.zeros(sampling_rate * 4, dtype=np.float32)
+
+class WhisperModel:
+    def __init__(self, where, device="cpu", compute_type="int8"):
+        pass
+
+    def transcribe(self, audio, **kw):
+        W = lambda s, e, w: types.SimpleNamespace(start=s, end=e, word=w, probability=0.9)
+        words = [W(0.0, 0.4, " We"), W(0.4, 0.8, " build"), W(0.8, 1.0, " one"), W(1.0, 1.3, "-page"),
+                 W(1.3, 2.0, " sites.")]
+        seg = types.SimpleNamespace(start=0.0, end=2.0, text="We build one-page sites.", words=words)
+        return iter([seg]), types.SimpleNamespace(language="en", language_probability=0.99, duration=4.0)
+''')
+        note = tmp / "tb_note.wav"
+        run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=f=300:d=4", str(note)])
+        env = {**os.environ, "PYTHONPATH": str(fake), "shash.builds_WHISPER_CACHE": str(tmp / "tb_cache")}
+        r = subprocess.run([sys.executable, str(TOOLBOX / "transcribe/transcribe.py"), str(note), "--out-dir",
+                            str(tmp / "tb_out"), "--model-dir", str(tmp)], capture_output=True, text=True, env=env)
+        assert r.returncode == 0, r.stdout + r.stderr
+        assert (tmp / "tb_out/tb_note.txt").read_text(encoding="utf-8").strip() == "We build one-page sites."
+        data = json.loads((tmp / "tb_out/tb_note.words.json").read_text(encoding="utf-8"))
+        assert [w["word"] for w in data["words"]] == ["We", "build", "one-page", "sites."], data
+        assert data["language"] == "en"
 
     @test
     def test_toolbox_transcribe_refuses_a_missing_file_plainly():
