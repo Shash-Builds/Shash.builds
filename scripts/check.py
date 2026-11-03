@@ -15,6 +15,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEXT = {".md", ".txt", ".json", ".yml", ".yaml", ".html", ".css", ".js", ".mjs", ".py", ".svg", ".sh"}
+PROSE = {".md", ".txt", ".html", ".svg", ".yml", ".yaml"}
 SKIP_DIRS = {".git", "node_modules", ".fonts", "__pycache__"}
 # Old brand names, stored rot13 so this file doesn't trip its own check.
 OLD_BRANDS = [codecs.decode(w, "rot13") for w in ("fbyvqfsbelbh", "fbyvqf sbe lbh", "sbhaqrejvgunof", "zbarlzbzragf")]
@@ -39,7 +40,8 @@ for p in files():
         continue
     body = p.read_text(encoding="utf-8", errors="replace")
     low = body.lower()
-    if chr(0x2014) in body:
+    # Prose only: some scripts and test fixtures hold em dashes on purpose (to detect them).
+    if chr(0x2014) in body and p.suffix in PROSE and not rel.startswith("tests/fixtures/"):
         errors.append(f"{rel}: em dash found, rewrite the sentence")
     if rel != "scripts/check.py":
         for word in OLD_BRANDS:

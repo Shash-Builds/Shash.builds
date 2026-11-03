@@ -11,7 +11,21 @@ Code is MIT. Content in content/ and media/ is CC BY 4.0.
 - [STATUS.md](https://github.com/ShashwatBuilds/shash.builds/blob/main/STATUS.md): public build log, backlog of upcoming drops
 
 ## Skills
-- None released yet. Each release adds a line here: name, one-line purpose, link.
+Install in Claude Code: `/plugin marketplace add ShashwatBuilds/shash.builds` then `/plugin install <slug>@shashbuilds`.
+- [Master Skill](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/master): Routes every task to the right specialists. Runs the video workflow.
+- [Humanizer](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/humanizer): Makes writing sound like you, not a model. Every fact kept.
+- [Social Media](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/social-media): Your head of social: strategy, posts, hooks, a 100-point check.
+- [LinkedIn](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/linkedin): A LinkedIn ghostwriter that never makes up a story.
+- [Motion Design Taste](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/motion-design-taste): Scores a video out of 100 like a senior motion designer.
+- [Audio Review](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/audio-review): A senior audio designer's review, with a ranked fix list.
+- [Transcriber](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/transcriber): Whisper transcripts and timed captions, right in the chat.
+- [Clipper](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/clipper): Long videos into captioned vertical clips. Permission first.
+- [AI Visuals](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/ai-visuals): Fixes AI images and video for where they will be used.
+- [Harsh Buyer Review](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/harsh-buyer-review): A real buyer compares you with 3 to 5 competitors.
+- [Competitor Research](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/competitor-research): Sourced, dated, double-checked competitor research.
+- [Ecom](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/ecom): Listings, images and profit per order from your real fees.
+- [Careful Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/careful-mode): Every piece of work checked three times before you see it.
+- [Economy Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/economy-mode): Cheap models for simple work, and a memory sheet.
 
 ## Tools
 - None released yet. Each release adds a line here: name, one-line purpose, link.

@@ -1,0 +1,16 @@
+{
+  "name": "humanizer",
+  "displayName": "Humanizer by shash.builds",
+  "description": "shash.builds Humanizer: makes posts, listings, emails, scripts and replies sound like the founder wrote them, not a model. Finds 300+ machine-writing patterns line by line, has a guide for each channel, checks the rewrite kept every fact, and compares the draft with the founder's own voice.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "humanizer",
+    "writing",
+    "copywriting",
+    "brand voice",
+    "ai writing",
+    "editing"
+  ]
+}

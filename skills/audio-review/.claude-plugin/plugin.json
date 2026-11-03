@@ -1,0 +1,16 @@
+{
+  "name": "audio-review",
+  "displayName": "Audio Review by shash.builds",
+  "description": "shash.builds Audio Review: Claude listens to audio like a senior audio designer (loudness, dynamics, tonal balance, stereo, noise and artifacts) and gives a scored review with a fix list.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "audio",
+    "mixing",
+    "mastering",
+    "loudness",
+    "podcast",
+    "sound design"
+  ]
+}

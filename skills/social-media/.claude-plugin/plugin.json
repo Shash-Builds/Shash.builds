@@ -1,0 +1,18 @@
+{
+  "name": "social-media",
+  "displayName": "Social Media by shash.builds",
+  "description": "shash.builds Social Media: Claude becomes your head of social media. Strategy, content calendars, posts, hooks, carousels and reel scripts for every major platform, a 100-point pre-publish scorecard, honest growth rules, and analytics that learn what works for your account.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "social media",
+    "content",
+    "instagram",
+    "tiktok",
+    "linkedin",
+    "youtube",
+    "marketing",
+    "viral"
+  ]
+}

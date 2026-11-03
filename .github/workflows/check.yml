@@ -1,11 +1,13 @@
 name: check
+# Repo hygiene and the full skills test suite (structure, docs, and every script
+# run on synthetic audio and video) on every push and pull request.
 on:
   push:
   pull_request:
 permissions:
   contents: read
 jobs:
-  check:
+  hygiene:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,3 +15,30 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/check.py
+
+  skills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install ffmpeg
+        run: |
+          for attempt in 1 2 3; do
+            sudo timeout 240 sh -c 'apt-get update && apt-get install -y --no-install-recommends ffmpeg' && exit 0
+            echo "ffmpeg install attempt $attempt failed, retrying"
+          done
+          exit 1
+      - name: Install Python packages
+        run: pip install -r skills/audio-review/skills/audio-review/requirements.txt
+      - name: Install Playwright, Chromium and Claude Code
+        run: |
+          npm install -g playwright @anthropic-ai/claude-code
+          npx playwright install --with-deps chromium
+      - name: Run tests
+        run: python3 tests/run_tests.py

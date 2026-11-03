@@ -1,0 +1,80 @@
+{
+  "name": "shashbuilds",
+  "description": "shash.builds: 14 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "owner": {
+    "name": "Shashwat Jain",
+    "url": "https://github.com/ShashwatBuilds"
+  },
+  "plugins": [
+    {
+      "name": "audio-review",
+      "source": "./skills/audio-review",
+      "description": "shash.builds Audio Review: Claude listens to audio like a senior audio designer (loudness, dynamics, tonal balance, stereo, noise and artifacts) and gives a scored review with a fix list."
+    },
+    {
+      "name": "motion-design-taste",
+      "source": "./skills/motion-design-taste",
+      "description": "shash.builds Motion Design Taste: Claude judges motion graphics videos like a senior motion designer, scores them out of 100, ranks them against references, and lists or applies exact fixes."
+    },
+    {
+      "name": "harsh-buyer-review",
+      "source": "./skills/harsh-buyer-review",
+      "description": "shash.builds Harsh Buyer Review: Claude becomes a real buyer, researches your competitors, compares one-on-one, and gives brutally specific feedback on listings, images, video, copy and price."
+    },
+    {
+      "name": "careful-mode",
+      "source": "./skills/careful-mode",
+      "description": "shash.builds Careful Mode: Claude reviews every piece of work three times (correctness, completeness, how could this go wrong) before handing it over."
+    },
+    {
+      "name": "economy-mode",
+      "source": "./skills/economy-mode",
+      "description": "shash.builds Economy Mode: Claude sends simple tasks to cheaper models (Haiku, Sonnet) and keeps the strongest model for decisions and review, to cut cost."
+    },
+    {
+      "name": "master",
+      "source": "./skills/master",
+      "description": "shash.builds Master Skill: on in every session, it has Claude use only the shash.builds tools each task needs, to save credits and raise quality: the full video workflow (plan, build, review, fix and re-render until it scores 85+), social media, feedback and research get their specialists; simple tasks get none. You can switch it to task-specific."
+    },
+    {
+      "name": "social-media",
+      "source": "./skills/social-media",
+      "description": "shash.builds Social Media: Claude becomes your head of social media. Strategy, content calendars, posts, hooks, carousels and reel scripts for every major platform, a 100-point pre-publish scorecard, honest growth rules, and analytics that learn what works for your account."
+    },
+    {
+      "name": "competitor-research",
+      "source": "./skills/competitor-research",
+      "description": "shash.builds Competitor Research: deep competitor analysis on any marketplace (Amazon, Flipkart, Meesho and more), competitor websites, social media and ad libraries. Every fact is sourced and dated, a separate pass verifies it, scripts do the maths, and the research runs on Haiku to save credits."
+    },
+    {
+      "name": "ecom",
+      "source": "./skills/ecom",
+      "description": "shash.builds Ecom: your e-commerce operator for any marketplace or own store. Listings that pass a harsh buyer, product images judged, planned and rendered, unit economics and pricing calculated in code from your real fees, plus ads, returns, stock, launches and sale events."
+    },
+    {
+      "name": "ai-visuals",
+      "source": "./skills/ai-visuals",
+      "description": "shash.builds AI Visuals: Claude reviews images and videos made with ChatGPT, Midjourney, Gemini, Flux, Ideogram, Firefly, Canva, Sora, Veo, Kling or Runway for where they'll be used, and hands back the exact fixed prompt or edit, with every change explained."
+    },
+    {
+      "name": "transcriber",
+      "source": "./skills/transcriber",
+      "description": "shash.builds Transcriber: upload a voice note, podcast, call or video and Claude transcribes it with OpenAI's Whisper inside the chat, with timestamped captions, nothing to install, and English, Hindi, Hinglish and 90+ languages."
+    },
+    {
+      "name": "humanizer",
+      "source": "./skills/humanizer",
+      "description": "shash.builds Humanizer: makes posts, listings, emails, scripts and replies sound like the founder wrote them, not a model, keeping every fact exactly as it was."
+    },
+    {
+      "name": "linkedin",
+      "source": "./skills/linkedin",
+      "description": "shash.builds LinkedIn: Claude becomes the founder's LinkedIn ghostwriter and editor: posts only the founder could write, hooks for the 'see more' fold, profiles, comments and messages, every draft through the humanizer."
+    },
+    {
+      "name": "clipper",
+      "source": "./skills/clipper",
+      "description": "shash.builds Clipper: long videos into vertical Shorts, Reels and TikToks for paid clipping campaigns or your own channel, with word-by-word captions, a hook and the campaign brief followed."
+    }
+  ]
+}

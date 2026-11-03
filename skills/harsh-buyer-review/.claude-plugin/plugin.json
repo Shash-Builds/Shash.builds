@@ -1,0 +1,16 @@
+{
+  "name": "harsh-buyer-review",
+  "displayName": "Harsh Buyer Review by shash.builds",
+  "description": "shash.builds Harsh Buyer Review: Claude becomes a real buyer, researches your competitors, compares one-on-one, and gives brutally specific feedback on listings, images, video, copy and price.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "ecommerce",
+    "amazon",
+    "listing",
+    "customer feedback",
+    "competitors",
+    "conversion"
+  ]
+}

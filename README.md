@@ -31,7 +31,7 @@ My paid work is simple: **a one-page website for a US service business. $400 fla
 
 This repo is everything around that work, shipped in the open:
 
-- **Claude skills** that do real jobs for small businesses and web designers.
+- **14 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
 - **Web tools and templates** you can copy, fork and ship today.
 - **The build log.** What I built, what broke, what's next. Every day.
 
@@ -39,24 +39,28 @@ All of it is free. Take what helps.
 
 ## Quick start
 
-Install any skill in under a minute.
+Install the skills in under a minute.
 
 **Claude Code**
 
-```bash
-git clone https://github.com/ShashwatBuilds/shash.builds
-cp -r shash.builds/skills/<skill-name> ~/.claude/skills/
+```
+/plugin marketplace add ShashwatBuilds/shash.builds
+/plugin install master@shashbuilds
+/plugin install humanizer@shashbuilds
 ```
 
-Restart Claude Code. The skill loads on its own when your request matches it.
+Add any other skill the same way, or run `/plugin` and pick from the list. Then just ask:
+"review this listing like a harsh buyer", "careful mode on", "make this sound like me".
 
-**Claude.ai (web or desktop)**
+**Claude.ai (web, desktop or mobile)**
 
-1. Download the skill's `.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases).
-2. Open Settings, then Capabilities, then Skills, and upload the zip.
+1. Download a skill's `.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases).
+2. Turn on code execution in Settings, then upload the zip as a custom skill.
 3. Ask Claude for the job the skill does.
 
-**Web tools** are plain HTML, CSS and JavaScript. Open the folder, read its README, deploy it anywhere static (Netlify, Vercel, GitHub Pages).
+**Any Claude chat:** paste a skill's prompt from [skills/PROMPTS.md](skills/PROMPTS.md).
+
+**Web tools** are plain HTML, CSS and JavaScript. Open the folder, read its README, deploy it anywhere static.
 
 ## Everything in here
 
@@ -64,9 +68,24 @@ Restart Claude Code. The skill loads on its own when your request matches it.
 
 ### Claude skills
 
-| Skill | What it does | Status |
-| --- | --- | --- |
-| *The first skills land here this week.* | Each one gets a README, a demo and a release. | Shipping |
+14 free Claude specialists that work together. Full guide: [skills/README.md](skills/README.md).
+
+| Skill | What it does |
+| --- | --- |
+| [Master Skill](skills/master) | Routes every task to the right specialists. Runs the video workflow. |
+| [Humanizer](skills/humanizer) | Makes writing sound like you, not a model. Every fact kept. |
+| [Social Media](skills/social-media) | Your head of social: strategy, posts, hooks, a 100-point check. |
+| [LinkedIn](skills/linkedin) | A LinkedIn ghostwriter that never makes up a story. |
+| [Motion Design Taste](skills/motion-design-taste) | Scores a video out of 100 like a senior motion designer. |
+| [Audio Review](skills/audio-review) | A senior audio designer's review, with a ranked fix list. |
+| [Transcriber](skills/transcriber) | Whisper transcripts and timed captions, right in the chat. |
+| [Clipper](skills/clipper) | Long videos into captioned vertical clips. Permission first. |
+| [AI Visuals](skills/ai-visuals) | Fixes AI images and video for where they will be used. |
+| [Harsh Buyer Review](skills/harsh-buyer-review) | A real buyer compares you with 3 to 5 competitors. |
+| [Competitor Research](skills/competitor-research) | Sourced, dated, double-checked competitor research. |
+| [Ecom](skills/ecom) | Listings, images and profit per order from your real fees. |
+| [Careful Mode](skills/careful-mode) | Every piece of work checked three times before you see it. |
+| [Economy Mode](skills/economy-mode) | Cheap models for simple work, and a memory sheet. |
 
 <img src="media/icons/tool.svg" width="28" align="left" alt="Web tool icon: a cream wrench on an orange tile.">
 
@@ -81,7 +100,9 @@ What's coming next lives in the backlog in [STATUS.md](STATUS.md). Machines can 
 ## The map
 
 ```
-skills/      Claude skills: SKILL.md, README, examples, a zip per release
+skills/      14 Claude skills, each an installable Claude Code plugin
+examples/    real outputs from the skills
+tests/       the test suite every skill passes
 tools/       open-source web tools and one-page site starters
 templates/   video, overlay, post and release templates
 content/     the daily "Built in Bed" drop: video script, LinkedIn and Instagram posts

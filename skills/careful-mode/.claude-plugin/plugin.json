@@ -1,0 +1,14 @@
+{
+  "name": "careful-mode",
+  "displayName": "Careful Mode by shash.builds",
+  "description": "shash.builds Careful Mode: Claude reviews every piece of work three times (correctness, completeness, how could this go wrong) before handing it over.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "quality",
+    "review",
+    "accuracy",
+    "high stakes"
+  ]
+}

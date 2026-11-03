@@ -2,7 +2,188 @@
   "name": "shash.builds",
   "description": "Free Claude skills and open-source web tools for US service businesses and web designers, built in public by Shashwat Jain.",
   "repo": "https://github.com/ShashwatBuilds/shash.builds",
-  "license": {"code": "MIT", "content": "CC BY 4.0"},
-  "hire": {"offer": "One-page website for a US service business", "price_usd": 400, "delivery_days": 7, "link": "https://github.com/ShashwatBuilds/shash.builds#hire-me"},
-  "items": []
+  "license": {
+    "code": "MIT",
+    "content": "CC BY 4.0"
+  },
+  "hire": {
+    "offer": "One-page website for a US service business",
+    "price_usd": 400,
+    "delivery_days": 7,
+    "link": "https://github.com/ShashwatBuilds/shash.builds#hire-me"
+  },
+  "items": [
+    {
+      "name": "Master Skill",
+      "slug": "master",
+      "kind": "skill",
+      "path": "skills/master",
+      "summary": "Routes every task to the right specialists. Runs the video workflow.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install master@shashbuilds",
+        "claude_ai": "master-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Humanizer",
+      "slug": "humanizer",
+      "kind": "skill",
+      "path": "skills/humanizer",
+      "summary": "Makes writing sound like you, not a model. Every fact kept.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install humanizer@shashbuilds",
+        "claude_ai": "humanizer-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Social Media",
+      "slug": "social-media",
+      "kind": "skill",
+      "path": "skills/social-media",
+      "summary": "Your head of social: strategy, posts, hooks, a 100-point check.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install social-media@shashbuilds",
+        "claude_ai": "social-media-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "LinkedIn",
+      "slug": "linkedin",
+      "kind": "skill",
+      "path": "skills/linkedin",
+      "summary": "A LinkedIn ghostwriter that never makes up a story.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install linkedin@shashbuilds",
+        "claude_ai": "linkedin-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Motion Design Taste",
+      "slug": "motion-design-taste",
+      "kind": "skill",
+      "path": "skills/motion-design-taste",
+      "summary": "Scores a video out of 100 like a senior motion designer.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install motion-design-taste@shashbuilds",
+        "claude_ai": "motion-design-taste-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Audio Review",
+      "slug": "audio-review",
+      "kind": "skill",
+      "path": "skills/audio-review",
+      "summary": "A senior audio designer's review, with a ranked fix list.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install audio-review@shashbuilds",
+        "claude_ai": "audio-review-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Transcriber",
+      "slug": "transcriber",
+      "kind": "skill",
+      "path": "skills/transcriber",
+      "summary": "Whisper transcripts and timed captions, right in the chat.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install transcriber@shashbuilds",
+        "claude_ai": "transcriber-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Clipper",
+      "slug": "clipper",
+      "kind": "skill",
+      "path": "skills/clipper",
+      "summary": "Long videos into captioned vertical clips. Permission first.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install clipper@shashbuilds",
+        "claude_ai": "clipper-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "AI Visuals",
+      "slug": "ai-visuals",
+      "kind": "skill",
+      "path": "skills/ai-visuals",
+      "summary": "Fixes AI images and video for where they will be used.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install ai-visuals@shashbuilds",
+        "claude_ai": "ai-visuals-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Harsh Buyer Review",
+      "slug": "harsh-buyer-review",
+      "kind": "skill",
+      "path": "skills/harsh-buyer-review",
+      "summary": "A real buyer compares you with 3 to 5 competitors.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install harsh-buyer-review@shashbuilds",
+        "claude_ai": "harsh-buyer-review-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Competitor Research",
+      "slug": "competitor-research",
+      "kind": "skill",
+      "path": "skills/competitor-research",
+      "summary": "Sourced, dated, double-checked competitor research.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install competitor-research@shashbuilds",
+        "claude_ai": "competitor-research-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Ecom",
+      "slug": "ecom",
+      "kind": "skill",
+      "path": "skills/ecom",
+      "summary": "Listings, images and profit per order from your real fees.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install ecom@shashbuilds",
+        "claude_ai": "ecom-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Careful Mode",
+      "slug": "careful-mode",
+      "kind": "skill",
+      "path": "skills/careful-mode",
+      "summary": "Every piece of work checked three times before you see it.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install careful-mode@shashbuilds",
+        "claude_ai": "careful-mode-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Economy Mode",
+      "slug": "economy-mode",
+      "kind": "skill",
+      "path": "skills/economy-mode",
+      "summary": "Cheap models for simple work, and a memory sheet.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install economy-mode@shashbuilds",
+        "claude_ai": null
+      }
+    }
+  ],
+  "install": {
+    "claude_code_catalog": "/plugin marketplace add ShashwatBuilds/shash.builds",
+    "marketplace_name": "shashbuilds"
+  }
 }

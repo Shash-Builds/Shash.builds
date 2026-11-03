@@ -1,0 +1,16 @@
+{
+  "name": "motion-design-taste",
+  "displayName": "Motion Design Taste by shash.builds",
+  "description": "shash.builds Motion Design Taste: Claude judges motion graphics videos like a senior motion designer, scores them out of 100, ranks them against references, and lists or applies exact fixes.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "video",
+    "motion graphics",
+    "animation",
+    "ads",
+    "reels",
+    "review"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ecom",
+  "displayName": "Ecom by shash.builds",
+  "description": "shash.builds Ecom: your e-commerce operator for any marketplace or own store. Listings that pass a harsh buyer, product images judged, planned and rendered, unit economics and pricing calculated in code from your real fees, plus ads, returns, stock, launches and sale events.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "ecommerce",
+    "amazon",
+    "flipkart",
+    "shopify",
+    "listing",
+    "pricing",
+    "unit economics",
+    "product images"
+  ]
+}
