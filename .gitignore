@@ -19,3 +19,4 @@ node_modules/
 # lead lists stay private, never commit them
 leads/
 *.leads.csv
+.venv/

@@ -1,0 +1,9 @@
+{
+  "title": "Photo Kit by shash.builds",
+  "summary": "One photo to every platform size, cropped around the subject, compressed, EXIF and GPS always stripped. Optional local background removal. Free.",
+  "tags": ["image resize", "background removal", "privacy", "exif", "instagram", "youtube thumbnail", "social media"],
+  "price": "free",
+  "cover_line": "Every platform size from one photo, location data always removed.",
+  "result": "8 sizes, metadata removed (GPS: yes)",
+  "command": "python photo_kit.py photo.jpg --sizes all --remove-bg"
+}

@@ -1,0 +1,5 @@
+# video-build also needs ffmpeg. The last three are for captions (the transcribe tool).
+pillow>=10
+faster-whisper>=1.1,<2
+av>=11,<19
+numpy

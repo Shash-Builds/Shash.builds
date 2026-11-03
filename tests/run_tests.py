@@ -1649,6 +1649,9 @@ def main() -> None:
         check_clipper(Path(tmp))
     with tempfile.TemporaryDirectory(prefix="shash_chaos_regressions_") as tmp:
         check_chaos_regressions(Path(tmp))
+    with tempfile.TemporaryDirectory(prefix="shash_toolbox_") as tmp:
+        import toolbox_tests
+        toolbox_tests.register(test, frontmatter, run, need, Path(tmp), fast, Skip)
     if not fast:
         with tempfile.TemporaryDirectory(prefix="shash_tests_") as tmp:
             check_media(Path(tmp))

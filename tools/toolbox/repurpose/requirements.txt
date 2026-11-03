@@ -1,0 +1,2 @@
+# No Python packages needed: repurpose uses only the standard library.
+# Optional: Ollama (https://ollama.com, MIT) to draft the posts with a free local model.

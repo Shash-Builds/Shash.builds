@@ -1,0 +1,9 @@
+{
+  "title": "Transcribe by shash.builds",
+  "summary": "Audio or video to transcript, SRT and VTT captions, and word timestamps with local Whisper. English, Hindi, Hinglish. Free, offline, no API key.",
+  "tags": ["transcription", "whisper", "captions", "subtitles", "hindi", "video", "offline"],
+  "price": "free",
+  "cover_line": "Audio or video to transcript and captions, on your own computer.",
+  "result": "reel.txt  reel.srt  reel.vtt  reel.words.json",
+  "command": "python transcribe.py reel.mp4 --model small --language en"
+}
