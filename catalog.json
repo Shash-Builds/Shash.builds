@@ -261,6 +261,17 @@
       "install": {
         "run": "Upload sheet-template/level-up-dashboard.xlsx to Google Drive"
       }
+    },
+    {
+      "name": "Toolbox",
+      "slug": "toolbox",
+      "kind": "tool",
+      "path": "tools/toolbox",
+      "summary": "Small free tools to make content and run the business: transcribe, cut silence, build videos, repurpose, photo kit and more. Run locally.",
+      "version": "0.1.0",
+      "install": {
+        "run": "bash tools/toolbox/install.sh"
+      }
     }
   ],
   "install": {
