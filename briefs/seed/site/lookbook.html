@@ -363,7 +363,7 @@ const S = [
   {code:"S-08", cls:"s8", name:"Luxe"}
 ];
 const SLOT_LABELS = ["Main photo","Photo 2","Photo 3","Photo 4"];
-const LINKEDIN = "https://www.linkedin.com/in/shashbuilds", CALENDLY = "";
+const LINKEDIN = "mailto:shash.builds@gmail.com?subject=Website%20for%20my%20business", CALENDLY = "";  // no LinkedIn profile yet: email instead
 
 const store = { get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} } };
 const st = Object.assign({ niche:"gyms", style:0, name:"", photos:[null,null,null,null] }, store.get("fr-state") || {});

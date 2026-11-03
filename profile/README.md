@@ -21,8 +21,8 @@ A new free skill or tool every 1 to 2 days, and a 2-minute "Built in Bed" video 
 
 Cleaner, landscaper, painter, contractor, detailer? You get one clean page that turns Google visitors into calls. $400 flat, live in 7 days.
 
-Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com), [message me on LinkedIn](https://www.linkedin.com/in/shashbuilds) or [open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml).
+Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com), or [open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml).
 
 ### Follow the build
 
-[Website](https://shashwat-websites.netlify.app) &nbsp;|&nbsp; [Instagram](https://www.instagram.com/shash.builds) &nbsp;|&nbsp; [YouTube](https://www.youtube.com/@shash.builds) &nbsp;|&nbsp; [LinkedIn](https://www.linkedin.com/in/shashbuilds) &nbsp;|&nbsp; [X](https://x.com/shashbuilds)
+[Website](https://shashwat-websites.netlify.app) &nbsp;|&nbsp; [Instagram](https://www.instagram.com/shash.builds) &nbsp;|&nbsp; [YouTube](https://www.youtube.com/@shash.builds) &nbsp;|&nbsp; [X](https://x.com/shashbuilds)

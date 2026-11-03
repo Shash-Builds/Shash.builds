@@ -138,8 +138,7 @@ Meet <img src="media/tab-static.svg" width="22" alt="Tab, the mascot"> **Tab**, 
 Cleaners, landscapers, painters, contractors, detailers, coaches. If customers find you on Google and call you, you need one clean page that turns that visit into a call.
 
 - See the work and the offer on [shashwat-websites.netlify.app](https://shashwat-websites.netlify.app),
-- Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com),
-- Message me on [LinkedIn](https://www.linkedin.com/in/shashbuilds), or
+- Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com), or
 - [Open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml) with your business name and current site. Keep phone numbers and emails out of it: issues are public. I'll reply there.
 
 ## Follow the build
@@ -147,7 +146,6 @@ Cleaners, landscapers, painters, contractors, detailers, coaches. If customers f
 [Website](https://shashwat-websites.netlify.app) &nbsp;|&nbsp;
 [Instagram](https://www.instagram.com/shash.builds) &nbsp;|&nbsp;
 [YouTube](https://www.youtube.com/@shash.builds) &nbsp;|&nbsp;
-[LinkedIn](https://www.linkedin.com/in/shashbuilds) &nbsp;|&nbsp;
 [X](https://x.com/shashbuilds)
 
 Star the repo to get each new drop in your GitHub feed.

@@ -90,7 +90,7 @@ From `private:content/built-in-bed/`.
 
 ## Open items for the factory and Shashwat
 
-1. **LinkedIn URL.** The site now links to `linkedin.com/in/shashbuilds`, matching this repo. If that URL isn't live yet, change it back to the current profile URL before deploy.
+1. **LinkedIn URL.** Resolved 2026-11-04: the profile isn't live yet, so every LinkedIn link now opens an email to shash.builds@gmail.com instead. Old note: The site now links to `linkedin.com/in/shashbuilds`, matching this repo. If that URL isn't live yet, change it back to the current profile URL before deploy.
 2. **Share image.** `og.jpg` was a photo, so the pages have no `og:image` now. Make one from the media kit (for example `media/social-preview.png`) before deploy.
 3. **Site address.** Canonical URLs and the sitemap still use `shashwat-websites.netlify.app`. Update them if the shash.builds site gets its own address.
 4. **Booking link.** Paste it into `CALENDLY` in `index.html` and `lookbook.html` when it exists.

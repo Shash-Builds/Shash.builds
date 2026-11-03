@@ -36,7 +36,7 @@ reject comments, commits, code, issues and other contributions that break it, an
 ban anyone from the project for behavior he considers harmful.
 
 To report a problem, message Shashwat privately on
-[LinkedIn](https://www.linkedin.com/in/shashbuilds), or use GitHub's
+email (shash.builds@gmail.com), or use GitHub's
 "Report content" option on the comment or issue. Reports are handled privately.
 
 Consequences scale with the problem: a private note, then a public warning, then a

@@ -36,4 +36,4 @@ By contributing, you agree your work is released under the same licenses.
 
 ## Questions
 
-Open a [discussion-style issue](https://github.com/Shash-Builds/shash.builds/issues/new?template=idea.yml) or message Shashwat on [LinkedIn](https://www.linkedin.com/in/shashbuilds).
+Open a [discussion-style issue](https://github.com/Shash-Builds/shash.builds/issues/new?template=idea.yml) or email shash.builds@gmail.com.
