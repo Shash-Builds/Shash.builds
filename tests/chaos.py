@@ -192,6 +192,11 @@ def text_tools():
         (nf / "brief.md").write_text("run_date: not-a-date")
         run("niche check bad run date", [P, str(N), "check", str(nf)])
 
+    G = R / "niche-research/skills/niche-research/scripts/suggest.py"
+    run("suggest missing folder", [P, str(G), missing, "seed"])
+    run("suggest no seeds", [P, str(G), str(nf)])
+    run("suggest --where without value", [P, str(G), str(nf), "--where"])
+    run("suggest binary terms.csv", [P, str(G), str(nf), "--where", "nowhere", "x"])
     Y = R / "niche-research/skills/niche-research/scripts/youtube_read.cjs"
     if shutil.which("node"):
         for bad in ("", "not a url", "https://example.com/", "http://youtube.com/watch?v=x", "javascript:alert(1)"):

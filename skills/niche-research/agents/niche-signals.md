@@ -14,6 +14,9 @@ research folder (FOLDER).
 2. Read `FOLDER/brief.md`, and `FOLDER/posts.csv` if it has rows. Write
    rows only to `FOLDER/terms.csv` and `FOLDER/times.csv` with Python's csv
    module. Times are US Eastern, `HH:MM-HH:MM`.
+   Start the terms with
+   `python3 "SKILL_DIR/scripts/suggest.py" FOLDER "<seed>" ...` using the
+   niche's words for each audience.
 3. Run `python3 "SKILL_DIR/scripts/niche_ledger.py" check FOLDER` and fix
    every problem in those two files.
 

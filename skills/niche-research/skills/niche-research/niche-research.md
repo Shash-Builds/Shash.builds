@@ -155,8 +155,9 @@ Write it as a short markdown file with those labels, then run
 
 ### Step 5. Terms and posting times (write `terms.csv` and `times.csv`)
 
-1. **Terms:** hashtags on the top posts, the search suggestions each
-   platform shows when you type the niche's words, YouTube search
+1. **Terms:** run `suggest.py <folder> "<seed>" ...` (section 8) with the
+   niche's words for each audience: it adds the YouTube and Google search
+   suggestions people really type. Then add hashtags on the top posts, YouTube search
    suggestions, and words in the titles of the top posts. One row per term
    per platform, with what you saw as `evidence` (for example
    `on 6 of the top 20 posts`, `search suggestion`).
@@ -262,6 +263,7 @@ browser and prints JSON; it needs Node.js and Playwright with Chromium.
 | `tables <folder>` | Writes `tables.md`: repeat counts, formats, hooks, terms |
 | `rank <folder>` | Scores and sorts `topics.csv`, adds `score` and `rank` |
 | `report <folder>` | Writes the sourced tables into `report.md` below your summary |
+| `python3 suggest.py <folder> "<seed>" ...` | Adds YouTube and Google search suggestions for each seed to `terms.csv`, sourced and dated |
 | `node youtube_read.cjs <url>` | A search or `/videos` page: the videos on it. A video page: exact date, views, title. An `/about` page: subscribers as shown |
 
 ## 9. Running it cheaply (Haiku)

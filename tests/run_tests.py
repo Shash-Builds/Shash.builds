@@ -742,6 +742,14 @@ def check_niche_research(tmp: Path) -> None:
             assert needle in bad.stdout, (needle, bad.stdout)
 
     @test
+    def test_niche_research_suggest_refuses_bad_input_plainly():
+        suggest = PLUGINS / "niche-research/skills/niche-research/scripts/suggest.py"
+        for args, needle in (([str(tmp / "nowhere"), "x"], "init first"), ([str(tmp), "--where", "tiktok", "x"], "unknown"),
+                             ([str(tmp)], "suggest.py FOLDER")):
+            r = subprocess.run([sys.executable, str(suggest), *args], capture_output=True, text=True, timeout=30)
+            assert r.returncode in (1, 2) and needle in r.stdout and "Traceback" not in r.stderr, (args, r.stdout, r.stderr)
+
+    @test
     def test_niche_research_youtube_reader_refuses_other_sites():
         reader = PLUGINS / "niche-research/skills/niche-research/scripts/youtube_read.cjs"
         if not shutil.which("node"):
