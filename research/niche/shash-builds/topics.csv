@@ -1,1 +1,51 @@
-id,topic,hook,audience,platform,format,demand,gap,fit,evidence
+rank,score,id,topic,hook,audience,platform,format,demand,gap,fit,evidence
+1,125,k-001,What a small business website really costs per year,Your website bill doesn't end at launch. Here's the full year.,a,youtube,2-min video,5,5,5,t-223 t-227 t-222 v-001 v-006 v-018
+2,100,k-002,"Building a $400 one-page site live, from call to launch","One page, $400, seven days. Watch the whole build.",a,youtube,2-min video,4,5,5,t-128 t-215 p-020 p-008 v-002 v-012
+3,100,k-012,A free Claude skill that builds one-page sites for service businesses,I open-sourced the Claude skill I use for client sites.,b,github,repo,5,4,5,t-044 t-048 t-051 t-057 t-065 a-001
+4,100,k-003,Five questions to ask a web designer before you pay,Ask these five things before you pay any web designer.,a,instagram,reel,4,5,5,v-008 v-009 v-015 v-016 v-031
+5,100,k-008,Make a Claude skill that actually triggers,Your Claude skill never fires? The description is usually why.,b,youtube,2-min video,5,5,4,v-201 v-204 v-210 v-211 t-050
+6,100,k-013,From Claude preview to a live site on a real domain,Your Claude site works on localhost. Now put it online.,both,youtube,2-min video,4,5,5,v-223 v-037 t-219 t-110
+7,80,k-011,Testing a Claude skill before you share it,How I test a Claude skill before anyone else installs it.,b,youtube,2-min video,4,5,4,v-205 v-212 v-220 v-221 v-222
+8,80,k-004,"Why your new site doesn't show on Google, and the fix",Your site is live but Google can't find it. Here's why.,a,youtube,2-min video,4,5,4,v-034 v-035 v-036 t-204
+9,80,k-005,Does a personal trainer need a website? A straight answer,Personal trainers ask if they need a website. Here's the answer.,a,instagram,reel,4,4,5,v-032 t-170 t-187 p-017
+10,80,k-007,Red flags in a web design quote,Three lines in a web design quote that should worry you.,a,instagram,reel,4,5,4,v-018 v-001 v-021 v-013
+11,80,k-014,"The yearly hosting, domain and SSL costs nobody mentions",An $800 SSL fee? Here's what SSL should cost you.,a,instagram,reel,4,5,4,v-018 v-006 t-219 t-228
+12,80,k-016,"One website, eight looks: the same gym in eight styles","Same gym, eight website styles. Which one would you book?",a,instagram,reel,4,4,5,t-182 t-183 t-170 p-017
+13,80,k-033,One page website vs a multi-page site for a small business,Why one page can beat five for a service business.,a,youtube,2-min video,4,4,5,t-092 t-100 t-102 t-112
+14,80,k-018,A salon booking page that fits on one screen,Salon sites need one thing above the fold: the book button.,a,instagram,reel,4,4,5,t-166 t-164 t-168
+15,80,k-039,"Why a skill description should say when, not what","Write when to use the skill, not what it does.",b,instagram,reel,4,5,4,v-204 v-203 t-050
+16,75,k-009,"Claude skills explained in two minutes, with a real one",A Claude skill is a folder. Here's one that builds websites.,b,youtube,2-min video,5,3,5,t-032 t-033 t-034 t-037 p-021 p-022
+17,75,k-006,"The day-by-day log of one client site (day 1, 3, 7)",Day 1: a 15-minute call. Day 7: live. Here's day 3.,a,linkedin,text post,3,5,5,v-002 v-010 v-017 t-274 t-286
+18,75,k-024,Claude Code website design: my exact prompt and skill,The exact prompt and skill I use for client sites.,b,youtube,2-min video,5,3,5,t-053 t-059 t-068 p-014 p-016
+19,64,k-021,Is a free website good enough for my business?,Free website builders aren't free. Here's the real catch.,a,youtube,2-min video,4,4,4,v-028 t-114 t-123 t-106 v-026
+20,64,k-028,Pricing a one-page site as a freelancer,"Why I charge $400 for a one-page site, line by line.",b,linkedin,text post,4,4,4,t-245 t-244 p-020 p-008
+21,64,k-026,Making AI sites not look like AI sites,Every AI website looks the same. Three fixes that change that.,b,instagram,reel,4,4,4,p-016 p-023 t-058
+22,64,k-031,Before and after: a real service business homepage,Before: a menu of everything. After: one button that books.,a,instagram,reel,4,4,4,p-006 p-024 t-119
+23,64,k-043,Website for small business owners: what to ask for,"Owners: ask for these three things, skip the rest.",a,youtube,2-min video,4,4,4,t-113 t-126 v-030
+24,60,k-025,Claude Design for client sites: what works and what doesn't,I used Claude Design on a real client site. Honest notes.,b,youtube,2-min video,5,3,4,t-072 t-073 t-076 p-022 p-023
+25,60,k-017,"A dentist one-page site, built with Claude","A dentist site in one page: book button first, always.",a,youtube,2-min video,3,4,5,t-132 t-137 v-031 p-024
+26,60,k-019,A contractor site that gets quote requests,Contractors: your website has one job. Get the quote call.,a,youtube,2-min video,3,4,5,t-143 t-144 t-150 t-152
+27,60,k-022,What happens when your web designer disappears,Your designer vanished with your files. Here's how to avoid it.,a,linkedin,text post,3,5,4,v-004 v-005 v-020 v-019
+28,60,k-030,Build in public: what a solo designer's daily log looks like,"Day [[REAL: N]] of building in public: one site, one skill.",both,linkedin,text post,3,4,5,t-274 t-286 t-277 t-271
+29,60,k-015,Owner edits: change your hours and prices in two minutes,Changing your hours shouldn't need a designer. Here's how.,a,instagram,reel,3,5,4,v-024 v-027 v-003
+30,60,k-023,"Own your site: domain, files and logins in your name",Check one thing today: is your domain in your name?,a,instagram,reel,3,5,4,v-020 v-004 v-021
+31,60,k-038,Claude skills use cases for designers,Five design jobs I hand to Claude skills now.,b,youtube,2-min video,5,3,4,t-039 t-046 p-021
+32,60,k-040,A skill that misfires: reading the trigger,My skill fired on the wrong request. Here's the fix.,b,linkedin,text post,3,5,4,v-211 v-201 v-225
+33,60,k-042,The one-page site checklist before launch,Ten checks before any one-page site goes live.,both,github,repo,3,4,5,v-036 v-037 t-105
+34,60,k-047,A Claude skill course: building your first skill,Build your first Claude skill in ten minutes.,b,youtube,long video,5,3,4,t-033 t-047 p-022
+35,60,k-049,A gym site built start to finish in two minutes,"A gym website in two minutes: free week, book button, done.",a,youtube,2-min video,3,4,5,t-170 t-174 p-017
+36,60,k-035,Where your clients come from: tracking calls from your site,Do you know which ad sent your last client?,a,instagram,reel,3,5,4,v-011 t-131
+37,48,k-041,Where to find Claude skills worth installing,Thousands of skill repos on GitHub. How I pick one.,b,github,repo,4,3,4,t-024 t-025 t-043 t-045 a-002
+38,48,k-020,Realtor one-pager vs a Zillow-style site,You don't need a Zillow clone. You need a booked call.,a,instagram,reel,3,4,4,t-199 t-190 t-194
+39,48,k-032,The five mistakes on local business websites,Five mistakes I check on every local business site.,a,youtube,2-min video,4,3,4,p-006 t-119 t-120
+40,48,k-048,The questions designers ask about client handover,What I hand every client on launch day.,b,linkedin,text post,3,4,4,v-020 v-024 t-248
+41,48,k-034,Speed check: why your site loses calls on mobile,"If your site is slow on a phone, callers leave first.",a,instagram,reel,3,4,4,t-119 v-011
+42,48,k-036,Reviews on your site without breaking the rules,Show real reviews on your site. Never write fake ones.,a,instagram,reel,3,4,4,t-135 t-141
+43,48,k-050,Is web design over now that Claude builds sites?,Claude builds sites now. Here's what clients still pay me for.,b,linkedin,text post,4,3,4,p-023 p-012
+44,45,k-010,Claude skills vs MCP: when to use which,Skill or MCP? One question tells you which one you need.,b,youtube,2-min video,5,3,3,t-036 t-038 t-049 t-090
+45,45,k-027,Keep one copy of your skills across tools,One folder of skills for Claude Code and claude.ai.,b,github,repo,3,5,3,v-218 v-219 t-040
+46,45,k-044,"Contrarian: you don't need a website, you need a booked call",You don't need a website. You need people to book.,a,instagram,reel,3,3,5,p-012 v-028 v-032
+47,40,k-045,"Week recap: sites shipped, skills shipped, lessons","This week: [[REAL: N]] sites, [[REAL: N]] skills, one lesson.",both,linkedin,text post,2,4,5,t-277 t-286
+48,30,k-046,AI website builders tested for a service business,"Four AI website builders, one salon site. Here's how each did.",a,youtube,2-min video,5,2,3,t-251 t-256 t-265 p-011
+49,24,k-029,Finding local clients who need a website,I checked [[REAL: N]] local businesses. Here's who had no site.,b,youtube,2-min video,4,2,3,p-004 p-005 t-148
+50,24,k-037,Claude skills in Cursor and other tools,Do Claude skills work in Cursor? Here's what I found.,b,youtube,2-min video,4,3,2,t-040 v-218
