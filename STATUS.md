@@ -79,7 +79,7 @@ Rough estimate: about 22% of the weekly limit used this week (front door, media 
 - **Contra fees** conflict between Contra's own help pages (0% vs $15 per payment under $500). Check with Contra support before listing.
 
 1. **Rename:** done. The account is `Shash-Builds`; every link points to github.com/Shash-Builds/shash.builds.
-2. **Website URL:** waiting for Mother chat's temporary Netlify address.
+2. **Website URL:** https://shashwat-websites.netlify.app, now in the README, profile README and llms.txt.
 3. **Public business email:** shash.builds@gmail.com, now in the README, the profile README and the offer page.
 4. **Needs Shashwat's clicks** (no API access from here): in repo Settings, set the description, topics, social preview (`media/social-preview.png`), turn on Actions and private vulnerability reporting. Text is below.
 5. **Publish the skills release:** after the rename, push the tags: `skills-v1.0.0`, `one-page-starter-v1.0.0`, `lead-tracker-v1.0.0`. The workflow builds and attaches every zip. (I can push them once Actions is on. Waiting for the go.)
