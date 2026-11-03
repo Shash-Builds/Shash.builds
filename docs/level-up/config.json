@@ -1,0 +1,25 @@
+{
+  "_about": "Default game rules for the Level-Up Dashboard. Fork it and change anything. Values in the Sheet's config tab override these.",
+  "role_model": "",
+  "goal_usd": 0,
+  "goal_days": 30,
+  "offer_price_usd": 400,
+  "timezone": "America/New_York",
+  "level_base": 100,
+  "level_step": 50,
+  "xp_per_usd": 0.5,
+  "counters": [
+    {"key": "invites_sent",     "label": "Invites sent",      "xp": 1,  "quest": 15},
+    {"key": "comments",         "label": "Comments",          "xp": 2,  "quest": 10},
+    {"key": "follows",          "label": "Follows",           "xp": 1,  "quest": 5, "daily_xp_cap": 10},
+    {"key": "posts_published",  "label": "Posts",             "xp": 10, "quest": 1},
+    {"key": "outreach_sent",    "label": "Emails sent",       "xp": 2},
+    {"key": "invites_accepted", "label": "Invites accepted",  "xp": 0},
+    {"key": "owner_replies",    "label": "Owner replied",     "xp": 10, "win": true},
+    {"key": "replies",          "label": "Email replies",     "xp": 5},
+    {"key": "inbound_dms",      "label": "Inbound DMs",       "xp": 25, "win": true},
+    {"key": "calls_booked",     "label": "Calls booked",      "xp": 25, "win": true}
+  ],
+  "xp_hour": 10,
+  "xp_ship": 25
+}

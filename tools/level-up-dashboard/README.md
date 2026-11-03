@@ -17,7 +17,7 @@ Six tabs, one header row each, frozen and styled. Nothing else to set up.
 
 | Tab | One row per | Columns |
 | --- | --- | --- |
-| `days` | day | date, day, hours_worked, shipped, outreach_sent, replies, calls_booked, posts_published, notes |
+| `days` | day | date, day, hours_worked, shipped, outreach_sent, replies, calls_booked, posts_published, notes, invites_sent, invites_accepted, comments, follows, inbound_dms, owner_replies |
 | `sales` | payment | date, client, offer, amount_usd, status (deposit, paid, refunded), source, notes |
 | `content` | post | date, platform, format, title, url, views, likes, comments, shares, saves |
 | `followers` | check-in | date, instagram, youtube, linkedin, x, github_stars |
@@ -43,7 +43,26 @@ Prefer plain files? Each tab is also a CSV in [`sheet-template/`](sheet-template
 
 Every read and every write needs the passphrase, so the URL alone shows nothing. The URL and passphrase are saved only on your device.
 
-**How the game works.** XP per day = hours x `xp_hour` (10) + outreach x `xp_outreach` (2) + replies x `xp_reply` (5) + calls x `xp_call` (20) + posts x `xp_post` (10) + `xp_ship` (25) if you shipped something, plus `xp_per_usd` (0.5) per dollar earned. Level 1 needs `level_base` (100) XP, and each level after needs `level_step` (50) more. A streak counts consecutive logged days. Pace is `goal_usd` spread evenly over `goal_days` (30) from `start_date`. Change any number in the `config` tab.
+**How the game works.** The rules live in [`docs/level-up/config.json`](../../docs/level-up/config.json), so a fork can change everything. Any key in the Sheet's `config` tab overrides it (`goal_usd`, `goal_days`, `start_date`, or per counter `xp_<key>`, `quest_<key>`, `cap_<key>`).
+
+| Counter | XP | Daily quest |
+| --- | --- | --- |
+| Invites sent (LinkedIn, with a "building in public" note) | 1 each | 15 |
+| Comments on target posts | 2 each | 10 |
+| Follows of target accounts | 1 each, max 10 XP a day | 5 |
+| Posts published | 10 each | 1 |
+| Emails sent | 2 each | |
+| Owner replied (a business owner accepted and replied) | 10 each | big win |
+| Email replies | 5 each | |
+| Inbound DMs from potential clients | 25 each | big win |
+| Calls booked | 25 each | big win |
+| Hours worked | 10 an hour | |
+| Shipped something | 25 | |
+| Money earned | 0.5 per dollar | |
+
+Level 1 needs 100 XP, and each level after needs 50 more. A streak counts consecutive logged days. Pace spreads `goal_usd` evenly over `goal_days` from `start_date`. The Network card shows the acceptance rate, comments and inbound DMs in the last 7 days, and the funnel from invites to accepted to owner replies to calls.
+
+If your Sheet is missing a column the app sends, the script adds it at the end of the tab.
 
 ## Rules that keep it honest
 
@@ -59,7 +78,7 @@ Every read and every write needs the passphrase, so the URL alone shows nothing.
 
 ## Changelog
 
-- **0.2.0** (2026-11-03): the app (daily log, level, XP, streak, money vs pace) and the Apps Script API.
+- **0.2.0** (2026-11-03): the app (daily log with tap counters and quests, level, XP, streak, money vs pace, Network card) and the Apps Script API.
 - **0.1.0** (2026-11-03): the Sheet template.
 
 ---

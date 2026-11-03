@@ -77,6 +77,10 @@ function readAll() {
 function save(tab, row) {
   if (WRITABLE.indexOf(tab) < 0) return { ok: false, error: 'Tab not writable: ' + tab };
   var s = sheet(tab), h = headers(s);
+  // New fields (for example new counters) get a column at the end, so an older Sheet keeps working.
+  Object.keys(row).forEach(function (k) {
+    if (h.indexOf(k) < 0 && /^[a-z0-9_]{1,40}$/.test(k)) { s.getRange(1, h.length + 1).setValue(k); h.push(k); }
+  });
   var values = h.map(function (k) { return row[k] === undefined || row[k] === null ? '' : row[k]; });
   if (tab === 'days' && row.date) {
     var n = s.getLastRow() - 1;

@@ -47,6 +47,13 @@ details > summary::-webkit-details-marker { display: none; }
 details[open] > summary { margin-bottom: 10px; }
 .list { display: grid; gap: 6px; }
 .list div { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+.steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.step { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; background: var(--ink); border: 1px solid var(--rule); border-radius: 10px; }
+.step button { padding: 10px 0; background: transparent; color: var(--cream); font-size: 1.3rem; }
+.step div { text-align: center; line-height: 1.15; } .step b { display: block; font-family: var(--font-display); font-size: 1.35rem; } .step span { font-size: 0.78rem; color: var(--muted); }
+.step.win { border-color: var(--orange); }
+.quests { display: flex; flex-wrap: wrap; gap: 6px; } .quests span { background: var(--ink-3); border-radius: 999px; padding: 4px 10px; font-size: 0.85rem; } .quests span.done { background: var(--good); color: var(--ink); }
+.funnel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; text-align: center; } .funnel div { background: var(--ink-3); border-radius: 10px; padding: 8px 4px; } .funnel b { display: block; font-family: var(--font-display); font-size: 1.3rem; } .funnel span { font-size: 0.75rem; color: var(--muted); }
 .ok { color: var(--good); } .no { color: var(--bad); }
 #toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--cream); color: var(--ink); padding: 10px 16px; border-radius: 999px; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity var(--dur) ease; }
 #toast.on { opacity: 1; }
@@ -88,16 +95,23 @@ details[open] > summary { margin-bottom: 10px; }
     </section>
 
     <section class="card">
+      <h2>Network</h2>
+      <div class="stats">
+        <div class="stat"><span class="muted">Accept rate</span><b id="acceptRate">-</b></div>
+        <div class="stat"><span class="muted">Comments, 7 days</span><b id="comments7">0</b></div>
+        <div class="stat"><span class="muted">Inbound DMs, 7 days</span><b id="dms7">0</b></div>
+      </div>
+      <p class="muted" style="margin:12px 0 6px">All time: invites to calls</p>
+      <div class="funnel" id="funnel"></div>
+    </section>
+
+    <section class="card">
       <h2>Today's log</h2>
       <form id="dayForm">
         <label>Date<input name="date" type="date" required></label>
-        <div class="grid2">
-          <label>Hours worked<input name="hours_worked" type="number" min="0" step="0.25" inputmode="decimal"></label>
-          <label>Outreach sent<input name="outreach_sent" type="number" min="0" inputmode="numeric"></label>
-          <label>Replies<input name="replies" type="number" min="0" inputmode="numeric"></label>
-          <label>Calls booked<input name="calls_booked" type="number" min="0" inputmode="numeric"></label>
-          <label>Posts published<input name="posts_published" type="number" min="0" inputmode="numeric"></label>
-        </div>
+        <div class="quests" id="quests"></div>
+        <div class="steps" id="steps"></div>
+        <label>Hours worked<input name="hours_worked" type="number" min="0" step="0.25" inputmode="decimal"></label>
         <label>Shipped today<input name="shipped" placeholder="What went live"></label>
         <label>Notes<textarea name="notes"></textarea></label>
         <p class="muted" id="xpPreview"></p>
@@ -135,7 +149,7 @@ details[open] > summary { margin-bottom: 10px; }
           <label>Start date<input name="start_date" type="date"></label>
           <label>Offer price (USD)<input name="offer_price_usd" type="number" min="0" inputmode="numeric"></label>
         </div>
-        <p class="muted">XP weights live in the config tab too (xp_hour, xp_outreach, xp_reply, xp_call, xp_post, xp_ship, xp_per_usd).</p>
+        <p class="muted">Quests and XP rules come from config.json next to this page; any key in the Sheet's config tab overrides it (for example xp_invites_sent or quest_comments).</p>
         <button type="submit">Save goals</button>
       </form>
       <button class="ghost" id="lockBtn" style="margin-top:10px;width:100%">Lock this device</button>
@@ -146,7 +160,9 @@ details[open] > summary { margin-bottom: 10px; }
 <script>
 "use strict";
 var DEFAULTS = { goal_usd: 0, goal_days: 30, offer_price_usd: 400, currency: "USD", timezone: "America/New_York", role_model: "",
-  xp_hour: 10, xp_outreach: 2, xp_reply: 5, xp_call: 20, xp_post: 10, xp_ship: 25, xp_per_usd: 0.5, level_base: 100, level_step: 50 };
+  xp_hour: 10, xp_ship: 25, xp_per_usd: 0.5, level_base: 100, level_step: 50,
+  counters: [{"key": "invites_sent", "label": "Invites sent", "xp": 1, "quest": 15}, {"key": "comments", "label": "Comments", "xp": 2, "quest": 10}, {"key": "follows", "label": "Follows", "xp": 1, "quest": 5, "daily_xp_cap": 10}, {"key": "posts_published", "label": "Posts", "xp": 10, "quest": 1}, {"key": "outreach_sent", "label": "Emails sent", "xp": 2}, {"key": "invites_accepted", "label": "Invites accepted", "xp": 0}, {"key": "owner_replies", "label": "Owner replied", "xp": 10, "win": true}, {"key": "replies", "label": "Email replies", "xp": 5}, {"key": "inbound_dms", "label": "Inbound DMs", "xp": 25, "win": true}, {"key": "calls_booked", "label": "Calls booked", "xp": 25, "win": true}] };
+var COUNTERS = [];
 var state = { data: null, cfg: {} };
 var $ = function (id) { return document.getElementById(id); };
 function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
@@ -173,14 +189,24 @@ function daysBetween(a, b) { return Math.round((new Date(b + "T12:00:00Z") - new
 function config(rows) {
   var c = Object.assign({}, DEFAULTS);
   rows.forEach(function (r) { if (r.key !== "" && r.value !== "" && r.value !== undefined) c[r.key] = r.value; });
-  ["goal_usd", "goal_days", "offer_price_usd", "xp_hour", "xp_outreach", "xp_reply", "xp_call", "xp_post", "xp_ship", "xp_per_usd", "level_base", "level_step"]
-    .forEach(function (k) { c[k] = num(c[k]); });
+  ["goal_usd", "goal_days", "offer_price_usd", "xp_hour", "xp_ship", "xp_per_usd", "level_base", "level_step"].forEach(function (k) { c[k] = num(c[k]); });
+  COUNTERS = (DEFAULTS.counters || []).map(function (q) {
+    var o = Object.assign({}, q);
+    if (c["xp_" + q.key] !== undefined) o.xp = num(c["xp_" + q.key]);
+    if (c["quest_" + q.key] !== undefined) o.quest = num(c["quest_" + q.key]);
+    if (c["cap_" + q.key] !== undefined) o.daily_xp_cap = num(c["cap_" + q.key]);
+    return o;
+  });
   if (!c.start_date) c.start_date = today(c.timezone);
   return c;
 }
 function dayXP(d, c) {
-  return Math.round(num(d.hours_worked) * c.xp_hour + num(d.outreach_sent) * c.xp_outreach + num(d.replies) * c.xp_reply +
-    num(d.calls_booked) * c.xp_call + num(d.posts_published) * c.xp_post + (String(d.shipped || "").trim() ? c.xp_ship : 0));
+  var xp = num(d.hours_worked) * c.xp_hour + (String(d.shipped || "").trim() ? c.xp_ship : 0);
+  COUNTERS.forEach(function (q) {
+    var v = num(d[q.key]) * num(q.xp);
+    xp += q.daily_xp_cap ? Math.min(v, q.daily_xp_cap) : v;
+  });
+  return Math.round(xp);
 }
 function levelFrom(xp, c) {
   var lvl = 1, need = c.level_base;
@@ -229,6 +255,17 @@ function render() {
     $("paceMark").hidden = true;
     $("paceLine").textContent = "Set a money goal under Goals and settings to see your pace.";
   }
+  var sum = function (rows, k) { return rows.reduce(function (s, r) { return s + num(r[k]); }, 0); };
+  var week = days.filter(function (r) { var n = daysBetween(r.date, t); return n >= 0 && n < 7; });
+  var sent = sum(days, "invites_sent"), acc = sum(days, "invites_accepted");
+  $("acceptRate").textContent = sent ? Math.round(100 * acc / sent) + "%" : "-";
+  $("comments7").textContent = sum(week, "comments");
+  $("dms7").textContent = sum(week, "inbound_dms");
+  var fun = $("funnel"); fun.textContent = "";
+  [["Invites", sent], ["Accepted", acc], ["Owner replied", sum(days, "owner_replies")], ["Calls", sum(days, "calls_booked")]].forEach(function (x) {
+    var dv = document.createElement("div"), b = document.createElement("b"), sp = document.createElement("span");
+    b.textContent = x[1]; sp.textContent = x[0]; dv.append(b, sp); fun.append(dv);
+  });
   var recent = $("recent"); recent.textContent = "";
   for (var i = 0; i < 7; i++) {
     var dt = addDays(t, -i), row = days.find(function (r) { return r.date === dt; });
@@ -242,20 +279,55 @@ function render() {
   var cf = $("cfgForm");
   ["role_model", "goal_usd", "goal_days", "start_date", "offer_price_usd"].forEach(function (k) { if (document.activeElement !== cf[k]) cf[k].value = c[k] || ""; });
 }
+var counts = {};
+function buildSteps() {
+  var box = $("steps"); if (box.dataset.built === String(COUNTERS.length)) return;
+  box.textContent = ""; box.dataset.built = String(COUNTERS.length);
+  COUNTERS.forEach(function (q) {
+    var el = document.createElement("div"); el.className = "step" + (q.win ? " win" : "");
+    var minus = document.createElement("button"), plus = document.createElement("button"), mid = document.createElement("div");
+    minus.type = plus.type = "button"; minus.textContent = "-"; plus.textContent = "+";
+    minus.setAttribute("aria-label", "One less " + q.label); plus.setAttribute("aria-label", "One more " + q.label);
+    var b = document.createElement("b"), sp = document.createElement("span"); b.id = "n_" + q.key; sp.textContent = q.label; mid.append(b, sp);
+    minus.onclick = function () { counts[q.key] = Math.max(0, (counts[q.key] || 0) - 1); paint(); };
+    plus.onclick = function () { counts[q.key] = (counts[q.key] || 0) + 1; paint(); };
+    el.append(minus, mid, plus); box.append(el);
+  });
+}
+function paint() {
+  COUNTERS.forEach(function (q) { var b = $("n_" + q.key); if (b) b.textContent = counts[q.key] || 0; });
+  var qs = $("quests"); qs.textContent = "";
+  COUNTERS.filter(function (q) { return q.quest; }).forEach(function (q) {
+    var s = document.createElement("span"), n = counts[q.key] || 0;
+    s.textContent = q.label + " " + Math.min(n, q.quest) + "/" + q.quest; if (n >= q.quest) s.className = "done"; qs.append(s);
+  });
+  preview();
+}
 function fillDay(date) {
   var f = $("dayForm"), row = (state.data.days || []).find(function (r) { return r.date === date; }) || {};
   f.date.value = date;
-  ["hours_worked", "outreach_sent", "replies", "calls_booked", "posts_published", "shipped", "notes"].forEach(function (k) { f[k].value = row[k] === undefined ? "" : row[k]; });
-  preview();
+  ["hours_worked", "shipped", "notes"].forEach(function (k) { f[k].value = row[k] === undefined ? "" : row[k]; });
+  buildSteps(); counts = {};
+  COUNTERS.forEach(function (q) { counts[q.key] = num(row[q.key]); });
+  paint();
 }
 function preview() {
-  var f = $("dayForm"), r = {};
-  ["hours_worked", "outreach_sent", "replies", "calls_booked", "posts_published", "shipped"].forEach(function (k) { r[k] = f[k].value; });
+  var f = $("dayForm"), r = Object.assign({}, counts);
+  r.hours_worked = f.hours_worked.value; r.shipped = f.shipped.value;
   $("xpPreview").textContent = "This day is worth " + dayXP(r, state.cfg) + " XP";
 }
-function formRow(f) { var o = {}; new FormData(f).forEach(function (v, k) { o[k] = typeof v === "string" ? v.trim() : v; }); return o; }
+function formRow(f) {
+  var o = {}; new FormData(f).forEach(function (v, k) { o[k] = typeof v === "string" ? v.trim() : v; });
+  if (f.id === "dayForm") COUNTERS.forEach(function (q) { o[q.key] = counts[q.key] || 0; });
+  return o;
+}
 
+async function loadRules() {
+  try { var r = await fetch("config.json", { cache: "no-cache" }); if (r.ok) { var j = await r.json(); Object.keys(j).forEach(function (k) { if (k[0] !== "_") DEFAULTS[k] = j[k]; }); } }
+  catch (e) { /* page still works with built-in defaults */ }
+}
 async function load() {
+  if (!loadRules.done) { loadRules.done = true; await loadRules(); }
   var j = await api({ action: "read" });
   state.data = j.data;
   $("lock").hidden = true; $("app").hidden = false;
