@@ -1,0 +1,238 @@
+{
+  "style": "s5",
+  "fonts": "family=Manrope:wght@400;600;800",
+  "theme_color": "#eef0ff",
+  "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%234b4fd0'/%3E%3Cpath d='M16 6c1 5 4 8 9 10-5 1-8 4-9 9-1-5-4-8-9-9 5-2 8-5 9-10z' fill='%23fff'/%3E%3C/svg%3E",
+  "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' rx='9' fill='currentColor'/><path d='M16 6c1 5 4 8 9 10-5 1-8 4-9 9-1-5-4-8-9-9 5-2 8-5 9-10z' fill='#fff'/></svg>",
+  "business": {
+    "name": "Saltbreeze Home Cleaning",
+    "trade_title": "House cleaning",
+    "city": "Tampa",
+    "state": "FL",
+    "phone": "(813) 555-0162"
+  },
+  "meta": "Concept site for Saltbreeze Home Cleaning, a made-up Tampa house cleaner: recurring, deep and move-out cleans with an instant price check. Designed by shash.builds.",
+  "book_first": true,
+  "book_label": "Get my price",
+  "call_label": "Call (813) 555-0162",
+  "hero": {
+    "eyebrow": "House cleaning in Tampa",
+    "title": "Come home to a clean house.",
+    "sub": "Weekly, every-other-week and one-time cleans across South Tampa and nearby. See your price in about a minute.",
+    "facts": [
+      "Same cleaner every visit",
+      "Supplies and equipment included",
+      "Flat price, set before we start"
+    ]
+  },
+  "services_title": "Pick the clean that fits your week.",
+  "services": [
+    [
+      "Recurring cleaning",
+      "Weekly or every other week, with the same cleaner who knows how you like things."
+    ],
+    [
+      "Deep cleaning",
+      "Baseboards, grout, ceiling fans and the spots that build up over a busy month."
+    ],
+    [
+      "Move-in and move-out",
+      "An empty-home clean for renters, buyers, sellers and landlords."
+    ],
+    [
+      "Vacation rental turnovers",
+      "Fresh linens, a stocked kitchen and a full reset between guests."
+    ],
+    [
+      "After a remodel",
+      "Fine dust and debris cleanup once the contractors pack up."
+    ],
+    [
+      "Add-ons",
+      "Inside the fridge, inside the oven, interior windows and a load of laundry."
+    ]
+  ],
+  "estimator": {
+    "title": "See your price before you book.",
+    "note": "Sample prices for this concept. On a live site, the owner sets these numbers.",
+    "beds": [
+      [
+        "1 bedroom",
+        40
+      ],
+      [
+        "2 bedrooms",
+        55
+      ],
+      [
+        "3 bedrooms",
+        70
+      ],
+      [
+        "4 bedrooms",
+        85
+      ],
+      [
+        "5+ bedrooms",
+        100
+      ]
+    ],
+    "baths": [
+      [
+        "1 bathroom",
+        45
+      ],
+      [
+        "2 bathrooms",
+        60
+      ],
+      [
+        "3 bathrooms",
+        75
+      ],
+      [
+        "4+ bathrooms",
+        90
+      ]
+    ],
+    "freq": [
+      [
+        "Every week",
+        1
+      ],
+      [
+        "Every 2 weeks",
+        1.1
+      ],
+      [
+        "Once a month",
+        1.2
+      ],
+      [
+        "One-time deep clean",
+        1.6
+      ]
+    ]
+  },
+  "steps_title": "Booked in a minute. Clean by Friday.",
+  "steps": [
+    [
+      "Check your price",
+      "Pick your rooms and how often. The price you see is the price you pay."
+    ],
+    [
+      "Choose a time",
+      "Morning or afternoon, any weekday. We text to confirm."
+    ],
+    [
+      "Come home to it",
+      "Your cleaner texts when they're on the way and sends a checklist when they're done."
+    ]
+  ],
+  "photos": {
+    "hero": {
+      "file": "hero",
+      "w": 1024,
+      "h": 683,
+      "alt": "A bright, spotless white kitchen with a long island, pendant lights and a dining table by the windows.",
+      "credit": "rawpixel",
+      "credit_url": "https://www.rawpixel.com/image/6042749/photo-image-public-domain-minimal-house"
+    },
+    "g1": {
+      "file": "living-room",
+      "w": 960,
+      "h": 640,
+      "alt": "A tidy white living room with a sofa, armchair, glass coffee table and a patterned rug.",
+      "credit": "Kristin Hardwick via StockSnap",
+      "credit_url": "https://stocksnap.io/photo/interior-design-HIH67XC5G0"
+    },
+    "g2": {
+      "file": "kitchen",
+      "w": 1024,
+      "h": 683,
+      "alt": "A clean U-shaped kitchen with wiped counters, a steel sink and potted flowers on the windowsill.",
+      "credit": "rawpixel",
+      "credit_url": "https://www.rawpixel.com/image/5912749/image-public-domain-kitchen-interior"
+    }
+  },
+  "area": {
+    "title": "South Tampa and the neighborhoods around it.",
+    "note": "If your ZIP isn't listed, ask. We add new streets as our team grows.",
+    "towns": [
+      "South Tampa",
+      "Hyde Park",
+      "Davis Islands",
+      "Seminole Heights",
+      "Westchase",
+      "Carrollwood",
+      "Town 'n' Country",
+      "Temple Terrace",
+      "Brandon",
+      "Riverview"
+    ]
+  },
+  "about": {
+    "title": "Small team, same faces.",
+    "body": [
+      "Most cleaning companies send whoever is free that day. You end up explaining the same things every visit.",
+      "We keep one cleaner on each home. They learn where the dog hides, which counters are marble and which room to skip when someone's working from home."
+    ]
+  },
+  "promise": {
+    "title": "Missed a spot? We come back within 24 hours.",
+    "body": "Tell us within a day of your clean and we'll send someone back to fix it, free. No forms, just a text."
+  },
+  "faq": [
+    [
+      "Do I need to be home?",
+      "No. Most clients give us a door code or a key. Your cleaner texts when they arrive and when they leave."
+    ],
+    [
+      "Do you bring supplies?",
+      "Yes, everything, including the vacuum. If you'd like us to use your own products, leave them out and we will."
+    ],
+    [
+      "Are you OK with pets?",
+      "Yes. Tell us their names and any rooms they should stay out of."
+    ],
+    [
+      "How do I pay?",
+      "By card after each clean. You're never charged before the work is done."
+    ],
+    [
+      "What if I need to skip or move a clean?",
+      "Text us 24 hours ahead and we'll move it at no charge."
+    ]
+  ],
+  "form": {
+    "eyebrow": "Book a clean",
+    "title": "Tell us about your home.",
+    "note": "We text back within the hour during business hours with your price and the next open times.",
+    "where": "ZIP code",
+    "options": [
+      "Recurring cleaning",
+      "Deep cleaning",
+      "Move-in or move-out",
+      "Vacation rental",
+      "After a remodel",
+      "Something else"
+    ],
+    "button": "Send my request",
+    "short": "Get my price"
+  },
+  "hours": [
+    [
+      "Mon to Fri",
+      "8am to 6pm"
+    ],
+    [
+      "Saturday",
+      "9am to 1pm"
+    ],
+    [
+      "Texts",
+      "Answered within the hour"
+    ]
+  ],
+  "ig_bg": "#4b4fd0"
+}

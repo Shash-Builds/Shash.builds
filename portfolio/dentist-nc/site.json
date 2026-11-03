@@ -1,0 +1,83 @@
+{
+  "style": "s6",
+  "fonts": "family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;600",
+  "theme_color": "#f4f0e8",
+  "ig_bg": "#1d5c63",
+  "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f0e8'/%3E%3Cpath d='M10 7c-3 0-5 3-4 7 1 3 2 5 2 9 0 2 2 3 3 1l2-6c1-2 5-2 6 0l2 6c1 2 3 1 3-1 0-4 1-6 2-9 1-4-1-7-4-7-2 0-4 2-6 2s-4-2-6-2z' fill='none' stroke='%231d5c63' stroke-width='2'/%3E%3C/svg%3E",
+  "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><path d='M10 7c-3 0-5 3-4 7 1 3 2 5 2 9 0 2 2 3 3 1l2-6c1-2 5-2 6 0l2 6c1 2 3 1 3-1 0-4 1-6 2-9 1-4-1-7-4-7-2 0-4 2-6 2s-4-2-6-2z' fill='none' stroke='currentColor' stroke-width='2'/></svg>",
+  "hero_layout": "magazine",
+  "business": {"name": "Wrenfield Family Dentistry", "trade_title": "Family dentist", "city": "Raleigh", "state": "NC", "phone": "(919) 555-0156"},
+  "meta": "Concept site for Wrenfield Family Dentistry, a made-up Raleigh, North Carolina family dentist: cleanings, fillings, crowns, whitening and calm first visits. Designed by shash.builds.",
+  "book_first": true,
+  "book_label": "Book an appointment",
+  "hero": {
+    "eyebrow": "Family dentistry in Raleigh, North Carolina",
+    "title": "Calm, unhurried dental care for the whole family.",
+    "sub": "Cleanings, fillings, crowns and whitening in North Raleigh, with early mornings and Saturdays for busy families. Nervous? Tell us, and we'll go at your pace.",
+    "facts": ["New patients welcome this week", "Most PPO plans accepted", "Early mornings and Saturdays"]
+  },
+  "extra": {
+    "eyebrow": "Your first visit",
+    "title": "What happens when you come in.",
+    "items": [
+      ["1", "A real conversation", "Ten minutes to talk about your teeth, your worries and your budget before anything else."],
+      ["2", "Exam and X-rays", "A gentle exam, low-dose digital X-rays and photos you can see on the screen with us."],
+      ["3", "A clear plan", "What needs doing now, what can wait, and the price of each, in writing."]
+    ]
+  },
+  "services_title": "Everything a family needs, in one office.",
+  "services": [
+    ["Cleanings and checkups", "Every six months for adults and kids, with a gentle hygienist who explains as they go."],
+    ["Fillings", "Tooth-colored fillings that match, usually done in one visit."],
+    ["Crowns and bridges", "Strong, natural-looking restorations for cracked or worn teeth."],
+    ["Whitening", "In-office or take-home trays, with honest advice on what to expect."],
+    ["Kids' dentistry", "First visits from age one, with a slow, friendly pace and no lectures."],
+    ["Emergency visits", "Same-day appointments for toothaches, chips and lost fillings."]
+  ],
+  "steps_title": "Booking takes two minutes.",
+  "steps": [
+    ["Pick a time", "Book online or call. Early mornings and Saturdays fill fastest."],
+    ["Fill in forms at home", "We text you a short form so you're not doing paperwork in the waiting room."],
+    ["Come in and relax", "Headphones, a blanket and a dentist who explains before doing anything."]
+  ],
+  "photos": {
+    "hero": {"file": "hero", "w": 960, "h": 640, "alt": "A bright, empty dental treatment room with a modern grey chair, overhead light and white cabinets.", "credit": "Daniel Frank via StockSnap", "credit_url": "https://stocksnap.io/photo/chair-dentist-3J10QN5PTS"},
+    "g1": {"file": "toothbrushes", "w": 1024, "h": 683, "alt": "Three colorful toothbrushes in blue, green and orange laid side by side.", "credit": "rawpixel", "credit_url": "https://www.rawpixel.com/image/6017589/toothbrush-image-free-public-domain-cc0-photo"},
+    "g2": {"file": "instruments", "w": 1024, "h": 576, "alt": "A row of clean steel dental instruments in a blue tray.", "credit": "rawpixel", "credit_url": "https://www.rawpixel.com/image/5917672/image-public-domain-free-work"}
+  },
+  "area": {
+    "title": "Close to home in North Raleigh.",
+    "note": "Families come to us from across Wake County. Free parking right outside the door.",
+    "towns": ["North Raleigh", "Midtown", "Wake Forest", "Durant Trails", "Brier Creek", "Crabtree", "Cary", "Garner", "Knightdale"]
+  },
+  "about": {
+    "title": "Dentistry without the rush.",
+    "body": [
+      "Plenty of people put off the dentist because the last visit felt rushed, painful or full of surprises on the bill.",
+      "We book longer appointments, explain every step before we take it, and give you the price in writing before any treatment. You can always say stop."
+    ]
+  },
+  "promise": {
+    "title": "No surprise bills. Ever.",
+    "body": "You see the price of every treatment, and what your insurance should cover, before we start. If something changes mid-visit, we stop and ask."
+  },
+  "faq": [
+    ["Do you take my insurance?", "We accept most PPO plans and file the claim for you. Call or send the form with your plan name and we'll check before your visit."],
+    ["I'm nervous about the dentist. Can you help?", "Yes. Tell us when you book. We go slower, explain everything first and agree on a hand signal so you can stop anytime."],
+    ["How old should my child be for a first visit?", "Around their first birthday, or when the first tooth shows up. Early visits are short and mostly about getting comfortable."],
+    ["Do you see emergencies?", "Yes. Call first thing and we'll fit you in the same day for toothaches, chips or a lost filling or crown."],
+    ["What if I don't have insurance?", "You get the full price list up front, and we can spread larger treatments over a few visits."]
+  ],
+  "form": {
+    "eyebrow": "Book a visit",
+    "title": "Request an appointment.",
+    "note": "Tell us what you need and when works best. We'll call or text to confirm a time.",
+    "where": "Best days and times",
+    "where_ac": "off",
+    "options": ["Cleaning and checkup", "New patient visit", "Toothache or emergency", "Whitening", "Child's visit", "Something else"],
+    "button": "Request appointment",
+    "short": "Book a visit"
+  },
+  "hours": [["Mon to Thu", "7am to 5pm"], ["Friday", "7am to 1pm"], ["Saturday", "8am to 1pm, twice a month"]],
+  "order": ["hero", "services", "extra", "about", "gallery", "how", "promise", "area", "faq", "contact"]
+}

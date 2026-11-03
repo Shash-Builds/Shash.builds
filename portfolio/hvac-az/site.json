@@ -1,0 +1,82 @@
+{
+  "style": "s2",
+  "fonts": "family=Sora:wght@400;600;700",
+  "theme_color": "#0b0d12",
+  "ig_bg": "#7c8cff",
+  "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230b0d12'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%234fd1c5' stroke-width='4'/%3E%3C/svg%3E",
+  "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><defs><linearGradient id='lg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#8b9bff'/><stop offset='1' stop-color='#4fd1c5'/></linearGradient></defs><circle cx='16' cy='16' r='12' fill='none' stroke='url(#lg)' stroke-width='5'/></svg>",
+  "hero_layout": "visual",
+  "hero_svg": "<svg viewBox='0 0 400 400' role='img'><defs><linearGradient id='arc' x1='0' y1='1' x2='1' y2='0'><stop offset='0' stop-color='#4fd1c5'/><stop offset='1' stop-color='#8b9bff'/></linearGradient><radialGradient id='glow'><stop offset='0' stop-color='#7c8cff' stop-opacity='.35'/><stop offset='1' stop-color='#7c8cff' stop-opacity='0'/></radialGradient></defs><circle cx='200' cy='200' r='200' fill='url(#glow)'/><circle cx='200' cy='200' r='150' fill='#10131b' stroke='#262b38' stroke-width='2'/><circle cx='200' cy='200' r='128' fill='none' stroke='#1c2130' stroke-width='14' stroke-linecap='round' stroke-dasharray='603 1000' transform='rotate(135 200 200)'/><circle class='dial-arc' cx='200' cy='200' r='128' fill='none' stroke='url(#arc)' stroke-width='14' stroke-linecap='round' stroke-dasharray='250 1000' transform='rotate(135 200 200)'/><g stroke='#3a4152' stroke-width='2'><path d='M200 46v12M200 342v12M46 200h12M342 200h12'/></g><text x='200' y='212' text-anchor='middle' fill='#fcfcfa' font-family='Sora, sans-serif' font-weight='700' font-size='86' letter-spacing='-4'>72°</text><text x='200' y='252' text-anchor='middle' fill='#4fd1c5' font-family='Sora, sans-serif' font-weight='600' font-size='15' letter-spacing='3'>COOLING</text><text x='200' y='300' text-anchor='middle' fill='#8b90a0' font-family='Sora, sans-serif' font-size='14'>Outside 112°F</text></svg>",
+  "art_note": "The thermostat dial is an illustration made for this page.",
+  "business": {"name": "Coolwash Air Co.", "trade_title": "AC and heating", "city": "Mesa", "state": "AZ", "phone": "(480) 555-0129"},
+  "meta": "Concept site for Coolwash Air Co., a made-up Mesa, Arizona AC and heating company: same-day AC repair, new systems, heat pumps and tune-ups. Designed by shash.builds.",
+  "book_label": "Book service online",
+  "hero": {
+    "eyebrow": "AC and heating · Mesa, AZ",
+    "title": "Cold air back on, before the afternoon peak.",
+    "sub": "AC repair, new systems and tune-ups across the East Valley. Call before 2pm and we aim to be at your door the same day.",
+    "facts": ["Same-day repair calls", "Upfront price before any work starts", "All major brands serviced"]
+  },
+  "extra": {
+    "eyebrow": "Built for desert summers",
+    "title": "What an AC company in Mesa should promise.",
+    "items": [
+      ["Same day", "Repair visits", "When you call before 2pm on a weekday."],
+      ["$0", "Second opinion", "We'll check any replacement quote you got elsewhere, free."],
+      ["2x a year", "Tune-ups on the plan", "Spring for cooling, fall for heating, with a written report."]
+    ]
+  },
+  "services_title": "Everything that keeps the house at 72.",
+  "services": [
+    ["Emergency AC repair", "Warm air, no air, ice on the lines or strange noises. Fixed fast, priced before we start."],
+    ["AC replacement", "Right-sized systems with a load calculation, not a guess from the square footage."],
+    ["Heat pumps", "Install and repair for the units that heat and cool from one box."],
+    ["Tune-ups and plans", "Coil cleaning, refrigerant check and a written report, twice a year."],
+    ["Ductwork and airflow", "Sealing, repairs and balancing for rooms that never cool down."],
+    ["Thermostats and air quality", "Smart thermostats, filters and air purifiers, installed and set up."]
+  ],
+  "steps_title": "From warm house to cold air.",
+  "steps": [
+    ["Call or book online", "Tell us what the system is doing. We give you a time window, not an all-day wait."],
+    ["Diagnose and price", "The tech finds the problem and shows you the price before any work starts."],
+    ["Fix and follow up", "Most repairs are done on the first visit. We call the next day to make sure it's holding."]
+  ],
+  "photos": {
+    "g1": {"file": "condensers", "w": 1024, "h": 767, "alt": "A row of outdoor AC condenser units and ducting along a back wall.", "credit": "rawpixel", "credit_url": "https://www.rawpixel.com/image/6074073/mizonokuchi-4th-apr"},
+    "g2": {"file": "desert", "w": 960, "h": 640, "alt": "Dry desert scrub and Joshua trees under a pale blue sky with mountains behind.", "credit": "Chelsea Bock via StockSnap", "credit_url": "https://stocksnap.io/photo/desert-trees-O7MIA3N5JB"}
+  },
+  "area": {
+    "title": "Mesa and the East Valley.",
+    "note": "Our trucks are spread across the East Valley in summer so the drive to you stays short.",
+    "towns": ["Mesa", "Gilbert", "Chandler", "Tempe", "Queen Creek", "San Tan Valley", "Apache Junction", "Gold Canyon", "Scottsdale"]
+  },
+  "about": {
+    "title": "Local techs who know desert heat.",
+    "body": [
+      "An AC in Mesa works harder than almost anywhere in the country. Systems that last fifteen years elsewhere can wear out in ten here.",
+      "Our techs only work in the East Valley. They know which units struggle at 115, which attics trap heat, and when a repair is still worth it."
+    ]
+  },
+  "promise": {
+    "title": "If the same part fails within a year, the fix is on us.",
+    "body": "Parts and labor on every repair are covered for 12 months, in writing. No fine print about service fees."
+  },
+  "faq": [
+    ["How fast can you come out?", "Call before 2pm on a weekday and we aim to be there the same day. In peak summer we give you a two-hour window."],
+    ["Should I repair or replace my AC?", "If the system is under ten years old and the repair is less than a third of a new one, repair usually wins. We'll show you both numbers."],
+    ["What does a tune-up include?", "Coil cleaning, refrigerant and electrical checks, drain line flush, filter change and a written report with photos."],
+    ["Do you work on heat pumps?", "Yes, repairs and new installs for all major brands."],
+    ["Is there a fee to come out?", "There's a flat diagnostic fee, and it's waived if you go ahead with the repair."]
+  ],
+  "form": {
+    "eyebrow": "Book service",
+    "title": "Tell us what the system is doing.",
+    "note": "We call back within 30 minutes during business hours to set a time.",
+    "where": "ZIP code",
+    "options": ["AC not cooling", "No air at all", "Strange noise or smell", "New system quote", "Tune-up", "Something else"],
+    "button": "Request service",
+    "short": "Book service"
+  },
+  "hours": [["Mon to Sat", "7am to 8pm"], ["Sunday", "Emergency calls only"], ["May to Sept", "Phones open till 10pm"]],
+  "order": ["hero", "extra", "services", "how", "gallery", "area", "promise", "about", "faq", "contact"]
+}

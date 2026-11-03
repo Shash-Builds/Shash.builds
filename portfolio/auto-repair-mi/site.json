@@ -1,0 +1,87 @@
+{
+  "style": "s7",
+  "fonts": "family=Anton&family=JetBrains+Mono:wght@400;700",
+  "theme_color": "#ffe600",
+  "ig_bg": "#0b0b0b",
+  "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffe600'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%230b0b0b' stroke-width='4'/%3E%3Cpath d='M16 16V5' stroke='%230b0b0b' stroke-width='4'/%3E%3C/svg%3E",
+  "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' fill='#ffe600' stroke='#0b0b0b' stroke-width='3'/><circle cx='16' cy='16' r='8' fill='none' stroke='#0b0b0b' stroke-width='3.5'/><path d='M16 16V6' stroke='#0b0b0b' stroke-width='3.5'/></svg>",
+  "hero_layout": "poster",
+  "business": {"name": "Quarter Turn Auto Repair", "trade_title": "Auto repair", "city": "Grand Rapids", "state": "MI", "phone": "(616) 555-0192"},
+  "meta": "Concept site for Quarter Turn Auto Repair, a made-up Grand Rapids, Michigan auto repair shop: brakes, diagnostics, oil changes, suspension and winter prep at posted prices. Designed by shash.builds.",
+  "book_label": "Book a repair",
+  "hero": {
+    "eyebrow": "Auto repair · Grand Rapids, MI",
+    "title": "Fixed right. Priced up front.",
+    "sub": "Brakes, check-engine lights, suspension and Michigan winter prep. We show you the problem, the photo and the price before we turn a wrench.",
+    "facts": ["Posted prices on common jobs", "Photos of every problem we find", "Loaner rides within 5 miles"]
+  },
+  "menu": {
+    "id": "prices",
+    "eyebrow": "Price board",
+    "title": "Common jobs. Posted prices.",
+    "note": "Sample prices for this concept. On a live site, the shop sets them.",
+    "items": [
+      ["Oil change", "Full synthetic, up to 5 quarts, filter and a 20-point check.", "$69"],
+      ["Brake pads", "Per axle, with a rotor check and road test.", "$189"],
+      ["Check-engine diagnosis", "Scan plus a real look. Credited toward the repair.", "$95"],
+      ["Tire swap", "Winter to summer or back, four tires on rims.", "$49"],
+      ["Battery replacement", "Tested first. Most batteries in stock.", "from $159"],
+      ["Alignment", "Four-wheel, with a printout of before and after.", "$119"]
+    ]
+  },
+  "services_title": "What we work on.",
+  "services": [
+    ["Brakes", "Pads, rotors, calipers and brake lines. Squeal today, fixed today."],
+    ["Diagnostics", "Check-engine lights, warning lights and strange noises, traced to the cause."],
+    ["Suspension and steering", "Pothole damage, clunks, wandering and uneven tire wear."],
+    ["Oil and maintenance", "Oil, filters, fluids and belts on the maker's schedule."],
+    ["Winter prep", "Battery test, coolant, wipers, tires and an underbody look before the salt."],
+    ["Exhaust and rust repair", "Rusted pipes, hangers and mufflers, welded or replaced."]
+  ],
+  "steps_title": "No surprises, start to finish.",
+  "steps": [
+    ["Drop it off", "Book online or call. Leave the keys and we'll run you home or to work."],
+    ["See it yourself", "We text photos of what we find, with the price for each fix. You pick what we do."],
+    ["Drive away", "Old parts in a box if you want them, and a written warranty on the repair."]
+  ],
+  "photos": {
+    "hero": {"file": "hero", "w": 960, "h": 640, "alt": "A ratchet wrench lying across a case of chrome sockets in neat rows.", "credit": "Jaroslaw Puszczynski via StockSnap", "credit_url": "https://stocksnap.io/photo/wrench-sockets-M07SV6AMBD"},
+    "g1": {"file": "engine", "w": 1024, "h": 681, "alt": "A clean chrome V8 engine with a round air filter and red wiring in a red engine bay.", "credit": "rawpixel", "credit_url": "https://www.rawpixel.com/image/5922437/photo-image-public-domain-ocean-technology"},
+    "g2": {"file": "tools", "w": 1024, "h": 768, "alt": "A shop wall rack full of screwdrivers above a workbench with a drill and cords.", "credit": "rawpixel", "credit_url": "https://www.rawpixel.com/image/5908970/image-public-domain-wood-free"}
+  },
+  "area": {
+    "title": "Grand Rapids and the suburbs.",
+    "note": "Free rides to home or work within 5 miles of the shop while your car is in.",
+    "towns": ["Grand Rapids", "East Grand Rapids", "Wyoming", "Kentwood", "Walker", "Grandville", "Rockford", "Ada", "Cascade"]
+  },
+  "about": {
+    "title": "A shop that shows its work.",
+    "body": [
+      "Most people walk out of a repair shop not sure what was wrong or whether it needed fixing at all.",
+      "We text you photos of every problem, explain it in plain words and price each fix on its own. You decide what gets done today and what can wait."
+    ]
+  },
+  "promise": {
+    "title": "12 months or 12,000 miles on every repair.",
+    "body": "Parts and labor, in writing. If the same repair fails inside that window, we fix it again at no cost."
+  },
+  "faq": [
+    ["Do I need an appointment?", "It helps. Booked cars get looked at first, but we take walk-ins for quick jobs like oil changes and tire swaps."],
+    ["How will I know what's wrong?", "We text photos and a short note for every problem, with the price to fix each one. Nothing gets done without your OK."],
+    ["Can I bring my own parts?", "For some jobs, yes. We can't warranty the part itself, only our labor."],
+    ["Do you work on all makes?", "Most domestic and import cars, SUVs and light trucks. Call if you're not sure."],
+    ["How do I get home while my car is in?", "We'll drive you anywhere within 5 miles of the shop and pick you up when it's ready."]
+  ],
+  "form": {
+    "eyebrow": "Book a repair",
+    "title": "What's the car doing?",
+    "note": "Tell us the make, the model and what you're hearing or seeing. We'll call back with a time and a ballpark.",
+    "where": "Car make, model and year",
+    "where_ac": "off",
+    "options": ["Brakes", "Check-engine light", "Strange noise", "Oil change", "Tire swap", "Winter prep", "Something else"],
+    "button": "Book my repair",
+    "short": "Book a repair"
+  },
+  "hours": [["Mon to Fri", "7:30am to 6pm"], ["Saturday", "8am to 1pm"], ["Sunday", "Closed"]],
+  "order": ["hero", "menu", "services", "how", "gallery", "about", "promise", "area", "faq", "contact"]
+}

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Row Barbershop: Barbershop in Long Beach, CA (concept site)</title>
+<meta name="description" content="Concept site for Lantern Row Barbershop, a made-up Long Beach, California barbershop: classic cuts, skin fades and hot towel shaves, booked online. Designed by shash.builds.">
+<meta name="theme-color" content="#0e0d0b">
+<meta property="og:title" content="Lantern Row Barbershop, a concept site by shash.builds">
+<meta property="og:description" content="Concept site for Lantern Row Barbershop, a made-up Long Beach, California barbershop: classic cuts, skin fades and hot towel shaves, booked online. Designed by shash.builds.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="shots/desktop-1280x720.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 32 32&#x27;%3E%3Crect width=&#x27;32&#x27; height=&#x27;32&#x27; fill=&#x27;%230e0d0b&#x27;/%3E%3Crect x=&#x27;12&#x27; y=&#x27;5&#x27; width=&#x27;8&#x27; height=&#x27;22&#x27; rx=&#x27;4&#x27; fill=&#x27;none&#x27; stroke=&#x27;%23c8a35a&#x27; stroke-width=&#x27;2&#x27;/%3E%3Cpath d=&#x27;M12 11l8 4M12 17l8 4&#x27; stroke=&#x27;%23c8a35a&#x27; stroke-width=&#x27;2&#x27;/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/hero-640.webp" imagesrcset="img/hero-640.webp 640w, img/hero.webp 714w" imagesizes="(min-width: 60rem) 50vw, 100vw">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap"></noscript>
+<style>
+:root {
+color-scheme: light;
+--bg: #fff; --surface: #f5f5f3; --ink: #111; --muted: #555; --rule: #ddd;
+--accent: #111; --on-accent: #fff; --accent-ink: #111;
+--f-display: ui-sans-serif, system-ui, sans-serif; --f-body: ui-sans-serif, system-ui, sans-serif;
+--display-weight: 800; --display-case: none; --tracking: -0.03em; --display-style: normal;
+--radius: 0px; --btn-radius: 0px; --photo-radius: 0px;
+--pad: clamp(16px, 5vw, 64px); --max: 1240px;
+--ease: cubic-bezier(.16, 1, .3, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.6 var(--f-body); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: var(--display-weight); letter-spacing: var(--tracking); line-height: 1.04; text-wrap: balance; overflow-wrap: break-word; }
+h1 { font-size: clamp(2.5rem, 7.5vw + .5rem, 5.4rem); text-transform: var(--display-case); font-style: var(--display-style); }
+h2 { font-size: clamp(1.9rem, 3.2vw + 1rem, 3.3rem); }
+h3 { font-size: 1.2rem; line-height: 1.2; letter-spacing: -0.01em; }
+p { text-wrap: pretty; }
+a { color: inherit; text-underline-offset: .18em; }
+img { display: block; max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--pad); }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 50; background: var(--ink); color: var(--bg); padding: 8px 12px; }
+.skip:focus { left: 8px; }
+.wide { display: none; }
+@media (min-width: 48rem) { .wide { display: inline; } .narrow { display: none; } }
+.concept-strip { font-size: .8rem; text-align: center; padding: 6px var(--pad); background: var(--ink); color: var(--bg); }
+.concept-strip a { color: inherit; font-weight: 600; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 2px solid transparent; border-radius: var(--btn-radius); font-weight: 700; font-size: 1rem; text-decoration: none; white-space: nowrap; cursor: pointer; transition: transform 160ms var(--ease), filter 160ms var(--ease), background-color 160ms var(--ease); }
+.btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.btn:active { transform: translateY(1px); }
+.btn-call { background: var(--accent); color: var(--on-accent); }
+.btn-book { background: transparent; color: var(--ink); border-color: currentColor; }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); }
+.nav { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--rule); }
+.nav-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; text-decoration: none; min-width: 0; }
+.logo span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.logo svg { width: 30px; height: 30px; flex: none; }
+.nav nav { display: none; gap: 28px; font-size: .95rem; font-weight: 500; }
+.nav nav a { text-decoration: none; }
+.nav nav a:hover { text-decoration: underline; }
+.nav-cta { min-height: 44px; padding: 0 14px; font-size: .92rem; }
+@media (min-width: 60rem) { .nav nav { display: flex; } }
+.hero-in { display: grid; gap: 32px; padding-block: 28px 48px; }
+.hero-copy { display: grid; gap: 20px; justify-items: start; align-content: center; }
+.lede { font-size: clamp(1.08rem, .5vw + 1rem, 1.3rem); max-width: 40ch; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.facts { display: grid; gap: 8px; font-size: .95rem; font-weight: 600; }
+.facts li { display: flex; gap: 10px; align-items: baseline; }
+.facts li::before { content: ""; width: 10px; height: 10px; flex: none; background: var(--accent); transform: translateY(1px); }
+.hero-photo { order: -1; }
+.hero-photo img, .gal img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--photo-radius); }
+.hero-photo img { aspect-ratio: 16 / 10; }
+@media (min-width: 60rem) {
+.hero-in { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; padding-block: 64px 88px; }
+.hero-photo { order: 0; }
+.hero-photo img { aspect-ratio: 4 / 4.6; }
+}
+.block { padding-block: clamp(56px, 8vw, 112px); }
+.head { display: grid; align-content: start; gap: 14px; margin-bottom: 36px; max-width: 46rem; }
+.head > p:not(.eyebrow) { color: var(--muted); font-size: 1.08rem; max-width: 52ch; }
+.svc { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+.svc li { display: grid; gap: 10px; align-content: start; padding: 24px; background: var(--surface); border-radius: var(--radius); }
+.svc .n { font-weight: 800; font-size: .85rem; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.svc p { color: var(--muted); }
+@media (min-width: 40rem) { .svc { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 60rem) { .svc { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.steps { display: grid; gap: 16px; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; gap: 8px; padding: 24px; border-top: 3px solid var(--accent); }
+.steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--f-display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--accent-ink); }
+.steps p { color: var(--muted); }
+@media (min-width: 48rem) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.gal { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+.gal img { aspect-ratio: 16 / 10; }
+@media (min-width: 48rem) { .gal { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); } .gal img { aspect-ratio: auto; height: clamp(260px, 32vw, 440px); } }
+.area-in, .about-in, .faq-in, .contact-in, .promise-in { display: grid; gap: 32px; }
+.towns { display: flex; flex-wrap: wrap; gap: 10px; align-content: start; }
+.towns li { padding: 10px 16px; border: 1px solid var(--rule); border-radius: var(--btn-radius); font-weight: 600; background: var(--bg); }
+.about-body { display: grid; gap: 16px; font-size: 1.12rem; max-width: 58ch; }
+@media (min-width: 60rem) {
+.area-in, .about-in, .faq-in, .contact-in { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; }
+.promise-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.area-in .head, .about-in .head, .faq-in .head, .contact-in .head { margin-bottom: 0; }
+}
+.guarantee, .reviews-slot { display: grid; gap: 14px; align-content: start; padding: clamp(24px, 4vw, 44px); border-radius: var(--radius); }
+.guarantee { background: var(--accent); color: var(--on-accent); }
+.guarantee .eyebrow { color: inherit; }
+.reviews-slot { border: 2px dashed var(--rule); color: var(--muted); }
+.rs-title { font-family: var(--f-display); font-weight: var(--display-weight); font-size: 1.6rem; line-height: 1.1; color: var(--ink); letter-spacing: var(--tracking); }
+.qs { display: grid; border-top: 1px solid var(--rule); }
+.qs details { border-bottom: 1px solid var(--rule); }
+.qs summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding-block: 14px; font-weight: 700; font-size: 1.08rem; cursor: pointer; list-style: none; }
+.qs summary::-webkit-details-marker { display: none; }
+.qs summary::after { content: "+"; font-size: 1.6rem; font-weight: 400; line-height: 1; transition: transform 200ms var(--ease); }
+.qs details[open] summary::after { transform: rotate(45deg); }
+.qs details p { padding-bottom: 20px; color: var(--muted); max-width: 62ch; }
+.big-call a { font-family: var(--f-display); font-weight: var(--display-weight); font-size: clamp(1.8rem, 3vw + 1rem, 2.8rem); letter-spacing: var(--tracking); text-decoration: none; }
+.hours { display: grid; grid-template-columns: auto 1fr; gap: 6px 20px; font-size: .98rem; }
+.hours dt { font-weight: 700; }
+.hours dd { color: var(--muted); }
+.quote { display: grid; gap: 14px; padding: clamp(20px, 4vw, 36px); background: var(--surface); border-radius: var(--radius); }
+.quote label { display: grid; gap: 6px; font-size: .92rem; font-weight: 600; }
+.quote input, .quote select, .quote textarea { width: 100%; min-height: 48px; padding: 10px 12px; font-size: 1rem; background: var(--bg); border: 1px solid var(--rule); border-radius: var(--btn-radius); }
+.quote input:hover, .quote select:hover, .quote textarea:hover { border-color: var(--muted); }
+.quote .btn { justify-self: start; }
+.form-note { font-size: .88rem; color: var(--muted); }
+.xl { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.xl li { display: grid; gap: 8px; align-content: start; padding: 24px; background: var(--surface); border-radius: var(--radius); }
+.xl b { font-family: var(--f-display); font-weight: var(--display-weight); font-size: clamp(1.8rem, 2vw + 1rem, 2.6rem); line-height: 1; letter-spacing: var(--tracking); color: var(--accent-ink); }
+.xl p { color: var(--muted); }
+.hero-art svg { width: 100%; height: auto; display: block; }
+.gal figure { min-width: 0; }
+.picks { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.pick { width: 100%; min-height: 64px; padding: 14px 18px; text-align: left; font-weight: 700; font-size: 1.05rem; background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius); cursor: pointer; }
+.pick:hover { background: var(--accent); color: var(--on-accent); }
+.menu-list { display: grid; gap: 4px 56px; }
+.menu-list li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 12px; padding-block: 16px; }
+.menu-list p { color: var(--muted); font-size: .95rem; }
+.menu-list .dots { border-bottom: 1px dotted var(--rule); transform: translateY(-6px); min-width: 24px; }
+.menu-list b { font-family: var(--f-display); font-size: 1.5rem; font-weight: var(--display-weight); font-variant-numeric: tabular-nums; }
+@media (min-width: 60rem) { .menu-list { grid-template-columns: 1fr 1fr; } }
+.est-card { display: grid; gap: 28px; }
+.est { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); align-items: end; }
+.est label { display: grid; gap: 6px; font-size: .92rem; font-weight: 600; }
+.est select { min-height: 48px; padding: 8px 12px; background: var(--bg); border: 1px solid var(--rule); border-radius: var(--btn-radius); }
+.est output { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.est output b { font-family: var(--f-display); font-size: clamp(2.4rem, 4vw + 1rem, 3.6rem); line-height: 1; letter-spacing: var(--tracking); }
+@media (min-width: 60rem) { .est-card { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: center; } }
+.foot { padding-block: 48px 120px; border-top: 1px solid var(--rule); font-size: .95rem; }
+.foot-in { display: grid; gap: 24px; }
+.foot .small { display: grid; gap: 6px; color: var(--muted); font-size: .85rem; }
+.badge { justify-self: start; display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 1px solid currentColor; border-radius: 999px; font-size: .85rem; text-decoration: none; }
+.badge:hover { background: var(--ink); color: var(--bg); }
+@media (min-width: 60rem) { .foot { padding-bottom: 56px; } .foot-in { grid-template-columns: 1fr 1.4fr auto; align-items: start; } }
+.callbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); background: var(--bg); border-top: 1px solid var(--rule); }
+.callbar .btn { padding: 0 10px; }
+@media (min-width: 60rem) { .callbar { display: none; } }
+@media (prefers-reduced-motion: no-preference) {
+.hero-copy > * { animation: rise 600ms var(--ease) both; }
+.hero-copy > :nth-child(2) { animation-delay: 60ms; } .hero-copy > :nth-child(3) { animation-delay: 120ms; } .hero-copy > :nth-child(n+4) { animation-delay: 180ms; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media (min-width: 48rem) { .g1 .gal { grid-template-columns: 1fr; } .g3 .gal { grid-template-columns: 1.4fr 1fr 1fr; } }
+.s8 {
+color-scheme: dark;
+--bg: #0e0d0b; --surface: #16140f; --ink: #efe6d2; --muted: #b3a78e; --rule: #3a3326;
+--accent: #c8a35a; --on-accent: #0e0d0b; --accent-ink: #d4b06a;
+--f-display: "Cormorant Garamond", Georgia, serif; --f-body: "Jost", ui-sans-serif, system-ui, sans-serif;
+--display-weight: 500; --tracking: -0.01em;
+--radius: 0px; --btn-radius: 0px; --photo-radius: 0px;
+}
+.s8 .concept-strip { background: #1c1a15; color: #d9cfb8; }
+.s8 .nav { background: rgba(14, 13, 11, .9); border-bottom-color: #3a3326; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.s8 .logo span { font-family: var(--f-body); font-weight: 500; letter-spacing: .16em; text-transform: uppercase; font-size: .85rem; }
+.s8 .nav nav { color: var(--muted); font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
+.s8 .btn { font-family: var(--f-body); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; font-size: .82rem; }
+.s8 .btn-book { background: #c8a35a; color: #0e0d0b; border-color: #c8a35a; }
+.s8 .btn-call { background: transparent; color: #efe6d2; border: 1px solid #c8a35a; }
+.s8 .nav-cta.btn-call { color: #c8a35a; }
+.s8 .eyebrow { color: #d4b06a; letter-spacing: .24em; font-weight: 500; }
+.s8 h1, .s8 h2 { font-weight: 500; }
+.s8 h1 { font-size: clamp(3rem, 7vw + .5rem, 6.4rem); line-height: .95; }
+.s8 h2 { font-size: clamp(2.2rem, 3.4vw + 1rem, 3.8rem); }
+.s8 h3 { font-family: var(--f-display); font-size: 1.5rem; font-weight: 600; }
+.s8 .hero--cover { position: relative; overflow: hidden; }
+.s8 .hero--cover .hero-in { align-content: end; padding-block: 30vh 40px; position: static; }
+.s8 .hero--cover .hero-copy { position: relative; z-index: 2; }
+.s8 .hero--cover h1 { font-size: clamp(2.6rem, 7vw + .5rem, 6.4rem); }
+@media (max-width: 47.99rem) { .s8 .logo span { letter-spacing: .08em; font-size: .78rem; } .s8 .hero--cover .hero-copy { gap: 14px; } .s8 .facts { display: none; } }
+.s8 .hero--cover .hero-photo { position: absolute; inset: 0; z-index: 0; order: 0; }
+.s8 .hero--cover .hero-photo img { width: 100%; height: 100%; aspect-ratio: auto; object-position: 50% 30%; }
+.s8 .hero--cover::after { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(14, 13, 11, .1) 0%, rgba(14, 13, 11, .7) 30%, #0e0d0b 55%); pointer-events: none; }
+.s8 .hero--cover .lede { color: #d9cfb8; }
+.s8 .facts { font-weight: 400; color: #d9cfb8; }
+.s8 .facts li::before { width: 18px; height: 1px; background: #c8a35a; transform: translateY(-5px); }
+@media (min-width: 60rem) {
+.s8 .hero--cover .hero-in { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); min-height: min(86vh, 820px); padding-block: 120px 96px; align-content: center; }
+.s8 .hero--cover .hero-photo { left: 45%; }
+.s8 .hero--cover .hero-photo img { object-position: 50% 40%; }
+.s8 .hero--cover::after { background: linear-gradient(90deg, #0e0d0b 42%, rgba(14, 13, 11, .55) 62%, rgba(14, 13, 11, .1) 100%); }
+.s8 .hero--cover .hero-photo::before { content: ""; position: absolute; inset: 24px 24px 24px 24px; border: 1px solid rgba(200, 163, 90, .7); z-index: 2; }
+}
+.s8 .menu { border-top: 1px solid #3a3326; }
+.s8 .menu-in { display: grid; gap: 40px; }
+.s8 .menu .head { justify-items: center; text-align: center; margin-inline: auto; }
+.s8 .menu-list li { border-bottom: 1px solid #2a251c; }
+.s8 .menu-list .dots { border-bottom-color: #6b5a37; }
+.s8 .menu-list b { color: #d4b06a; font-size: 1.9rem; }
+.s8 .about { background: #16140f; border-block: 1px solid #3a3326; }
+.s8 .about-body { font-family: var(--f-display); font-size: clamp(1.35rem, 1vw + 1.1rem, 1.75rem); font-style: italic; line-height: 1.4; color: #e3d8c0; }
+.s8 .gal img { outline: 1px solid rgba(200, 163, 90, .7); outline-offset: -16px; filter: sepia(.25) saturate(.8); }
+@media (min-width: 48rem) { .s8 .g1 .gal img { height: 420px; } }
+.s8 .steps li { border-top: 1px solid #c8a35a; padding-inline: 0; }
+.s8 .steps li::before { font-weight: 500; font-style: italic; color: #d4b06a; }
+.s8 .guarantee { background: transparent; color: var(--ink); border: 1px solid #c8a35a; outline: 1px solid rgba(200, 163, 90, .35); outline-offset: -10px; }
+.s8 .guarantee .eyebrow { color: #d4b06a; }
+.s8 .reviews-slot { border: 1px dashed #4a4231; }
+.s8 .rs-title { font-weight: 500; }
+.s8 .towns li { background: transparent; border-color: #4a4231; font-weight: 400; }
+.s8 .qs summary { font-family: var(--f-display); font-size: 1.4rem; font-weight: 600; }
+.s8 .quote { background: #16140f; border: 1px solid #3a3326; }
+.s8 .quote input, .s8 .quote select, .s8 .quote textarea { background: #0e0d0b; border-color: #4a4231; }
+.s8 .quote .btn-call { background: #c8a35a; color: #0e0d0b; border-color: #c8a35a; }
+.s8 .big-call a { color: #d4b06a; }
+.s8 .badge:hover { background: #c8a35a; color: #0e0d0b; }
+.s8 .callbar { background: rgba(14, 13, 11, .94); border-top-color: #3a3326; }
+.s8 :focus-visible { outline-color: #d4b06a; }
+</style>
+</head>
+<body class="s8 barber-ca">
+<a class="skip" href="#main">Skip to content</a>
+<p class="concept-strip">Concept site for a made-up business. <a href="../">See all samples by shash.builds</a></p>
+<header class="nav"><div class="wrap nav-in">
+<a class="logo" href="#main"><svg viewBox='0 0 32 32' aria-hidden='true'><rect x='12' y='4' width='8' height='24' rx='4' fill='none' stroke='#c8a35a' stroke-width='2'/><path d='M12 10l8 4M12 16l8 4' stroke='#c8a35a' stroke-width='2'/></svg><span>Lantern Row Barbershop</span></a>
+<nav aria-label="Sections"><a href="#services">Services</a><a href="#area">Service area</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
+<a class="btn btn-call nav-cta" href="tel:+15625550138"><span class="narrow">Call</span><span class="wide">Call (562) 555-0138</span></a>
+</div></header>
+<main id="main">
+<section class="hero hero--cover"><div class="wrap hero-in">
+<div class="hero-copy">
+<p class="eyebrow">Barbershop · Long Beach, CA</p>
+<h1>Sharp cuts. Hot towels. No rush.</h1>
+<p class="lede">Classic cuts, skin fades and straight-razor shaves in a quiet shop on the east side of Long Beach. Book your chair online in under a minute.</p>
+<div class="actions"><a class="btn btn-book" href="#quote">Book a chair</a><a class="btn btn-call" href="tel:+15625550138">Call (562) 555-0138</a></div>
+<ul class="facts" aria-label="Quick facts"><li>Online booking, 7 days</li><li>Walk-ins when a chair is free</li><li>Hot towel with every cut</li></ul>
+</div>
+<figure class="hero-photo"><img class="" src="img/hero.webp" srcset="img/hero-640.webp 640w, img/hero.webp 714w" sizes="(min-width: 60rem) 50vw, 100vw" width="714" height="1024" alt="A red, white and blue barber pole mounted on an old brick wall at dusk." fetchpriority="high"></figure>
+</div></section>
+
+<section class="menu block" id="services" aria-labelledby="menu-h"><div class="wrap menu-in"><div class="head"><p class="eyebrow">The menu</p><h2 id="menu-h">Cuts and shaves.</h2><p>Sample prices for this concept. On a live site, the shop sets them.</p></div><ul class="menu-list"><li><div><h3>Classic cut</h3><p>Scissor or clipper, washed and styled. 30 minutes.</p></div><span class="dots" aria-hidden="true"></span><b>$38</b></li><li><div><h3>Skin fade</h3><p>Bald to blended, finished with a straight-razor line-up.</p></div><span class="dots" aria-hidden="true"></span><b>$42</b></li><li><div><h3>Cut and beard</h3><p>Full haircut plus a beard shape and hot towel.</p></div><span class="dots" aria-hidden="true"></span><b>$58</b></li><li><div><h3>Beard trim</h3><p>Shape, line-up and beard oil.</p></div><span class="dots" aria-hidden="true"></span><b>$24</b></li><li><div><h3>Hot towel shave</h3><p>Two hot towels, a straight razor and a cold finish.</p></div><span class="dots" aria-hidden="true"></span><b>$45</b></li><li><div><h3>Kids&#x27; cut</h3><p>12 and under, any style.</p></div><span class="dots" aria-hidden="true"></span><b>$28</b></li></ul></div></section>
+
+<section class="about block" id="about" aria-labelledby="about-h"><div class="wrap about-in">
+<div class="head"><p class="eyebrow">About</p><h2 id="about-h">A barbershop that runs on time.</h2></div>
+<div class="about-body"><p>Most shops overbook, so you wait forty minutes and then get a rushed cut. We book every chair with room to breathe.</p><p>Your barber has the time to ask what you want, do it properly and finish with a hot towel. Then you&#x27;re on with your day.</p></div>
+</div></section>
+
+<section class="gallery g1" aria-label="Photos"><div class="wrap gal"><figure><img class="" src="img/razor.webp" srcset="img/razor-640.webp 640w, img/razor.webp 1024w" sizes="(min-width: 60rem) 50vw, 100vw" width="1024" height="683" alt="A straight razor, a shaving brush and a cake of shaving soap on a light table." loading="lazy" decoding="async"></figure></div></section>
+
+<section class="how block" aria-labelledby="how-h"><div class="wrap how-in">
+<div class="head"><p class="eyebrow">How it works</p><h2 id="how-h">Booked in a minute.</h2></div>
+<ol class="steps"><li><h3>Pick a barber and time</h3><p>See every open chair for the week and choose the one that fits.</p></li><li><h3>Get a reminder</h3><p>A text the day before. Running late? Reply and we&#x27;ll shuffle.</p></li><li><h3>Sit back</h3><p>Hot towel, a cut that takes the time it needs, and you&#x27;re out the door.</p></li></ol>
+</div></section>
+
+<section class="promise block" aria-labelledby="promise-h"><div class="wrap promise-in">
+<div class="guarantee"><p class="eyebrow">Our promise</p><h2 id="promise-h">Not happy with the cut? Come back within 7 days.</h2><p>We&#x27;ll fix it, free. Just book a quick touch-up and tell your barber what&#x27;s off.</p></div>
+<div class="reviews-slot" role="note"><p class="eyebrow">Reviews</p><p class="rs-title">Reviews go here.</p><p>On a live site, this panel shows the business's own Google reviews. A concept site has no customers yet, so it shows none. We never make reviews up.</p></div>
+</div></section>
+
+<section class="area block" id="area" aria-labelledby="area-h"><div class="wrap area-in">
+<div class="head"><p class="eyebrow">Service area</p><h2 id="area-h">Easy to reach from all over Long Beach.</h2><p>Street parking out front, and a short walk from the bus line.</p></div>
+<ul class="towns"><li>Belmont Shore</li><li>Bixby Knolls</li><li>Downtown Long Beach</li><li>Signal Hill</li><li>Lakewood</li><li>Seal Beach</li><li>Los Alamitos</li></ul>
+</div></section>
+
+<section class="faq block" id="faq" aria-labelledby="faq-h"><div class="wrap faq-in">
+<div class="head"><p class="eyebrow">FAQ</p><h2 id="faq-h">Questions people ask first</h2></div>
+<div class="qs"><details><summary>Do you take walk-ins?</summary><p>Yes, when a chair is free. Booking online is the only way to skip the wait.</p></details><details><summary>How long does a cut take?</summary><p>About 30 minutes for a cut, 45 for a skin fade and an hour for a cut and beard.</p></details><details><summary>Do you cut curly and textured hair?</summary><p>Yes. Every barber in the shop cuts all hair types.</p></details><details><summary>Can I book for my kid?</summary><p>Yes. Kids&#x27; cuts are for 12 and under, and you can book two chairs back to back.</p></details><details><summary>Where do I park?</summary><p>Metered street parking out front, free after 6pm and on Sundays.</p></details></div>
+</div></section>
+
+<section class="contact block" id="quote" aria-labelledby="quote-h"><div class="wrap contact-in">
+<div class="head"><p class="eyebrow">Book a chair</p><h2 id="quote-h">Book your chair.</h2><p>Pick what you want and when. We&#x27;ll text to confirm your time.</p>
+<p class="big-call"><a href="tel:+15625550138">(562) 555-0138</a></p>
+<dl class="hours"><dt>Tue to Fri</dt><dd>10am to 8pm</dd><dt>Saturday</dt><dd>9am to 6pm</dd><dt>Sun and Mon</dt><dd>10am to 4pm</dd></dl></div>
+<form class="quote" id="quote-form" novalidate>
+<label>Your name<input name="name" autocomplete="name" required></label>
+<label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+<label>Preferred day and time<input name="where" autocomplete="off"></label>
+<label>What do you need?<select name="need"><option>Classic cut</option><option>Skin fade</option><option>Cut and beard</option><option>Beard trim</option><option>Hot towel shave</option><option>Kids&#x27; cut</option></select></label>
+<label>Anything else?<textarea name="msg" rows="3"></textarea></label>
+<button class="btn btn-call" type="submit">Request my chair</button>
+<p class="form-note" id="form-note" role="status">Demo form: it isn't connected, so nothing you type is sent.</p>
+</form>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+<div><p class="logo">Lantern Row Barbershop</p><p>Barbershop in Long Beach, CA.</p><p><a href="tel:+15625550138">(562) 555-0138</a></p></div>
+<div class="small"><p>A made-up business. Name, phone (a 555 number) and copy are sample content.</p><p>Photos: <a href="https://www.rawpixel.com/image/3800129/photo-image-flower-vintage-retro">Library of Congress via rawpixel</a>; <a href="https://www.rawpixel.com/image/5926092/photo-image-public-domain-brush-free">rawpixel</a> (CC0 or public domain).</p></div>
+<a class="badge" href="../">Concept site by <b>shash.builds</b></a>
+</div></footer>
+<div class="callbar"><a class="btn btn-call" href="tel:+15625550138">Call now</a><a class="btn btn-book" href="#quote">Book a chair</a></div>
+<script>
+document.getElementById('quote-form').addEventListener('submit',ev=>{ev.preventDefault();document.getElementById('form-note').textContent='Thanks! This is a demo, so nothing was sent. On a live site, this lands in the owner\'s inbox and lead sheet.';});
+
+document.querySelectorAll('[data-need]').forEach(b=>b.addEventListener('click',()=>{const s=document.querySelector('select[name=need]');[...s.options].forEach(o=>{if(o.text===b.dataset.need)s.value=o.value;});document.getElementById('quote').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});setTimeout(()=>s.focus({preventScroll:true}),400);}));
+</script>
+</body>
+</html>

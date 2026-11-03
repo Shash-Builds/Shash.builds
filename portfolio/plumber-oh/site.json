@@ -1,0 +1,78 @@
+{
+  "style": "s4",
+  "fonts": "family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800",
+  "theme_color": "#fff4d6",
+  "ig_bg": "#3d5afe",
+  "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='8' fill='%233d5afe' stroke='%231b1b1b' stroke-width='3'/%3E%3Cpath d='M16 8c3 5 6 8 6 12a6 6 0 0 1-12 0c0-4 3-7 6-12z' fill='%23fff4d6' stroke='%231b1b1b' stroke-width='2'/%3E%3C/svg%3E",
+  "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect x='2' y='2' width='28' height='28' rx='8' fill='#3d5afe' stroke='#1b1b1b' stroke-width='3'/><path d='M16 8c3 5 6 8 6 12a6 6 0 0 1-12 0c0-4 3-7 6-12z' fill='#fff4d6' stroke='#1b1b1b' stroke-width='2'/></svg>",
+  "hero_layout": "flip",
+  "business": {"name": "Bluejay Plumbing Co.", "trade_title": "Plumbing", "city": "Dayton", "state": "OH", "phone": "(937) 555-0174"},
+  "meta": "Concept site for Bluejay Plumbing Co., a made-up Dayton, Ohio plumber: leak repair, drain cleaning, water heaters and sump pumps at flat prices. Designed by shash.builds.",
+  "book_label": "Tell us what's wrong",
+  "hero": {
+    "eyebrow": "Plumbing · Dayton, OH",
+    "title": "Leaks fixed. Drains cleared. Today.",
+    "sub": "Repairs, water heaters and drain cleaning across the Miami Valley. A real person answers, and you get the price before we pick up a wrench.",
+    "facts": ["Flat prices, quoted up front", "Shoe covers and a clean worksite", "Evenings and Saturdays"]
+  },
+  "picker": {
+    "eyebrow": "Start here",
+    "title": "What's going on?",
+    "note": "Tap the closest match. It fills in the form for you, so we know what to bring.",
+    "items": ["Leak or drip", "Clogged drain", "No hot water", "Running toilet", "Low water pressure", "Sump pump trouble"]
+  },
+  "services_title": "The jobs we do every day.",
+  "services": [
+    ["Leak repair", "Under the sink, behind the wall or in the ceiling. Found, fixed and dried out."],
+    ["Drain cleaning", "Kitchen, bath and main lines, cleared with a snake or a hydro jet."],
+    ["Water heaters", "Tank and tankless, repaired or replaced, usually the same day."],
+    ["Toilets and fixtures", "Running toilets, dripping faucets and new fixtures installed right."],
+    ["Sump pumps", "Repairs, replacements and battery backups, before the spring rains."],
+    ["Sewer camera checks", "We see what's in the line before anyone digs."]
+  ],
+  "steps_title": "Three steps, one flat price.",
+  "steps": [
+    ["Tell us what's wrong", "Call, text or tap a problem above. We give you a time window that day."],
+    ["Get a flat price", "The plumber looks, then quotes one price for the whole job before starting."],
+    ["Fixed and cleaned up", "Shoe covers on, drop cloths down, mess gone when we leave."]
+  ],
+  "photos": {
+    "hero": {"file": "hero", "w": 960, "h": 640, "alt": "A bright farmhouse kitchen with a white apron sink and tall faucet under a bay window.", "credit": "Matt Bango via StockSnap", "credit_url": "https://stocksnap.io/photo/farmhouse-kitchen-QSX4WH8BDB"},
+    "g1": {"file": "pipes", "w": 960, "h": 636, "alt": "Ends of stacked teal plastic drainage pipes in rows.", "credit": "Tim Sullivan via StockSnap", "credit_url": "https://stocksnap.io/photo/drainage-pipes-J7GDUQ3PHC"},
+    "g2": {"file": "faucet", "w": 960, "h": 1440, "alt": "A chrome pull-down kitchen faucet over a steel sink.", "credit": "Fernando Arcos via StockSnap", "credit_url": "https://stocksnap.io/photo/sink-faucet-XVEZZZGCXA"}
+  },
+  "area": {
+    "title": "Dayton and the Miami Valley.",
+    "note": "Most calls in these towns get a plumber the same day.",
+    "towns": ["Dayton", "Kettering", "Oakwood", "Centerville", "Beavercreek", "Huber Heights", "Miamisburg", "Vandalia", "Fairborn", "Xenia"]
+  },
+  "about": {
+    "title": "A small crew that picks up the phone.",
+    "body": [
+      "Call most plumbing companies and you get a call center, a four-hour window and a price you find out about later.",
+      "Call us and you talk to someone in Dayton who can tell you when a plumber will be there and roughly what it'll cost."
+    ]
+  },
+  "promise": {
+    "title": "The price we quote is the price you pay.",
+    "body": "One flat price for the whole job, agreed before we start. If it takes us longer than we thought, that's on us, not you."
+  },
+  "faq": [
+    ["Do you charge by the hour?", "No. You get one flat price for the job before any work starts, so you're never watching the clock."],
+    ["Can you come today?", "Usually. Call before noon and most jobs in Dayton and nearby get a plumber the same day."],
+    ["Should I get a tank or tankless water heater?", "Tank costs less up front. Tankless costs more but saves space and runs longer. We'll price both for your house."],
+    ["Why does my sump pump matter so much?", "In Ohio basements it's the only thing between spring rain and a flooded floor. A battery backup keeps it running when the power goes out."],
+    ["Do you clean up after?", "Yes. Shoe covers, drop cloths and a full cleanup are part of every job."]
+  ],
+  "form": {
+    "eyebrow": "Book a plumber",
+    "title": "Tell us what's wrong.",
+    "note": "A real person reads every request and calls back within 30 minutes during business hours.",
+    "where": "ZIP code",
+    "options": ["Leak or drip", "Clogged drain", "No hot water", "Running toilet", "Low water pressure", "Sump pump trouble", "Something else"],
+    "button": "Send to a plumber",
+    "short": "Book a plumber"
+  },
+  "hours": [["Mon to Fri", "7am to 8pm"], ["Saturday", "8am to 4pm"], ["Sunday", "Emergencies only"]],
+  "order": ["hero", "picker", "services", "how", "gallery", "promise", "area", "about", "faq", "contact"]
+}

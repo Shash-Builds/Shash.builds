@@ -1,0 +1,61 @@
+/* S-04 Playful blocks (lookbook): Bricolage Grotesque, butter yellow, coral, cobalt and mint,
+ * thick black outlines and hard offset shadows. Layout signature for this sample: photo left,
+ * copy right with a tilted sticker, a big "What's going on?" picker that fills in the form,
+ * services as a colored block grid. */
+.s4 {
+  --bg: #fff4d6; --surface: #fffaf0; --ink: #1b1b1b; --muted: #3f3a33; --rule: #1b1b1b;
+  --accent: #ff6b4a; --on-accent: #1b1b1b; --accent-ink: #1b1b1b;
+  --f-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; --f-body: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --display-weight: 800; --tracking: -0.04em;
+  --radius: 18px; --btn-radius: 12px; --photo-radius: 22px;
+}
+.s4 .concept-strip { background: #1b1b1b; color: #fff4d6; }
+.s4 .nav { background: #fff4d6; border-bottom: 3px solid #1b1b1b; }
+.s4 .btn, .s4 .pick, .s4 .quote input, .s4 .quote select, .s4 .quote textarea { border: 3px solid #1b1b1b; }
+.s4 .btn { box-shadow: 4px 4px 0 #1b1b1b; font-weight: 800; }
+.s4 .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1b1b1b; filter: none; }
+.s4 .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #1b1b1b; }
+.s4 .btn-call { background: #ff6b4a; }
+.s4 .btn-book { background: #19c39b; color: #1b1b1b; }
+.s4 .eyebrow { display: inline-block; justify-self: start; background: #19c39b; border: 2px solid #1b1b1b; padding: 5px 12px; border-radius: 999px; transform: rotate(-2deg); letter-spacing: .04em; }
+.s4 h1 { font-size: clamp(2.8rem, 7vw + .5rem, 5.8rem); line-height: .95; }
+.s4 .facts li::before { width: 14px; height: 14px; border: 2px solid #1b1b1b; border-radius: 4px; background: #ffd23f; }
+.s4 .hero-photo { position: relative; }
+.s4 .hero-photo img { border: 3px solid #1b1b1b; box-shadow: 10px 10px 0 #3d5afe; }
+.s4 .hero-photo::after { content: "Same day in Dayton"; position: absolute; right: -6px; bottom: -14px; padding: 10px 16px; background: #ffd23f; border: 3px solid #1b1b1b; border-radius: 999px; font-weight: 800; transform: rotate(-4deg); box-shadow: 4px 4px 0 #1b1b1b; }
+@media (min-width: 60rem) {
+  .s4 .hero--flip .hero-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+  .s4 .hero--flip .hero-photo { order: -1; }
+  .s4 .hero--flip .hero-photo img { aspect-ratio: 1 / 1; }
+}
+/* picker */
+.s4 .picker { background: #3d5afe; color: #fff; border-block: 3px solid #1b1b1b; --muted: #ffffff; }
+.s4 .picker .eyebrow { background: #ffd23f; }
+.s4 .pk-in { display: grid; gap: 28px; }
+@media (min-width: 60rem) { .s4 .pk-in { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); align-items: center; } .s4 .picker .head { margin-bottom: 0; } }
+.s4 .pick { background: #fffaf0; color: #1b1b1b; box-shadow: 5px 5px 0 #1b1b1b; transition: transform 140ms var(--ease), box-shadow 140ms var(--ease); }
+.s4 .pick:hover { background: #ffd23f; color: #1b1b1b; transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #1b1b1b; }
+.s4 .picks li:nth-child(3n+2) .pick { background: #c9f1e5; }
+.s4 .picks li:nth-child(3n) .pick { background: #ffd2c7; }
+/* colored block services */
+.s4 .svc li { border: 3px solid #1b1b1b; box-shadow: 6px 6px 0 #1b1b1b; }
+.s4 .svc li:nth-child(6n+1) { background: #ffd2c7; } .s4 .svc li:nth-child(6n+2) { background: #c9f1e5; } .s4 .svc li:nth-child(6n+3) { background: #d6dcff; }
+.s4 .svc li:nth-child(6n+4) { background: #fff0a8; } .s4 .svc li:nth-child(6n+5) { background: #ffd2c7; } .s4 .svc li:nth-child(6n+6) { background: #c9f1e5; }
+.s4 .svc .n { display: inline-grid; place-items: center; width: 40px; height: 40px; border: 3px solid #1b1b1b; border-radius: 50%; background: #fffaf0; }
+.s4 .svc p { color: #2b2721; }
+.s4 .how { background: #ffd23f; border-block: 3px solid #1b1b1b; }
+.s4 .steps li { border: 3px solid #1b1b1b; background: #fffaf0; border-radius: 18px; }
+.s4 .gal img { border: 3px solid #1b1b1b; }
+@media (min-width: 48rem) { .s4 .gal img { height: clamp(260px, 26vw, 360px); } }
+.s4 .guarantee { background: #19c39b; color: #1b1b1b; border: 3px solid #1b1b1b; box-shadow: 8px 8px 0 #1b1b1b; }
+.s4 .reviews-slot { border: 3px dashed #1b1b1b; color: #3f3a33; }
+.s4 .towns li { border: 2px solid #1b1b1b; border-radius: 999px; background: #fffaf0; }
+.s4 .towns li:nth-child(odd) { background: #c9f1e5; }
+.s4 .qs { border-top: 3px solid #1b1b1b; }
+.s4 .qs details { border-bottom: 2px solid #1b1b1b; }
+.s4 .quote { border: 3px solid #1b1b1b; box-shadow: 8px 8px 0 #3d5afe; }
+.s4 .big-call a { color: #3d5afe; }
+.s4 .foot { border-top: 3px solid #1b1b1b; background: #1b1b1b; color: #fff4d6; --muted: #e6dcc0; }
+.s4 .foot .badge:hover { background: #fff4d6; color: #1b1b1b; }
+.s4 .callbar { border-top: 3px solid #1b1b1b; }
+.s4 .callbar .btn { box-shadow: 3px 3px 0 #1b1b1b; }
