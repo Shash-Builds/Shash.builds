@@ -1,0 +1,1 @@
+# No Python packages needed: cut-silence uses only the standard library and ffmpeg.

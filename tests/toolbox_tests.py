@@ -27,7 +27,7 @@ def tool_dirs() -> list[Path]:
     return sorted(p for p in TOOLBOX.iterdir() if p.is_dir() and (p / "SKILL.md").exists())
 
 
-def register(test, frontmatter, run, need, tmp: Path, fast: bool) -> None:
+def register(test, frontmatter, run, need, tmp: Path, fast: bool, Skip=Exception) -> None:
     @test
     def test_toolbox_tools_have_readme_skill_requirements_and_listing():
         assert tool_dirs(), "no toolbox tools found"
@@ -80,3 +80,37 @@ def register(test, frontmatter, run, need, tmp: Path, fast: bool) -> None:
         r = subprocess.run([sys.executable, str(TOOLBOX / "transcribe/transcribe.py"), str(tmp / "nope.wav")],
                            capture_output=True, text=True)
         assert r.returncode != 0 and "not a file" in r.stderr and "Traceback" not in r.stderr, r.stderr
+
+    @test
+    def test_toolbox_cut_silence_plans_cuts_with_pad_and_bridges_fillers():
+        t = load("cut-silence", "cut_silence.py")
+        keep, removed = t.plan(10.0, [(2.0, 4.0), (8.0, 10.0)], 0.15)
+        assert removed == [(2.15, 3.85), (8.15, 10.0)], removed
+        assert keep == [(0.0, 2.15), (3.85, 8.15)], keep
+        # silence, filler, silence with no real word between them: one cut
+        keep, removed = t.plan(10.0, [(2.0, 3.0), (3.2, 3.5), (3.9, 5.0)], 0.15, speech=[(0.5, 1.9), (5.1, 6.0)])
+        assert removed == [(2.15, 4.85)], removed
+        # a real word between two cuts is kept
+        keep, removed = t.plan(10.0, [(2.0, 3.0), (3.9, 5.0)], 0.15, speech=[(3.2, 3.6)])
+        assert len(removed) == 2, removed
+        assert t.plan(1.0, [(0.0, 0.05)], 0.15)[1] == [], "cuts shorter than the pads are skipped"
+
+    @test
+    def test_toolbox_cut_silence_cuts_a_real_video():
+        if fast:
+            raise Skip("full mode only")
+        need("ffmpeg", "ffprobe")
+        src = tmp / "tone_gaps.mp4"
+        run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=s=320x240:r=25:d=5",
+             "-f", "lavfi", "-i", "sine=f=440:d=5",
+             "-filter_complex", "[1]volume='if(between(t,1.5,3.5),0,1)':eval=frame[a]",
+             "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", str(src)])
+        out = tmp / "cut.mp4"
+        run([sys.executable, str(TOOLBOX / "cut-silence/cut_silence.py"), str(src), "-o", str(out)])
+        r = run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(out)])
+        assert 2.8 < float(r.stdout) < 3.6, f"expected about 3.3 s, got {r.stdout.strip()}"
+        cuts = json.loads(Path(f"{out}.cuts.json").read_text(encoding="utf-8"))
+        assert cuts["silences_found"] == 1 and len(cuts["removed"]) == 1, cuts
+        r = subprocess.run([sys.executable, str(TOOLBOX / "cut-silence/cut_silence.py"), str(src), "-o", str(src)],
+                           capture_output=True, text=True)
+        assert r.returncode != 0 and "overwrite" in r.stderr, "must refuse to overwrite the input"

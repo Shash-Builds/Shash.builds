@@ -9,7 +9,7 @@ Every tool is a folder with its own README, a command-line script and a `SKILL.m
 | # | Tool | What it does | Status |
 | --- | --- | --- | --- |
 | 1 | [transcribe](transcribe) | Audio or video to transcript, SRT and VTT captions, word timestamps (local Whisper, English, Hindi, Hinglish) | 0.1.0 |
-| 2 | cut-silence | Removes silences and "umm" gaps from a face recording, keeping a 0.15 s pad | building |
+| 2 | [cut-silence](cut-silence) | Removes silences and "umm" gaps from a face recording, keeping a 0.15 s pad (ffmpeg only) | 0.1.0 |
 | 3 | video-build | Voice, face clip and a script to a 1080x1920 video with brand captions and music | building |
 | 4 | repurpose | Transcript to LinkedIn post, Instagram caption, X thread, YouTube title and chapters | building |
 | 5 | photo-kit | Background removal, every platform size, compression, EXIF and GPS stripped | building |
