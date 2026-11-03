@@ -4,6 +4,10 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-03. Seed export + Niche Research** (from branch chat 2), merged after a privacy, brand and size review (30 binaries, 2.7 MB total, none over 500 KB).
+  - [`briefs/seed/`](briefs/seed): the site (index, lookbook, skills page), the booked-one-pager skill draft, Tab mascot stills and loops, trailer scenes, Built in Bed graphics. See its `MANIFEST.md` for sources and the 5 open items.
+  - [Niche Research](skills/niche-research) skill (19 skills now), with the shash.builds niche run in [`research/niche/shash-builds/report.md`](research/niche/shash-builds/report.md). Drop copy: [content/drops/niche-research.md](content/drops/niche-research.md).
+  - Release plan: one first release, `skills-v1.0.0`, covers all 19 skills (the separate v1.1.0 notes were folded in).
 - **2026-11-03. Toolbox batch 1** in [`tools/toolbox/`](tools/toolbox): local CLI tools that are also Claude skills, with installers for macOS/Linux and Windows. Tested on Linux; Windows untested until Shashwat runs the checklist.
   - [transcribe](tools/toolbox/transcribe), [cut-silence](tools/toolbox/cut-silence), [video-build](tools/toolbox/video-build), [repurpose](tools/toolbox/repurpose), [photo-kit](tools/toolbox/photo-kit). Release notes ready for tags `<tool>-v0.1.0`.
   - Agensi packages are in each tool's `agensi/` folder, prepared only; each waits for Shashwat's approval.
@@ -34,6 +38,7 @@ Open-sourcing everything, in waves:
 
 Standing jobs:
 
+0. Sort `briefs/seed/` into the layout (site to its own home, Tab assets to `media/`, booked-one-pager to `skills/`), standing job 2.
 1. Video template (`templates/video/`), standing job 4.
 2. Seed the repo from `briefs/seed/` (waiting for the export).
 3. 30-day content calendar from 2026-11-04 (waiting for the topic list).

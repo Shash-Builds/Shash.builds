@@ -17,6 +17,7 @@ Claude Project's instructions.
 | AI Visuals | [ai-visuals.md](ai-visuals/skills/ai-visuals/ai-visuals.md), plus the placement's section of [purposes.md](ai-visuals/skills/ai-visuals/purposes.md) and the tool's section of [generators.md](ai-visuals/skills/ai-visuals/generators.md) | Nothing. Share the image or video, the prompt you used and where it will go |
 | Ecom | [ecom.md](ecom/skills/ecom/ecom.md), plus the module you need from [modules/](ecom/skills/ecom/modules/) and the marketplace's section of [marketplaces.md](ecom/skills/ecom/marketplaces.md) | Nothing. Claude asks for your products, costs and channels the first time |
 | Competitor Research | [competitor-research.md](competitor-research/skills/competitor-research/competitor-research.md) | Nothing. Claude asks for your product and the question. Pick Haiku as the model to save credits |
+| Niche Research | [niche-research.md](niche-research/skills/niche-research/niche-research.md) | Your niche, audiences, platforms and goal. Pick Haiku as the model to save credits |
 | Careful Mode | [careful-mode.md](careful-mode/skills/careful-mode/careful-mode.md) | Nothing |
 | Master Skill | [master-full.md](../dist/master-full.md) (the Master Skill with every tool and the video workflow, in one file) | Nothing. Claude picks the tools each task needs |
 

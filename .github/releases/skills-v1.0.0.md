@@ -1,6 +1,6 @@
 ## shash.builds skills 1.0.0
 
-18 free Claude skills, now in one place: Lead Finder, Site Audit, Mock Builder, Cold Email Drafter (the sales kit), Master Skill, Humanizer, Social Media, LinkedIn,
+19 free Claude skills, now in one place: Lead Finder, Site Audit, Mock Builder, Cold Email Drafter (the sales kit), Niche Research, Master Skill, Humanizer, Social Media, LinkedIn,
 Motion Design Taste, Audio Review, Transcriber, Clipper, AI Visuals, Harsh Buyer Review,
 Competitor Research, Ecom, Careful Mode and Economy Mode.
 

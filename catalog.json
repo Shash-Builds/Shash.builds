@@ -146,6 +146,18 @@
       }
     },
     {
+      "name": "Niche Research",
+      "slug": "niche-research",
+      "kind": "skill",
+      "path": "skills/niche-research",
+      "summary": "A content niche into a sourced posting plan and 50 ranked video topics.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install niche-research@shashbuilds",
+        "claude_ai": "niche-research-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
       "name": "Ecom",
       "slug": "ecom",
       "kind": "skill",

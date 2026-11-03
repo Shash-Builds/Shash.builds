@@ -1,0 +1,19 @@
+{
+  "name": "niche-research",
+  "displayName": "Niche Research by shash.builds",
+  "description": "shash.builds Niche Research: researches a content niche and turns it into a posting plan: top 30 accounts, the 20 best posts of the last 90 days and why they worked, audience questions and pains, content gaps, 50 ranked video topics with hooks, posting times in ET and the hashtags people use. Every row has a source link and a date. Runs on Haiku helpers.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "niche research",
+    "content strategy",
+    "social media",
+    "creators",
+    "content gaps",
+    "video topics",
+    "hooks",
+    "posting times",
+    "hashtags"
+  ]
+}

@@ -30,6 +30,7 @@ SKILLS = [
     "master",
     "social-media",
     "competitor-research",
+    "niche-research",
     "ecom",
     "ai-visuals",
     "transcriber",

@@ -1,0 +1,132 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Portfolio trailer, 9:16, 38 beats at 110 BPM (20.73 s): quiet break at beat 16, the drop at beat 24.
+     Music is not included (bring a licensed track). Render with any headless-browser frame renderer
+     at 60 fps, 1080x1920. Screenshots it loads from caps/ are not included. -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Onest:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --orange: #e8572c; --ink: #15120f; --cream: #f6efe3; --cream2: #ebe2d2; }
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(--orange); font-family: "Onest", sans-serif; }
+#bg, #flash, #fade { position: absolute; inset: 0; }
+#flash { background: #fffaf0; opacity: 0; }
+#fade { background: #000; opacity: 0; }
+.abs { position: absolute; left: 0; right: 0; text-align: center; }
+.disp { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; letter-spacing: -0.05em; line-height: .86; }
+#word span { display: inline-block; }
+#me { position: absolute; left: 50%; width: 760px; transform-origin: 50% 100%; }
+#card { position: absolute; left: 50%; top: 50%; width: 960px; border-radius: 22px; overflow: hidden; background: var(--ink); box-shadow: 0 50px 100px -30px rgba(0,0,0,.6); }
+#card .bar { height: 34px; background: #2a2520; display: flex; gap: 10px; align-items: center; padding: 0 16px; }
+#card .bar i { width: 12px; height: 12px; border-radius: 50%; background: #4a423a; }
+#card img { display: block; width: 100%; }
+#card2 { position: absolute; left: 50%; top: 50%; width: 960px; border-radius: 22px; overflow: hidden; }
+#card2 img { display: block; width: 100%; }
+.pill { display: inline-block; padding: 26px 54px; border-radius: 999px; background: var(--ink); color: var(--cream); font: 500 46px/1 "Onest", sans-serif; }
+</style></head><body>
+<div id="bg"></div>
+<div id="word" class="abs disp"></div>
+<img id="me" src="caps/tab.png" alt="">
+<div id="name" class="abs"></div>
+<div id="head" class="abs disp"></div>
+<div id="card2"><img id="c2img" alt=""></div>
+<div id="card"><div class="bar"><i></i><i></i><i></i></div><img id="cimg" alt=""></div>
+<div id="cap" class="abs"></div>
+<div id="big" class="abs disp"></div>
+<div id="sub" class="abs"></div>
+<div id="end" class="abs"></div>
+<div id="flash"></div><div id="fade"></div>
+<script>
+const BEAT = 60 / 110, NB = 38; window.DURATION = NB * BEAT;
+const W = 1080, H = 1920, $ = id => document.getElementById(id);
+const C = { o: '#e8572c', k: '#15120f', c: '#f6efe3' };
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), mix = (a, b, k) => a + (b - a) * k;
+const out = x => 1 - Math.pow(1 - clamp(x), 4);
+const inn = x => Math.pow(clamp(x), 3);
+const spring = x => { x = clamp(x); return 1 - Math.exp(-6 * x) * Math.cos(9 * x); };
+const STYLES = [['s1', 'Realtor'], ['s2', 'Salon'], ['s3', 'Dentist'], ['s4', 'Gym'], ['s5', 'Coach'], ['s6', 'Lawyer'], ['s7', 'Contractor'], ['s8', 'Photographer']];
+window.READY = Promise.all([
+  document.fonts.load('800 100px "Bricolage Grotesque"'), document.fonts.load('500 40px "Onest"'), document.fonts.load('400 40px "Onest"'),
+  ...['me', ...STYLES.map(s => s[0])].map(n => new Promise(r => { const i = new Image(); i.onload = r; i.onerror = r; i.src = `caps/${n}.${n === 'me' ? 'webp' : 'jpg'}`; }))
+]);
+const hide = (...ids) => ids.forEach(id => $(id).style.opacity = 0);
+
+window.renderFrame = function (t) {
+  const b = t / BEAT;
+  hide('word', 'me', 'name', 'head', 'card', 'card2', 'cap', 'big', 'sub', 'end');
+  $('flash').style.opacity = 0; $('fade').style.opacity = 0;
+  let bg = C.o;
+
+  if (b < 8) {
+    // A. BOOKED. letter by letter, then Tab rises in front of it
+    const exit = inn((b - 7.5) / .5);                       // whip up at beat 8
+    const letters = 'BOOKED.'.split('');
+    const w = $('word'); w.style.opacity = 1; w.style.color = C.c; w.style.fontSize = '236px';
+    w.style.top = (330 - exit * 900) + 'px';
+    w.innerHTML = letters.map((ch, i) => { const p = spring((b - i * .5) / 1.1); const on = b >= i * .5;
+      return `<span style="opacity:${on ? 1 : 0};transform:translateY(${(1 - p) * -60}px) scale(${mix(1.7, 1, p)})">${ch}</span>`; }).join('');
+    const rise = out((b - 3) / 1.6);
+    const me = $('me'); me.style.opacity = b >= 3 ? 1 : 0;
+    me.style.top = (mix(1960, 520, rise) - exit * 1500) + 'px';
+    me.style.transform = `translateX(-50%) scale(${mix(1, 1.04, clamp((b - 3) / 5))})`;
+    const nm = out((b - 5) / .8);
+    const n = $('name'); n.style.opacity = nm; n.style.top = (1590 + (1 - nm) * 80 - exit * 1500) + 'px';
+    n.innerHTML = `<div style="background:${C.k};padding:44px 0 60px"><div class="disp" style="font-size:96px;color:${C.c}">Shashwat Jain</div><div style="font:500 40px/1.3 Onest;color:${C.o};margin-top:14px">Web designer for US businesses</div></div>`;
+    if (b > 7.6) $('flash').style.opacity = .0;
+  } else if (b < 16) {
+    // B. eight looks, one per beat
+    bg = C.k;
+    const i = Math.min(7, Math.floor(b - 8)), local = b - 8 - i;
+    const h = $('head'); h.style.opacity = out((b - 8) / .5); h.style.top = (300 - (1 - out((b - 8) / .5)) * 60) + 'px';
+    h.style.fontSize = '150px'; h.style.color = C.c; h.innerHTML = 'Pick a look.';
+    if (i > 0) { const c2 = $('card2'); c2.style.opacity = .35; $('c2img').src = `caps/${STYLES[i - 1][0]}.jpg`;
+      c2.style.transform = `translate(-50%,-50%) translateY(${-40 - local * 20}px) scale(${.9 - local * .04}) rotate(-3deg)`; }
+    const k = spring(local / .8);
+    const c = $('card'); c.style.opacity = 1; $('cimg').src = `caps/${STYLES[i][0]}.jpg`;
+    c.style.transform = `translate(-50%,-50%) translateX(${(1 - k) * 700}px) translateY(${60}px) rotate(${(1 - k) * 8}deg) scale(${mix(1.08, 1, out(local / .5))})`;
+    const cp = $('cap'); cp.style.opacity = 1; cp.style.top = '1440px';
+    cp.innerHTML = `<div style="font:500 44px/1 Onest;color:${C.o}">S-0${i + 1}</div><div class="disp" style="font-size:110px;color:${C.c};margin-top:20px">${STYLES[i][1]}</div>`;
+    if (b > 15.5) { const e = inn((b - 15.5) / .5); c.style.transform += ` translateY(${-e * 1600}px)`; h.style.opacity = 1 - e; cp.style.opacity = 1 - e; $('card2').style.opacity = 0; }
+  } else if (b < 24) {
+    // C. the quiet break: your name, your photos, your site
+    bg = C.c;
+    const lines = [['Your name.', 16], ['Your photos.', 18], ['Your site.', 20]];
+    const shake = b > 22 ? Math.sin(b * 60) * (b - 22) * 3 : 0;
+    const g = $('big'); g.style.opacity = 1; g.style.fontSize = '150px'; g.style.top = (640 + shake) + 'px'; g.style.lineHeight = '1.05';
+    g.innerHTML = lines.map(([s, at], j) => { const p = out((b - at) / .6);
+      return `<div style="opacity:${b >= at ? 1 : 0};transform:translateY(${(1 - p) * 80}px);color:${j === 2 ? C.o : C.k}">${s}</div>`; }).join('');
+    const sc = mix(1, 1.12, inn((b - 22) / 2));
+    g.style.transform = `scale(${sc})`;
+    const s = $('sub'); s.style.opacity = out((b - 20.5) / .6); s.style.top = '1260px';
+    s.innerHTML = `<div style="font:500 44px/1.3 Onest;color:${C.k}">Try any look on your own business.</div>`;
+    $('flash').style.opacity = inn((b - 23.4) / .6) * .9;
+  } else if (b < 30) {
+    // D. the drop: price, speed, hours
+    const j = Math.min(2, Math.floor((b - 24) / 2)), local = b - 24 - j * 2;
+    const set = [[C.k, C.o, '$400', 'flat price'], [C.o, C.k, '7 days', 'to go live'], [C.c, C.k, 'US hours', '8:30 to 6:30 ET']][j];
+    bg = set[0];
+    const p = spring(local / .7);
+    const g = $('big'); g.style.opacity = 1; g.style.color = set[1]; g.style.fontSize = (j === 2 ? 250 : 330) + 'px'; g.style.lineHeight = '.86';
+    g.style.top = (j === 2 ? 760 : 700) + 'px'; g.innerHTML = set[2];
+    g.style.transform = `scale(${mix(1.5, 1, p) + local * .02})`;
+    const s = $('sub'); s.style.opacity = out((local - .25) / .4); s.style.top = '1130px';
+    s.innerHTML = `<div style="font:500 56px/1 Onest;color:${set[1]}">${set[3]}</div>`;
+    $('flash').style.opacity = local < .25 ? (1 - local / .25) * .8 : 0;
+  } else {
+    // E. end card
+    const k = out((b - 30) / .8);
+    const me = $('me'); me.style.opacity = k; me.style.top = mix(1000, 330, out((b - 30) / 1.2)) + 'px';
+    me.style.transform = 'translateX(-50%) scale(.78)';
+    const e = $('end'); e.style.opacity = 1; e.style.top = '1080px';
+    const a = out((b - 30.5) / .6), bt = spring((b - 31.5) / .9), u = out((b - 34.5) / .6);
+    e.innerHTML = `<div style="background:${C.o};padding-top:40px;min-height:900px">
+      <div class="disp" style="font-size:190px;color:${C.k};opacity:${a};transform:translateY(${(1 - a) * 50}px)">Let’s talk.</div>
+      <div style="margin-top:56px;opacity:${b >= 31.5 ? 1 : 0};transform:scale(${mix(.6, 1, bt)})"><span class="pill">Book a 15-min call</span></div>
+      <div class="disp" style="margin-top:60px;font-size:96px;color:${C.c};opacity:${b >= 33 ? 1 : 0};transform:scale(${mix(.7, 1, spring((b - 33) / .9))})">DM to enquire</div>
+      <div style="margin-top:48px;font:500 42px/1 Onest;color:${C.k};opacity:${u}">shashwat-websites.netlify.app</div></div>`;
+    $('flash').style.opacity = b < 30.25 ? (1 - (b - 30) / .25) * .6 : 0;
+    $('fade').style.opacity = inn((b - 36.5) / 1.5);
+  }
+  $('bg').style.background = bg;
+};
+window.renderFrame(0);
+</script></body></html>
