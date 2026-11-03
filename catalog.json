@@ -268,8 +268,8 @@
       "slug": "level-up-dashboard",
       "kind": "tool",
       "path": "tools/level-up-dashboard",
-      "summary": "A Google Sheet template to track a build-in-public run: days, sales, content, followers, reviews.",
-      "version": "0.1.0",
+      "summary": "Log your day from your phone and level up: XP, streak, and money vs pace, stored in your own Google Sheet.",
+      "version": "0.2.0",
       "install": {
         "run": "Upload sheet-template/level-up-dashboard.xlsx to Google Drive"
       }

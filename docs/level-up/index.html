@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#15120f">
+<title>Level-Up Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Onest:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Level-Up Dashboard v1. Data lives in the owner's Google Sheet; this page only talks to their Apps Script with their passphrase. */
+:root {
+  --ink: #15120f; --ink-2: #221d18; --ink-3: #2e2822; --cream: #f6efe3; --muted: #b9ad9c; --orange: #e8572c; --good: #7fc98f; --bad: #ff8a6b;
+  --rule: #3a332c; --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; --font-body: "Onest", ui-sans-serif, system-ui, sans-serif;
+  --r: 14px; --gap: 16px; --dur: 180ms;
+}
+html, body { overflow-x: clip; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ink); color: var(--cream); font: 400 16px/1.45 var(--font-body); padding: 16px 16px calc(32px + env(safe-area-inset-bottom)); }
+main { max-width: 560px; margin: 0 auto; display: grid; gap: var(--gap); }
+h1, h2 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; margin: 0; overflow-wrap: break-word; min-width: 0; }
+h1 { font-size: 1.9rem; } h1 b { color: var(--orange); font-weight: 800; }
+h2 { font-size: 1.2rem; margin-bottom: 10px; }
+p { margin: 0; }
+.muted { color: var(--muted); font-size: 0.9rem; }
+.card { background: var(--ink-2); border: 1px solid var(--rule); border-radius: var(--r); padding: 16px; }
+.row { display: flex; gap: 12px; align-items: baseline; justify-content: space-between; flex-wrap: wrap; }
+.big { font-family: var(--font-display); font-weight: 800; font-size: 3rem; line-height: 1; }
+.bar { position: relative; height: 12px; background: var(--ink-3); border-radius: 999px; overflow: hidden; margin: 10px 0 6px; }
+.bar > i { position: absolute; inset: 0; width: 100%; transform: scaleX(0); background: var(--orange); border-radius: 999px; transform-origin: left; }
+.bar > s { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--cream); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.stat { background: var(--ink-3); border-radius: 10px; padding: 10px; }
+.stat b { display: block; font-family: var(--font-display); font-size: 1.5rem; }
+label { display: grid; gap: 4px; font-size: 0.9rem; color: var(--muted); }
+input, select, textarea { width: 100%; font: 400 16px var(--font-body); color: var(--cream); background: var(--ink); border: 1px solid var(--rule); border-radius: 10px; padding: 11px 12px; }
+textarea { resize: vertical; min-height: 70px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+form { display: grid; gap: 10px; }
+button { font: 600 1rem var(--font-body); border: 0; border-radius: 10px; padding: 13px 16px; cursor: pointer; background: var(--orange); color: var(--ink); transition: background-color var(--dur) ease, opacity var(--dur) ease; }
+button.ghost { background: var(--ink-3); color: var(--cream); }
+button[disabled] { opacity: 0.6; cursor: wait; }
+:focus-visible { outline: 3px solid var(--cream); outline-offset: 2px; transition: none; }
+details > summary { cursor: pointer; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] > summary { margin-bottom: 10px; }
+.list { display: grid; gap: 6px; }
+.list div { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+.ok { color: var(--good); } .no { color: var(--bad); }
+#toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--cream); color: var(--ink); padding: 10px 16px; border-radius: 999px; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity var(--dur) ease; }
+#toast.on { opacity: 1; }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <header class="row"><h1>Level-Up<b>.</b></h1><p class="muted" id="who"></p></header>
+
+  <section class="card" id="lock">
+    <h2>Unlock</h2>
+    <form id="lockForm">
+      <label>Your Apps Script web app URL<input id="url" type="url" inputmode="url" placeholder="https://script.google.com/macros/s/.../exec" required autocomplete="off"></label>
+      <label>Passphrase<input id="pass" type="password" required autocomplete="current-password"></label>
+      <button type="submit">Unlock</button>
+      <p class="muted">Both stay on this device only. Setup steps: tools/level-up-dashboard in the shash.builds repo.</p>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <section class="card">
+      <div class="row"><div><p class="muted">Level</p><p class="big" id="level">1</p></div>
+        <div class="stats" style="flex:1;min-width:220px">
+          <div class="stat"><span class="muted">Day</span><b id="dayN">1</b></div>
+          <div class="stat"><span class="muted">Streak</span><b id="streak">0</b></div>
+          <div class="stat"><span class="muted">Total XP</span><b id="xpTotal">0</b></div>
+        </div></div>
+      <div class="bar" aria-hidden="true"><i id="xpBar"></i></div>
+      <p class="muted" id="xpNext"></p>
+    </section>
+
+    <section class="card">
+      <h2>Money vs pace</h2>
+      <div class="row"><p class="big" id="money">$0</p><p class="muted" id="goal"></p></div>
+      <div class="bar" aria-hidden="true"><i id="moneyBar"></i><s id="paceMark"></s></div>
+      <p id="paceLine"></p>
+    </section>
+
+    <section class="card">
+      <h2>Today's log</h2>
+      <form id="dayForm">
+        <label>Date<input name="date" type="date" required></label>
+        <div class="grid2">
+          <label>Hours worked<input name="hours_worked" type="number" min="0" step="0.25" inputmode="decimal"></label>
+          <label>Outreach sent<input name="outreach_sent" type="number" min="0" inputmode="numeric"></label>
+          <label>Replies<input name="replies" type="number" min="0" inputmode="numeric"></label>
+          <label>Calls booked<input name="calls_booked" type="number" min="0" inputmode="numeric"></label>
+          <label>Posts published<input name="posts_published" type="number" min="0" inputmode="numeric"></label>
+        </div>
+        <label>Shipped today<input name="shipped" placeholder="What went live"></label>
+        <label>Notes<textarea name="notes"></textarea></label>
+        <p class="muted" id="xpPreview"></p>
+        <button type="submit">Save day</button>
+      </form>
+    </section>
+
+    <details class="card">
+      <summary>Add a sale</summary>
+      <form id="saleForm">
+        <div class="grid2">
+          <label>Date<input name="date" type="date" required></label>
+          <label>Amount (USD)<input name="amount_usd" type="number" min="0" step="0.01" inputmode="decimal" required></label>
+        </div>
+        <label>Client<input name="client" required></label>
+        <div class="grid2">
+          <label>Offer<input name="offer"></label>
+          <label>Status<select name="status"><option>deposit</option><option>paid</option><option>refunded</option></select></label>
+        </div>
+        <label>Source<input name="source" placeholder="Cold email, Upwork, referral..."></label>
+        <label>Notes<input name="notes"></label>
+        <button type="submit">Save sale</button>
+      </form>
+    </details>
+
+    <section class="card"><h2>Last 7 days</h2><div class="list" id="recent"></div></section>
+
+    <details class="card">
+      <summary>Goals and settings</summary>
+      <form id="cfgForm">
+        <label>Who you're chasing (role model or goal name)<input name="role_model" placeholder="My first $10k month"></label>
+        <div class="grid2">
+          <label>Money goal (USD)<input name="goal_usd" type="number" min="0" inputmode="numeric"></label>
+          <label>Days to hit it<input name="goal_days" type="number" min="1" inputmode="numeric"></label>
+          <label>Start date<input name="start_date" type="date"></label>
+          <label>Offer price (USD)<input name="offer_price_usd" type="number" min="0" inputmode="numeric"></label>
+        </div>
+        <p class="muted">XP weights live in the config tab too (xp_hour, xp_outreach, xp_reply, xp_call, xp_post, xp_ship, xp_per_usd).</p>
+        <button type="submit">Save goals</button>
+      </form>
+      <button class="ghost" id="lockBtn" style="margin-top:10px;width:100%">Lock this device</button>
+    </details>
+  </div>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+var DEFAULTS = { goal_usd: 0, goal_days: 30, offer_price_usd: 400, currency: "USD", timezone: "America/New_York", role_model: "",
+  xp_hour: 10, xp_outreach: 2, xp_reply: 5, xp_call: 20, xp_post: 10, xp_ship: 25, xp_per_usd: 0.5, level_base: 100, level_step: 50 };
+var state = { data: null, cfg: {} };
+var $ = function (id) { return document.getElementById(id); };
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
+function toast(t) { var el = $("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(function () { el.classList.remove("on"); }, 2200); }
+function num(v) { var n = parseFloat(v); return isFinite(n) ? n : 0; }
+function money(v) { return "$" + Math.round(v).toLocaleString("en-US"); }
+
+async function api(body) {
+  var url = store("lu_url"), pass = store("lu_pass");
+  body.pass = pass;
+  var r = await fetch(url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body), redirect: "follow" });
+  var j = await r.json();
+  if (!j.ok) throw new Error(j.error || "Request failed");
+  return j;
+}
+
+function today(tz) {
+  try { return new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
+  catch (e) { return new Date().toISOString().slice(0, 10); }
+}
+function addDays(iso, n) { var d = new Date(iso + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+function daysBetween(a, b) { return Math.round((new Date(b + "T12:00:00Z") - new Date(a + "T12:00:00Z")) / 864e5); }
+
+function config(rows) {
+  var c = Object.assign({}, DEFAULTS);
+  rows.forEach(function (r) { if (r.key !== "" && r.value !== "" && r.value !== undefined) c[r.key] = r.value; });
+  ["goal_usd", "goal_days", "offer_price_usd", "xp_hour", "xp_outreach", "xp_reply", "xp_call", "xp_post", "xp_ship", "xp_per_usd", "level_base", "level_step"]
+    .forEach(function (k) { c[k] = num(c[k]); });
+  if (!c.start_date) c.start_date = today(c.timezone);
+  return c;
+}
+function dayXP(d, c) {
+  return Math.round(num(d.hours_worked) * c.xp_hour + num(d.outreach_sent) * c.xp_outreach + num(d.replies) * c.xp_reply +
+    num(d.calls_booked) * c.xp_call + num(d.posts_published) * c.xp_post + (String(d.shipped || "").trim() ? c.xp_ship : 0));
+}
+function levelFrom(xp, c) {
+  var lvl = 1, need = c.level_base;
+  while (xp >= need) { xp -= need; lvl++; need = c.level_base + c.level_step * (lvl - 1); }
+  return { level: lvl, into: xp, need: need };
+}
+
+function render() {
+  var d = state.data, c = state.cfg = config(d.config || []);
+  var t = today(c.timezone);
+  $("who").textContent = c.role_model ? "Chasing: " + c.role_model : "";
+  var days = (d.days || []).filter(function (r) { return r.date; });
+  var sales = d.sales || [];
+  var xpDays = days.reduce(function (s, r) { return s + dayXP(r, c); }, 0);
+  var cash = sales.reduce(function (s, r) {
+    var a = num(r.amount_usd), st = String(r.status || "").toLowerCase();
+    return st === "refunded" ? s - a : (st === "paid" || st === "deposit" ? s + a : s);
+  }, 0);
+  var xp = Math.max(0, Math.round(xpDays + Math.max(0, cash) * c.xp_per_usd));
+  var L = levelFrom(xp, c);
+  $("level").textContent = L.level;
+  $("xpTotal").textContent = xp.toLocaleString("en-US");
+  $("xpBar").style.transform = "scaleX(" + Math.min(1, L.into / L.need) + ")";
+  $("xpNext").textContent = (L.need - L.into) + " XP to level " + (L.level + 1);
+  var dayN = Math.max(1, daysBetween(c.start_date, t) + 1);
+  $("dayN").textContent = dayN;
+  var active = {};
+  days.forEach(function (r) { if (dayXP(r, c) > 0) active[r.date] = true; });
+  var cur = active[t] ? t : addDays(t, -1), streak = 0;
+  while (active[cur]) { streak++; cur = addDays(cur, -1); }
+  $("streak").textContent = streak;
+  $("money").textContent = money(cash);
+  if (c.goal_usd > 0) {
+    var paceAmt = c.goal_usd * Math.min(dayN, c.goal_days) / c.goal_days;
+    var diff = cash - paceAmt;
+    $("goal").textContent = "of " + money(c.goal_usd) + " in " + c.goal_days + " days";
+    $("moneyBar").style.transform = "scaleX(" + Math.min(1, Math.max(0, cash) / c.goal_usd) + ")";
+    $("paceMark").hidden = false;
+    $("paceMark").style.left = (Math.min(1, paceAmt / c.goal_usd) * 100) + "%";
+    $("paceLine").innerHTML = "Pace for day " + Math.min(dayN, c.goal_days) + ": " + money(paceAmt) + ". " +
+      (diff >= 0 ? '<span class="ok">Ahead by ' + money(diff) + "</span>" : '<span class="no">Behind by ' + money(-diff) + "</span>") +
+      (c.offer_price_usd > 0 && diff < 0 ? ' <span class="muted">(' + Math.ceil(-diff / c.offer_price_usd) + " sale" + (Math.ceil(-diff / c.offer_price_usd) > 1 ? "s" : "") + " to catch up)</span>" : "");
+  } else {
+    $("goal").textContent = "No goal set";
+    $("moneyBar").style.transform = "scaleX(0)";
+    $("paceMark").hidden = true;
+    $("paceLine").textContent = "Set a money goal under Goals and settings to see your pace.";
+  }
+  var recent = $("recent"); recent.textContent = "";
+  for (var i = 0; i < 7; i++) {
+    var dt = addDays(t, -i), row = days.find(function (r) { return r.date === dt; });
+    var div = document.createElement("div");
+    var a = document.createElement("span"); a.textContent = dt + (row && row.shipped ? ": " + row.shipped : "");
+    var b = document.createElement("span"); b.textContent = row ? "+" + dayXP(row, c) + " XP" : "no log"; b.className = row ? "ok" : "muted";
+    div.append(a, b); recent.append(div);
+  }
+  fillDay($("dayForm").date.value || t);
+  var sf = $("saleForm"); if (!sf.date.value) sf.date.value = t; if (!sf.offer.value) sf.offer.value = "One-page site"; if (!sf.amount_usd.value) sf.amount_usd.value = c.offer_price_usd || "";
+  var cf = $("cfgForm");
+  ["role_model", "goal_usd", "goal_days", "start_date", "offer_price_usd"].forEach(function (k) { if (document.activeElement !== cf[k]) cf[k].value = c[k] || ""; });
+}
+function fillDay(date) {
+  var f = $("dayForm"), row = (state.data.days || []).find(function (r) { return r.date === date; }) || {};
+  f.date.value = date;
+  ["hours_worked", "outreach_sent", "replies", "calls_booked", "posts_published", "shipped", "notes"].forEach(function (k) { f[k].value = row[k] === undefined ? "" : row[k]; });
+  preview();
+}
+function preview() {
+  var f = $("dayForm"), r = {};
+  ["hours_worked", "outreach_sent", "replies", "calls_booked", "posts_published", "shipped"].forEach(function (k) { r[k] = f[k].value; });
+  $("xpPreview").textContent = "This day is worth " + dayXP(r, state.cfg) + " XP";
+}
+function formRow(f) { var o = {}; new FormData(f).forEach(function (v, k) { o[k] = typeof v === "string" ? v.trim() : v; }); return o; }
+
+async function load() {
+  var j = await api({ action: "read" });
+  state.data = j.data;
+  $("lock").hidden = true; $("app").hidden = false;
+  render();
+}
+async function busy(btn, fn) {
+  btn.disabled = true;
+  try { await fn(); } catch (e) { toast(e.message || "Something went wrong"); } finally { btn.disabled = false; }
+}
+
+$("lockForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  store("lu_url", $("url").value.trim()); store("lu_pass", $("pass").value);
+  busy(e.submitter || e.target.querySelector("button"), async function () {
+    try { await load(); toast("Unlocked"); }
+    catch (err) { store("lu_pass", null); throw err; }
+  });
+});
+$("dayForm").addEventListener("input", function (e) { if (e.target.name === "date") fillDay(e.target.value); else preview(); });
+$("dayForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var row = formRow(e.target), c = state.cfg;
+  row.day = Math.max(1, daysBetween(c.start_date, row.date) + 1);
+  busy(e.target.querySelector("button"), async function () { await api({ action: "save", tab: "days", row: row }); await load(); toast("Saved: +" + dayXP(row, c) + " XP"); });
+});
+$("saleForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var row = formRow(e.target);
+  busy(e.target.querySelector("button"), async function () { await api({ action: "save", tab: "sales", row: row }); e.target.client.value = ""; e.target.notes.value = ""; await load(); toast("Sale saved"); });
+});
+$("cfgForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var row = formRow(e.target);
+  busy(e.target.querySelector("button"), async function () {
+    for (var k in row) if (String(row[k]) !== String(state.cfg[k] || "")) await api({ action: "setConfig", key: k, value: row[k] });
+    await load(); toast("Goals saved");
+  });
+});
+$("lockBtn").addEventListener("click", function () { store("lu_pass", null); location.reload(); });
+
+if (store("lu_url")) $("url").value = store("lu_url");
+if (store("lu_url") && store("lu_pass")) load().catch(function (e) { toast(e.message); });
+</script>
+</body>
+</html>

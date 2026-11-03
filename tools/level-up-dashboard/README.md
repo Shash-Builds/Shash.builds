@@ -4,7 +4,12 @@
 
 **One Google Sheet that tracks a build-in-public run day by day: hours, what shipped, outreach, sales, posts, followers and real reviews.**
 
-This folder holds the Sheet template. A live dashboard page that reads it is in the [backlog](../../STATUS.md).
+It has two parts:
+
+- **The Sheet template** (below): where your numbers live.
+- **The app** ([`docs/level-up/`](../../docs/level-up/index.html)): a phone-first page to log your day and see your level, XP, streak, and money against your pace. It talks to your Sheet through a small script you paste into it ([`apps-script/Code.gs`](apps-script/Code.gs)), protected by a passphrase you choose.
+
+Your goals, pace and XP weights live in the Sheet's `config` tab, not in code, so anyone can set their own target and chase it.
 
 ## The Sheet template
 
@@ -29,6 +34,17 @@ No Google account? Download [`sheet-template/level-up-dashboard.xlsx`](sheet-tem
 
 Prefer plain files? Each tab is also a CSV in [`sheet-template/`](sheet-template).
 
+## The app in 4 steps
+
+1. In your copy of the Sheet: Extensions, then Apps Script. Paste [`apps-script/Code.gs`](apps-script/Code.gs) and save.
+2. Project Settings, then Script Properties: add `PASSPHRASE` with a long phrase only you know.
+3. Deploy, then New deployment, then Web app (Execute as: Me, Who has access: Anyone). Copy the `/exec` URL.
+4. Open the app ([shash-builds.github.io/Shash.builds/level-up/](https://shash-builds.github.io/Shash.builds/level-up/), or host `docs/level-up/index.html` yourself), paste the URL and passphrase, and tap Unlock.
+
+Every read and every write needs the passphrase, so the URL alone shows nothing. The URL and passphrase are saved only on your device.
+
+**How the game works.** XP per day = hours x `xp_hour` (10) + outreach x `xp_outreach` (2) + replies x `xp_reply` (5) + calls x `xp_call` (20) + posts x `xp_post` (10) + `xp_ship` (25) if you shipped something, plus `xp_per_usd` (0.5) per dollar earned. Level 1 needs `level_base` (100) XP, and each level after needs `level_step` (50) more. A streak counts consecutive logged days. Pace is `goal_usd` spread evenly over `goal_days` (30) from `start_date`. Change any number in the `config` tab.
+
 ## Rules that keep it honest
 
 - Numbers come from each platform's own analytics or your bank, never from memory.
@@ -43,6 +59,7 @@ Prefer plain files? Each tab is also a CSV in [`sheet-template/`](sheet-template
 
 ## Changelog
 
+- **0.2.0** (2026-11-03): the app (daily log, level, XP, streak, money vs pace) and the Apps Script API.
 - **0.1.0** (2026-11-03): the Sheet template.
 
 ---
