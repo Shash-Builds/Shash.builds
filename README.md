@@ -137,6 +137,7 @@ Meet <img src="media/tab-static.svg" width="22" alt="Tab, the mascot"> **Tab**, 
 
 Cleaners, landscapers, painters, contractors, detailers, coaches. If customers find you on Google and call you, you need one clean page that turns that visit into a call.
 
+- See 8 concept sites, one per trade, in the [portfolio gallery](https://shash-builds.github.io/Shash.builds/portfolio/) (source and case cards in [`portfolio/`](portfolio)),
 - See the work and the offer on [shashwat-websites.netlify.app](https://shashwat-websites.netlify.app),
 - Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com),
 - Message me on [LinkedIn](https://www.linkedin.com/in/shashbuilds), or

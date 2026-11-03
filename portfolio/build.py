@@ -24,6 +24,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 STYLES = os.path.join(HERE, "styles")
 GALLERY = "../"  # the gallery page, relative to each sample
+GALLERY_ORDER = ["roofer-tx", "cleaner-fl", "hvac-az", "landscaper-ga", "plumber-oh", "barber-ca", "dentist-nc", "auto-repair-mi"]
 e = lambda s: html.escape(str(s or ""), quote=True)
 
 
@@ -244,7 +245,127 @@ document.querySelectorAll('[data-need]').forEach(b=>b.addEventListener('click',(
     print("built", slug)
 
 
+REPO = "https://github.com/Shash-Builds/Shash.builds/tree/HEAD/portfolio/"
+LIVE = "https://shash-builds.github.io/Shash.builds/portfolio/"
+STYLE_NAMES = {"s1": "Swiss grid", "s2": "Night glow", "s3": "Organic", "s4": "Playful blocks",
+               "s5": "Glass", "s6": "Editorial", "s7": "Brutal", "s8": "Luxe"}
+
+
+def build_gallery(slugs):
+    """portfolio/index.html: every sample as a card, filterable by trade."""
+    cards, trades = [], []
+    for slug in slugs:
+        site = json.load(open(os.path.join(HERE, slug, "site.json"), encoding="utf-8"))
+        b = site["business"]
+        trade = b["trade_title"]
+        key = re.sub(r"[^a-z0-9]+", "-", trade.lower()).strip("-")
+        trades.append((key, trade))
+        style = STYLE_NAMES[site["style"]]
+        cards.append(f"""<li class="card" data-trade="{key}">
+<a class="shot" href="{slug}/" aria-label="Open the {e(b["name"])} concept site"><img src="{slug}/shots/desktop-1280x720.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="The {e(b["name"])} concept site on desktop, in the {style} style."></a>
+<div class="meta"><p class="tag">{e(trade)} · {e(b["city"])}, {e(b["state"])}</p><h2>{e(b["name"])}</h2><p class="style">Style: {style}</p>
+<p class="links"><a href="{slug}/">Open the site</a><a href="{REPO}{slug}">Case card</a></p></div></li>""")
+    chips = '<button type="button" class="chip" aria-pressed="true" data-f="all">All trades</button>' + "".join(
+        f'<button type="button" class="chip" aria-pressed="false" data-f="{k}">{e(t)}</button>' for k, t in trades)
+    page = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept sites by shash.builds</title>
+<meta name="description" content="Eight one-page website concepts for US service businesses: roofer, house cleaner, HVAC, landscaper, plumber, barber, dentist and auto repair. Each in its own style, by shash.builds.">
+<meta property="og:title" content="Concept sites by shash.builds">
+<meta property="og:description" content="Eight one-page website concepts for US service businesses, each in its own style.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{LIVE}roofer-tx/shots/desktop-1280x720.jpg">
+<meta name="theme-color" content="#e8572c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e8572c'/%3E%3Crect x='7' y='9' width='18' height='14' rx='2' fill='none' stroke='%2315120f' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Onest:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<style>
+:root {{ color-scheme: light; --bg: #f6efe3; --panel: #fffaf2; --ink: #15120f; --muted: #5f5547; --rule: #d9cdb9; --accent: #e8572c; --pad: clamp(16px, 5vw, 64px); }}
+* {{ box-sizing: border-box; }}
+html, body {{ overflow-x: clip; }}
+body {{ margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.55 "Onest", ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }}
+h1, h2, p, ul {{ margin: 0; padding: 0; }}
+ul {{ list-style: none; }}
+a {{ color: inherit; text-underline-offset: .18em; }}
+img {{ display: block; max-width: 100%; height: auto; }}
+:focus-visible {{ outline: 3px solid var(--ink); outline-offset: 3px; }}
+.wrap {{ max-width: 1320px; margin-inline: auto; padding-inline: var(--pad); }}
+.top {{ background: var(--accent); }}
+.top-in {{ display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 68px; }}
+.brand {{ font: 800 1.15rem/1 "Bricolage Grotesque", sans-serif; letter-spacing: -0.03em; text-decoration: none; }}
+.hire {{ display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 500; }}
+.head {{ background: var(--accent); padding-block: 8px clamp(32px, 5vw, 64px); }}
+.head h1 {{ font: 800 clamp(2.8rem, 8vw, 7rem)/.92 "Bricolage Grotesque", sans-serif; letter-spacing: -0.05em; max-width: 14ch; text-wrap: balance; }}
+.head p {{ margin-top: 16px; font-size: 1.1rem; max-width: 56ch; }}
+.filters {{ display: flex; flex-wrap: wrap; gap: 8px; padding-block: 28px 24px; }}
+.chip {{ min-height: 44px; padding: 0 16px; border: 1px solid var(--rule); border-radius: 999px; background: transparent; color: var(--ink); font: 500 .95rem "Onest", sans-serif; cursor: pointer; }}
+.chip:hover {{ border-color: var(--ink); }}
+.chip[aria-pressed="true"] {{ background: var(--ink); color: var(--bg); border-color: var(--ink); }}
+.grid {{ display: grid; gap: 28px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); padding-bottom: 72px; }}
+.card {{ display: grid; gap: 14px; align-content: start; }}
+.card[hidden] {{ display: none; }}
+.shot {{ display: block; border: 1px solid var(--rule); background: var(--panel); overflow: hidden; box-shadow: 0 24px 50px -34px rgba(0, 0, 0, .45); }}
+.shot img {{ width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; transition: transform 300ms cubic-bezier(.16, 1, .3, 1); }}
+.shot:hover img {{ transform: scale(1.02); }}
+.meta {{ display: grid; gap: 4px; }}
+.tag {{ font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #a63a14; }}
+.meta h2 {{ font: 800 1.5rem/1.1 "Bricolage Grotesque", sans-serif; letter-spacing: -0.03em; }}
+.style {{ color: var(--muted); font-size: .95rem; }}
+.links {{ display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 6px; font-weight: 500; }}
+.links a {{ display: inline-flex; align-items: center; min-height: 44px; }}
+.note {{ border-top: 1px solid var(--rule); padding-block: 32px 64px; display: grid; gap: 12px; color: var(--muted); max-width: 70ch; }}
+.note b {{ color: var(--ink); }}
+@media (prefers-reduced-motion: reduce) {{ .shot img {{ transition: none; }} }}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap top-in"><a class="brand" href="https://github.com/Shash-Builds/Shash.builds">shash.builds</a><a class="hire" href="https://github.com/Shash-Builds/Shash.builds#hire-me">Get a site like this</a></div></header>
+<main>
+<section class="head"><div class="wrap"><h1>Concept sites for service businesses.</h1>
+<p>{len(slugs)} one-page websites for made-up US businesses, each in a different style. Every one has a call button in the first screen, a sticky call bar on phones and a quote form.</p></div></section>
+<div class="wrap">
+<div class="filters" role="group" aria-label="Filter by trade">{chips}</div>
+<ul class="grid" id="grid">{"".join(cards)}</ul>
+<div class="note"><p><b>These are concept sites.</b> The businesses, phone numbers (555 numbers), prices and copy are made up, and none of the pages shows reviews: each has an empty "Reviews go here" panel, because we never write fake ones. Photos are CC0 or public domain, with no people in them.</p>
+<p>A real site like these is $400 flat and live in 7 days. <a href="https://github.com/Shash-Builds/Shash.builds#hire-me">See how to hire me</a>.</p></div>
+</div>
+</main>
+<script>
+const chips=[...document.querySelectorAll('.chip')],cards=[...document.querySelectorAll('.card')];
+function show(f){{chips.forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.f===f)));cards.forEach(c=>c.hidden=!(f==='all'||c.dataset.trade===f));}}
+chips.forEach(c=>c.addEventListener('click',()=>{{show(c.dataset.f);history.replaceState(null,'',c.dataset.f==='all'?location.pathname:'#'+c.dataset.f);}}));
+const h=location.hash.slice(1);if(h&&chips.some(c=>c.dataset.f===h))show(h);
+</script>
+</body>
+</html>
+"""
+    open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(page)
+    print("built gallery")
+
+
+def publish(slugs):
+    """Copy the light, live parts (pages, photos, thumbnails) to docs/portfolio/ for GitHub Pages."""
+    import shutil
+    out = os.path.join(HERE, "..", "docs", "portfolio")
+    shutil.rmtree(out, ignore_errors=True)
+    os.makedirs(out)
+    shutil.copy(os.path.join(HERE, "index.html"), out)
+    for slug in slugs:
+        d = os.path.join(out, slug)
+        shutil.copytree(os.path.join(HERE, slug, "img"), os.path.join(d, "img"))
+        os.makedirs(os.path.join(d, "shots"))
+        shutil.copy(os.path.join(HERE, slug, "index.html"), d)
+        shutil.copy(os.path.join(HERE, slug, "shots", "desktop-1280x720.jpg"), os.path.join(d, "shots"))
+    print("published to docs/portfolio")
+
+
 if __name__ == "__main__":
-    slugs = sys.argv[1:] or sorted(d for d in os.listdir(HERE) if os.path.isfile(os.path.join(HERE, d, "site.json")))
-    for s in slugs:
+    every = sorted(d for d in os.listdir(HERE) if os.path.isfile(os.path.join(HERE, d, "site.json")))
+    for s in sys.argv[1:] or every:
         build(s)
+    build_gallery(GALLERY_ORDER + [s for s in every if s not in GALLERY_ORDER])
+    publish(every)
