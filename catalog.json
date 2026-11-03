@@ -242,6 +242,18 @@
       }
     },
     {
+      "name": "AI Resume",
+      "slug": "ai-resume",
+      "kind": "skill",
+      "path": "skills/ai-resume",
+      "summary": "One true page that a recruiter and an ATS can both read.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install ai-resume@shashbuilds",
+        "claude_ai": "ai-resume-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
       "name": "One-Page Starter",
       "slug": "one-page-starter",
       "kind": "tool",

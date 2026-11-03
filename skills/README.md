@@ -1,8 +1,8 @@
-<p align="center"><img src="../media/header-skills.svg" width="100%" alt="Claude skills header: 19 free Claude specialists, a shash.builds collection."></p>
+<p align="center"><img src="../media/header-skills.svg" width="100%" alt="Claude skills header: 20 free Claude specialists, a shash.builds collection."></p>
 
 # Claude skills
 
-19 free Claude specialists: a sales kit that finds and pitches clients, a harsh buyer, a head of social media, a LinkedIn ghostwriter,
+20 free Claude specialists: a sales kit that finds and pitches clients, a harsh buyer, a head of social media, a LinkedIn ghostwriter,
 a motion designer, an audio engineer, a humanizer and more. Each one does one real job, and
 they work together through the Master Skill.
 
@@ -30,6 +30,7 @@ chat** as a paste-in prompt.
 | [Site Audit](site-audit) | A weak-site score from 0 to 100 and the 3 most specific, provable problems, in words an owner understands. Reads robots.txt, fetches one page | Before a pitch, or to check your own site |
 | [Mock Builder](mock-builder) | A one-page website mock in one HTML file, every placeholder marked as sample, with a shareable preview path | Showing a prospect instead of telling |
 | [Cold Email Drafter](cold-email-drafter) | A 3-email sequence (90 words or fewer, then day 3 and day 7) from the audit and the mock, with CAN-SPAM basics and a checker | First contact with a business |
+| [AI Resume](ai-resume) | A true, one-page, ATS-safe resume (HTML and PDF) for a target role, with design checks and a humanizer pass. Missing facts get listed, never invented | Applying for a job |
 | [Careful Mode](careful-mode) | Checks every piece of work three times (is it right, is it complete, how could it go wrong) before handing it over | Prices, contracts, customer emails, launches |
 | [Economy Mode](economy-mode) | Sends simple work to cheaper models and keeps the strongest one for decisions. Keeps a memory sheet so Claude remembers across sessions | Long Claude Code sessions |
 
@@ -76,6 +77,7 @@ Then install the skills you want:
 /plugin install site-audit@shashbuilds
 /plugin install mock-builder@shashbuilds
 /plugin install cold-email-drafter@shashbuilds
+/plugin install ai-resume@shashbuilds
 ```
 
 Or run `/plugin` and pick from the list. Then ask naturally: "review this listing like a

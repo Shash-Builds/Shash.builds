@@ -1,6 +1,6 @@
 {
   "name": "shashbuilds",
-  "description": "shash.builds: 19 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "description": "shash.builds: 20 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
   "owner": {
     "name": "Shashwat Jain",
     "url": "https://github.com/Shash-Builds"
@@ -100,6 +100,11 @@
       "name": "niche-research",
       "source": "./skills/niche-research",
       "description": "shash.builds Niche Research: researches a content niche and turns it into a posting plan (top accounts, best posts of the last 90 days, audience questions, content gaps, 50 ranked video topics with hooks, posting times in ET, hashtags), every row sourced and dated, run on Haiku helpers."
+    },
+    {
+      "name": "ai-resume",
+      "source": "./skills/ai-resume",
+      "description": "shash.builds AI Resume: builds a true, one-page, ATS-safe resume (HTML and PDF) for a target role from facts the user can back up, then runs Hallmark design checks and a humanizer pass. Lists missing facts instead of inventing them."
     }
   ]
 }

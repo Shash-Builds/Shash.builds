@@ -20,6 +20,7 @@ and clips, product graphics, and soundtracks.
 | ecom | Product graphics (infographics, comparison charts) and marketplace image rules |
 | transcriber | Footage with speech: the transcript and captions the rough cut and subtitles start from |
 | humanizer | Scripts and voice-overs that sound spoken, not generated |
+| ai-resume | True one-page resumes and CVs |
 
 Foundation: careful-mode on the brief and every delivery; economy-mode for
 bulk steps; the memory sheet for brand rules.

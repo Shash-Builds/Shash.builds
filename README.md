@@ -34,7 +34,7 @@ My paid work is simple: **a one-page website for a US service business. $400 fla
 
 This repo is everything around that work, shipped in the open:
 
-- **19 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
+- **20 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
 - **Web tools and templates** you can copy, fork and ship today.
 - **The build log.** What I built, what broke, what's next. Every day.
 
@@ -71,7 +71,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 ### Claude skills
 
-19 free Claude specialists that work together, including a sales kit that finds and pitches clients. Full guide: [skills/README.md](skills/README.md).
+20 free Claude specialists that work together, including a sales kit that finds and pitches clients. Full guide: [skills/README.md](skills/README.md).
 
 | Skill | What it does |
 | --- | --- |
@@ -88,6 +88,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 | [Competitor Research](skills/competitor-research) | Sourced, dated, double-checked competitor research. |
 | [Niche Research](skills/niche-research) | A content niche into a sourced posting plan and 50 ranked video topics. |
 | [Ecom](skills/ecom) | Listings, images and profit per order from your real fees. |
+| [AI Resume](skills/ai-resume) | One true page that a recruiter and an ATS can both read. |
 | [Careful Mode](skills/careful-mode) | Every piece of work checked three times before you see it. |
 | [Economy Mode](skills/economy-mode) | Cheap models for simple work, and a memory sheet. |
 | [Lead Finder](skills/lead-finder) | Local businesses by trade and city, audited. |
@@ -112,7 +113,7 @@ What's coming next lives in the backlog in [STATUS.md](STATUS.md). Machines can 
 ## The map
 
 ```
-skills/      19 Claude skills, each an installable Claude Code plugin
+skills/      20 Claude skills, each an installable Claude Code plugin
 examples/    real outputs from the skills
 tests/       the test suite every skill passes
 tools/       open-source web tools and one-page site starters

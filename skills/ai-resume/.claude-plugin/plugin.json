@@ -1,0 +1,18 @@
+{
+  "name": "ai-resume",
+  "displayName": "AI Resume by shash.builds",
+  "description": "shash.builds AI Resume: builds a true, one-page, ATS-safe resume (HTML and PDF) for a target role from facts the user can back up, then runs Hallmark design checks and a humanizer pass. Lists missing facts instead of inventing them.",
+  "author": {
+    "name": "Shashwat Jain",
+    "url": "https://github.com/Shash-Builds"
+  },
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "resume",
+    "cv",
+    "ats",
+    "job application",
+    "career"
+  ]
+}
