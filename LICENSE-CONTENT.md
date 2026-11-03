@@ -7,7 +7,7 @@ Tab mascot artwork, the social preview) is licensed under the
 You can share and adapt it for any purpose, including commercial use, as long as you
 give credit. Credit line:
 
-> shash.builds by Shashwat Jain, CC BY 4.0, https://github.com/ShashwatBuilds/shash.builds
+> shash.builds by Shashwat Jain, CC BY 4.0, https://github.com/Shash-Builds/shash.builds
 
 Two exceptions:
 

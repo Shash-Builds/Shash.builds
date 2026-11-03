@@ -4,9 +4,9 @@
   "description": "shash.builds Cold Email Drafter: turns a site audit and a mock link into a 3-email sequence (90 words or fewer, then day 3 and day 7 follow-ups) in plain human text, with CAN-SPAM basics and a checker that fails hype, em dashes and extra links.",
   "author": {
     "name": "Shashwat Jain",
-    "url": "https://github.com/ShashwatBuilds"
+    "url": "https://github.com/Shash-Builds"
   },
-  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
   "license": "MIT",
   "keywords": [
     "cold email",

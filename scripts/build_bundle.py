@@ -55,7 +55,7 @@ def build(src, extras):
         "Do not edit by hand: edit the source files and rebuild. -->",
         "",
         "Copyright (c) 2026 Shashwat Jain "
-        "(https://github.com/ShashwatBuilds/shash.builds). Released under the "
+        "(https://github.com/Shash-Builds/shash.builds). Released under the "
         "MIT License; the full license text is at the end of this file.",
         "",
         text.rstrip(),

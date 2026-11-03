@@ -76,10 +76,10 @@ def _get_generation_config(
     """
     Loads the appropriate generation config from HF repo
     """
-    # shash.builds modification (2026-10-24): when shash.builds_GENERATION_CONFIG names a JSON file
+    # shash.builds modification (2026-10-24): when SHASHBUILDS_GENERATION_CONFIG names a JSON file
     # (built by scripts/build_whisper_packages.py from OpenAI's own whisper package), use it instead
     # of downloading a config from the Hugging Face Hub.
-    local = os.environ.get("shash.builds_GENERATION_CONFIG")
+    local = os.environ.get("SHASHBUILDS_GENERATION_CONFIG")
     if local:
         with open(local, encoding="utf-8") as f:
             return GenerationConfig(**json.load(f))

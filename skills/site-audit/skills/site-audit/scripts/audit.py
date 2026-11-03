@@ -27,7 +27,7 @@ import urllib.parse
 import urllib.request
 import urllib.robotparser
 
-UA = "shashbuilds-site-audit/1.0 (+https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/site-audit)"
+UA = "shashbuilds-site-audit/1.0 (+https://github.com/Shash-Builds/shash.builds/tree/main/skills/site-audit)"
 TIMEOUT = 15
 MAX_BYTES = 5_000_000
 MAX_LINKS = 15

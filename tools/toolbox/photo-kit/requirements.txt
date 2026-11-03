@@ -1,0 +1,3 @@
+pillow>=10
+# Background removal (--remove-bg). Leave it out if you only need sizes and privacy cleaning.
+rembg[cpu]>=2.0.50

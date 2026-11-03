@@ -8,8 +8,8 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT for code, CC BY 4.0 for content" src="https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-e8572c?style=flat-square&labelColor=15120f"></a>
-  <a href="https://github.com/ShashwatBuilds/shash.builds/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/ShashwatBuilds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
-  <a href="https://github.com/ShashwatBuilds/shash.builds/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/ShashwatBuilds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
+  <a href="https://github.com/Shash-Builds/shash.builds/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Shash-Builds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
+  <a href="https://github.com/Shash-Builds/shash.builds/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Shash-Builds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
   <a href="STATUS.md"><img alt="Built in public: read the build log" src="https://img.shields.io/badge/built%20in-public-f6efe3?style=flat-square&labelColor=15120f"></a>
 </p>
 
@@ -34,7 +34,7 @@ My paid work is simple: **a one-page website for a US service business. $400 fla
 
 This repo is everything around that work, shipped in the open:
 
-- **18 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
+- **19 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
 - **Web tools and templates** you can copy, fork and ship today.
 - **The build log.** What I built, what broke, what's next. Every day.
 
@@ -47,7 +47,7 @@ Install the skills in under a minute.
 **Claude Code**
 
 ```
-/plugin marketplace add ShashwatBuilds/shash.builds
+/plugin marketplace add Shash-Builds/shash.builds
 /plugin install master@shashbuilds
 /plugin install humanizer@shashbuilds
 ```
@@ -57,7 +57,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 **Claude.ai (web, desktop or mobile)**
 
-1. Download a skill's `.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases).
+1. Download a skill's `.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases).
 2. Turn on code execution in Settings, then upload the zip as a custom skill.
 3. Ask Claude for the job the skill does.
 
@@ -71,7 +71,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 ### Claude skills
 
-18 free Claude specialists that work together, including a sales kit that finds and pitches clients. Full guide: [skills/README.md](skills/README.md).
+19 free Claude specialists that work together, including a sales kit that finds and pitches clients. Full guide: [skills/README.md](skills/README.md).
 
 | Skill | What it does |
 | --- | --- |
@@ -86,6 +86,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 | [AI Visuals](skills/ai-visuals) | Fixes AI images and video for where they will be used. |
 | [Harsh Buyer Review](skills/harsh-buyer-review) | A real buyer compares you with 3 to 5 competitors. |
 | [Competitor Research](skills/competitor-research) | Sourced, dated, double-checked competitor research. |
+| [Niche Research](skills/niche-research) | A content niche into a sourced posting plan and 50 ranked video topics. |
 | [Ecom](skills/ecom) | Listings, images and profit per order from your real fees. |
 | [Careful Mode](skills/careful-mode) | Every piece of work checked three times before you see it. |
 | [Economy Mode](skills/economy-mode) | Cheap models for simple work, and a memory sheet. |
@@ -104,14 +105,14 @@ Plain HTML, CSS and JavaScript. Free hosting, no monthly fees.
 | --- | --- |
 | [One-Page Starter](tools/one-page-starter) | A one-page site for a local service business, from one CSV row. Call button, reviews, quote form. |
 | [Lead Tracker](tools/lead-tracker) | Every website lead in a Google Sheet, with where it came from, and a Dashboard by source. |
-| [Level-Up Dashboard](tools/level-up-dashboard) | A Google Sheet template to track a build-in-public run: days, sales, content, followers, reviews. |
+| [Level-Up Game Dashboard](tools/level-up-dashboard) | Turn your 365-day business goal into a game: levels, boss fights, quests, XP, streaks and money against pace. [Try the sample](https://shash-builds.github.io/Shash.builds/level-up-game/#sample). |
 
 What's coming next lives in the backlog in [STATUS.md](STATUS.md). Machines can read the same list in [`catalog.json`](catalog.json) and [`llms.txt`](llms.txt).
 
 ## The map
 
 ```
-skills/      18 Claude skills, each an installable Claude Code plugin
+skills/      19 Claude skills, each an installable Claude Code plugin
 examples/    real outputs from the skills
 tests/       the test suite every skill passes
 tools/       open-source web tools and one-page site starters
@@ -136,11 +137,14 @@ Meet <img src="media/tab-static.svg" width="22" alt="Tab, the mascot"> **Tab**, 
 
 Cleaners, landscapers, painters, contractors, detailers, coaches. If customers find you on Google and call you, you need one clean page that turns that visit into a call.
 
+- See the work and the offer on [shashwat-websites.netlify.app](https://shashwat-websites.netlify.app),
+- Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com),
 - Message me on [LinkedIn](https://www.linkedin.com/in/shashbuilds), or
-- [Open a hire request](https://github.com/ShashwatBuilds/shash.builds/issues/new?template=hire.yml) with your business name and current site. Keep phone numbers and emails out of it: issues are public. I'll reply there.
+- [Open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml) with your business name and current site. Keep phone numbers and emails out of it: issues are public. I'll reply there.
 
 ## Follow the build
 
+[Website](https://shashwat-websites.netlify.app) &nbsp;|&nbsp;
 [Instagram](https://www.instagram.com/shash.builds) &nbsp;|&nbsp;
 [YouTube](https://www.youtube.com/@shash.builds) &nbsp;|&nbsp;
 [LinkedIn](https://www.linkedin.com/in/shashbuilds) &nbsp;|&nbsp;

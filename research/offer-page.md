@@ -50,7 +50,7 @@ Note on Option 4: the lead tracker records form fills only. It does not track ph
 - Hosting: the first month is free, then $10/month. Cancel any time. A month already started is not refunded.
 - Domain: you buy it, in your name. It is usually about $12 a year at most registrars. [[REAL: confirm the domain cost estimate and who sets up DNS]]
 - Two rounds of changes after your first review. A round covers text, photos, colors and layout within the agreed page. New pages or new features cost extra.
-- Payment: 50% ($200) to start, the rest ($200) when the site is live.
+- Payment: by PayPal invoice. 50% ($200) to start, the rest ($200) when the site is live.
 - Ownership: the domain and the Google Sheet are in your name. [[REAL: confirm whether the site files are handed over at launch or on cancelling hosting]]
 - Post-launch: [[REAL: confirm what happens after launch, for example 30 days of free fixes for broken links or form errors, then optional paid help]]
 
@@ -91,13 +91,16 @@ The 7 days start when Shashwat has your materials. Late materials stop the clock
 ## 4. Process
 
 1. **Call (30 minutes).** We confirm your trade, city and services, and check that the offer fits. [[REAL: confirm call length and that the call is free]]
-2. **Deposit.** 50% ($200) starts the build. [[REAL: confirm how payment is taken]]
+2. **Deposit.** A PayPal invoice for 50% ($200) starts the build.
 3. **Build.** I build the page and the lead sheet. You review it and send changes in two rounds.
-4. **Live.** I publish the site, connect your domain, test the form and hand over the lead sheet. The other 50% is due once the site is live. Hosting is free for the first month, then $10/month.
+4. **Live.** I publish the site, connect your domain, test the form and hand over the lead sheet. The other 50% is due by PayPal invoice once the site is live. Hosting is free for the first month, then $10/month.
 
 ---
 
 ## 5. FAQ
+
+**How do I reach you?**
+Email shash.builds@gmail.com, or message me on LinkedIn.
 
 **What do I get for $400?**
 A one-page website for your business, a quote form, and a lead sheet that shows where each lead came from. The full list is above.

@@ -2,7 +2,7 @@
 """Transcribe a voice note, podcast or video with OpenAI's Whisper, inside the chat's own sandbox.
 
 Usage:
-  python3 transcribe.py FILE [--size base|small] [--language auto|en|hi|...]
+  python3 transcribe.py FILE [--size base|small|medium|large-v3] [--language auto|en|hi|...]
         [--hinglish] [--prompt "words or names to expect"] [--translate] [--out-dir DIR]
         [--model-dir DIR] [--no-install]
 
@@ -38,15 +38,18 @@ for _stream in (sys.stdout, sys.stderr):
         _stream.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = Path(__file__).resolve().parent
-REGISTRY = json.loads(Path(os.environ.get("shash.builds_WHISPER_REGISTRY", HERE / "models.json"))
+REGISTRY = json.loads(Path(os.environ.get("SHASHBUILDS_WHISPER_REGISTRY", HERE / "models.json"))
                       .read_text(encoding="utf-8"))
-CACHE = Path(os.environ.get("shash.builds_WHISPER_CACHE",
+CACHE = Path(os.environ.get("SHASHBUILDS_WHISPER_CACHE",
                             Path.home() / ".cache" / "shashbuilds-whisper"))
 
 # A short Roman-script Hinglish example steers Whisper to write Hindi in Roman letters and keep
 # English words in English (otherwise it writes everything in Devanagari, or even Urdu script).
 HINGLISH_PROMPT = ("Haan, toh aaj hum baat karenge ki yeh kaise banta hai. "
                    "Shuru hota hai pure cotton se, phir cutting aur silai.")
+
+# Sizes with no shash.builds package yet: faster-whisper downloads them (needs Hugging Face).
+OTHER_SIZES = ["medium", "large-v3"]
 
 FALLBACK = """No speech model could be loaded here, so nothing was transcribed.
 Ways to get a transcript without a computer:
@@ -141,13 +144,13 @@ def from_packages(size, entry, allow_install):
 def load_model(args):
     from faster_whisper import WhisperModel
     entry = REGISTRY["models"].get(args.size)
-    if entry is None:
-        sys.exit(f"unknown --size {args.size}; choose from {', '.join(REGISTRY['models'])}")
+    if entry is None and args.size not in OTHER_SIZES:
+        sys.exit(f"unknown --size {args.size}; choose from {', '.join(list(REGISTRY['models']) + OTHER_SIZES)}")
     tried = []
     if args.model_dir:
         tried.append("--model-dir")
         return WhisperModel(args.model_dir, device="cpu", compute_type="int8"), "your folder"
-    folder = from_packages(args.size, entry, not args.no_install)
+    folder = from_packages(args.size, entry, not args.no_install) if entry else None
     tried.append("shash.builds packages")
     if folder:
         return WhisperModel(str(folder), device="cpu", compute_type="int8"), "shash.builds package (verified)"
@@ -200,6 +203,25 @@ def tighten_words(segs, audio, sr=16000, frame=0.02):
                     w["start"], w["end"] = round(start, 3), round(min(end, w["end"]), 3)
 
 
+def join_pieces(raw):
+    """Whisper sometimes splits a word into pieces ("one" + "-page", "shash" + ".builds").
+    A piece with no leading space that starts with punctuation joins the word before it."""
+    words = []
+    for w in raw:
+        text = w.word.strip()
+        if not text:
+            continue
+        if words and not w.word[:1].isspace() and not text[:1].isalnum():
+            prev = words[-1]
+            prev["word"] += text
+            prev["end"] = round(w.end, 3)
+            prev["probability"] = round(min(prev["probability"], w.probability), 3)
+        else:
+            words.append({"start": round(w.start, 3), "end": round(w.end, 3), "word": text,
+                          "probability": round(w.probability, 3)})
+    return words
+
+
 def to_cues(segs, gap=0.5, max_s=7.0, max_chars=84):
     """Re-cut Whisper's segments into caption cues using word timings: a new cue at
     every pause longer than `gap`, after sentence-ending punctuation once a cue has
@@ -211,7 +233,7 @@ def to_cues(segs, gap=0.5, max_s=7.0, max_chars=84):
     cues, cur = [], []
     for w in words:
         if cur:
-            text_len = len(" ".join(x["word"] for x in cur))
+            text_len = len(" ".join(x["word"] for x in cur + [w]))
             if (w["start"] - cur[-1]["end"] > gap or w["end"] - cur[0]["start"] > max_s
                     or text_len > max_chars
                     or (cur[-1]["word"][-1:] in ".?!" and w["end"] - cur[0]["start"] > 1.0)):
@@ -244,6 +266,7 @@ def main():
     ap.add_argument("--out-dir")
     ap.add_argument("--model-dir")
     ap.add_argument("--no-install", action="store_true")
+    ap.add_argument("--max-chars", type=int, default=84, help="longest caption cue (42 suits reels)")
     args = ap.parse_args()
     src = Path(args.file)
     if not src.is_file():
@@ -267,10 +290,9 @@ def main():
     segs = []
     for s in segments:
         segs.append({"start": round(s.start, 3), "end": round(s.end, 3), "text": s.text.strip(),
-                     "words": [{"start": round(w.start, 3), "end": round(w.end, 3), "word": w.word.strip(),
-                                "probability": round(w.probability, 3)} for w in (s.words or [])]})
+                     "words": join_pieces(s.words or [])})
     tighten_words(segs, audio)
-    segs = to_cues(segs)
+    segs = to_cues(segs, max_chars=args.max_chars)
     out_dir = Path(args.out_dir) if args.out_dir else src.parent
     out_dir.mkdir(parents=True, exist_ok=True)
     stem = out_dir / src.stem

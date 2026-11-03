@@ -5,8 +5,8 @@ contributions get merged fastest.
 
 ## Ways to help
 
-- **Report a bug.** [Open a bug report](https://github.com/ShashwatBuilds/shash.builds/issues/new?template=bug.yml). Say which skill or tool, what you did, what you expected and what happened.
-- **Ask for a skill or tool.** [Open an idea](https://github.com/ShashwatBuilds/shash.builds/issues/new?template=idea.yml). Best ideas solve one real job for a small service business or a web designer.
+- **Report a bug.** [Open a bug report](https://github.com/Shash-Builds/shash.builds/issues/new?template=bug.yml). Say which skill or tool, what you did, what you expected and what happened.
+- **Ask for a skill or tool.** [Open an idea](https://github.com/Shash-Builds/shash.builds/issues/new?template=idea.yml). Best ideas solve one real job for a small service business or a web designer.
 - **Fix something.** Typos, broken links and clearer install steps are always welcome.
 - **Share a result.** Used a skill on a real project? Tell me in an issue. It helps me decide what to build next.
 
@@ -36,4 +36,4 @@ By contributing, you agree your work is released under the same licenses.
 
 ## Questions
 
-Open a [discussion-style issue](https://github.com/ShashwatBuilds/shash.builds/issues/new?template=idea.yml) or message Shashwat on [LinkedIn](https://www.linkedin.com/in/shashbuilds).
+Open a [discussion-style issue](https://github.com/Shash-Builds/shash.builds/issues/new?template=idea.yml) or message Shashwat on [LinkedIn](https://www.linkedin.com/in/shashbuilds).

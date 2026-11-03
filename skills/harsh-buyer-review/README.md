@@ -25,11 +25,11 @@ The real review carries your product's actual details and cited competitor facts
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install harsh-buyer-review@shashbuilds`
 3. Ask: "Review this listing like a harsh buyer" and share the link, screenshots, or your product and price.
 
-On claude.ai: download `harsh-buyer-review-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/harsh-buyer-review/harsh-buyer-reviewer.md) (fill in sections 1 to 3 about your product, price, market and buyer first).
+On claude.ai: download `harsh-buyer-review-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/harsh-buyer-review/harsh-buyer-reviewer.md) (fill in sections 1 to 3 about your product, price, market and buyer first).
 
 ## Before and after
 

@@ -4,11 +4,11 @@ Prepared 2026-11-03 for Shashwat Jain (shash.builds). Offer: one-page website fo
 
 ## Read this first
 
-- **Proof and repo.** The repo links use github.com/ShashwatBuilds/shash.builds, which goes live when the GitHub account is renamed to ShashwatBuilds. Until then, items marked **[[AFTER RENAME]]** point at the future address.
+- **Proof and repo.** The repo links use github.com/Shash-Builds/shash.builds, which goes live when the GitHub account is renamed to Shash-Builds. Until then, items marked **[[AFTER RENAME]]** point at the future address.
 - **Official pages.** Upwork and Fiverr help pages returned HTTP 403 to the fetch tool. Their facts below come from search-result excerpts of the official pages. Those are marked "excerpt". Anything not confirmed on an official page is marked **unverified**. Contra pages were opened directly, so their facts are marked "opened".
 - **Placeholders.** Anything in [[double brackets]] needs your input before posting.
 - **Terms (confirmed by Shashwat, 2026-11-03).** Use these in every listing and proposal:
-  - Payment: 50% to start, the rest at launch.
+  - Payment: 50% to start, the rest at launch (PayPal invoices off-platform; on a marketplace, use its own payments).
   - 2 revision rounds included.
   - Hosting: first month free, then $10/month, cancel any time. A month already started is not refunded.
   - Guarantee: "Live in 7 days with everything listed included, or you get your money back." Refunds only if the 7-day deadline is missed (the clock starts when the deposit and the client's content arrive, and pauses while the client is late) or an included item is not delivered and not fixed within 2 days of being pointed out. Refund = everything paid so far. No refunds for a change of mind or taste after approval, or for requests outside the included list. Full wording: [offer-page.md](offer-page.md), section 7.
@@ -47,7 +47,7 @@ Website Design, Landing Page Design, Responsive Web Design, Web Development, Wor
 
 **Portfolio items** (tools are open-source and published by you)
 
-1. **One-page site starter (open-source tool)**: A one-page site starter I published as open source at github.com/ShashwatBuilds/shash.builds. **[[AFTER RENAME]]**
+1. **One-page site starter (open-source tool)**: A one-page site starter I published as open source at github.com/Shash-Builds/shash.builds. **[[AFTER RENAME]]**
 2. **Google Sheets lead tracker (open-source tool)**: An open-source Google Sheets lead tracker: every website form fill lands in a Sheet with where the visitor came from. **[[AFTER RENAME]]**
 3. **Online side of my clothing brand**: The online store and site for my own clothing brand, built by me. Add the live URL. **[[NAME AND LINK: Shashwat to supply]]**
 
@@ -278,7 +278,7 @@ Each link was checked on 2026-11-03. "Opened" means the page loaded in this sess
 - https://companies.contra.com/understanding-contras-fees-as-a-client (checked 2026-11-03, search result; client fee conflict)
 
 **Repo**
-- https://github.com/ShashwatBuilds/shash.builds (checked 2026-11-03; 404 to unauthenticated fetch, not reachable from this session. **[[AFTER RENAME]]**)
+- https://github.com/Shash-Builds/shash.builds (checked 2026-11-03; 404 to unauthenticated fetch, not reachable from this session. **[[AFTER RENAME]]**)
 
 ---
 

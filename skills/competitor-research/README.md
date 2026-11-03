@@ -24,11 +24,11 @@ Names, numbers and findings come from the pages it actually reads. The shape abo
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install competitor-research@shashbuilds`
 3. Ask: "Research the competitors for my product" and say what you sell, where, and the question you want answered.
 
-On claude.ai: download `competitor-research-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/competitor-research/competitor-research.md). Pick Haiku as the model to save credits.
+On claude.ai: download `competitor-research-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/competitor-research/competitor-research.md). Pick Haiku as the model to save credits.
 
 ## Before and after
 

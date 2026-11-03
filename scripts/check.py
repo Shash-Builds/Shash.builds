@@ -16,7 +16,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEXT = {".md", ".txt", ".json", ".yml", ".yaml", ".html", ".css", ".js", ".mjs", ".py", ".svg", ".sh"}
 PROSE = {".md", ".txt", ".html", ".svg", ".yml", ".yaml"}
-SKIP_DIRS = {".git", "node_modules", ".fonts", "__pycache__"}
+SKIP_DIRS = {".git", "node_modules", ".fonts", "__pycache__", ".venv"}
 # Old brand names, stored rot13 so this file doesn't trip its own check.
 OLD_BRANDS = [codecs.decode(w, "rot13") for w in ("fbyvqfsbelbh", "fbyvqf sbe lbh", "sbhaqrejvgunof", "zbarlzbzragf")]
 SECRETS = re.compile(r"(sk-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|xox[abp]-[A-Za-z0-9-]{10,})")

@@ -22,7 +22,7 @@ The final line always lists what was delegated. The counts depend on your task.
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install economy-mode@shashbuilds`
 3. Say "economy mode" at the start of a session, or "remember this: ..." to save a decision.
 

@@ -1,0 +1,11 @@
+id,gap,audience,evidence,why_open
+g-001,"Owners pay up front, then the designer goes quiet or never ships. Nobody shows a fixed scope, a fixed date and the work in public",a,v-002 v-005 v-007 v-008 v-009 v-012 v-014 v-016 v-020,"Agency review pages are full of this pain, but no account or post collected here shows a project's real timeline from call to launch"
+g-002,"What a small business site really costs per year: hosting, SSL, domain and renewals",a,v-001 v-006 v-018 v-021 v-026,Owners hit these fees as surprises; none of the collected accounts or posts lays out the yearly running cost in plain numbers
+g-003,"Owners can't change their own site after launch, and builders keep moving the buttons",a,v-024 v-025 v-027,"Builder tutorials teach setup, not the owner's monthly edit of hours, prices and photos"
+g-004,"The site is live but doesn't show on Google, or the domain won't verify",a,v-034 v-035 v-036 v-037,These questions sit in builder forums; no collected creator answers them for a service business in a short video
+g-005,"Does my kind of business even need a website, and is a free one good enough?",a,v-028 v-029 v-030 v-032 v-033,"Answers online are generic; none of the collected posts answers it trade by trade (trainer, dentist, salon)"
+g-006,"How to pick a web designer for one trade, and what to ask before paying",a,v-031 v-015 v-003,"Owners ask how to find one for their trade; the collected posts speak to designers, not to the buyer"
+g-007,"Why a Claude skill doesn't fire when you expect, and how to write a description that triggers",b,v-201 v-202 v-203 v-204 v-210 v-211 v-225,"The questions live in GitHub issues; the top skill videos collected show what skills are, not how to make one trigger"
+g-008,How to test a skill and prove it works before you share it,b,v-205 v-212 v-220 v-221 v-222,"There is no standard way yet, and the issues ask for one; no collected creator shows a real test setup"
+g-009,"One copy of your skills across Claude Code, claude.ai and other tools",b,v-218 v-219,Asked in discussions with no clear answer from the collected creators
+g-010,From a site built with Claude on localhost to a live site on a real domain,b,v-223 v-037,Build videos stop at the preview; the go-live step is where both audiences get stuck

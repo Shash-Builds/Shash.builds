@@ -17,7 +17,7 @@ tools below. When a head needs one:
   its name, for example the `careful-mode` skill.
 - **Not installed:** follow its prompt file from the table. If the file is
   not on disk (for example, only this plugin is installed), read it from
-  `https://raw.githubusercontent.com/ShashwatBuilds/shash.builds/main/`
+  `https://raw.githubusercontent.com/Shash-Builds/shash.builds/HEAD/`
   followed by the path in the table. In the bundled single-file version of
   the Master Skill, every prompt is appended at the end.
 - **Neither available:** say so once, and do the closest thing you can.
@@ -31,6 +31,7 @@ tools below. When a head needs one:
 | motion-design-taste | Making, reviewing or fixing videos | `skills/motion-design-taste/skills/motion-design-taste/motion-design-taste.md` |
 | audio-review | Audio tasks; the sound of any video | `skills/audio-review/skills/audio-review/initiation_prompt.md` |
 | competitor-research | Competitor, market and pricing research on marketplaces, websites, social media and ad libraries; competitor data for feedback | `skills/competitor-research/skills/competitor-research/competitor-research.md` |
+| niche-research | Researching a content niche before planning: top accounts, best recent posts, audience questions, gaps, ranked video topics, posting times and hashtags | `skills/niche-research/skills/niche-research/niche-research.md` |
 | ecom | Selling online: listings, product images, unit economics, fees, pricing, ads, returns, stock, launches and sale events | `skills/ecom/skills/ecom/ecom.md` |
 | ai-visuals | Reviewing, scoring and fixing AI-generated images and video; the fixed prompt; optional generation | `skills/ai-visuals/skills/ai-visuals/ai-visuals.md` |
 | linkedin | LinkedIn posts, profiles, comments, messages and plans, in the founder's voice | `skills/linkedin/skills/linkedin/linkedin.md` |

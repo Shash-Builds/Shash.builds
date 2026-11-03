@@ -1,0 +1,24 @@
+# shash.builds: Shashwat Jain, web designer
+
+> Shashwat Jain designs and builds one-page websites for US service businesses (coaches, consultants, realtors, therapists, dentists, lawyers, cleaners, contractors, salons, gyms, photographers, accountants). Each site has one job: get the visitor to book a call or appointment. Flat price $400, live in 7 days, 2 rounds of changes, booking built in, the client owns the site. He works US hours, 8:30 am to 6:30 pm Eastern, from India.
+
+## Pages
+
+- [Home](https://shashwat-websites.netlify.app/): the offer, sample designs, how a project runs and how to book a call.
+- [Lookbook](https://shashwat-websites.netlify.app/lookbook.html): try 8 website styles on your own business with your own name and photos, live in the browser.
+- [Free Claude skills](https://shashwat-websites.netlify.app/skills.html): "Booked one-pager", a free Claude skill for building one-page sites that get bookings.
+
+## How a project runs
+
+- Day 1: a 15-minute call about the business, the customer and the one action the page must drive.
+- Day 3: a first draft link to open on a phone.
+- Day 7: live on the client's domain, booking tested end to end.
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/shashbuilds
+- GitHub: https://github.com/Shash-Builds/shash.builds
+
+## Optional
+
+- [Booked one-pager skill (SKILL.md)](https://shashwat-websites.netlify.app/skills/booked-one-pager/SKILL.md)

@@ -1,8 +1,7 @@
 # Marketing head
 
-Grows the audience and the brand: social media strategy, content
-calendars, posts, carousels, scripts, YouTube, analytics, comment replies
-and launch campaigns.
+Grows the audience and the brand: strategy, calendars, posts, scripts,
+YouTube, analytics, replies and campaigns.
 
 ## 1. When it runs
 
@@ -13,12 +12,13 @@ and launch campaigns.
 
 | Sub-skill | Used for |
 |---|---|
+| niche-research | Sourced niche research before a plan: accounts, posts, gaps, ranked topics |
 | social-media | The core: brand memory, strategy, creation, the 100-point scorecard, analytics, YouTube tools |
 | ai-visuals | AI-made images and clips for posts: fixed prompt and scorecard |
 | harsh-buyer-review | Posts and ads that sell a product |
 | humanizer | Every post, caption and script sounds like the founder; facts unchanged |
 | linkedin | Everything on LinkedIn: posts, profile, comments, messages, plan |
-| transcriber | A video, podcast or voice note into text: chapters, captions, quotes and repurposed posts |
+| transcriber | Video, podcast or voice note into text, captions and quotes |
 | clipper | Clipping campaigns, and Shorts, Reels and TikToks cut from a long video |
 
 Foundation: careful-mode on claims, numbers and anything customers see;
@@ -29,11 +29,11 @@ sheet.
 
 1. **LinkedIn goes to the linkedin skill** (it runs the humanizer itself).
    For other channels, **load the brand**: run social-media; it reads the founder's brand
-   memory and only the sections the job needs. Search the memory sheet for
-   facts it doesn't hold.
-2. **Product facts.** For a post about a product, take prices, offers and
-   product facts from ecom's store memory (or the memory sheet), never from
-   memory, so every channel says the same thing.
+   memory and only the sections the job needs; the memory sheet fills
+   gaps. New niche or no plan yet: niche-research first; its `topics.csv`
+   feeds the calendar.
+2. **Product facts.** Take prices, offers and product facts from ecom's
+   store memory (or the memory sheet), so every channel says the same thing.
 3. **Make it** with social-media's method. Working from a video, podcast
    or voice note, transcribe it first with transcriber; its `.srt` feeds
    chapters, retention and captions. Clips from a long video and clipping

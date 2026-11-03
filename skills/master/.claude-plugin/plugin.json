@@ -2,8 +2,8 @@
   "name": "master",
   "displayName": "Master Skill by shash.builds",
   "description": "shash.builds Master Skill: on in every session, it has Claude use only the shash.builds tools each task needs, to save credits and raise quality: the full video workflow (plan, build, review, fix and re-render until it scores 85+), social media, feedback and research get their specialists; simple tasks get none. You can switch it to task-specific.",
-  "author": {"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"},
-  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/Shash-Builds"},
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
   "license": "MIT",
   "keywords": [
     "workflow",

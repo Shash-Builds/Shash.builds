@@ -25,7 +25,7 @@ import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-UA = "shashbuilds-lead-finder/1.0 (+https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/lead-finder)"
+UA = "shashbuilds-lead-finder/1.0 (+https://github.com/Shash-Builds/shash.builds/tree/main/skills/lead-finder)"
 OVERPASS = "https://overpass-api.de/api/interpreter"
 NOMINATIM = "https://nominatim.openstreetmap.org/search"
 

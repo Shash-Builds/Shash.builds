@@ -24,11 +24,11 @@ Claude: Verdict: score out of 100, and the single biggest problem.
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install motion-design-taste@shashbuilds`
 3. Ask: "Review this video" and upload it, with any reference you like.
 
-On claude.ai: download `motion-design-taste-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/motion-design-taste/motion-design-taste.md).
+On claude.ai: download `motion-design-taste-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/motion-design-taste/motion-design-taste.md).
 
 ## Before and after
 

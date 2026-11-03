@@ -20,7 +20,7 @@ ask for it.
 
 - Every tool is a Claude Code plugin in `skills/<tool>/`, listed in
   `.claude-plugin/marketplace.json`. Founders install with
-  `/plugin marketplace add ShashwatBuilds/shash.builds` and then
+  `/plugin marketplace add Shash-Builds/shash.builds` and then
   `/plugin install <tool>@shashbuilds`.
 - `skills/<tool>/skills/<tool>/` is the single source of truth: `SKILL.md`,
   the full prompt (which doubles as the paste-in version), and any scripts.
@@ -38,7 +38,7 @@ ask for it.
 
 1. Create `skills/<tool>/.claude-plugin/plugin.json` with `name`,
    `displayName` ("<Tool> by shash.builds"), `description` (starting
-   "shash.builds <Tool>:"), `author` `{"name": "Shashwat Jain", "url": "https://github.com/ShashwatBuilds"}`,
+   "shash.builds <Tool>:"), `author` `{"name": "Shashwat Jain", "url": "https://github.com/Shash-Builds"}`,
    `homepage` and `keywords`. Leave out `version`, so founders get every
    update.
    Add `"license": "MIT"` after `homepage`, and copy the MIT text from the root `LICENSE` (without its scope note) as `LICENSE.md`
@@ -122,7 +122,17 @@ or its wording without the owner's explicit decision.
   OpenAI checkpoint, checked against OpenAI's published SHA-256, converted,
   split under PyPI's size limit, uploaded with `PYPI_TOKEN`). Until they're
   published, `models.json` has `published: false` and the script falls back to
-  faster-whisper's own download, then to phone instructions.
+  faster-whisper's own download, then to phone instructions. `--size medium`
+  and `large-v3` have no packages and always use faster-whisper's download.
+  It joins Whisper's split word pieces and keeps cues within `--max-chars`.
+  `tools/toolbox/transcribe` is a thin CLI over this engine (its skill zip
+  bundles it as `engine/`); don't fork the engine.
+- **Toolbox:** `tools/toolbox/<tool>/` are local CLI tools that double as
+  skills (README, `SKILL.md`, `requirements.txt`, `agensi/` listing and
+  cover). `tools/toolbox/package.py` checks listings, draws covers and builds
+  `dist/toolbox/<tool>-skill.zip`; its `BUNDLE` map pulls in files from
+  elsewhere in the repo. Tests live in `tests/toolbox_tests.py`. Agensi
+  listings go live only after Shashwat approves each one.
 - **Humanizer:** `humanizer.md` is the method (ground rules, process,
   pattern catalogue, rewriting moves, a guide per channel, Hindi and
   Hinglish, voice matching, examples, hand-back), read by section.
@@ -188,10 +198,8 @@ or its wording without the owner's explicit decision.
   going public, head or no head (a rule in `toolbox.md`). Every tool must be called by at least one head
   (the tests check it), to save founders credits and raise quality. It is always-on
   by default: the SessionStart hook in `skills/master/hooks/hooks.json` loads
-  `toolbox.md`, a compact router, into every session. The same hook gives
-  the one-time welcome in `hooks/welcome.json` (Claude opens its first reply
-  after install with "Oh my god, this is gold."), remembered by a
-  `welcomed` file in `${CLAUDE_PLUGIN_DATA}`. Founders can switch to
+  `toolbox.md`, a compact router, into every session. Never script a
+  reaction or a canned line for Claude to say; the tests check it. Founders can switch to
   task-specific through the plugin's `mode` setting (`userConfig` in its
   `plugin.json`). `toolbox.md` is paid for in every session, so keep it
   short (the tests cap it) and put detail in `master.md`, which loads only

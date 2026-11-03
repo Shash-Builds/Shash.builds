@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lookbook, shash.builds</title>
+<meta name="description" content="Try 8 website styles on your own business: pick your niche, type your name, add your photos and see it live. Photos never leave your device.">
+<link rel="canonical" href="https://shashwat-websites.netlify.app/lookbook.html">
+<meta property="og:title" content="Try your website look">
+<meta property="og:description" content="8 styles, 12 kinds of business, your own photos. Live preview.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Archivo:wght@400;600;800&family=Manrope:wght@400;600;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · shape: Fitting room · genre: bold-commercial · theme: signal orange / ink / cream (same as index) · job: book · signature: live sample site that takes the visitor's own name and photos · waive 48: the .s1 to .s8 blocks are mock client brands, each its own palette by design · v2.0.0 */
+/* waive 37: the extra families belong to the mock client styles, the page itself uses Bricolage Grotesque, Onest and JetBrains Mono */
+/* layout: site nav, orange title band, controls rail left (sticky on desktop), live sample in a browser frame right, pick bar fixed at the bottom */
+:root {
+  color-scheme: light;
+  --bg: #f6efe3; --panel: #fffaf2; --ink: #15120f; --muted: #6f6455; --rule: #d9cdb9;
+  --accent: #e8572c; --accent-soft: #fbd9cb; --on-accent: #15120f; --cream: #f6efe3;
+  --f-body: "Onest", ui-sans-serif, system-ui, sans-serif; --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  --f-display: "Bricolage Grotesque", "Arial Narrow", ui-sans-serif, sans-serif;
+  --pad: clamp(16px, 5vw, 72px); --frame-shade: oklch(0% 0 0 / 0.35);
+}
+* { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body); -webkit-font-smoothing: antialiased; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 120px; }
+.top { display: grid; gap: 8px; margin-bottom: 24px; }
+.top h1 { margin: 0; font: 700 clamp(1.6rem, 2.4vw + 0.8rem, 2.4rem)/1.05 var(--f-body); letter-spacing: -0.02em; text-wrap: balance; }
+.top p { margin: 0; color: var(--muted); max-width: 62ch; }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 28px; align-items: start; }
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: grid; gap: 24px; background: var(--panel); border: 1px solid var(--rule); padding: 20px; }
+.step { display: grid; gap: 12px; }
+.step h2 { margin: 0; font: 500 0.75rem/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: 500 0.85rem/1 var(--f-body); padding: 8px 12px; border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; border-radius: 999px; }
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+label.field { display: grid; gap: 8px; font-size: 0.85rem; color: var(--muted); }
+input[type="text"] { font: 500 1rem var(--f-body); padding: 12px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); border-radius: 0; width: 100%; }
+.slots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.slot { position: relative; aspect-ratio: 1; border: 1px dashed var(--rule); background: var(--bg) center/cover no-repeat; display: grid; place-items: center; cursor: pointer; color: var(--muted); font: 500 0.7rem/1.2 var(--f-mono); text-align: center; padding: 4px; }
+.slot:hover { border-color: var(--ink); color: var(--ink); }
+.slot.has { border-style: solid; color: transparent; }
+.slot .x { position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border: 0; background: var(--ink); color: var(--bg); font-size: 14px; line-height: 1; cursor: pointer; display: none; }
+.slot.has .x { display: block; }
+.hint { font-size: 0.8rem; color: var(--muted); margin: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font: 500 0.9rem var(--f-body); cursor: pointer; text-decoration: none; }
+.btn:hover { background: var(--accent-soft); }
+.btn:active, .chip:active, .styleopt:active { transform: translateY(1px); }
+.pick .btn { white-space: nowrap; }
+.btn--solid { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn--solid:hover { background: var(--accent); filter: brightness(1.08); }
+.styles { display: grid; gap: 8px; }
+.styleopt { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; text-align: left; padding: 12px; border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; font: 500 0.9rem var(--f-body); }
+.styleopt .mono { color: var(--muted); font-size: 0.8rem; }
+.styleopt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.styleopt[aria-pressed="true"] .mono { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* browser frame */
+.stage { display: grid; gap: 12px; min-width: 0; }
+.stagebar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.tag { font: 500 0.85rem/1 var(--f-body); padding: 8px 12px; background: var(--ink); color: var(--bg); }
+.arrows { display: flex; gap: 8px; }
+.arrows .btn { min-width: 44px; padding: 0 12px; }
+.frame { background: var(--panel); box-shadow: 0 24px 60px -30px var(--frame-shade); overflow: hidden; touch-action: pan-y; }
+.chrome { display: flex; align-items: center; gap: 12px; padding: 12px; border-bottom: 1px solid var(--rule); }
+.dots { display: flex; gap: 4px; } .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--rule); }
+.url { flex: 1; min-width: 0; font: 500 0.78rem var(--f-mono); color: var(--muted); background: var(--bg); padding: 4px 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ====== the sample site (each style is its own fixed look) ====== */
+.site { container-type: inline-size; --pad: clamp(18px, 4cqi, 56px); }
+.site a { text-decoration: none; color: inherit; }
+.site h1, .site h2, .site p, .site blockquote, .site ul, .site figure { margin: 0; padding: 0; list-style: none; }
+.s-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px var(--pad); }
+.s-nav nav { display: flex; gap: 22px; font-size: 0.9rem; }
+.s-logo { font-weight: 800; font-size: 1.05rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.s-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; font-weight: 600; white-space: nowrap; }
+.s-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(20px, 4cqi, 56px); align-items: center; padding: clamp(24px, 5cqi, 72px) var(--pad); }
+.s-copy { display: grid; gap: 18px; justify-items: start; min-width: 0; }
+.s-eyebrow { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.s-hero h1 { font-size: clamp(2rem, 5.4cqi, 4.2rem); line-height: 1.02; text-wrap: balance; overflow-wrap: break-word; }
+.s-sub { font-size: clamp(1rem, 1.4cqi, 1.2rem); max-width: 42ch; }
+.ph { position: relative; background-size: cover; background-position: center; display: grid; place-items: center; cursor: pointer; overflow: hidden; min-height: 0; }
+.ph .ph-label { font: 500 0.75rem/1.3 var(--f-mono); padding: 6px 10px; text-align: center; }
+.ph.has .ph-label { display: none; }
+.s-hero .ph { aspect-ratio: 4 / 4.4; width: 100%; }
+.s-services { padding: clamp(28px, 5cqi, 64px) var(--pad); display: grid; gap: 22px; }
+.s-services h2, .s-quote h2 { font-size: clamp(1.4rem, 3cqi, 2.2rem); line-height: 1.1; }
+.s-services ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.s-services li { display: grid; gap: 8px; padding: 18px; }
+.s-services li b { font-size: 1.05rem; }
+.s-gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; padding: 0 var(--pad); }
+.s-gallery .ph { aspect-ratio: 4 / 3.2; }
+.s-quote { padding: clamp(36px, 6cqi, 80px) var(--pad); display: grid; gap: 14px; }
+.s-quote blockquote { font-size: clamp(1.3rem, 3cqi, 2.1rem); line-height: 1.2; max-width: 30ch; text-wrap: balance; }
+.s-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 22px var(--pad); font-size: 0.85rem; }
+@container (max-width: 640px) {
+  .s-nav nav { display: none; }
+  .s-nav .s-cta { min-height: 38px; padding: 0 12px; font-size: 0.85rem; }
+  .s-hero { grid-template-columns: minmax(0, 1fr); }
+  .s-hero .ph { aspect-ratio: 4 / 3; order: -1; }
+  .s-services ul { grid-template-columns: minmax(0, 1fr); }
+  .s-gallery { grid-template-columns: 1fr 1fr; }
+  .s-gallery .ph:first-child { grid-column: 1 / -1; }
+}
+
+/* S-01 Swiss grid */
+.s1 { background: #fcfcfa; color: #111; font-family: "Archivo", sans-serif; }
+.s1 .s-nav { border-bottom: 2px solid #111; }
+.s1 .s-cta { background: #e2231a; color: #fcfcfa; }
+.s1 h1 { font-weight: 800; letter-spacing: -0.035em; text-transform: uppercase; }
+.s1 .s-eyebrow { color: #e2231a; font-weight: 600; }
+.s1 .ph { background-color: #ececec; background-image: repeating-linear-gradient(135deg, transparent 0 10px, #dcdcdc 10px 11px); color: #555; }
+.s1 .ph.has { background-image: none; }
+.s1 .s-services { border-top: 2px solid #111; }
+.s1 .s-services li { border-top: 1px solid #111; padding-inline: 0; }
+.s1 .s-services li::before { content: attr(data-n); font-weight: 800; color: #e2231a; }
+.s1 .s-quote { background: #111; color: #fcfcfa; margin-top: clamp(28px, 5cqi, 64px); }
+.s1 .s-quote h2 { color: #e2231a; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.s1 blockquote { font-weight: 600; }
+.s1 .s-foot { border-top: 2px solid #111; }
+
+/* S-02 Night glow */
+.s2 { background: #0b0d12; color: #e8eaf0; font-family: "Manrope", sans-serif; background-image: radial-gradient(60cqi 40cqi at 85% 0%, rgba(124,140,255,.28), transparent 70%), radial-gradient(50cqi 30cqi at 0% 40%, rgba(79,209,197,.14), transparent 70%); }
+.s2 .s-logo { font-weight: 800; }
+.s2 .s-nav nav { color: #8b90a0; }
+.s2 .s-cta { background: linear-gradient(135deg, #8b9bff, #4fd1c5); color: #0b0d12; border-radius: 999px; font-weight: 800; }
+.s2 h1 { font-weight: 800; letter-spacing: -0.04em; background: linear-gradient(180deg, #fcfcfa 30%, #9aa3c0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.s2 .s-eyebrow { color: #4fd1c5; border: 1px solid rgba(79,209,197,.35); padding: 6px 10px; border-radius: 999px; letter-spacing: 0.04em; text-transform: none; }
+.s2 .s-sub { color: #a3a8b8; }
+.s2 .ph { background-color: #151922; background-image: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px); background-size: 14px 14px; border: 1px solid #262b38; border-radius: 18px; color: #8b90a0; }
+.s2 .ph.has { background-size: cover; }
+.s2 .s-services li { background: #121620; border: 1px solid #222838; border-radius: 16px; }
+.s2 .s-services li span { color: #8b90a0; }
+.s2 .s-quote { text-align: center; justify-items: center; }
+.s2 .s-quote h2 { font-size: 0.85rem; color: #4fd1c5; letter-spacing: 0.06em; text-transform: uppercase; }
+.s2 cite { color: #8b90a0; }
+.s2 .s-foot { border-top: 1px solid #1e2330; color: #8b90a0; }
+
+/* S-03 Organic */
+.s3 { background: #eef0e6; color: #23301f; font-family: "DM Sans", sans-serif; }
+.s3 h1, .s3 h2, .s3 blockquote, .s3 .s-logo { font-family: "Fraunces", serif; font-weight: 500; }
+.s3 h1 { letter-spacing: -0.02em; }
+.s3 .s-cta { background: #4f6b3c; color: #f6f5ec; border-radius: 999px; }
+.s3 .s-eyebrow { color: #8a5a2b; }
+.s3 .ph { background-color: #d5dcc6; color: #4f6b3c; border-radius: 22px; }
+.s3 .s-hero .ph { border-radius: 999px 999px 24px 24px; }
+.s3 .s-services li { background: #f7f7f0; border-radius: 22px; }
+.s3 .s-services li span { color: #5e6b57; }
+.s3 .s-gallery .ph:nth-child(2) { border-radius: 999px 999px 22px 22px; }
+.s3 .s-quote { background: #23301f; color: #eef0e6; margin: clamp(28px, 5cqi, 64px) var(--pad) 0; border-radius: 28px; }
+.s3 .s-quote h2 { color: #d9a46c; font-family: "DM Sans", sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.s3 cite { color: #b9c2ac; }
+.s3 .s-foot { color: #5e6b57; }
+
+/* S-04 Playful blocks */
+.s4 { background: #fff4d6; color: #1b1b1b; font-family: "Bricolage Grotesque", sans-serif; }
+.s4 .s-logo { font-weight: 800; }
+.s4 .s-cta { background: #ff6b4a; color: #1b1b1b; border: 3px solid #1b1b1b; box-shadow: 4px 4px 0 #1b1b1b; border-radius: 12px; font-weight: 800; }
+.s4 h1 { font-weight: 800; letter-spacing: -0.03em; }
+.s4 .s-eyebrow { background: #19c39b; border: 2px solid #1b1b1b; padding: 5px 10px; border-radius: 999px; transform: rotate(-2deg); font-weight: 800; }
+.s4 .ph { background-color: #3d5afe; background-image: repeating-linear-gradient(-45deg, transparent 0 14px, rgba(255,255,255,.14) 14px 28px); border: 3px solid #1b1b1b; border-radius: 18px; box-shadow: 6px 6px 0 #1b1b1b; color: #fcfcfa; }
+.s4 .ph.has { background-image: none; }
+.s4 .ph .ph-label { background: #1b1b1b; border-radius: 8px; }
+.s4 .s-services li { border: 3px solid #1b1b1b; border-radius: 18px; background: #fcfcfa; }
+.s4 .s-services li:nth-child(1) { background: #ffd2c7; } .s4 .s-services li:nth-child(2) { background: #c9f1e5; } .s4 .s-services li:nth-child(3) { background: #d6dcff; }
+.s4 .s-quote { background: #ff6b4a; border-block: 3px solid #1b1b1b; margin-top: clamp(28px, 5cqi, 64px); }
+.s4 .s-quote h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.s4 blockquote { font-weight: 800; }
+
+/* pick bar */
+.pick { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--ink); color: var(--bg); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); padding-top: 12px; }
+.pick__in { max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.pick__txt { font-size: 0.95rem; }
+.pick__txt b { font-family: var(--f-mono); color: var(--accent); }
+.pick .btn { border-color: var(--bg); color: var(--bg); }
+.pick .btn:hover { background: transparent; text-decoration: underline; }
+.pick .btn--solid { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.pick__acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.toast { font-size: 0.85rem; color: var(--accent); }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .rail { position: static; }
+}
+@media (max-width: 520px) {
+  .pick__acts { width: 100%; } .pick__acts .btn { flex: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .site { animation: in 260ms cubic-bezier(.16,1,.3,1); }
+  @keyframes in { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}
+.lb-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px var(--pad); background: var(--accent); }
+.lb-logo { font: 800 1.15rem/1 var(--f-display); letter-spacing: -0.03em; text-decoration: none; color: var(--ink); }
+.lb-book { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: var(--ink); color: var(--cream); font: 500 .95rem/1 var(--f-body); text-decoration: none; }
+.lb-head { background: var(--accent); padding: 8px var(--pad) clamp(32px, 5vw, 64px); display: grid; gap: 12px; }
+.lb-head h1 { margin: 0; font: 800 clamp(3rem, 9vw, 8rem)/.9 var(--f-display); letter-spacing: -0.05em; color: var(--ink); text-wrap: balance; }
+.lb-head p { margin: 0; font-size: 1.05rem; max-width: 46ch; color: var(--ink); }
+.styles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pick__txt b { color: var(--accent); }
+@media (max-width: 480px) { .lb-book { display: none; } }
+
+/* S-05 Glass */
+.s5 { background: #eef0ff; background-image: radial-gradient(60cqi 50cqi at 10% 0%, #c9d6ff, transparent 70%), radial-gradient(60cqi 50cqi at 100% 30%, #f3d9ff, transparent 70%), radial-gradient(50cqi 40cqi at 40% 100%, #d4fff1, transparent 70%); color: #1d1f33; font-family: "Manrope", sans-serif; }
+.s5 .s-nav { margin: 12px; border-radius: 18px; background: rgba(255,255,255,.55); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.8); }
+.s5 .s-logo { font-weight: 800; }
+.s5 .s-cta { background: #1d1f33; color: #fcfcfa; border-radius: 12px; }
+.s5 h1 { font-weight: 800; letter-spacing: -0.035em; }
+.s5 .s-eyebrow { color: #5b5fd6; font-weight: 600; }
+.s5 .s-sub { color: #474a66; }
+.s5 .ph { background-color: rgba(255,255,255,.45); background-image: linear-gradient(135deg, rgba(201,214,255,.7), rgba(243,217,255,.7)); border: 1px solid rgba(255,255,255,.9); border-radius: 24px; color: #5b5fd6; }
+.s5 .ph.has { background-image: none; }
+.s5 .s-services li { background: rgba(255,255,255,.55); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.85); border-radius: 18px; }
+.s5 .s-services li span { color: #5d607c; }
+.s5 .s-quote { margin: clamp(28px, 5cqi, 64px) var(--pad) 0; background: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.85); border-radius: 24px; }
+.s5 .s-quote h2 { font-size: 0.85rem; color: #5b5fd6; text-transform: uppercase; letter-spacing: 0.06em; }
+.s5 cite { color: #5d607c; }
+.s5 .s-foot { color: #5d607c; }
+
+/* S-06 Editorial */
+.s6 { background: #f1ece2; color: #1a1714; font-family: "DM Sans", sans-serif; }
+.s6 h1, .s6 h2, .s6 blockquote, .s6 .s-logo { font-family: "Fraunces", serif; font-weight: 500; }
+.s6 h1 { font-style: italic; letter-spacing: -0.02em; }
+.s6 .s-nav { border-bottom: 1px solid #1a1714; }
+.s6 .s-logo { font-size: 1.25rem; letter-spacing: -0.01em; }
+.s6 .s-cta { background: transparent; color: #7a1f2b; border-bottom: 2px solid #7a1f2b; padding-inline: 2px; min-height: 36px; }
+.s6 .s-eyebrow { color: #7a1f2b; letter-spacing: 0.14em; }
+.s6 .ph { background-color: #d9d1c1; color: #6b6255; filter: grayscale(.2); }
+.s6 .s-services { border-top: 1px solid #1a1714; }
+.s6 .s-services ul { gap: 0; }
+.s6 .s-services li { border-left: 1px solid #c9bfae; padding-block: 8px; }
+.s6 .s-services li:first-child { border-left: 0; padding-left: 0; }
+.s6 .s-services li span { color: #6b6255; }
+.s6 .s-quote { border-block: 1px solid #1a1714; margin: clamp(28px, 5cqi, 64px) var(--pad) 0; padding-inline: 0; }
+.s6 .s-quote h2 { font-family: "DM Sans", sans-serif; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: #7a1f2b; }
+.s6 blockquote { font-style: italic; }
+.s6 .s-foot { color: #6b6255; }
+
+/* S-07 Brutal */
+.s7 { background: #f2f2ee; color: #0b0b0b; font-family: "JetBrains Mono", monospace; }
+.s7 .s-nav { border-bottom: 4px solid #0b0b0b; }
+.s7 .s-logo { text-transform: uppercase; }
+.s7 .s-cta { background: #ffe600; color: #0b0b0b; border: 3px solid #0b0b0b; font-weight: 500; text-transform: uppercase; }
+.s7 h1 { font-family: "Archivo", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -0.04em; }
+.s7 .s-eyebrow { background: #0b0b0b; color: #ffe600; padding: 4px 8px; }
+.s7 .ph { background-color: #ffe600; background-image: repeating-linear-gradient(0deg, transparent 0 18px, rgba(0,0,0,.12) 18px 20px); border: 4px solid #0b0b0b; color: #0b0b0b; }
+.s7 .ph.has { background-image: none; }
+.s7 .s-services { border-top: 4px solid #0b0b0b; }
+.s7 .s-services li { border: 3px solid #0b0b0b; background: #fcfcfa; }
+.s7 .s-services li b { text-transform: uppercase; }
+.s7 .s-quote { background: #0b0b0b; color: #fcfcfa; margin-top: clamp(28px, 5cqi, 64px); }
+.s7 .s-quote h2 { color: #ffe600; font-size: 0.85rem; text-transform: uppercase; }
+.s7 blockquote { font-family: "Archivo", sans-serif; font-weight: 800; text-transform: uppercase; }
+.s7 .s-foot { border-top: 4px solid #0b0b0b; text-transform: uppercase; }
+
+/* S-08 Luxe */
+.s8 { background: #0e0d0b; color: #efe6d2; font-family: "DM Sans", sans-serif; }
+.s8 h1, .s8 h2, .s8 blockquote, .s8 .s-logo { font-family: "Fraunces", serif; font-weight: 500; }
+.s8 .s-nav { border-bottom: 1px solid #3a3326; }
+.s8 .s-logo { letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
+.s8 .s-nav nav { color: #a99d84; }
+.s8 .s-cta { background: transparent; color: #c8a35a; border: 1px solid #c8a35a; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.8rem; }
+.s8 h1 { font-weight: 500; letter-spacing: -0.01em; }
+.s8 .s-eyebrow { color: #c8a35a; letter-spacing: 0.2em; }
+.s8 .s-sub { color: #a99d84; }
+.s8 .ph { background-color: #1a1813; border: 1px solid #3a3326; outline: 1px solid #c8a35a; outline-offset: -10px; color: #c8a35a; }
+.s8 .s-services li { border-top: 1px solid #c8a35a; padding-inline: 0; }
+.s8 .s-services li span { color: #a99d84; }
+.s8 .s-quote { text-align: center; justify-items: center; }
+.s8 .s-quote h2 { font-family: "DM Sans", sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #c8a35a; }
+.s8 cite { color: #a99d84; }
+.s8 .s-foot { border-top: 1px solid #3a3326; color: #a99d84; }
+</style>
+</head>
+<body>
+<header class="lb-nav"><a class="lb-logo" href="index.html">Shashwat Jain</a><a class="lb-book" href="index.html#talk">Book a call</a></header>
+<section class="lb-head" aria-labelledby="lb-title">
+  <h1 id="lb-title">Try your look.</h1>
+  <p>Pick your business. Add your name and photos. They stay on your device.</p>
+</section>
+<div class="wrap">
+
+  <div class="layout">
+    <aside class="rail" aria-label="Customize the sample">
+      <section class="step">
+        <h2>1 · Your business</h2>
+        <div class="chips" id="niches" role="group" aria-label="Type of business"></div>
+        <label class="field">Business name
+          <input type="text" id="bizname" autocomplete="organization" placeholder="Iron House Gym">
+        </label>
+      </section>
+
+      <section class="step">
+        <h2>2 · Your photos</h2>
+        <div class="slots" id="slots"></div>
+        <input type="file" id="file" accept="image/*" multiple hidden>
+        <p class="hint">Tap a square or any photo spot in the preview. No photos? The design still shows how it looks.</p>
+      </section>
+
+      <section class="step">
+        <h2>3 · Style</h2>
+        <div class="styles" id="styles" role="group" aria-label="Design style"></div>
+      </section>
+    </aside>
+
+    <section class="stage" aria-label="Live preview">
+      <div class="stagebar">
+        <span class="tag">Sample design · <span id="code">S-01</span></span>
+        <div class="arrows">
+          <button class="btn" id="prev">Previous style</button>
+          <button class="btn" id="next">Next style</button>
+        </div>
+      </div>
+      <div class="frame" id="frame">
+        <div class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url" id="url">ironhousegym.com</span></div>
+        <div id="site"></div>
+      </div>
+      <p class="hint">On a phone, swipe the preview left or right to change style.</p>
+    </section>
+  </div>
+</div>
+
+<div class="pick" role="region" aria-label="Your pick">
+  <div class="pick__in">
+    <span class="pick__txt">You picked <b id="pickcode">S-01</b> for <span id="pickniche">Gyms</span></span>
+    <div class="pick__acts">
+      <button class="btn" id="copylink">Copy link</button>
+      <a class="btn btn--solid" id="book" href="#" target="_blank" rel="noopener">Book a call with this style</a>
+    </div>
+    <span class="toast" id="toast" role="status" aria-live="polite"></span>
+  </div>
+</div>
+<script>
+const N = {
+  coaches:["Coaches","Northbound Coaching","Get unstuck and lead with a clear plan","1:1 coaching for first-time managers. Twelve weeks, one goal, a call every week.","Book a free intro call",["1:1 coaching","Team workshops","Leadership reviews"],"I went from dreading Mondays to running the team meeting.","Priya R., engineering manager"],
+  consultants:["Consultants","Meridian Ops Group","Cut the waste out of your operations","Operations consulting for 10 to 100 person companies. Fixed-fee audit in two weeks.","Book a strategy call",["Operations audit","Process redesign","Fractional COO"],"They found money we were losing to manual work every single month.","Dan K., COO"],
+  realtors:["Realtors","Harbor & Pine Realty","Find the home that fits the next ten years","Buying and selling homes in the Austin suburbs, with a local agent who picks up.","See homes for sale",["Buyer tours","Free home valuation","Seller staging"],"We had three offers in the first weekend.","The Alvarez family"],
+  therapists:["Therapists","Quiet Harbor Counseling","A calm place to talk things through","Licensed therapy for anxiety, burnout and relationships. In person or online.","Book a free consult",["Individual therapy","Couples counseling","Online sessions"],"I finally feel like I have tools, not just worries.","Client, 2025"],
+  dentists:["Dentists","Brightside Family Dental","Gentle dental care for the whole family","Same-week appointments, Saturday hours and most insurance accepted.","Book an appointment",["Cleanings and checkups","Whitening","Implants"],"My kids actually like going to the dentist now.","Megan T."],
+  lawyers:["Lawyers","Calder & Reyes Law","Clear legal advice when it matters most","Family and estate law in Denver. Flat-fee wills and a free first consultation.","Schedule a consultation",["Wills and trusts","Family law","Real estate closings"],"They explained every step in plain English.","Robert M."],
+  cleaners:["Cleaners","Sparkhaus Cleaning","Come home to a spotless house","Insured, background-checked cleaners. Weekly, every two weeks or a one-time deep clean.","Get a quote in 60 seconds",["Weekly cleaning","Deep cleans","Move-out cleans"],"Same two cleaners every week, and they never miss a spot.","Jess L."],
+  contractors:["Contractors","Ironwood Builders","Kitchens, baths and additions built right","Licensed general contractor in Phoenix. Fixed quotes and an agreed finish date.","Get a free estimate",["Kitchen remodels","Bathrooms","Home additions"],"Finished a week early and on budget.","Carlos and Ana P."],
+  salons:["Salons","Velvet & Vine Salon","Hair you'll want to show off","Cuts, color and balayage in downtown Charlotte. Book online in 30 seconds.","Book your appointment",["Cut and style","Color and balayage","Bridal hair"],"Best color I've had in ten years.","Tasha W."],
+  gyms:["Gyms","Iron House Gym","Get stronger with coaches who know your name","Small-group strength classes and open gym in Columbus. Your first week is free.","Claim your free week",["Strength classes","Personal training","Open gym, 5am to 11pm"],"Down 22 pounds, and I deadlift my bodyweight now.","Marcus J."],
+  photographers:["Photographers","Lumen & Lake Studio","Photos you'll frame, not just post","Wedding and family photography across the Pacific Northwest.","Check my dates",["Weddings","Family sessions","Brand portraits"],"Every photo made us cry, in a good way.","Hannah and Luke"],
+  accountants:["Accountants","Ledgerwise CPA","Taxes done right, books you can trust","CPA firm for small businesses and freelancers. Monthly bookkeeping from $250.","Book a free review",["Tax returns","Monthly bookkeeping","Payroll"],"They caught deductions our old accountant missed for years.","Owner, Rivera Plumbing"]
+};
+const S = [
+  {code:"S-01", cls:"s1", name:"Swiss grid"},
+  {code:"S-02", cls:"s2", name:"Night glow"},
+  {code:"S-03", cls:"s3", name:"Organic"},
+  {code:"S-04", cls:"s4", name:"Playful blocks"},
+  {code:"S-05", cls:"s5", name:"Glass"},
+  {code:"S-06", cls:"s6", name:"Editorial"},
+  {code:"S-07", cls:"s7", name:"Brutal"},
+  {code:"S-08", cls:"s8", name:"Luxe"}
+];
+const SLOT_LABELS = ["Main photo","Photo 2","Photo 3","Photo 4"];
+const LINKEDIN = "https://www.linkedin.com/in/shashbuilds", CALENDLY = "";
+
+const store = { get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} } };
+const st = Object.assign({ niche:"gyms", style:0, name:"", photos:[null,null,null,null] }, store.get("fr-state") || {});
+const fromHash = location.hash.slice(1); if (N[fromHash]) st.niche = fromHash;
+let targetSlot = null;
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function save(){ store.set("fr-state", st); }
+function bizName(){ return st.name.trim() || N[st.niche][1]; }
+
+function ph(i, extra=""){
+  const p = st.photos[i];
+  return `<figure class="ph${p ? " has" : ""}" data-slot="${i}" role="button" tabindex="0" aria-label="${p ? "Replace" : "Add"} ${SLOT_LABELS[i].toLowerCase()}" ${p ? `style="background-image:url('${p}')"` : ""}><span class="ph-label">+ ${SLOT_LABELS[i]}</span></figure>`;
+}
+
+function renderSite(){
+  const n = N[st.niche], s = S[st.style], name = esc(bizName());
+  $("site").innerHTML = `<div class="site ${s.cls}">
+    <header class="s-nav"><span class="s-logo">${name}</span><nav><a href="#">Services</a><a href="#">About</a><a href="#">Reviews</a></nav><a class="s-cta" href="#">${esc(n[4])}</a></header>
+    <section class="s-hero"><div class="s-copy"><span class="s-eyebrow">${esc(n[0].replace(/s$/,""))} · Book online</span><h1>${esc(n[2])}</h1><p class="s-sub">${esc(n[3])}</p><a class="s-cta" href="#">${esc(n[4])}</a></div>${ph(0)}</section>
+    <section class="s-services"><h2>What we do</h2><ul>${n[5].map((x,i)=>`<li data-n="0${i+1}"><b>${esc(x)}</b><span>Clear pricing, booked online.</span></li>`).join("")}</ul></section>
+    <section class="s-gallery">${ph(1)}${ph(2)}${ph(3)}</section>
+    <section class="s-quote"><h2>What clients say</h2><blockquote>“${esc(n[6])}”</blockquote><cite>${esc(n[7])}</cite></section>
+    <footer class="s-foot"><span>© ${name}</span><a class="s-cta" href="#">${esc(n[4])}</a></footer>
+  </div>`;
+  $("url").textContent = bizName().toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"") + ".com";
+}
+
+function renderControls(){
+  $("niches").innerHTML = Object.entries(N).map(([k,v]) => `<button class="chip" data-niche="${k}" aria-pressed="${k===st.niche}">${v[0]}</button>`).join("");
+  $("styles").innerHTML = S.map((s,i) => `<button class="styleopt" data-style="${i}" aria-pressed="${i===st.style}"><span class="mono">${s.code}</span><span>${s.name}</span></button>`).join("");
+  $("slots").innerHTML = st.photos.map((p,i) => `<div class="slot${p ? " has" : ""}" data-slot="${i}" role="button" tabindex="0" aria-label="${p ? "Replace" : "Add"} ${SLOT_LABELS[i].toLowerCase()}" ${p ? `style="background-image:url('${p}')"` : ""}>${i===0 ? "Main" : i+1}<button class="x" data-remove="${i}" aria-label="Remove ${SLOT_LABELS[i].toLowerCase()}">×</button></div>`).join("");
+  $("bizname").value = st.name;
+  $("bizname").placeholder = N[st.niche][1];
+}
+
+function renderPick(){
+  const s = S[st.style], n = N[st.niche];
+  $("code").textContent = s.code; $("pickcode").textContent = s.code; $("pickniche").textContent = n[0];
+  $("book").href = CALENDLY ? `${CALENDLY}?a1=${encodeURIComponent(s.code + " " + n[0])}` : LINKEDIN;
+}
+
+function render(){ renderControls(); renderSite(); renderPick(); save(); }
+
+function setStyle(i){ st.style = (i + S.length) % S.length; render(); }
+
+async function shrink(file){
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((ok, bad) => { const im = new Image(); im.onload = () => ok(im); im.onerror = bad; im.src = url; });
+    const max = 1400, k = Math.min(1, max / Math.max(img.width, img.height));
+    const c = document.createElement("canvas"); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+    c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    return c.toDataURL("image/jpeg", 0.8);
+  } finally { URL.revokeObjectURL(url); }
+}
+
+async function addFiles(files, start){
+  let i = start ?? st.photos.findIndex((p) => !p); if (i < 0) i = 0;
+  for (const f of [...files].filter((f) => f.type.startsWith("image/")).slice(0, 4)) {
+    try { st.photos[i] = await shrink(f); } catch(e){ toast("That file couldn't be read as a photo. Try a JPG or PNG."); }
+    i = (i + 1) % 4;
+  }
+  render();
+}
+
+function pickFor(i){ targetSlot = i; $("file").click(); }
+function toast(t){ $("toast").textContent = t; clearTimeout(toast.t); toast.t = setTimeout(() => $("toast").textContent = "", 2600); }
+
+document.addEventListener("click", (e) => {
+  const rm = e.target.closest("[data-remove]");
+  if (rm) { e.stopPropagation(); st.photos[+rm.dataset.remove] = null; render(); return; }
+  const slot = e.target.closest("[data-slot]"); if (slot) { pickFor(+slot.dataset.slot); return; }
+  const ni = e.target.closest("[data-niche]");
+  if (ni) { st.niche = ni.dataset.niche; history.replaceState(null, "", "#" + st.niche); render(); return; }
+  const so = e.target.closest("[data-style]"); if (so) { setStyle(+so.dataset.style); return; }
+  if (e.target.closest(".site a")) e.preventDefault();
+});
+document.addEventListener("keydown", (e) => {
+  const slot = e.target.closest && e.target.closest("[data-slot]");
+  if (slot && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); pickFor(+slot.dataset.slot); }
+});
+$("file").addEventListener("change", (e) => { addFiles(e.target.files, targetSlot); e.target.value = ""; });
+$("bizname").addEventListener("input", (e) => { st.name = e.target.value.slice(0, 40); renderSite(); renderPick(); save(); });
+$("prev").addEventListener("click", () => setStyle(st.style - 1));
+$("next").addEventListener("click", () => setStyle(st.style + 1));
+$("frame").addEventListener("dragover", (e) => e.preventDefault());
+$("frame").addEventListener("drop", (e) => { e.preventDefault(); const t = e.target.closest("[data-slot]"); addFiles(e.dataTransfer.files, t ? +t.dataset.slot : null); });
+let sx = null;
+$("frame").addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+$("frame").addEventListener("touchend", (e) => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 60) setStyle(st.style + (dx < 0 ? 1 : -1)); });
+$("copylink").addEventListener("click", () => {
+  const link = location.href.split("#")[0] + "#" + st.niche;
+  navigator.clipboard.writeText(link).then(() => toast("Link copied. It opens on " + N[st.niche][0] + "."), () => toast(link));
+});
+window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (N[h]) { st.niche = h; render(); } });
+render();
+</script>
+
+</body>
+</html>

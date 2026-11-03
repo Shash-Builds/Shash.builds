@@ -44,11 +44,11 @@ It uses only the Python 3 standard library.
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install site-audit@shashbuilds`
 3. Say "audit this site: https://their-site.com".
 
-On claude.ai: download `site-audit-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/site-audit/SKILL.md).
+On claude.ai: download `site-audit-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. It runs a Python script, so it works best in Claude Code or anywhere Claude can run code. See [the skill file](skills/site-audit/SKILL.md).
 
 ## Before and after
 

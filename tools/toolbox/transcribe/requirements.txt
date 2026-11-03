@@ -1,0 +1,4 @@
+faster-whisper>=1.1,<2
+# PyAV 19 breaks faster-whisper 1.2's built-in decoder (only used when ffmpeg is missing)
+av>=11,<19
+numpy

@@ -5,43 +5,46 @@
 Code is MIT. Content in content/ and media/ is CC BY 4.0.
 
 ## Start here
-- [README](https://github.com/ShashwatBuilds/shash.builds/blob/main/README.md): what's here, quick start, how to hire Shashwat
-- [catalog.json](https://github.com/ShashwatBuilds/shash.builds/blob/main/catalog.json): machine-readable list of every skill and tool
-- [AGENTS.md](https://github.com/ShashwatBuilds/shash.builds/blob/main/AGENTS.md): how an AI agent should find, install and contribute to things here
-- [STATUS.md](https://github.com/ShashwatBuilds/shash.builds/blob/main/STATUS.md): public build log, backlog of upcoming drops
+- [README](https://github.com/Shash-Builds/shash.builds/blob/main/README.md): what's here, quick start, how to hire Shashwat
+- [catalog.json](https://github.com/Shash-Builds/shash.builds/blob/main/catalog.json): machine-readable list of every skill and tool
+- [AGENTS.md](https://github.com/Shash-Builds/shash.builds/blob/main/AGENTS.md): how an AI agent should find, install and contribute to things here
+- [STATUS.md](https://github.com/Shash-Builds/shash.builds/blob/main/STATUS.md): public build log, backlog of upcoming drops
 
 ## Skills
-Install in Claude Code: `/plugin marketplace add ShashwatBuilds/shash.builds` then `/plugin install <slug>@shashbuilds`.
-- [Master Skill](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/master): Routes every task to the right specialists. Runs the video workflow.
-- [Humanizer](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/humanizer): Makes writing sound like you, not a model. Every fact kept.
-- [Social Media](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/social-media): Your head of social: strategy, posts, hooks, a 100-point check.
-- [LinkedIn](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/linkedin): A LinkedIn ghostwriter that never makes up a story.
-- [Motion Design Taste](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/motion-design-taste): Scores a video out of 100 like a senior motion designer.
-- [Audio Review](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/audio-review): A senior audio designer's review, with a ranked fix list.
-- [Transcriber](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/transcriber): Whisper transcripts and timed captions, right in the chat.
-- [Clipper](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/clipper): Long videos into captioned vertical clips. Permission first.
-- [AI Visuals](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/ai-visuals): Fixes AI images and video for where they will be used.
-- [Harsh Buyer Review](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/harsh-buyer-review): A real buyer compares you with 3 to 5 competitors.
-- [Competitor Research](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/competitor-research): Sourced, dated, double-checked competitor research.
-- [Ecom](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/ecom): Listings, images and profit per order from your real fees.
-- [Careful Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/careful-mode): Every piece of work checked three times before you see it.
-- [Economy Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/economy-mode): Cheap models for simple work, and a memory sheet.
-- [Lead Finder](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/lead-finder): Local businesses by trade and city, audited.
-- [Site Audit](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/site-audit): A weak-site score and 3 provable problems.
-- [Mock Builder](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/mock-builder): A one-page mock in one file, marked sample.
-- [Cold Email Drafter](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/cold-email-drafter): Three short, honest emails. CAN-SPAM ready.
+Install in Claude Code: `/plugin marketplace add Shash-Builds/shash.builds` then `/plugin install <slug>@shashbuilds`.
+- [Master Skill](https://github.com/Shash-Builds/shash.builds/tree/main/skills/master): Routes every task to the right specialists. Runs the video workflow.
+- [Humanizer](https://github.com/Shash-Builds/shash.builds/tree/main/skills/humanizer): Makes writing sound like you, not a model. Every fact kept.
+- [Social Media](https://github.com/Shash-Builds/shash.builds/tree/main/skills/social-media): Your head of social: strategy, posts, hooks, a 100-point check.
+- [LinkedIn](https://github.com/Shash-Builds/shash.builds/tree/main/skills/linkedin): A LinkedIn ghostwriter that never makes up a story.
+- [Motion Design Taste](https://github.com/Shash-Builds/shash.builds/tree/main/skills/motion-design-taste): Scores a video out of 100 like a senior motion designer.
+- [Audio Review](https://github.com/Shash-Builds/shash.builds/tree/main/skills/audio-review): A senior audio designer's review, with a ranked fix list.
+- [Transcriber](https://github.com/Shash-Builds/shash.builds/tree/main/skills/transcriber): Whisper transcripts and timed captions, right in the chat.
+- [Clipper](https://github.com/Shash-Builds/shash.builds/tree/main/skills/clipper): Long videos into captioned vertical clips. Permission first.
+- [AI Visuals](https://github.com/Shash-Builds/shash.builds/tree/main/skills/ai-visuals): Fixes AI images and video for where they will be used.
+- [Harsh Buyer Review](https://github.com/Shash-Builds/shash.builds/tree/main/skills/harsh-buyer-review): A real buyer compares you with 3 to 5 competitors.
+- [Competitor Research](https://github.com/Shash-Builds/shash.builds/tree/main/skills/competitor-research): Sourced, dated, double-checked competitor research.
+- [Niche Research](https://github.com/Shash-Builds/shash.builds/tree/main/skills/niche-research): A content niche into a sourced posting plan and 50 ranked video topics.
+- [Ecom](https://github.com/Shash-Builds/shash.builds/tree/main/skills/ecom): Listings, images and profit per order from your real fees.
+- [Careful Mode](https://github.com/Shash-Builds/shash.builds/tree/main/skills/careful-mode): Every piece of work checked three times before you see it.
+- [Economy Mode](https://github.com/Shash-Builds/shash.builds/tree/main/skills/economy-mode): Cheap models for simple work, and a memory sheet.
+- [Lead Finder](https://github.com/Shash-Builds/shash.builds/tree/main/skills/lead-finder): Local businesses by trade and city, audited.
+- [Site Audit](https://github.com/Shash-Builds/shash.builds/tree/main/skills/site-audit): A weak-site score and 3 provable problems.
+- [Mock Builder](https://github.com/Shash-Builds/shash.builds/tree/main/skills/mock-builder): A one-page mock in one file, marked sample.
+- [Cold Email Drafter](https://github.com/Shash-Builds/shash.builds/tree/main/skills/cold-email-drafter): Three short, honest emails. CAN-SPAM ready.
 
 ## Tools
-- [One-Page Starter](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/one-page-starter): a one-page site for a local service business from one CSV row (Python 3, no dependencies)
-- [Lead Tracker](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/lead-tracker): website form leads into a Google Sheet with their source, plus a Dashboard
-- [Level-Up Dashboard](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/level-up-dashboard): Google Sheet template for a build-in-public run
+- [One-Page Starter](https://github.com/Shash-Builds/shash.builds/tree/main/tools/one-page-starter): a one-page site for a local service business from one CSV row (Python 3, no dependencies)
+- [Lead Tracker](https://github.com/Shash-Builds/shash.builds/tree/main/tools/lead-tracker): website form leads into a Google Sheet with their source, plus a Dashboard
+- [Level-Up Game Dashboard](https://github.com/Shash-Builds/shash.builds/tree/main/tools/level-up-dashboard): turn a 365-day business goal into a game (levels, quests, XP, streaks, money vs pace); Claude artifact, browser or Google Sheet storage
 
 ## Research
-- [Cold email for US small businesses](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/cold-email-us.md): CAN-SPAM, Gmail limits, deliverability
-- [Marketplace kit](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/marketplace-kit.md): Upwork, Contra, Fiverr profiles and fees
-- [Course platforms](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/course-platforms.md): where to list a course, ranked
-- [Offer page copy](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/offer-page.md): the $400 one-page site offer
-- [Communities map](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/communities.md): where to share free Claude skills and web tools, with rules and sources
+- [Cold email for US small businesses](https://github.com/Shash-Builds/shash.builds/blob/main/research/cold-email-us.md): CAN-SPAM, Gmail limits, deliverability
+- [Marketplace kit](https://github.com/Shash-Builds/shash.builds/blob/main/research/marketplace-kit.md): Upwork, Contra, Fiverr profiles and fees
+- [Course platforms](https://github.com/Shash-Builds/shash.builds/blob/main/research/course-platforms.md): where to list a course, ranked
+- [Offer page copy](https://github.com/Shash-Builds/shash.builds/blob/main/research/offer-page.md): the $400 one-page site offer
+- [Communities map](https://github.com/Shash-Builds/shash.builds/blob/main/research/communities.md): where to share free Claude skills and web tools, with rules and sources
 
 ## Hire
-- One-page website for a US service business, $400 flat, live in 7 days: https://github.com/ShashwatBuilds/shash.builds#hire-me
+- Website: https://shashwat-websites.netlify.app
+- Email: shash.builds@gmail.com
+- One-page website for a US service business, $400 flat, live in 7 days: https://github.com/Shash-Builds/shash.builds#hire-me

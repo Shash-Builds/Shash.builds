@@ -24,11 +24,11 @@ The wording of the record changes with your task. It always says what was checke
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install careful-mode@shashbuilds`
 3. Say "careful mode on" before a task that matters.
 
-On claude.ai: download `careful-mode-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/careful-mode/careful-mode.md).
+On claude.ai: download `careful-mode-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/careful-mode/careful-mode.md).
 
 ## Before and after
 

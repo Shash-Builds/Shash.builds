@@ -1,9 +1,9 @@
 {
   "name": "shashbuilds",
-  "description": "shash.builds: 18 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "description": "shash.builds: 19 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
   "owner": {
     "name": "Shashwat Jain",
-    "url": "https://github.com/ShashwatBuilds"
+    "url": "https://github.com/Shash-Builds"
   },
   "plugins": [
     {
@@ -95,6 +95,11 @@
       "name": "cold-email-drafter",
       "source": "./skills/cold-email-drafter",
       "description": "shash.builds Cold Email Drafter: turns a site audit and a mock link into a 3-email sequence (90 words or fewer, then day 3 and day 7 follow-ups) in plain human text, with CAN-SPAM basics and a checker that fails hype, em dashes and extra links."
+    },
+    {
+      "name": "niche-research",
+      "source": "./skills/niche-research",
+      "description": "shash.builds Niche Research: researches a content niche and turns it into a posting plan (top accounts, best posts of the last 90 days, audience questions, content gaps, 50 ranked video topics with hooks, posting times in ET, hashtags), every row sourced and dated, run on Haiku helpers."
     }
   ]
 }

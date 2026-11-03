@@ -55,7 +55,7 @@ TIKTOKEN_URLS = {  # what the converter asks tiktoken for; served from the PyPI 
     "https://raw.githubusercontent.com/openai/whisper/main/whisper/assets/gpt2.tiktoken": "gpt2.tiktoken",
 }
 LIMIT = 90 * 1024 * 1024  # PyPI's default limit is 100 MB per file; stay well under it
-HOMEPAGE = "https://github.com/ShashwatBuilds/shash.builds"
+HOMEPAGE = "https://github.com/Shash-Builds/shash.builds"
 
 
 def sha256(path):
@@ -153,7 +153,7 @@ def convert(pt, work, size):
     subprocess.run([sys.executable, str(CONVERTER), "--checkpoint_path", str(pt),
                     "--pytorch_dump_folder_path", str(hf), "--convert_preprocessor", "True"],
                    check=True, env={**os.environ, "TIKTOKEN_CACHE_DIR": str(cache),
-                                    "shash.builds_GENERATION_CONFIG": str(generation_config(pt, size, work))})
+                                    "SHASHBUILDS_GENERATION_CONFIG": str(generation_config(pt, size, work))})
     import ctranslate2
     out = work / "ct2"
     copy = [f for f in ("tokenizer.json", "preprocessor_config.json") if (hf / f).exists()]

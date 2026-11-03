@@ -194,7 +194,7 @@ def social():
     body.append(wordmark(150, 80, 300))
     body.append(text(BODY, "One-page websites for US service businesses.", 38, 84, 384, CREAM))
     body.append(text(BODY, "Free Claude skills and web tools, built in public.", 38, 84, 436, MUTED))
-    body.append(text(BODY_BOLD, "github.com/ShashwatBuilds/shash.builds", 28, 84, 548, ORANGE))
+    body.append(text(BODY_BOLD, "github.com/Shash-Builds/shash.builds", 28, 84, 548, ORANGE))
     body.append(f'<g transform="translate(910 150) scale(1.6)">{tab_group(False)}</g>')
     body.append(f'<rect y="{h-12}" width="{w}" height="12" fill="{ORANGE}"/>')
     return svg(w, h, "".join(body), "shash.builds social preview",
@@ -261,7 +261,7 @@ def build_all():
     out = {
         "banner.svg": banner(), "social-preview.svg": social(), "profile-header.svg": profile_header(),
         "tab.svg": tab(True), "tab-static.svg": tab(False),
-        "header-skills.svg": header("Claude skills", "skill", "18 free Claude specialists that work together."),
+        "header-skills.svg": header("Claude skills", "skill", "19 free Claude specialists that work together."),
     }
     out.update({f"icons/{k}.svg": icon(k) for k in ICONS})
     for name, data in out.items():

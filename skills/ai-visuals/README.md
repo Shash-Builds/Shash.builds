@@ -32,11 +32,11 @@ The score uses eight weighted criteria, and the total is added up by a script. Y
 
 ## Install in 3 steps
 
-1. `/plugin marketplace add ShashwatBuilds/shash.builds`
+1. `/plugin marketplace add Shash-Builds/shash.builds`
 2. `/plugin install ai-visuals@shashbuilds`
 3. Share an image or video, the prompt you used, and say where it will go: "Review this for an Instagram ad."
 
-On claude.ai: download `ai-visuals-skill.zip` from [Releases](https://github.com/ShashwatBuilds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/ai-visuals/ai-visuals.md), plus the placement's section of [purposes.md](skills/ai-visuals/purposes.md) and the tool's section of [generators.md](skills/ai-visuals/generators.md).
+On claude.ai: download `ai-visuals-skill.zip` from [Releases](https://github.com/Shash-Builds/shash.builds/releases) and upload it under Settings, Capabilities. Any chat: paste [the prompt](skills/ai-visuals/ai-visuals.md), plus the placement's section of [purposes.md](skills/ai-visuals/purposes.md) and the tool's section of [generators.md](skills/ai-visuals/generators.md).
 
 ## Before and after
 

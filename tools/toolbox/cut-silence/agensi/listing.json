@@ -1,0 +1,9 @@
+{
+  "title": "Cut Silence by shash.builds",
+  "summary": "Cuts silences and umm or uh fillers from a face recording or voice-over with ffmpeg, keeping a 0.15 s pad. Free, local, no API key.",
+  "tags": ["video editing", "silence removal", "jump cuts", "ffmpeg", "reels", "podcast"],
+  "price": "free",
+  "cover_line": "Silences and umms out of your recording, speech left untouched.",
+  "result": "7.0 s to 3.5 s: 1 cut (2 silences, 1 filler)",
+  "command": "python cut_silence.py face.mp4 --words face.words.json"
+}
