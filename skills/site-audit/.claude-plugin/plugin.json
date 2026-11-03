@@ -1,0 +1,18 @@
+{
+  "name": "site-audit",
+  "displayName": "Site Audit by shash.builds",
+  "description": "shash.builds Site Audit: scores how weak a small business website is (0 to 100) and names the 3 most specific, provable problems in plain words an owner understands. Fetches robots.txt and one page, nothing guessed.",
+  "author": {
+    "name": "Shashwat Jain",
+    "url": "https://github.com/ShashwatBuilds"
+  },
+  "homepage": "https://github.com/ShashwatBuilds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "website audit",
+    "small business",
+    "lead generation",
+    "web design",
+    "seo"
+  ]
+}

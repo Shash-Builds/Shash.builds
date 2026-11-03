@@ -26,12 +26,21 @@ Install in Claude Code: `/plugin marketplace add ShashwatBuilds/shash.builds` th
 - [Ecom](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/ecom): Listings, images and profit per order from your real fees.
 - [Careful Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/careful-mode): Every piece of work checked three times before you see it.
 - [Economy Mode](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/economy-mode): Cheap models for simple work, and a memory sheet.
+- [Lead Finder](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/lead-finder): Local businesses by trade and city, audited.
+- [Site Audit](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/site-audit): A weak-site score and 3 provable problems.
+- [Mock Builder](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/mock-builder): A one-page mock in one file, marked sample.
+- [Cold Email Drafter](https://github.com/ShashwatBuilds/shash.builds/tree/main/skills/cold-email-drafter): Three short, honest emails. CAN-SPAM ready.
 
 ## Tools
 - [One-Page Starter](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/one-page-starter): a one-page site for a local service business from one CSV row (Python 3, no dependencies)
 - [Lead Tracker](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/lead-tracker): website form leads into a Google Sheet with their source, plus a Dashboard
+- [Level-Up Dashboard](https://github.com/ShashwatBuilds/shash.builds/tree/main/tools/level-up-dashboard): Google Sheet template for a build-in-public run
 
 ## Research
+- [Cold email for US small businesses](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/cold-email-us.md): CAN-SPAM, Gmail limits, deliverability
+- [Marketplace kit](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/marketplace-kit.md): Upwork, Contra, Fiverr profiles and fees
+- [Course platforms](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/course-platforms.md): where to list a course, ranked
+- [Offer page copy](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/offer-page.md): the $400 one-page site offer
 - [Communities map](https://github.com/ShashwatBuilds/shash.builds/blob/main/research/communities.md): where to share free Claude skills and web tools, with rules and sources
 
 ## Hire

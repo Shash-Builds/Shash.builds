@@ -12,11 +12,11 @@ skill (invoke the skill if it isn't loaded).
 | Listings, product images, store numbers, ads, returns, stock, sale events | Ecom (ecom, harsh-buyer-review, humanizer, ai-visuals) |
 | Social media, LinkedIn, content, YouTube, clipping, campaigns | Marketing (social-media, linkedin, clipper, humanizer, ai-visuals, harsh-buyer-review, transcriber) |
 | Make or edit a video, AI image or clip, product graphic, sound | Design (video workflow and its sound library, ai-visuals, motion-design-taste, audio-review, transcriber) |
+| Leads, site audits, mocks, cold emails | Sales (lead-finder, site-audit, mock-builder, cold-email-drafter) |
 | Review or feedback on finished work: listing, ad, copy, video, audio, image, post | Review (harsh-buyer-review, motion-design-taste, audio-review, ai-visuals) |
-| Other research | No head: economy-mode helpers gather; you verify and cite; careful-mode |
+| Other research | No head: economy-mode helpers gather; you verify, cite |
 
-Mixed task: each part to its head; heads hand work to each other as their
-files say. Unsure: the head with more checks.
+Mixed task: each part to its head; heads hand off as their files say. Unsure: the head with more checks.
 
 Foundation for every head: careful-mode on anything customers see or hard
 to undo; economy-mode for bulk work; search the memory sheet

@@ -15,3 +15,7 @@ media/.fonts/
 .DS_Store
 __pycache__/
 node_modules/
+
+# lead lists stay private, never commit them
+leads/
+*.leads.csv

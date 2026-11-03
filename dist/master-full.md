@@ -42,6 +42,10 @@ tools below. When a head needs one:
 | clipper | Long videos into vertical clips with captions and a hook, for paid clipping campaigns or the founder's own Shorts | `skills/clipper/skills/clipper/clipper.md` |
 | transcriber | Speech to text: voice notes, podcasts, calls and videos into text and timestamped captions | `skills/transcriber/skills/transcriber/transcriber.md` |
 | social-media | Social media strategy, calendars, posts, scripts, analytics and replies; the script and posting plan for social videos | `skills/social-media/skills/social-media/social-media.md` |
+| site-audit | Weak-site score and provable problems for a business website | `skills/site-audit/skills/site-audit/SKILL.md` |
+| lead-finder | Finding local service businesses by trade and city from public sources | `skills/lead-finder/skills/lead-finder/SKILL.md` |
+| mock-builder | One-file one-page website mocks for prospects, labeled sample | `skills/mock-builder/skills/mock-builder/SKILL.md` |
+| cold-email-drafter | Short honest cold email sequences with CAN-SPAM basics | `skills/cold-email-drafter/skills/cold-email-drafter/SKILL.md` |
 | Video workflow | Making or editing a video (the Design head's video path) | `skills/master/skills/master/workflows/video.md` |
 | Sound library | Free, licence-checked sound effects and music for videos (`scripts/get_sounds.py`), picked by video type, with credit lines | `skills/master/skills/master/sounds/README.md` |
 | Product head | Competitors, market, pricing decisions, positioning, launch readiness | `skills/master/skills/master/heads/product.md` |
@@ -49,6 +53,7 @@ tools below. When a head needs one:
 | Marketing head | Social media, content, YouTube, campaigns | `skills/master/skills/master/heads/marketing.md` |
 | Design head | Videos, AI images and clips, product graphics, sound | `skills/master/skills/master/heads/design.md` |
 | Review head | Reviewing anything before it ships | `skills/master/skills/master/heads/review.md` |
+| Sales head | Leads, website audits, mock sites and cold emails for outreach | `skills/master/skills/master/heads/sales.md` |
 
 ## 2. When the Master Skill runs (the founder chooses)
 
@@ -116,6 +121,11 @@ transcript for chapters, captions and repurposing; ai-visuals for AI-made
 visuals; harsh-buyer-review for posts that sell; the humanizer on every
 post. All LinkedIn work goes to linkedin; clipping campaigns and Shorts
 cut from long videos go to clipper. Reels and videos go to Design.
+
+**Sales** (`heads/sales.md`): finds clients. lead-finder lists local businesses
+from public sources, site-audit proves what is weak about each website,
+mock-builder makes a labeled sample site, cold-email-drafter writes the
+sequence and the humanizer checks the personal line. The founder sends.
 
 **Design** (`heads/design.md`): makes the assets. Videos follow
 `workflows/video.md` from start to finish (economy mode, careful brief,
@@ -200,11 +210,11 @@ skill (invoke the skill if it isn't loaded).
 | Listings, product images, store numbers, ads, returns, stock, sale events | Ecom (ecom, harsh-buyer-review, humanizer, ai-visuals) |
 | Social media, LinkedIn, content, YouTube, clipping, campaigns | Marketing (social-media, linkedin, clipper, humanizer, ai-visuals, harsh-buyer-review, transcriber) |
 | Make or edit a video, AI image or clip, product graphic, sound | Design (video workflow and its sound library, ai-visuals, motion-design-taste, audio-review, transcriber) |
+| Leads, site audits, mocks, cold emails | Sales (lead-finder, site-audit, mock-builder, cold-email-drafter) |
 | Review or feedback on finished work: listing, ad, copy, video, audio, image, post | Review (harsh-buyer-review, motion-design-taste, audio-review, ai-visuals) |
-| Other research | No head: economy-mode helpers gather; you verify and cite; careful-mode |
+| Other research | No head: economy-mode helpers gather; you verify, cite |
 
-Mixed task: each part to its head; heads hand work to each other as their
-files say. Unsure: the head with more checks.
+Mixed task: each part to its head; heads hand off as their files say. Unsure: the head with more checks.
 
 Foundation for every head: careful-mode on anything customers see or hard
 to undo; economy-mode for bulk work; search the memory sheet
@@ -2899,6 +2909,175 @@ change.
 
 ---
 
+## Skill: `skills/site-audit/skills/site-audit/SKILL.md`
+
+# Site Audit
+
+Score how weak a small business website is and name the 3 problems an owner would care
+about, with proof. Facts only: never guess, never judge taste without evidence.
+
+## 1. Run the audit
+
+```
+python3 ${CLAUDE_SKILL_DIR}/scripts/audit.py <url or "none"> --name "<business>" --md audit.md > audit.json
+```
+
+(`scripts/audit.py` is next to this SKILL.md.) It reads robots.txt and stops if the page is
+disallowed, fetches the one page, and sends HEAD requests to at most 15 of its links (skip
+with `--no-links`). Python 3 standard library only.
+
+## 2. Read the result
+
+- `score`: 0 to 100, higher means a weaker site (a better prospect for a rebuild).
+- `problems`: each has a plain sentence and its `evidence`. `top_3` are the heaviest.
+- `facts`: what was measured (https, download time from the audit server, viewport, tel links,
+  action buttons, links checked).
+- `skipped`: robots.txt asked tools not to fetch the page. Respect it; do not work around it.
+
+## 3. Report
+
+Give the score and the top 3 problems, each in one sentence a business owner understands,
+with its evidence. Download time is from the audit server, not a phone: say so if you quote
+it. If the user wants a design opinion ("outdated"), only add it with something visible as
+proof (a screenshot, a copyright year, old tags). Never invent a problem to fill 3 slots.
+
+## 4. Hand-offs
+
+The audit JSON feeds `mock-builder` (what to fix in the mock) and `cold-email-drafter`
+(the one personal line). `lead-finder` runs this audit on every business it finds.
+
+---
+
+## Skill: `skills/lead-finder/skills/lead-finder/SKILL.md`
+
+# Lead Finder
+
+Find local US service businesses from sources that allow it, audit each website, and hand
+back a CSV ranked weakest site first. The list belongs to the user: never commit it, never
+publish it.
+
+## 1. Run it
+
+```
+python3 ${CLAUDE_SKILL_DIR}/scripts/find_leads.py --trade plumber --city "Austin, TX" --limit 25 --out leads/austin-plumbers.leads.csv
+```
+
+(`scripts/find_leads.py` is next to this SKILL.md.) Trades: plumber, hvac, electrician,
+roofer, cleaner, landscaper, painter, carpenter, handyman, locksmith, pest control, salon,
+barber, dentist, auto repair, car wash, pet grooming, flooring.
+
+- Default source: OpenStreetMap (Nominatim finds the city, Overpass finds businesses). Free,
+  no key. Credit "© OpenStreetMap contributors". Coverage varies by city.
+- `--source places`: Google Places API with the user's own `GOOGLE_PLACES_API_KEY`. Google
+  bills for it; follow Google's terms on storing results.
+- Never scrape Google Maps or any site whose terms forbid it.
+
+The audit needs the `site-audit` skill installed next to this one (or pass `--no-audit`).
+
+## 2. Read the CSV
+
+Columns: business, trade, city, website, contact, score, problem_1..3, source. A blank
+website means the source didn't list one, which is not proof there is none: say so and
+suggest a quick search before calling it "no website". `contact` is a public email from the
+source or "contact page on website".
+
+## 3. Keep it private
+
+Save under `leads/` or as `*.leads.csv` and make sure `.gitignore` covers both. Remind the
+user that cold email needs CAN-SPAM basics (see `cold-email-drafter`).
+
+## 4. Hand-offs
+
+Pick the weakest sites, then `mock-builder` for each and `cold-email-drafter` for the emails.
+
+---
+
+## Skill: `skills/mock-builder/skills/mock-builder/SKILL.md`
+
+# Mock Builder
+
+Make a one-page mock a business owner can open on a phone, as a single HTML file.
+
+## 1. Gather only public facts
+
+Name, trade, city and state are enough. If the business has a public website, you may take
+its logo URL, its main brand color and its public phone number from it. Nothing else about
+the business goes on the page.
+
+## 2. Build
+
+```
+python3 ${CLAUDE_SKILL_DIR}/scripts/mock.py --name "<name>" --trade "<trade>" --city "<city>" --state <ST> \
+  [--color "#hex"] [--logo <url>] [--phone "<public number>"] [--by "<your name>"] --out previews/<slug>/index.html
+```
+
+(`scripts/mock.py` and `templates/style.css` are next to this SKILL.md.) The file has the
+CSS inside it, so it works anywhere.
+
+## 3. Rules
+
+- The banner says it is a sample mock and not a claim about the business. Keep it.
+- No reviews, ratings, years in business, licenses or awards unless the user gives you the
+  business's own public source. The reviews panel says real reviews go there.
+- If a site-audit JSON exists, make sure the mock fixes its top problems (call button, phone
+  layout, service area) and tell the user which ones it fixes.
+
+## 4. Share
+
+Put every mock in one static site as `previews/<slug>/index.html` (Netlify drop or GitHub
+Pages) and share `https://<site>/previews/<slug>/`. The page has `noindex` so search engines
+skip it. Hand the link to `cold-email-drafter`.
+
+---
+
+## Skill: `skills/cold-email-drafter/skills/cold-email-drafter/SKILL.md`
+
+# Cold Email Drafter
+
+Three short, honest emails a business owner might actually answer.
+
+## 1. Inputs
+
+- The site-audit JSON for the business (or its top problem).
+- The mock link.
+- The sender's real name and postal address (CAN-SPAM needs both).
+- The owner's first name only if it is public (their own site or Google profile).
+
+## 2. Draft
+
+```
+python3 ${CLAUDE_SKILL_DIR}/scripts/email_tool.py draft --audit audit.json --mock <link> \
+  --sender "<real name>" --business "<business>" [--owner <first name>] [--city <city>] > emails.txt
+```
+
+(`scripts/email_tool.py` is next to this SKILL.md.) Then rewrite the personal line so it
+sounds like a person who looked: one specific, provable thing from the audit, in plain
+words. Keep the rest short. The offer line stays: "Want it live in 7 days for $400?" unless
+the user's offer differs.
+
+## 3. Rules
+
+- Email 1: subject, greeting, one personal line, the mock link, the soft question, sign-off.
+  90 words or fewer, not counting the address and opt-out lines.
+- Follow-ups on day 3 and day 7, shorter, no guilt. Send them as replies in the same
+  thread, so the "Re:" subject is true. Never put "Re:" on a new email.
+- The email plainly says it is a business offer (the price line does this). Keep it.
+- Plain text. One link. No attachments, no images, no tracking pixels.
+- No em dashes, no hype, no fake familiarity, no claims about results.
+- Every email ends with the sender's name, a real postal address and a one-line opt-out.
+  Honor every opt-out.
+- Run the humanizer on the personal line if it is installed.
+
+## 4. Check before sending
+
+```
+python3 ${CLAUDE_SKILL_DIR}/scripts/email_tool.py check emails.txt
+```
+
+Fix everything it reports. It reminds you to fill the postal address placeholder.
+
+---
+
 ## Skill: `skills/master/skills/master/workflows/video.md`
 
 # Video workflow (part of the shash.builds Master Skill)
@@ -3655,6 +3834,58 @@ never for judging; the memory sheet for the brand's rules.
 
 Every reviewer for the asset has run, the fix list is ranked with an owner
 for each fix, and careful-mode passed on the verdict.
+
+---
+
+## Skill: `skills/master/skills/master/heads/sales.md`
+
+# Sales head
+
+Finds clients for a web design or local-services offer and writes the first contact:
+leads, website audits, mock sites and cold emails. Honest outreach only.
+
+## 1. When it runs
+
+- "Find leads", "prospects in <city>", "audit this business's site", "mock up a site for
+  them", "write the cold email", or any outreach to a business that hasn't asked yet.
+
+## 2. Sub-skills
+
+| Step | Skill |
+|---|---|
+| Find businesses by trade and city | lead-finder |
+| Score a website and name its provable problems | site-audit |
+| One-page mock for the business | mock-builder |
+| 3-email sequence with CAN-SPAM basics | cold-email-drafter |
+| The personal line sounds human | humanizer |
+| Anything that goes out under the founder's name | careful-mode |
+
+Foundation: economy-mode for bulk audits; the memory sheet for the offer, price and sender
+details; never invent facts about a business.
+
+## 3. Workflow
+
+1. **Offer and sender.** Read the memory sheet for the current offer, price, sender name and
+   postal address. Ask once if missing.
+2. **Leads.** lead-finder for the trade and city; the CSV stays private (leads/ or
+   *.leads.csv, ignored by git).
+3. **Pick.** The weakest sites with a public contact route. A blank website in the source is
+   not proof of no website: search first.
+4. **Mock.** mock-builder per pick, fixing the audit's top problems, labeled sample.
+5. **Emails.** cold-email-drafter, humanizer on the personal line, then its check. The
+   founder sends; never send, post or log in for them.
+
+## 4. Hand-offs
+
+- Marketing head: posts about the work (no client names without permission).
+- Review head: a second look at the mock or the email before a big batch.
+- Product head: pricing or offer changes the replies point to.
+
+## 5. Done when
+
+- Each lead has a score, three proven problems or a clear reason it was skipped.
+- Each email passes the checker, has a real address and opt-out, and the founder has the
+  mock links and emails ready to send by hand.
 
 ---
 

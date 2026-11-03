@@ -38,6 +38,10 @@ tools below. When a head needs one:
 | clipper | Long videos into vertical clips with captions and a hook, for paid clipping campaigns or the founder's own Shorts | `skills/clipper/skills/clipper/clipper.md` |
 | transcriber | Speech to text: voice notes, podcasts, calls and videos into text and timestamped captions | `skills/transcriber/skills/transcriber/transcriber.md` |
 | social-media | Social media strategy, calendars, posts, scripts, analytics and replies; the script and posting plan for social videos | `skills/social-media/skills/social-media/social-media.md` |
+| site-audit | Weak-site score and provable problems for a business website | `skills/site-audit/skills/site-audit/SKILL.md` |
+| lead-finder | Finding local service businesses by trade and city from public sources | `skills/lead-finder/skills/lead-finder/SKILL.md` |
+| mock-builder | One-file one-page website mocks for prospects, labeled sample | `skills/mock-builder/skills/mock-builder/SKILL.md` |
+| cold-email-drafter | Short honest cold email sequences with CAN-SPAM basics | `skills/cold-email-drafter/skills/cold-email-drafter/SKILL.md` |
 | Video workflow | Making or editing a video (the Design head's video path) | `skills/master/skills/master/workflows/video.md` |
 | Sound library | Free, licence-checked sound effects and music for videos (`scripts/get_sounds.py`), picked by video type, with credit lines | `skills/master/skills/master/sounds/README.md` |
 | Product head | Competitors, market, pricing decisions, positioning, launch readiness | `skills/master/skills/master/heads/product.md` |
@@ -45,6 +49,7 @@ tools below. When a head needs one:
 | Marketing head | Social media, content, YouTube, campaigns | `skills/master/skills/master/heads/marketing.md` |
 | Design head | Videos, AI images and clips, product graphics, sound | `skills/master/skills/master/heads/design.md` |
 | Review head | Reviewing anything before it ships | `skills/master/skills/master/heads/review.md` |
+| Sales head | Leads, website audits, mock sites and cold emails for outreach | `skills/master/skills/master/heads/sales.md` |
 
 ## 2. When the Master Skill runs (the founder chooses)
 
@@ -112,6 +117,11 @@ transcript for chapters, captions and repurposing; ai-visuals for AI-made
 visuals; harsh-buyer-review for posts that sell; the humanizer on every
 post. All LinkedIn work goes to linkedin; clipping campaigns and Shorts
 cut from long videos go to clipper. Reels and videos go to Design.
+
+**Sales** (`heads/sales.md`): finds clients. lead-finder lists local businesses
+from public sources, site-audit proves what is weak about each website,
+mock-builder makes a labeled sample site, cold-email-drafter writes the
+sequence and the humanizer checks the personal line. The founder sends.
 
 **Design** (`heads/design.md`): makes the assets. Videos follow
 `workflows/video.md` from start to finish (economy mode, careful brief,

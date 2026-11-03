@@ -4,6 +4,11 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-03. Sales kit + research (brief from Mother chat, all 9 items).**
+  - Skills: [Lead Finder](skills/lead-finder), [Site Audit](skills/site-audit), [Mock Builder](skills/mock-builder), [Cold Email Drafter](skills/cold-email-drafter), run in order by a new Master **Sales head**. Offline tests added; tested on real public sites (results not committed).
+  - [Level-Up Dashboard Sheet template](tools/level-up-dashboard): 6 tabs (days, sales, content, followers, reviews, config).
+  - Research: [cold email US](research/cold-email-us.md), [marketplace kit](research/marketplace-kit.md), [course platforms](research/course-platforms.md), [offer page copy](research/offer-page.md).
+  - Community post copy: [content/drops/2026-11-03-sales-kit.md](content/drops/2026-11-03-sales-kit.md).
 - **2026-11-03. Two web tools open-sourced:** [One-Page Starter](tools/one-page-starter) (one-page site per business from a CSV, optional preview ribbon, `--sheet-url` live form) and [Lead Tracker](tools/lead-tracker) (form leads into a Google Sheet with source and a Dashboard). Both with demos. The starter's demo is now in the README's first screen.
 - **2026-11-03. 14 Claude skills open-sourced** in [`skills/`](skills/): Master, Humanizer, Social Media, LinkedIn, Motion Design Taste, Audio Review, Transcriber, Clipper, AI Visuals, Harsh Buyer Review, Competitor Research, Ecom, Careful Mode, Economy Mode. Installable as a Claude Code plugin catalog (`shashbuilds`), each with its own README and header, relicensed to Shashwat Jain, full test suite in CI. Release notes ready for tag `skills-v1.0.0`.
 - **2026-11-03. Front door.** README, media kit (banner, animated Tab, icons, social preview, per-item headers, all built by `media/build.py`), LICENSE (MIT) plus LICENSE-CONTENT (CC BY 4.0), CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue forms (bug, idea, hire), PR template, `llms.txt`, `AGENTS.md`, `catalog.json`, a repo check (`scripts/check.py`, runs in CI) and a release workflow (push a tag, get a Release with notes and a zip).
@@ -49,9 +54,14 @@ Before building any of these, check the seed export so nothing gets built twice.
 
 ## Budget
 
-Rough estimate: about 12% of the weekly limit used this week (front door, media kit, skills port; research and READMEs done by Haiku and Sonnet helpers). Stop and report at 45%.
+Rough estimate: about 22% of the weekly limit used this week (front door, media kit, skills port; research and READMEs done by Haiku and Sonnet helpers). Stop and report at 45%.
 
 ## Questions for Mother chat
+
+- **Dashboard columns.** The Sheet template uses default headers (listed in its README). Send the dashboard's real column list if it differs.
+- **Make-a-copy link.** Share a Google Sheet built from `level-up-dashboard.xlsx` (view access) and I'll add the `/copy` link.
+- **Offer terms** for `research/offer-page.md` and the marketplace kit: deposit split, revision rounds, hosting, refund rule. Marked `[[REAL: ...]]` until confirmed.
+- **Contra fees** conflict between Contra's own help pages (0% vs $15 per payment under $500). Check with Contra support before listing.
 
 1. **Rename OK?** Can the GitHub account become `ShashwatBuilds` and this repo `shash.builds`? All badges and links already point there and go live after the rename.
 2. **Website URL.** What's the shash.builds site address? The README's hire section uses LinkedIn and an issue form until then.

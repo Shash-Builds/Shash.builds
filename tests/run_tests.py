@@ -1241,6 +1241,66 @@ def check_chaos_regressions(tmp: Path) -> None:
         assert "|| python " in cmd, "Windows often has python but not python3"
 
     @test
+    def test_sales_kit_audits_mocks_and_emails_offline():
+        import http.server, threading, importlib.util
+        audit_py = PLUGINS / "site-audit/skills/site-audit/scripts/audit.py"
+        if not audit_py.exists():
+            raise Skip("no site-audit")
+        tmp = Path(tempfile.mkdtemp())
+        (tmp / "robots.txt").write_text("User-agent: *\nDisallow: /private/\n")
+        (tmp / "weak.html").write_text("<html><head><title>Joe Plumbing</title></head><body><font>Welcome</font>"
+                                       "<p>Call 555 0100</p><a href='/gone.html'>old page</a><p>&copy; 2015 Joe</p></body></html>")
+        (tmp / "good.html").write_text("<html><head><title>Ann Roofing</title><meta name='viewport' content='width=device-width'>"
+                                       "</head><body><a href='tel:+15550100'>Call now</a><p>Serving Tulsa, OK and nearby</p>"
+                                       "<p>Reviews: 5 stars</p><a href='https://maps.app.goo.gl/x'>Google</a></body></html>")
+        (tmp / "private").mkdir()
+        (tmp / "private/index.html").write_text("<html></html>")
+        handler = lambda *a, **k: http.server.SimpleHTTPRequestHandler(*a, directory=str(tmp), **k)
+        http.server.SimpleHTTPRequestHandler.log_message = lambda *a: None
+        srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        base = f"http://127.0.0.1:{srv.server_address[1]}"
+        try:
+            spec = importlib.util.spec_from_file_location("audit", audit_py)
+            audit = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(audit)
+            weak = audit.audit(base + "/weak.html", "Joe Plumbing")
+            ids = {x["id"] for x in weak["problems"]}
+            for need in ("no_https", "not_mobile", "no_call_button", "outdated", "broken_links", "no_reviews"):
+                assert need in ids, f"weak page should flag {need}: {ids}"
+            assert weak["score"] >= 70 and len(weak["top_3"]) == 3, weak["score"]
+            good = audit.audit(base + "/good.html", "Ann Roofing", check_broken=False)
+            gids = {x["id"] for x in good["problems"]}
+            assert gids <= {"no_https"}, f"good page flagged too much: {gids}"
+            blocked = audit.audit(base + "/private/index.html")
+            assert blocked.get("skipped") and blocked["fetched"] == [base + "/robots.txt"], "robots.txt must be respected"
+            none = audit.audit("none", "No Site Co")
+            assert none["score"] == 100
+        finally:
+            srv.shutdown()
+        out = tmp / "previews/demo/index.html"
+        run([sys.executable, str(PLUGINS / "mock-builder/skills/mock-builder/scripts/mock.py"), "--name", "Demo Co",
+             "--trade", "Roofing", "--city", "Tulsa", "--state", "OK", "--color", "#ffcc00", "--out", str(out)])
+        page = out.read_text(encoding="utf-8")
+        assert "Sample mock" in page and "noindex" in page and "<style>" in page and "<blockquote>" not in page, "no review cards in a mock"
+        assert ".btn-ink{background:#ffcc00;color:#111111}" in page, "light brand colors need dark text"
+        tool = PLUGINS / "cold-email-drafter/skills/cold-email-drafter/scripts/email_tool.py"
+        (tmp / "a.json").write_text(json.dumps(weak))
+        r = run([sys.executable, str(tool), "draft", "--audit", str(tmp / "a.json"), "--mock", "https://x.test/previews/demo/",
+                 "--sender", "Test Sender", "--business", "Joe Plumbing"])
+        (tmp / "e.txt").write_text(r.stdout)
+        run([sys.executable, str(tool), "check", str(tmp / "e.txt")])
+        bad = r.stdout.replace("Take a look:", "Take a look \u2014 it is a game-changer: https://y.test", 1)
+        (tmp / "bad.txt").write_text(bad)
+        res = subprocess.run([sys.executable, str(tool), "check", str(tmp / "bad.txt")], capture_output=True, text=True)
+        assert res.returncode == 1 and "em dash" in res.stdout and "game-changer" in res.stdout and "2 links" in res.stdout, res.stdout
+        lead = PLUGINS / "lead-finder/skills/lead-finder/scripts/find_leads.py"
+        r = subprocess.run([sys.executable, str(lead), "--trade", "astronaut", "--city", "X"], capture_output=True, text=True)
+        assert r.returncode != 0 and "Unknown trade" in (r.stderr + r.stdout)
+        assert "leads/" in (ROOT / ".gitignore").read_text() and "*.leads.csv" in (ROOT / ".gitignore").read_text(), \
+            "lead lists must be git-ignored"
+
+    @test
     def test_sound_library_lists_fetches_and_credits():
         get = PLUGINS / "master/skills/master/scripts/get_sounds.py"
         if not get.exists():

@@ -182,6 +182,54 @@
       }
     },
     {
+      "name": "Lead Finder",
+      "slug": "lead-finder",
+      "kind": "skill",
+      "path": "skills/lead-finder",
+      "summary": "Local businesses by trade and city, audited.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install lead-finder@shashbuilds",
+        "claude_ai": "lead-finder-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Site Audit",
+      "slug": "site-audit",
+      "kind": "skill",
+      "path": "skills/site-audit",
+      "summary": "A weak-site score and 3 provable problems.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install site-audit@shashbuilds",
+        "claude_ai": "site-audit-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Mock Builder",
+      "slug": "mock-builder",
+      "kind": "skill",
+      "path": "skills/mock-builder",
+      "summary": "A one-page mock in one file, marked sample.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install mock-builder@shashbuilds",
+        "claude_ai": "mock-builder-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
+      "name": "Cold Email Drafter",
+      "slug": "cold-email-drafter",
+      "kind": "skill",
+      "path": "skills/cold-email-drafter",
+      "summary": "Three short, honest emails. CAN-SPAM ready.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add ShashwatBuilds/shash.builds && /plugin install cold-email-drafter@shashbuilds",
+        "claude_ai": "cold-email-drafter-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
       "name": "One-Page Starter",
       "slug": "one-page-starter",
       "kind": "tool",
@@ -201,6 +249,17 @@
       "version": "1.0.0",
       "install": {
         "run": "Google Sheet + Apps Script + capture.js, see README"
+      }
+    },
+    {
+      "name": "Level-Up Dashboard",
+      "slug": "level-up-dashboard",
+      "kind": "tool",
+      "path": "tools/level-up-dashboard",
+      "summary": "A Google Sheet template to track a build-in-public run: days, sales, content, followers, reviews.",
+      "version": "0.1.0",
+      "install": {
+        "run": "Upload sheet-template/level-up-dashboard.xlsx to Google Drive"
       }
     }
   ],

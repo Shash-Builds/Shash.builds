@@ -1,0 +1,6 @@
+key,value,notes
+start_date,2026-11-04,Day 1 of the run
+goal_usd,,Revenue goal; set your own
+offer_price_usd,400,Price of the main offer
+timezone,America/New_York,Dates are in this zone
+currency,USD,

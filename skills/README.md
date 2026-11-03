@@ -1,8 +1,8 @@
-<p align="center"><img src="../media/header-skills.svg" width="100%" alt="Claude skills header: 14 free Claude specialists, a shash.builds collection."></p>
+<p align="center"><img src="../media/header-skills.svg" width="100%" alt="Claude skills header: 18 free Claude specialists, a shash.builds collection."></p>
 
 # Claude skills
 
-14 free Claude specialists: a harsh buyer, a head of social media, a LinkedIn ghostwriter,
+18 free Claude specialists: a sales kit that finds and pitches clients, a harsh buyer, a head of social media, a LinkedIn ghostwriter,
 a motion designer, an audio engineer, a humanizer and more. Each one does one real job, and
 they work together through the Master Skill.
 
@@ -25,8 +25,23 @@ chat** as a paste-in prompt.
 | [Harsh Buyer Review](harsh-buyer-review) | A real buyer researches 3 to 5 competitors, compares one-on-one, and says exactly why they would or wouldn't buy | Before you launch or change a listing, page or price |
 | [Competitor Research](competitor-research) | Sourced, dated competitor research on marketplaces, websites, social media and ads, double-checked, run by cheap Haiku helpers | Before you price, launch or ask for feedback |
 | [Ecom](ecom) | An e-commerce operator for Amazon, Walmart, Etsy, Shopify, Flipkart and more: listings, images, profit per order from your real fees, ads, returns, stock | Anything about selling online |
+| [Lead Finder](lead-finder) | Finds US service businesses by trade and city from OpenStreetMap (or Google Places with your key), audits each site, writes a private CSV ranked weakest first | Prospecting for web design clients |
+| [Site Audit](site-audit) | A weak-site score from 0 to 100 and the 3 most specific, provable problems, in words an owner understands. Reads robots.txt, fetches one page | Before a pitch, or to check your own site |
+| [Mock Builder](mock-builder) | A one-page website mock in one HTML file, every placeholder marked as sample, with a shareable preview path | Showing a prospect instead of telling |
+| [Cold Email Drafter](cold-email-drafter) | A 3-email sequence (90 words or fewer, then day 3 and day 7) from the audit and the mock, with CAN-SPAM basics and a checker | First contact with a business |
 | [Careful Mode](careful-mode) | Checks every piece of work three times (is it right, is it complete, how could it go wrong) before handing it over | Prices, contracts, customer emails, launches |
 | [Economy Mode](economy-mode) | Sends simple work to cheaper models and keeps the strongest one for decisions. Keeps a memory sheet so Claude remembers across sessions | Long Claude Code sessions |
+
+## The sales kit
+
+Four skills that work as one pipeline for anyone selling websites to local businesses:
+
+```
+lead-finder  ->  site-audit  ->  mock-builder  ->  cold-email-drafter
+(who)            (what's weak)    (show them)       (ask, honestly)
+```
+
+The Master Skill's Sales head runs them in order. Lead lists stay private: save them under `leads/` or as `*.leads.csv`, which git ignores here.
 
 ## Install
 
@@ -55,6 +70,10 @@ Then install the skills you want:
 /plugin install ecom@shashbuilds
 /plugin install careful-mode@shashbuilds
 /plugin install economy-mode@shashbuilds
+/plugin install lead-finder@shashbuilds
+/plugin install site-audit@shashbuilds
+/plugin install mock-builder@shashbuilds
+/plugin install cold-email-drafter@shashbuilds
 ```
 
 Or run `/plugin` and pick from the list. Then ask naturally: "review this listing like a

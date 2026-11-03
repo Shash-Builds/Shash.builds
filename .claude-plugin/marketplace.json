@@ -1,6 +1,6 @@
 {
   "name": "shashbuilds",
-  "description": "shash.builds: 14 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "description": "shash.builds: 18 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
   "owner": {
     "name": "Shashwat Jain",
     "url": "https://github.com/ShashwatBuilds"
@@ -75,6 +75,26 @@
       "name": "clipper",
       "source": "./skills/clipper",
       "description": "shash.builds Clipper: long videos into vertical Shorts, Reels and TikToks for paid clipping campaigns or your own channel, with word-by-word captions, a hook and the campaign brief followed."
+    },
+    {
+      "name": "site-audit",
+      "source": "./skills/site-audit",
+      "description": "shash.builds Site Audit: scores how weak a small business website is (0 to 100) and names the 3 most specific, provable problems in plain words an owner understands. Fetches robots.txt and one page, nothing guessed."
+    },
+    {
+      "name": "lead-finder",
+      "source": "./skills/lead-finder",
+      "description": "shash.builds Lead Finder: finds US service businesses by trade and city from OpenStreetMap (or Google Places with your own key), runs each website through Site Audit, and writes a private CSV ranked weakest site first."
+    },
+    {
+      "name": "mock-builder",
+      "source": "./skills/mock-builder",
+      "description": "shash.builds Mock Builder: a one-page website mock for a local service business as a single HTML file, with a shareable preview path. Every placeholder is marked as sample; no fake reviews or claims about the business."
+    },
+    {
+      "name": "cold-email-drafter",
+      "source": "./skills/cold-email-drafter",
+      "description": "shash.builds Cold Email Drafter: turns a site audit and a mock link into a 3-email sequence (90 words or fewer, then day 3 and day 7 follow-ups) in plain human text, with CAN-SPAM basics and a checker that fails hype, em dashes and extra links."
     }
   ]
 }

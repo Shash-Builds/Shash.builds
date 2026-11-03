@@ -34,7 +34,7 @@ My paid work is simple: **a one-page website for a US service business. $400 fla
 
 This repo is everything around that work, shipped in the open:
 
-- **14 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
+- **18 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
 - **Web tools and templates** you can copy, fork and ship today.
 - **The build log.** What I built, what broke, what's next. Every day.
 
@@ -71,7 +71,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 ### Claude skills
 
-14 free Claude specialists that work together. Full guide: [skills/README.md](skills/README.md).
+18 free Claude specialists that work together, including a sales kit that finds and pitches clients. Full guide: [skills/README.md](skills/README.md).
 
 | Skill | What it does |
 | --- | --- |
@@ -89,6 +89,10 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 | [Ecom](skills/ecom) | Listings, images and profit per order from your real fees. |
 | [Careful Mode](skills/careful-mode) | Every piece of work checked three times before you see it. |
 | [Economy Mode](skills/economy-mode) | Cheap models for simple work, and a memory sheet. |
+| [Lead Finder](skills/lead-finder) | Local businesses by trade and city, audited. |
+| [Site Audit](skills/site-audit) | A weak-site score and 3 provable problems. |
+| [Mock Builder](skills/mock-builder) | A one-page mock in one file, marked sample. |
+| [Cold Email Drafter](skills/cold-email-drafter) | Three short, honest emails. CAN-SPAM ready. |
 
 <img src="media/icons/tool.svg" width="28" align="left" alt="Web tool icon: a cream wrench on an orange tile.">
 
@@ -100,13 +104,14 @@ Plain HTML, CSS and JavaScript. Free hosting, no monthly fees.
 | --- | --- |
 | [One-Page Starter](tools/one-page-starter) | A one-page site for a local service business, from one CSV row. Call button, reviews, quote form. |
 | [Lead Tracker](tools/lead-tracker) | Every website lead in a Google Sheet, with where it came from, and a Dashboard by source. |
+| [Level-Up Dashboard](tools/level-up-dashboard) | A Google Sheet template to track a build-in-public run: days, sales, content, followers, reviews. |
 
 What's coming next lives in the backlog in [STATUS.md](STATUS.md). Machines can read the same list in [`catalog.json`](catalog.json) and [`llms.txt`](llms.txt).
 
 ## The map
 
 ```
-skills/      14 Claude skills, each an installable Claude Code plugin
+skills/      18 Claude skills, each an installable Claude Code plugin
 examples/    real outputs from the skills
 tests/       the test suite every skill passes
 tools/       open-source web tools and one-page site starters
