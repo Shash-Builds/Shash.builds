@@ -1,0 +1,36 @@
+/* S-01 Swiss grid (lookbook): Archivo, signal red on paper, hard black rules, numbered grid.
+ * Signature for this sample: an oversized uppercase headline cut by a red rule, services as a numbered table. */
+.s1 {
+  --bg: #fcfcfa; --surface: #f1f1ee; --ink: #111; --muted: #4a4a4a; --rule: #111;
+  --accent: #d81e14; --on-accent: #fff; --accent-ink: #c01a11;
+  --f-display: "Archivo", "Arial Narrow", sans-serif; --f-body: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --display-weight: 800; --display-case: uppercase; --tracking: -0.04em;
+}
+.s1 .concept-strip { background: #111; }
+.s1 .nav { border-bottom: 2px solid #111; }
+.s1 .logo svg { color: var(--accent); }
+.s1 h1 { line-height: .92; font-size: clamp(2.7rem, 8.5vw + .4rem, 6.2rem); }
+.s1 .hero-copy { border-top: 6px solid var(--accent); padding-top: 22px; }
+.s1 .hero-photo img { filter: saturate(.9) contrast(1.05); }
+.s1 .facts li::before { background: var(--accent); width: 14px; height: 4px; transform: translateY(-4px); }
+.s1 .btn-book { border-color: #111; }
+.s1 .services { border-top: 2px solid #111; }
+.s1 .svc { gap: 0; border-top: 2px solid #111; }
+.s1 .svc li { background: none; padding: 22px 0; border-bottom: 1px solid #111; }
+@media (min-width: 40rem) { .s1 .svc li { padding: 26px 24px 26px 0; } .s1 .svc li:not(:nth-child(2n)) { border-right: 1px solid #111; } .s1 .svc li:nth-child(2n) { padding-left: 24px; } }
+@media (min-width: 60rem) { .s1 .svc li:not(:nth-child(2n)) { border-right: 0; } .s1 .svc li:nth-child(2n) { padding-left: 0; } .s1 .svc li:not(:nth-child(3n)) { border-right: 1px solid #111; } .s1 .svc li:not(:nth-child(3n+1)) { padding-left: 24px; } }
+.s1 .svc .n { font-size: 2.2rem; line-height: 1; color: var(--accent); letter-spacing: -0.04em; }
+.s1 .svc h3 { text-transform: uppercase; letter-spacing: -0.01em; }
+.s1 .how { background: #111; color: #fcfcfa; --muted: #bdbdb8; --accent-ink: #ff5a4f; }
+.s1 .how .steps li { border-top-color: #ff5a4f; padding-inline: 0; }
+.s1 .towns li { border: 2px solid #111; font-weight: 700; text-transform: uppercase; font-size: .88rem; letter-spacing: .02em; }
+.s1 .area { border-top: 2px solid #111; }
+.s1 .about { background: var(--surface); border-block: 2px solid #111; }
+.s1 .reviews-slot { border-color: #111; }
+.s1 .qs { border-top: 2px solid #111; }
+.s1 .qs details { border-bottom-color: #111; }
+.s1 .quote { border: 2px solid #111; background: #fff; }
+.s1 .quote input, .s1 .quote select, .s1 .quote textarea { border-color: #111; }
+.s1 .big-call a { color: var(--accent); }
+.s1 .foot { border-top: 2px solid #111; }
+.s1 .callbar { border-top: 2px solid #111; }

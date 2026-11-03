@@ -1,0 +1,46 @@
+/* S-05 Glass (lookbook): Manrope, soft blue/lilac/mint light, frosted panels, rounded everything.
+ * Signature for this sample: a frosted price checker that floats over the color wash. */
+.s5 {
+  --bg: #f4f6ff; --surface: rgba(255, 255, 255, .62); --ink: #1d1f33; --muted: #4b4e6b; --rule: rgba(29, 31, 51, .14);
+  --accent: #4b4fd0; --on-accent: #fff; --accent-ink: #4448c4;
+  --f-display: "Manrope", ui-sans-serif, system-ui, sans-serif; --f-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --display-weight: 800; --tracking: -0.035em;
+  --radius: 24px; --btn-radius: 14px; --photo-radius: 28px;
+  background-color: #eef0ff;
+  background-image:
+    radial-gradient(60vw 50vw at 8% 0%, #cdd8ff, transparent 70%),
+    radial-gradient(55vw 45vw at 100% 18%, #f1dcff, transparent 70%),
+    radial-gradient(60vw 50vw at 30% 62%, #d6fff2, transparent 70%),
+    radial-gradient(60vw 50vw at 100% 92%, #dfe6ff, transparent 70%);
+}
+.s5 .concept-strip { background: #1d1f33; }
+.s5 .nav { margin: 10px; top: 10px; border: 1px solid rgba(255, 255, 255, .85); border-radius: 18px; background: rgba(255, 255, 255, .6); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.s5 .nav-in { padding-inline: clamp(12px, 3vw, 28px); }
+.s5 .logo svg { color: var(--accent); }
+.s5 .btn-call { background: #1d1f33; color: #fff; }
+.s5 .btn-book { background: var(--accent); color: #fff; border-color: var(--accent); }
+.s5 .hero .eyebrow { justify-self: start; padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, .7); border: 1px solid #fff; letter-spacing: .04em; text-transform: none; font-size: .88rem; }
+.s5 .facts li::before { width: 18px; height: 18px; border-radius: 50%; background: #c9f2e3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.6 2.5L13 6.5' fill='none' stroke='%231d1f33' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat; transform: translateY(3px); }
+.s5 .hero-photo { position: relative; }
+.s5 .hero-photo img { border: 6px solid rgba(255, 255, 255, .8); box-shadow: 0 30px 60px -30px rgba(29, 31, 51, .45); }
+.s5 .svc li, .s5 .quote, .s5 .est-card, .s5 .reviews-slot, .s5 .towns li { background: rgba(255, 255, 255, .58); border: 1px solid rgba(255, 255, 255, .9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.s5 .svc li { box-shadow: 0 10px 30px -20px rgba(29, 31, 51, .35); }
+.s5 .svc .n { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #cdd8ff, #f1dcff); color: #1d1f33; }
+.s5 .estimator { padding-block: 0 clamp(56px, 8vw, 112px); }
+.s5 .est-card { border-radius: 28px; padding: clamp(24px, 4vw, 48px); margin-inline: var(--pad); max-width: calc(var(--max) - 2 * var(--pad)); box-shadow: 0 30px 60px -36px rgba(29, 31, 51, .5); }
+@media (min-width: 1240px) { .s5 .est-card { margin-inline: auto; } }
+.s5 .est-card > div { display: grid; gap: 12px; }
+.s5 .est-card > div > p:not(.eyebrow) { color: var(--muted); }
+.s5 .est output b { color: var(--accent); }
+.s5 .steps li { border-top: 0; background: rgba(255, 255, 255, .45); border-radius: 24px; border: 1px solid rgba(255, 255, 255, .85); }
+.s5 .steps li::before { background: linear-gradient(135deg, #4b4fd0, #33b28a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.s5 .towns li { border-radius: 999px; }
+.s5 .guarantee { background: linear-gradient(135deg, #4b4fd0, #3a3fa8); }
+.s5 .reviews-slot { border: 2px dashed rgba(75, 79, 208, .35); }
+.s5 .qs { border-top-color: rgba(29, 31, 51, .14); }
+.s5 .quote { box-shadow: 0 30px 60px -40px rgba(29, 31, 51, .5); }
+.s5 .quote input, .s5 .quote select, .s5 .quote textarea { background: rgba(255, 255, 255, .85); }
+.s5 .big-call a { color: var(--accent); }
+.s5 .foot { border-top: 0; }
+.s5 .badge:hover { background: #1d1f33; color: #fff; }
+.s5 .callbar { margin: 0 8px 8px; left: 0; right: 0; border: 1px solid rgba(255, 255, 255, .9); border-radius: 18px; background: rgba(255, 255, 255, .72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }

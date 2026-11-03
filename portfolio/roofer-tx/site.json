@@ -1,0 +1,174 @@
+{
+  "style": "s1",
+  "fonts": "family=Archivo:wght@400;600;800",
+  "theme_color": "#fcfcfa",
+  "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Cpath d='M5 20 16 9l11 11' fill='none' stroke='%23d81e14' stroke-width='4'/%3E%3C/svg%3E",
+  "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' fill='#111'/><path d='M5 21 16 10l11 11' fill='none' stroke='currentColor' stroke-width='4'/></svg>",
+  "business": {
+    "name": "Caliche Ridge Roofing",
+    "trade_title": "Roofing",
+    "city": "San Antonio",
+    "state": "TX",
+    "phone": "(210) 555-0147"
+  },
+  "meta": "Concept site for Caliche Ridge Roofing, a made-up San Antonio roofer: free inspections, hail and storm repairs, metal roofs and full replacements. Designed by shash.builds.",
+  "book_label": "Book a free inspection",
+  "hero": {
+    "eyebrow": "Roofing · San Antonio, TX",
+    "title": "Roofs built for Texas hail and heat.",
+    "sub": "Repairs, full replacements and storm inspections across Bexar County. You get a written estimate within 48 hours of your inspection.",
+    "facts": [
+      "Free roof inspection with photos",
+      "Written estimate in 48 hours",
+      "Shingle, metal and tile roofs"
+    ]
+  },
+  "services_title": "Everything on top of your house.",
+  "services": [
+    [
+      "Roof repair",
+      "Leaks, missing shingles, cracked flashing and worn vent boots, fixed before the next storm."
+    ],
+    [
+      "Full replacement",
+      "Tear-off to final nail sweep. Most homes are done in one to two days."
+    ],
+    [
+      "Hail and storm inspection",
+      "A photo report of every hit and soft spot, for you and your insurance adjuster."
+    ],
+    [
+      "Metal roofing",
+      "Standing seam and exposed fastener panels that reflect summer heat."
+    ],
+    [
+      "Gutters",
+      "Seamless gutters and guards sized to your roof, so water leaves the house."
+    ],
+    [
+      "Attic ventilation",
+      "Ridge vents and turbines that let the attic breathe and cut cooling bills."
+    ]
+  ],
+  "steps_title": "Three steps, no guesswork.",
+  "steps": [
+    [
+      "Free inspection",
+      "We go up, take photos of everything and walk you through what we found."
+    ],
+    [
+      "Written estimate",
+      "Line by line, within 48 hours. No pressure to sign on the spot."
+    ],
+    [
+      "Build and clean up",
+      "One to two days on most homes. We magnet-sweep the yard for nails before we leave."
+    ]
+  ],
+  "photos": {
+    "hero": {
+      "file": "hero",
+      "w": 960,
+      "h": 641,
+      "alt": "A dark wood-sided house with a steep standing-seam metal roof and skylights against a teal sky.",
+      "credit": "Oliur Rahman via StockSnap",
+      "credit_url": "https://stocksnap.io/photo/house-roof-KJMQM11A8G"
+    },
+    "g1": {
+      "file": "metal-roof",
+      "w": 960,
+      "h": 540,
+      "alt": "A corrugated metal roof with a turbine vent under a clear blue sky.",
+      "credit": "Megan Branson via StockSnap",
+      "credit_url": "https://stocksnap.io/photo/roof-skyscraper-2DQ6K6PY2K"
+    },
+    "g2": {
+      "file": "shingles",
+      "w": 960,
+      "h": 526,
+      "alt": "Close-up of dark metal roof shingles in neat overlapping rows, edges catching warm light.",
+      "credit": "Bernard Spragg via StockSnap",
+      "credit_url": "https://stocksnap.io/photo/roof-shingle-RIUJONCXNY"
+    }
+  },
+  "area": {
+    "title": "San Antonio and the Hill Country edge.",
+    "note": "We work within about 35 miles of downtown. Not sure if you're in range? Call and ask.",
+    "towns": [
+      "San Antonio",
+      "Alamo Heights",
+      "Stone Oak",
+      "Helotes",
+      "Leon Valley",
+      "Converse",
+      "Live Oak",
+      "Schertz",
+      "Boerne",
+      "New Braunfels"
+    ]
+  },
+  "about": {
+    "title": "A local crew, not a storm chaser.",
+    "body": [
+      "When hail hits San Antonio, trucks from three states over show up the next morning. Most are gone by the time a leak shows up in the fall.",
+      "We live here. The same project lead runs your job from the first inspection to the final walk-through, and picks up the phone if something comes up a year later."
+    ]
+  },
+  "promise": {
+    "title": "If a leak traces back to our work, we fix it.",
+    "body": "Every roof comes with the workmanship warranty in writing, and a copy of the manufacturer's warranty for the materials we install."
+  },
+  "faq": [
+    [
+      "Will my insurance cover hail damage?",
+      "It depends on your policy and the damage. We photograph every hit so your adjuster has what they need, and we can meet them on the roof."
+    ],
+    [
+      "How long does a new roof take?",
+      "Most homes take one to two days, plus time for cleanup and a final walk-through with you."
+    ],
+    [
+      "How much does a new roof cost?",
+      "It depends on size, pitch and material. The free inspection gets you a written number, so you're never guessing."
+    ],
+    [
+      "Do you install metal roofs?",
+      "Yes. Standing seam and exposed fastener panels, in colors that keep the attic cooler."
+    ],
+    [
+      "Do I need to be home?",
+      "Only for the inspection walk-through and the final check. During the build we just need the driveway clear."
+    ]
+  ],
+  "form": {
+    "eyebrow": "Free inspection",
+    "title": "Book your free roof inspection.",
+    "note": "Tell us where the house is and what's going on. We call back the same day to set a time.",
+    "where": "Address or ZIP",
+    "options": [
+      "Storm or hail inspection",
+      "Leak repair",
+      "Full replacement",
+      "Metal roof",
+      "Gutters",
+      "Something else"
+    ],
+    "button": "Request inspection",
+    "short": "Free inspection"
+  },
+  "hours": [
+    [
+      "Mon to Fri",
+      "7am to 7pm"
+    ],
+    [
+      "Saturday",
+      "8am to 2pm"
+    ],
+    [
+      "Storm calls",
+      "Answered 7 days"
+    ]
+  ],
+  "ig_bg": "#d81e14"
+}
