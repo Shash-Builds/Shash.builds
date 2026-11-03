@@ -1,6 +1,6 @@
 {
   "name": "shashbuilds",
-  "description": "shash.builds: 20 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "description": "shash.builds: 21 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
   "owner": {
     "name": "Shashwat Jain",
     "url": "https://github.com/Shash-Builds"
@@ -105,6 +105,11 @@
       "name": "ai-resume",
       "source": "./skills/ai-resume",
       "description": "shash.builds AI Resume: builds a true, one-page, ATS-safe resume (HTML and PDF) for a target role from facts the user can back up, then runs Hallmark design checks and a humanizer pass. Lists missing facts instead of inventing them."
+    },
+    {
+      "name": "brutal-review",
+      "source": "./skills/brutal-review",
+      "description": "shash.builds Brutal Review: a blunt second opinion from a different AI model on a plan, pitch, resume or code: verdict, score out of 100, ranked weaknesses with fixes, and the likeliest reason it fails. Keys from environment variables only; personal details removed before sending."
     }
   ]
 }

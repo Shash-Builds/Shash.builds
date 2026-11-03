@@ -1,3 +1,7 @@
+> **Result (2026-11-04):** shipped as [`skills/brutal-review`](../../skills/brutal-review), written from scratch (idea credited, nothing copied).
+> Providers: OpenAI, xAI, Anthropic, Google, Ollama, claude CLI; keys from the environment only; emails, phones and keys removed before sending; validated JSON; Review head route.
+> Tests: fake-provider test in run_tests.py and hostile inputs in chaos.py, no network or keys needed. Name kept as Brutal Review; the head chef style has no celebrity name.
+
 # Brief: Brutal Review skill (outside-model critique)
 
 From: the job-search chat, 2026-11-03. For: the head chat.

@@ -1,0 +1,18 @@
+{
+  "name": "brutal-review",
+  "displayName": "Brutal Review by shash.builds",
+  "description": "shash.builds Brutal Review: a blunt second opinion from a different AI model on a plan, pitch, resume or code: verdict, score out of 100, ranked weaknesses with fixes, and the likeliest reason it fails. Keys from environment variables only; personal details removed before sending.",
+  "author": {
+    "name": "Shashwat Jain",
+    "url": "https://github.com/Shash-Builds"
+  },
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "review",
+    "critique",
+    "second opinion",
+    "red team",
+    "feedback"
+  ]
+}

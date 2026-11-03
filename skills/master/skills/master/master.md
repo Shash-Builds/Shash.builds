@@ -44,6 +44,7 @@ tools below. When a head needs one:
 | mock-builder | One-file one-page website mocks for prospects, labeled sample | `skills/mock-builder/skills/mock-builder/SKILL.md` |
 | cold-email-drafter | Short honest cold email sequences with CAN-SPAM basics | `skills/cold-email-drafter/skills/cold-email-drafter/SKILL.md` |
 | ai-resume | One-page, ATS-safe resumes and CVs from true facts, with design and humanizer checks | `skills/ai-resume/skills/ai-resume/SKILL.md` |
+| brutal-review | A blunt second opinion from a different AI model on plans, pitches, resumes and code | `skills/brutal-review/skills/brutal-review/SKILL.md` |
 | Video workflow | Making or editing a video (the Design head's video path) | `skills/master/skills/master/workflows/video.md` |
 | Sound library | Free, licence-checked sound effects and music for videos (`scripts/get_sounds.py`), picked by video type, with credit lines | `skills/master/skills/master/sounds/README.md` |
 | Product head | Competitors, market, pricing decisions, positioning, launch readiness | `skills/master/skills/master/heads/product.md` |

@@ -1360,6 +1360,39 @@ def check_chaos_regressions(tmp: Path) -> None:
             "lead lists must be git-ignored"
 
     @test
+    def test_brutal_review_redacts_validates_and_never_invents():
+        tool = PLUGINS / "brutal-review/skills/brutal-review/scripts/review.py"
+        if not tool.exists():
+            raise Skip("no brutal-review")
+        tmp = Path(tempfile.mkdtemp())
+        plan = tmp / "plan.md"
+        fake_key = "sk" + "-" + "abcdefghijklmnopqrstuvwx"  # built in pieces so the secret scan stays quiet
+        plan.write_text(f"Plan: mail me at a.b@example.com or +1 (512) 555-0142, key {fake_key}. Ship in 2 weeks.")
+        base = {k: v for k, v in os.environ.items() if not k.endswith("_API_KEY")}
+        def go(*args, **env):
+            return subprocess.run([sys.executable, str(tool), *args], capture_output=True, text=True, timeout=60, env={**base, **env})
+        r = go(str(plan), "--provider", "fake", "--dry-run")
+        sent = json.loads(r.stdout)["user"]
+        assert "example.com" not in sent and "555" not in sent and "sk-abc" not in sent, sent
+        assert "removed: 1 key, 1 email, 1 phone" in r.stderr, r.stderr
+        good = json.dumps({"verdict": "Too vague.", "score": "38", "weaknesses": [
+            {"severity": "minor", "issue": "a", "fix": "b"}, {"severity": "critical", "issue": "c", "fix": "d"}],
+            "fails_in_6_months_because": "No buyer."})
+        r = go(str(plan), "--provider", "fake", "--md", str(tmp / "r.md"), BRUTAL_FAKE_RESPONSE="Here you go: " + good)
+        out = json.loads(r.stdout)
+        assert r.returncode == 0 and out["score"] == 38 and out["weaknesses"][0]["severity"] == "critical", r.stdout
+        assert "Score:** 38/100" in (tmp / "r.md").read_text()
+        for bad in ["junk", '{"verdict": "x", "score": 500, "weaknesses": [], "fails_in_6_months_because": ""}']:
+            r = go(str(plan), "--provider", "fake", BRUTAL_FAKE_RESPONSE=bad)
+            assert r.returncode == 1 and "Traceback" not in r.stderr and not r.stdout.strip(), (bad, r.stdout, r.stderr)
+        r = go(str(plan), "--provider", "openai")
+        assert r.returncode == 1 and "OPENAI_API_KEY" in r.stderr and "sending" not in r.stderr, r.stderr
+        (tmp / "empty.md").write_text("")
+        assert go(str(tmp / "empty.md"), "--provider", "fake").returncode == 1
+        r = go(str(plan), "--provider", "fake", "--timeout", "1", BRUTAL_FAKE_SLEEP="2", BRUTAL_FAKE_RESPONSE=good)
+        assert r.returncode == 1 and "timed out" in r.stderr, r.stderr
+
+    @test
     def test_sound_library_lists_fetches_and_credits():
         get = PLUGINS / "master/skills/master/scripts/get_sounds.py"
         if not get.exists():

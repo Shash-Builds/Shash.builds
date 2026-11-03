@@ -254,6 +254,18 @@
       }
     },
     {
+      "name": "Brutal Review",
+      "slug": "brutal-review",
+      "kind": "skill",
+      "path": "skills/brutal-review",
+      "summary": "A blunt second opinion from a different AI model.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install brutal-review@shashbuilds",
+        "claude_ai": null
+      }
+    },
+    {
       "name": "One-Page Starter",
       "slug": "one-page-starter",
       "kind": "tool",

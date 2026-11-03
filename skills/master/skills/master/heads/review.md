@@ -20,6 +20,7 @@ high-stakes work.
 | AI image or clip | ai-visuals' scorecard |
 | Social post | social-media's 100-point scorecard; + harsh-buyer-review if it sells |
 | Any writing customers read | humanizer (check, then compare: facts unchanged) |
+| Plan, pitch, resume or code: an outside view | brutal-review (a different model's blunt critique, shown word for word; ask before sending) |
 | Anything high-stakes | careful-mode |
 
 Foundation: careful-mode on every verdict; economy-mode only for gathering,

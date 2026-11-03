@@ -4,6 +4,7 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-04. Brutal Review skill** ([`skills/brutal-review`](skills/brutal-review)): a blunt second opinion from a different model, original code and prompts, privacy redaction, tests and chaos inputs. 21 skills now.
 - **2026-11-04. AI Resume skill** ([`skills/ai-resume`](skills/ai-resume)): true, one-page, ATS-safe resumes with Hallmark and humanizer checks; sample resume with made-up data; routed by the Master Design head. 20 skills now.
 - **2026-11-04. Level-Up Game 15-day plan panel** and **email instead of LinkedIn** across the site and docs.
 - **2026-11-04. Level-Up Game Dashboard open-sourced** in [`tools/level-up-dashboard/`](tools/level-up-dashboard): one HTML file with a `CONFIG` block (levels, quests, XP, money pace, mini-boss, products, channels, role model label), storage in the user's private Claude artifact or the browser (Export/Import), and a sample mode. Personal parts left out (job-hunt tab, personal targets, names). Skill: [`SKILL.md`](tools/level-up-dashboard/SKILL.md). Example config: [`one-page-studio.config.js`](tools/level-up-dashboard/game/examples/one-page-studio.config.js). Live sample: `docs/level-up-game/` (needs Pages on). Agensi listing and cover in `agensi/`, **not published** until Shashwat approves. LinkedIn draft: [`content/drops/2026-11-05-level-up-game.md`](content/drops/2026-11-05-level-up-game.md).

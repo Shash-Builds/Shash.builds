@@ -327,6 +327,15 @@ def text_tools():
     run("generate missing image", [P, str(A / "generate_openai.py"), "--prompt-file", str(W / "hk_hindi.txt"), "--out", "o.png", "--image", missing], env={"OPENAI_API_KEY": "sk-x"})
     run("generate n 0", [P, str(A / "generate_openai.py"), "--prompt-file", str(W / "hk_hindi.txt"), "--out", "o.png", "--n", "0", "--base-url", "http://127.0.0.1:9"], env={"OPENAI_API_KEY": "sk-x"})
     run("generate missing prompt file", [P, str(A / "generate_openai.py"), "--prompt-file", missing, "--out", "o.png"], env={"OPENAI_API_KEY": "sk-x"})
+    BR = R / "brutal-review/skills/brutal-review/scripts/review.py"
+    fake = {"BRUTAL_FAKE_RESPONSE": "{not json"}
+    for label, path in [("empty", empty), ("binary", binary), ("missing", missing), ("cp1252", f("br_cp.txt", "Caf\u00e9 plan \u2019quoted\u2019", "cp1252")),
+                        ("huge", f("br_huge.txt", "word " * 60000))]:
+        run(f"brutal-review {label}", [P, str(BR), path, "--provider", "fake"], env=fake, timeout=60)
+    run("brutal-review missing key", [P, str(BR), f("br_ok.txt", "a plan"), "--provider", "anthropic"], env={"ANTHROPIC_API_KEY": ""})
+    run("brutal-review junk reply", [P, str(BR), f("br_ok2.txt", "a plan"), "--provider", "fake"], env={"BRUTAL_FAKE_RESPONSE": "[1,2"})
+    run("brutal-review timeout", [P, str(BR), f("br_ok3.txt", "a plan"), "--provider", "fake", "--timeout", "1"], env={"BRUTAL_FAKE_SLEEP": "2", "BRUTAL_FAKE_RESPONSE": "{}"})
+    run("brutal-review unreachable ollama", [P, str(BR), f("br_ok4.txt", "a plan"), "--provider", "ollama", "--timeout", "2"], env={"OLLAMA_HOST": "http://127.0.0.1:9"}, timeout=120)
 
 
 
