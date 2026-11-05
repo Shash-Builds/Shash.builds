@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Jordan Reed | Tifton Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: 1280px 4842px; margin: 0 }
+:root { --ink:#17211e; --dark:#10261f; --sand:#f6f5f0; --line:rgba(23,33,30,.13); --acc:#2e6b54; --gold:#b6dcc8; --mute:#5c6864; --r:0px; --df:'Bodoni Moda', serif; --bf:'Outfit', sans-serif; --fw:500 }
+* { box-sizing: border-box; margin: 0 }
+body { font: 17px/1.6 var(--bf); color: var(--ink); background: var(--sand); -webkit-print-color-adjust: exact }
+h1, h2, h3 { font-family: var(--df); font-weight: var(--fw); letter-spacing: -.02em }
+em { font-style: italic; color: var(--acc) }
+.eyebrow { font-size: 12.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--acc) }
+.ph { background-size: cover; background-position: center }
+nav { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 28px 64px }
+nav b { font: var(--fw) 25px var(--df) }
+nav div { display: flex; gap: 36px; align-items: center; font-size: 15px; font-weight: 500 }
+nav .tel { padding: 10px 20px; border-radius: 999px }
+.l-full nav, .l-split nav { color: #fff } .l-full .tel, .l-split .tel { background: #fff; color: var(--ink) }
+.l-center .tel, .l-frame .tel { background: var(--dark); color: #fff }
+.hero .pic { position: relative; background-image: url(../re-assets/home4.jpg) }
+.l-full .hero { position: relative; height: 880px; color: #fff }
+.l-full .pic { position: absolute; inset: 0 }
+.l-full .pic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,20,17,.62), rgba(10,20,17,0) 62%), linear-gradient(180deg, rgba(10,20,17,.5), rgba(10,20,17,.05) 30%, rgba(10,20,17,.2) 55%, rgba(10,20,17,.8)) }
+.l-full .copy { position: absolute; left: 64px; right: 64px; bottom: 150px; z-index: 1 }
+.l-full h1 { font-size: 104px; line-height: 1 }
+.l-full .eyebrow, .l-split .eyebrow { color: var(--gold) }
+.l-full em, .l-split em { color: #fff }
+.l-split .hero { display: grid; grid-template-columns: 1fr 1.2fr; height: 860px; background: var(--dark); color: #fff }
+.l-split .copy { align-self: center; padding: 0 44px 40px 64px }
+.l-split h1 { font-size: 78px; line-height: 1.04; margin-top: 14px }
+.l-split .pic::after { content: ""; position: absolute; inset: 0 0 auto; height: 130px; background: linear-gradient(rgba(10,20,17,.55), transparent) }
+.l-center .hero { padding-top: 132px; text-align: center }
+.l-center h1 { font-size: 92px; line-height: 1.04; margin-top: 12px }
+.l-center .pic { margin: 42px 64px 0; height: 640px; border-radius: var(--r) }
+.l-frame .hero { padding-top: 124px }
+.l-frame .copy { padding: 0 64px }
+.l-frame h1 { font-size: 100px; line-height: 1; margin-top: 12px }
+.l-frame .pic { margin: 40px 64px 0; height: 640px; border-radius: var(--r) }
+.search { position: relative; z-index: 3; margin: -84px 104px 0; background: #fff; border-radius: var(--r); padding: 12px; display: grid; grid-template-columns: 1fr 1fr 1fr auto; box-shadow: 0 24px 60px rgba(23,33,30,.16) }
+.search div { padding: 14px 24px; border-right: 1px solid var(--line) }
+.search small { display: block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--mute) }
+.search span { font-size: 18px }
+.search .go { background: var(--dark); color: #fff; border-radius: var(--r); display: grid; place-items: center; font-weight: 600; padding: 0 38px }
+.intro { padding: 110px 64px 0; display: grid; grid-template-columns: 240px 1fr; gap: 40px }
+.intro p { font: var(--fw) 42px/1.22 var(--df); letter-spacing: -.015em }
+section { padding: 110px 64px 0 }
+.head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 32px }
+.head h2 { font-size: 54px; line-height: 1.05; margin-top: 8px }
+.head span { color: var(--mute); font-size: 15px }
+.homes { display: grid; grid-template-columns: 1.55fr 1fr; grid-template-rows: 300px 300px; gap: 18px }
+.row .homes { grid-template-columns: repeat(3, 1fr); grid-template-rows: 440px }
+.home { position: relative; border-radius: var(--r); overflow: hidden; color: #fff; display: flex; align-items: end; padding: 24px 26px }
+.home.big { grid-row: span 2 } .row .home.big { grid-row: auto }
+.home::after, .tile::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, rgba(10,20,17,.8)) }
+.home div { position: relative; z-index: 1 }
+.home b { font: var(--fw) 30px/1.1 var(--df); display: block }
+.home span { font-size: 15px; opacity: .92 }
+.sell { margin-top: 110px; display: grid; grid-template-columns: 1fr 1fr; background: var(--dark); color: #f4eee2 }
+.flip .sell .txt { order: 2 }
+.sell .txt { padding: 96px 64px }
+.sell .eyebrow { color: var(--gold) } .sell em { color: var(--gold) }
+.sell h2 { font-size: 52px; line-height: 1.08; margin: 10px 0 26px }
+.sell ol { list-style: none; padding: 0; counter-reset: n }
+.sell li { counter-increment: n; display: flex; gap: 18px; padding: 15px 0; border-top: 1px solid rgba(255,255,255,.16) }
+.sell li::before { content: counter(n); font: 500 20px var(--df); color: var(--gold); width: 22px }
+.about { display: grid; grid-template-columns: 420px 1fr; gap: 72px; align-items: center }
+.flip .about { grid-template-columns: 1fr 420px } .flip .about .card { order: 2 }
+.card { height: 520px; border-radius: var(--r); position: relative; overflow: hidden }
+.card span { position: absolute; left: 18px; bottom: 18px; right: 18px; background: rgba(255,255,255,.94); border-radius: 10px; padding: 12px 16px; font-size: 14.5px; color: var(--mute) }
+.about h2 { font-size: 58px; line-height: 1.06; margin: 10px 0 20px }
+.about ul { list-style: none; padding: 0; margin-top: 24px; border-top: 1px solid var(--line) }
+.about li { padding: 14px 0; border-bottom: 1px solid var(--line) }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px }
+.tile { height: 320px; border-radius: var(--r); overflow: hidden; position: relative; color: #fff; display: flex; align-items: end; padding: 20px 22px }
+.tile b { position: relative; z-index: 1; font: var(--fw) 26px var(--df) }
+.say { margin: 110px 64px 0; text-align: center; padding: 54px 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line) }
+.say h2 { font-size: 36px; margin-bottom: 6px }
+.say span { color: var(--mute) }
+.cta { margin-top: 110px; height: 480px; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background-image: linear-gradient(rgba(10,20,17,.6), rgba(10,20,17,.6)), url(../re-assets/home1.jpg) }
+.cta h2 { font-size: 72px; line-height: 1.04; margin-bottom: 18px }
+.cta em { color: #fff }
+.cta p { font-size: 21px }
+footer { padding: 28px 64px; font-size: 13.5px; color: var(--mute); display: flex; justify-content: space-between; gap: 40px }
+</style></head><body class="l-center row">
+<nav><b>Jordan Reed</b><div><span>Buy</span><span>Sell</span><span>Neighborhoods</span><span>About</span><span class="tel">(000) 000-0000</span></div></nav>
+<div class="hero"><div class="copy"><div class="eyebrow">Tifton Real Estate</div><h1>At home in<br><em>Tifton</em></h1></div><div class="pic ph"></div></div>
+<div class="search"><div><small>Looking in</small><span>Tifton</span></div><div><small>Home type</small><span>Any</span></div><div><small>Price</small><span>Any price</span></div><span class="go">Search homes</span></div>
+<div class="intro"><div class="eyebrow">A better way to move</div><p>Buying or selling a home is a big decision. You should have one local person who knows the streets, answers the phone and tells you the truth.</p></div>
+<section><div class="head"><div><div class="eyebrow">Featured homes</div><h2>On the market now</h2></div><span>Sample photos and listings shown</span></div>
+<div class="homes">
+<div class="home big ph" style="background-image:url(../re-assets/home6.jpg)"><div><b>Your featured listing</b><span>Sample · Price, beds and baths go here</span></div></div>
+<div class="home ph" style="background-image:url(../re-assets/home5.jpg)"><div><b>Your next listing</b><span>Sample · Price, beds and baths</span></div></div>
+<div class="home ph" style="background-image:url(../re-assets/home2.jpg)"><div><b>Your next listing</b><span>Sample · Price, beds and baths</span></div></div>
+</div></section>
+<div class="sell"><div class="txt"><div class="eyebrow">Thinking of selling?</div><h2>Know what your home is <em>worth</em> first.</h2>
+<ol><li>Enter your address and get a home value</li><li>Walk through it together and set the right price</li><li>Photos, listing and showings handled</li><li>Review offers, close and move on</li></ol></div><div class="ph" style="background-image:url(../re-assets/int1.jpg)"></div></div>
+<section class="about"><div class="card ph" style="background-image:url(../re-assets/int2.jpg)"><span>Your photo goes here</span></div><div><div class="eyebrow">Meet your agent</div><h2>Hi, I'm <em>Jordan</em>.</h2>
+<p>I help people buy and sell homes in Tifton. First home, bigger home or your next chapter, you get straight answers and clear next steps.</p>
+<ul><li>Serving Tifton and nearby</li><li>Your Brokerage</li><li>Call or text (000) 000-0000</li></ul></div></section>
+<section><div class="head"><div><div class="eyebrow">Where I work</div><h2>Find your neighborhood</h2></div></div>
+<div class="tiles"><div class="tile ph" style="background-image:url(../re-assets/home6.jpg)"><b>Downtown</b></div><div class="tile ph" style="background-image:url(../re-assets/home4.jpg)"><b>North side</b></div><div class="tile ph" style="background-image:url(../re-assets/home5.jpg)"><b>South side</b></div><div class="tile ph" style="background-image:url(../re-assets/home2.jpg)"><b>New builds</b></div></div></section>
+<div class="say"><h2>Your real client reviews go here</h2><span>Word for word from your Google or Facebook reviews.</span></div>
+<div class="cta ph"><h2>Ready when <em>you</em> are.</h2><p>(000) 000-0000 &nbsp;·&nbsp; you@email.com</p></div>
+<footer><span>&copy; 2026 Jordan Reed · Your Brokerage · Equal Housing Opportunity</span><span>Free concept by shash.builds. Sample layout and stock photos, not a live site.</span></footer>
+<script>document.documentElement.setAttribute('data-h', document.documentElement.scrollHeight)</script>
+</body></html>

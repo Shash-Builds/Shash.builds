@@ -1,0 +1,216 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real estate website templates | shash.builds</title>
+<meta name="description" content="12 real estate website templates. $1,000 one time, live in 7 days, complete site management included.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Onest:wght@400;500&display=swap" rel="stylesheet"><style>
+/* Hallmark · shape: Poster · genre: bold-commercial · theme: signal orange / ink / cream · job: book · hero: giant word, Tab the mascot, one line, one action · signature: BOOKED. behind Tab · v2.0.0 */
+/* layout: poster hero (giant word, cut-out photo, one line, one button), then pictures, three words per step, a price, a way to talk.
+   one committed look: signal orange, ink, cream. */
+:root {
+  color-scheme: light;
+  --orange: #e8572c; --orange-deep: #c9431c;
+  --ink: #15120f; --ink-2: #2a2520;
+  --cream: #f6efe3; --cream-2: #ebe2d2;
+  --muted-on-ink: #b9ad9c; --muted: #7a6f60; --live: #5ee08a; --live-ring: rgba(94,224,138,.6); --live-0: rgba(94,224,138,0);
+  --edge: rgba(0,0,0,.06); --shade: rgba(21,18,15,.45); --shade-2: rgba(21,18,15,.55); --gap: clamp(16px, 2.4vw, 32px);
+  --f-display: "Bricolage Grotesque", "Arial Narrow", ui-sans-serif, sans-serif;
+  --f-body: "Onest", ui-sans-serif, system-ui, sans-serif;
+  --pad: clamp(16px, 5vw, 72px);
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+* { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 400 1rem/1.5 var(--f-body); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+h1, h2 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0.04em; line-height: .92; text-wrap: balance; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.dark :focus-visible { outline-color: var(--cream); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: var(--pad); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .6em; min-height: 56px; padding: 0 28px; border-radius: 999px; font: 500 1.05rem/1 var(--f-body); text-decoration: none; white-space: nowrap; transition: transform .2s var(--ease), background-color .2s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn--ink { background: var(--ink); color: var(--cream); }
+.btn--ink:hover { background: var(--ink-2); }
+.btn--cream { background: var(--cream); color: var(--ink); }
+.btn--line { box-shadow: inset 0 0 0 2px currentColor; }
+.btn .arr { transition: transform .2s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
+
+/* nav */
+.nav { position: absolute; inset: 0 0 auto; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: 24px var(--pad); }
+.logo { font: 800 1.15rem/1 var(--f-display); letter-spacing: -0.03em; text-decoration: none; }
+.nav .btn { min-height: 44px; padding: 0 20px; font-size: .95rem; }
+.nav__links { display: flex; align-items: center; gap: 24px; }
+.nav__links a:not(.btn) { font-weight: 500; text-decoration: none; }
+.nav__links a:not(.btn):hover { text-decoration: underline; }
+.shot a { display: block; text-decoration: none; color: inherit; }
+.more { margin-top: clamp(28px, 4vw, 48px); display: flex; justify-content: center; }
+
+/* hero */
+.hero { position: relative; background: var(--orange); overflow: hidden; min-height: min(860px, 100svh); display: grid; }
+.hero__word { position: absolute; left: 50%; top: clamp(70px, 9vw, 110px); transform: translateX(-50%); margin: 0; font: 800 clamp(5.5rem, 23vw, 22rem)/.8 var(--f-display); letter-spacing: -0.06em; color: var(--cream); white-space: nowrap; user-select: none; pointer-events: none; }
+.hero__me { position: absolute; left: 50%; bottom: 0; top: clamp(92px, 9vw, 124px); transform: translateX(-38%); z-index: 2; }
+.hero__me { top: auto; left: 60%; bottom: clamp(24px, 4vw, 56px); height: min(52%, 440px); transform: translateX(-50%); }
+.hero__me img { height: 100%; width: auto; max-width: none; }
+.hero__text { position: relative; z-index: 3; align-self: end; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; padding: 0 var(--pad) clamp(28px, 4vw, 52px); }
+.hero__left { display: grid; gap: 24px; justify-items: start; max-width: 30rem; }
+.hero h1 { font-size: clamp(2.6rem, 4.6vw, 4.4rem); }
+.stats { display: grid; gap: 12px; justify-items: end; text-align: right; }
+.stats li { list-style: none; font: 800 clamp(1.4rem, 2.2vw, 2rem)/1 var(--f-display); letter-spacing: -0.03em; }
+.stats small { display: block; font: 500 .8rem/1.2 var(--f-body); letter-spacing: .02em; opacity: .75; margin-top: 4px; }
+.stats ul { margin: 0; padding: 0; display: grid; gap: 16px; }
+.open { display: inline-flex; align-items: center; gap: 8px; font: 500 .9rem/1 var(--f-body); background: var(--ink); color: var(--cream); padding: 8px 12px; border-radius: 999px; }
+.open i { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 0 var(--live-ring); animation: ping 2s infinite; }
+@keyframes ping { 70% { box-shadow: 0 0 0 8px var(--live-0); } 100% { box-shadow: 0 0 0 0 var(--live-0); } }
+
+/* marquee */
+.ticker { background: var(--ink); color: var(--cream); overflow: hidden; padding-block: 16px; }
+.ticker:hover .ticker__track { animation-play-state: paused; }
+.ticker__track { display: flex; gap: 48px; width: max-content; animation: slide 32s linear infinite; font: 800 clamp(1.4rem, 2.6vw, 2.2rem)/1 var(--f-display); letter-spacing: -0.03em; }
+.ticker__track span { display: inline-flex; align-items: center; gap: 48px; white-space: nowrap; }
+.ticker__track span::after { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--orange); }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* work */
+.section { padding-block: clamp(72px, 10vw, 140px); }
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: clamp(32px, 4vw, 56px); }
+.head h2 { font-size: clamp(3rem, 8vw, 7.5rem); }
+.head p { font-size: 1.05rem; max-width: 30ch; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.shot { margin: 0; display: grid; gap: 12px; }
+.shot__frame { border-radius: 14px; overflow: hidden; background: var(--cream-2); box-shadow: 0 1px 0 var(--edge), 0 30px 60px -36px var(--shade); transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.shot__bar { display: flex; gap: 8px; padding: 12px; background: var(--ink); }
+.shot__bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-2); }
+.shot img { width: 100%; aspect-ratio: 960 / 651; object-fit: cover; object-position: top; }
+.shot:hover .shot__frame { transform: translateY(-6px) rotate(-.4deg); box-shadow: 0 1px 0 var(--edge), 0 44px 70px -36px var(--shade-2); }
+.shot figcaption { display: flex; justify-content: space-between; gap: 12px; font-weight: 500; }
+.shot figcaption span:last-child { color: var(--muted); }
+
+/* steps */
+.dark { background: var(--ink); color: var(--cream); }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin: 0; padding: 0; }
+.steps li { list-style: none; border-top: 2px solid var(--ink-2); padding-top: 20px; display: grid; gap: 8px; }
+.steps b { font: 800 clamp(3.5rem, 8vw, 7rem)/.85 var(--f-display); letter-spacing: -0.05em; color: var(--orange); }
+.steps span { font: 500 clamp(1.1rem, 1.6vw, 1.4rem)/1.2 var(--f-body); }
+
+/* price */
+.motion__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: var(--gap); align-items: center; }
+.motion__copy { display: grid; gap: 20px; justify-items: start; }
+.motion__copy ul { margin: 0; padding: 0; display: grid; gap: 8px; list-style: none; font: 500 1.2rem/1.2 var(--f-body); color: var(--muted-on-ink); }
+.motion__price { margin: 0; font: 800 clamp(4rem, 9vw, 7rem)/.9 var(--f-display); letter-spacing: -0.04em; }
+.motion__price small { font-size: .3em; letter-spacing: 0; }
+.motion__video { width: 100%; border-radius: 18px; display: block; background: var(--ink-2); }
+@media (max-width: 860px) { .motion__in { grid-template-columns: minmax(0, 1fr); } }
+.price { background: var(--orange); }
+.price__in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--gap); align-items: end; }
+.price__big { font: 800 clamp(7rem, 22vw, 19rem)/.78 var(--f-display); letter-spacing: -0.06em; }
+.price__side { display: grid; gap: 20px; justify-items: start; padding-bottom: 12px; }
+.price__side ul { margin: 0; padding: 0; display: grid; gap: 8px; font: 500 1.2rem/1.2 var(--f-body); }
+.price__side li { list-style: none; display: flex; gap: 12px; align-items: center; }
+.price__side li::before { content: ""; width: 8px; height: 8px; background: var(--ink); border-radius: 50%; }
+
+/* contact */
+.talk h2 { font-size: clamp(4rem, 14vw, 13rem); }
+.talk__row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(28px, 4vw, 48px); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px; border-top: 1px solid var(--ink-2); color: var(--muted-on-ink); font-size: .9rem; }
+.foot a { text-decoration: none; } .foot a:hover { color: var(--cream); }
+
+/* entrance */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__word { animation: rise .9s var(--ease) both; }
+  .hero__me { animation: up 1s .1s var(--ease) both; }
+  .hero__left, .stats { animation: fade .8s .35s var(--ease) both; }
+  @keyframes rise { from { transform: translate(-50%, 40px); opacity: 0; } }
+  @keyframes up { from { transform: translate(-38%, 60px); opacity: 0; } }
+  @keyframes fade { from { opacity: 0; transform: translateY(12px); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker__track, .open i { animation: none; }
+  * { transition-duration: .01ms !important; }
+}
+
+@media (max-width: 820px) {
+  .hero { min-height: 0; grid-template-rows: auto auto; }
+  .hero__word { position: relative; left: auto; top: auto; transform: none; padding: 92px var(--pad) 0; font-size: 26vw; text-align: center; }
+  .hero__me { position: relative; left: auto; bottom: auto; top: auto; transform: none; width: 72vw; max-width: 360px; height: 82vw; max-height: 410px; margin: -12vw auto 0; overflow: hidden; }
+  .hero__me img { width: 100%; height: auto; }
+  .hero__text { grid-template-columns: minmax(0, 1fr); padding-top: 0; background: var(--orange); margin-top: -2px; padding-top: 24px; }
+  .stats { justify-items: start; text-align: left; }
+  .stats ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .grid, .steps { grid-template-columns: minmax(0, 1fr); }
+  .price__in { grid-template-columns: minmax(0, 1fr); }
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes rise { from { transform: translateY(30px); opacity: 0; } }
+    @keyframes up { from { transform: translateY(40px); opacity: 0; } }
+  }
+}
+@media (max-width: 480px) {
+  .nav .btn { display: none; }
+  .nav__links { gap: 16px; }
+  .hero__left .btn, .talk__row .btn { width: 100%; }
+}
+</style><style>
+.tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--gap) }
+.tpl { background: #fff; border-radius: 18px; overflow: hidden; color: var(--ink) }
+.tpl img { display: block; width: 100%; height: auto }
+.tpl__body { padding: 20px 22px 24px; display: grid; gap: 8px }
+.tpl h3 { margin: 0; font: 800 1.7rem/1.1 var(--f-display) }
+.tpl p { margin: 0; color: var(--muted) }
+.tpl__row { display: flex; gap: 8px; align-items: baseline } .tpl__row b { font: 800 1.6rem var(--f-display) }
+.tpl__btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px }
+.inc { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; font: 500 1.15rem/1.3 var(--f-body) }
+.inc li { display: flex; gap: 12px } .inc li::before { content: "✓"; color: var(--orange) }
+.custom { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--gap); align-items: center }
+.custom img, .custom video { width: 100%; border-radius: 18px; display: block }
+.pair { display: grid; gap: var(--gap) }
+.ttitle { font: 800 clamp(3rem, 8vw, 6rem)/1 var(--f-display); letter-spacing: -.03em; margin: 0 0 18px }
+@media (max-width: 860px) { .custom { grid-template-columns: minmax(0, 1fr) } }
+</style></head><body>
+<header class="nav"><a class="logo" href="index.html">Shashwat Jain</a><div class="nav__links"><a href="index.html#motion">Motion videos</a><a href="#custom">Custom builds</a><a class="btn btn--ink" href="#buy">Templates</a></div></header>
+<main>
+<section class="section"><div class="wrap"><h1 class="ttitle">12 websites for real estate agents.</h1><p style="font-size:1.3rem;max-width:44em;margin:0">Pick a design, see it live, and buy it. I put in your details and take care of the whole site.</p></div></section>
+<section class="section" style="padding-top:0" id="buy"><div class="wrap"><div class="tgrid"><article class="tpl"><a href="demos/pine.html" target="_blank" rel="noopener"><img src="previews/pine.jpg" alt="Preview of the Pine real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Pine</h3><p>Full-photo hero, warm serif, deep green</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Pine%20real%20estate%20template">Buy Pine</a><a class="btn btn--line" href="demos/pine.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/coast.html" target="_blank" rel="noopener"><img src="previews/coast.jpg" alt="Preview of the Coast real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Coast</h3><p>Split hero, crisp navy, coastal feel</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Coast%20real%20estate%20template">Buy Coast</a><a class="btn btn--line" href="demos/coast.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/clay.html" target="_blank" rel="noopener"><img src="previews/clay.jpg" alt="Preview of the Clay real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Clay</h3><p>Centered headline, soft terracotta</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Clay%20real%20estate%20template">Buy Clay</a><a class="btn btn--line" href="demos/clay.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/noir.html" target="_blank" rel="noopener"><img src="previews/noir.jpg" alt="Preview of the Noir real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Noir</h3><p>Black and gold, for luxury listings</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Noir%20real%20estate%20template">Buy Noir</a><a class="btn btn--line" href="demos/noir.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/sage.html" target="_blank" rel="noopener"><img src="previews/sage.jpg" alt="Preview of the Sage real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Sage</h3><p>Split hero, calm green, friendly serif</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Sage%20real%20estate%20template">Buy Sage</a><a class="btn btn--line" href="demos/sage.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/tide.html" target="_blank" rel="noopener"><img src="previews/tide.jpg" alt="Preview of the Tide real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Tide</h3><p>Bold modern sans, ocean teal</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Tide%20real%20estate%20template">Buy Tide</a><a class="btn btn--line" href="demos/tide.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/plum.html" target="_blank" rel="noopener"><img src="previews/plum.jpg" alt="Preview of the Plum real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Plum</h3><p>Centered and elegant, rich plum</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Plum%20real%20estate%20template">Buy Plum</a><a class="btn btn--line" href="demos/plum.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/bright.html" target="_blank" rel="noopener"><img src="previews/bright.jpg" alt="Preview of the Bright real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Bright</h3><p>Clean, bright and modern, strong blue</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Bright%20real%20estate%20template">Buy Bright</a><a class="btn btn--line" href="demos/bright.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/merlot.html" target="_blank" rel="noopener"><img src="previews/merlot.jpg" alt="Preview of the Merlot real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Merlot</h3><p>Full-photo hero, classic burgundy</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Merlot%20real%20estate%20template">Buy Merlot</a><a class="btn btn--line" href="demos/merlot.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/ink.html" target="_blank" rel="noopener"><img src="previews/ink.jpg" alt="Preview of the Ink real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Ink</h3><p>Sharp tech look, ink and amber</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Ink%20real%20estate%20template">Buy Ink</a><a class="btn btn--line" href="demos/ink.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/slate.html" target="_blank" rel="noopener"><img src="previews/slate.jpg" alt="Preview of the Slate real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Slate</h3><p>Editorial serif, cool slate</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Slate%20real%20estate%20template">Buy Slate</a><a class="btn btn--line" href="demos/slate.html" target="_blank" rel="noopener">Live preview</a></div></div></article><article class="tpl"><a href="demos/bodoni.html" target="_blank" rel="noopener"><img src="previews/bodoni.jpg" alt="Preview of the Bodoni real estate website template" loading="lazy" width="640" height="500"></a>
+<div class="tpl__body"><h3>Bodoni</h3><p>Fashion-style type, deep forest</p><div class="tpl__row"><b>$1,000</b><span>one time</span></div>
+<div class="tpl__btns"><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Buy%20the%20Bodoni%20real%20estate%20template">Buy Bodoni</a><a class="btn btn--line" href="demos/bodoni.html" target="_blank" rel="noopener">Live preview</a></div></div></article></div></div></section>
+<section class="section dark"><div class="wrap"><h2 class="ttitle" style="font-size:clamp(2.4rem,6vw,4rem)">Every template includes</h2><ul class="inc"><li>Your name, photo, listings and reviews</li><li>Home value form and contact form</li><li>Works on every phone</li><li>Live in 7 days, or every dollar back</li><li>Complete site management</li><li>3 months of hosting free, then $50 a month</li><li>1 month of support after delivery</li></ul></div></section>
+<section class="section" id="custom"><div class="wrap custom"><div><h2 class="ttitle" style="font-size:clamp(2.4rem,6vw,4rem)">Custom builds</h2><p style="font-size:1.2rem">Need more than one page? Custom sites start at $1,500, planned around your business.</p><a class="btn btn--ink" href="mailto:shash.builds@gmail.com?subject=Custom%20website%20build">Ask about a custom build</a></div>
+<div class="pair"><img src="previews/custom-site.png" alt="Preview of a planned multi-page custom website" loading="lazy"><video src="motion/welcome-to-miami.mp4" poster="motion/welcome-to-miami.jpg" autoplay muted loop playsinline aria-label="Sample motion video for a made-up product"></video></div></div></section>
+</main>
+<footer class="foot wrap" style="padding-block:32px"><span>© 2026 Shashwat Jain · shash.builds</span><span>Previews use sample names and stock photos.</span></footer>
+<form name="visits" data-netlify="true" hidden><input name="ref"><input name="page"></form>
+<script>
+(function () {
+  var ref = new URLSearchParams(location.search).get('ref');
+  if (!ref) return;
+  try { if (sessionStorage.getItem('seen') === ref) return; sessionStorage.setItem('seen', ref); } catch (e) {}
+  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ 'form-name': 'visits', ref: ref, page: location.pathname }).toString() });
+})();
+</script>
+</body></html>
