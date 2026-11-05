@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Better Hire Shashwat: one hire, a whole company</title>
+<meta name="description" content="Shashwat Jain: sales, operations, logistics, support, marketing, design, engineering and AI. A 2-minute video resume, and what each part of it proves.">
+<meta property="og:title" content="Better Hire Shashwat">
+<meta property="og:description" content="One hire. A whole company. A 2-minute video resume.">
+<meta property="og:image" content="poster.jpg">
+<link rel="icon" href="../tab.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Onest:wght@400;500&display=swap">
+<style>
+:root {
+  --orange: #e8572c;
+  --orange-deep: #c9431c;
+  --ink: #15120f;
+  --ink-2: #2a241f;
+  --cream: #f6efe3;
+  --card: #fffaf2;
+  --peach: #f4c6a8;
+  --line: #e4d8c6;
+  --muted: #7a6f60;
+  --muted-on-ink: #b9ad9c;
+  --good: #2c8150;
+  --f-display: "Bricolage Grotesque", "Arial Narrow", ui-sans-serif, sans-serif;
+  --f-body: "Onest", ui-sans-serif, system-ui, sans-serif;
+  --pad: clamp(16px, 5vw, 72px);
+  --gap: clamp(16px, 2.4vw, 32px);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+* { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font: 400 17px/1.55 var(--f-body);
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--pad); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -.02em; line-height: 1.02; margin: 0; overflow-wrap: break-word; min-width: 0; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 22px; border-radius: 999px; font-weight: 500; text-decoration: none;
+  transition: transform .25s var(--ease), background-color .25s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--ink { background: var(--ink); color: var(--cream); }
+.btn--ink:hover { background: var(--ink-2); }
+.btn--orange { background: var(--orange); color: #fff; }
+.btn--orange:hover { background: var(--orange-deep); }
+.btn--line { border: 1.5px solid var(--ink); }
+
+/* nav */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 20px var(--pad); max-width: 1180px; margin: 0 auto; }
+.logo { font-family: var(--f-display); font-weight: 800; font-size: 20px; text-decoration: none; }
+.nav__links { display: flex; gap: 24px; align-items: center; font-size: 15px; }
+.nav__links a:not(.btn) { text-decoration: none; }
+.nav__links a:not(.btn):hover { color: var(--orange); }
+
+/* hero */
+.hero { padding: clamp(32px, 7vw, 96px) 0 clamp(24px, 4vw, 48px); }
+.hero h1 { font-size: clamp(44px, 8.4vw, 112px); max-width: 11ch; }
+.hero h1 span { color: var(--orange); }
+.hero p { font-size: clamp(18px, 2vw, 22px); max-width: 34ch; color: var(--muted); margin: 20px 0 28px; }
+.hero__row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* video */
+.film { padding-bottom: clamp(40px, 6vw, 80px); }
+.film__frame {
+  position: relative; border-radius: 22px; overflow: hidden; background: var(--ink);
+  box-shadow: 0 30px 80px -30px rgba(201, 67, 28, .45); aspect-ratio: 16 / 9;
+}
+.film__frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.film__note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+
+/* proof strip */
+.proof { background: var(--ink); color: var(--cream); padding: clamp(28px, 4vw, 44px) 0; }
+.proof ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--gap); }
+.proof li { font-family: var(--f-display); font-weight: 800; font-size: clamp(26px, 3.2vw, 40px); line-height: 1; }
+.proof small { display: block; font-family: var(--f-body); font-weight: 400; font-size: 14px; color: var(--muted-on-ink); margin-top: 8px; line-height: 1.35; }
+
+/* departments */
+.depts { padding: clamp(56px, 8vw, 110px) 0; }
+.depts h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
+.depts > .wrap > p { color: var(--muted); max-width: 52ch; margin: 16px 0 36px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+.dept {
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px;
+  display: flex; flex-direction: column; gap: 10px; min-height: 190px;
+  transition: transform .3s var(--ease), border-color .3s var(--ease);
+}
+.dept:hover { transform: translateY(-4px); border-color: var(--peach); }
+.dept h3 { font-size: 24px; }
+.dept__tag { align-self: flex-start; font-size: 13px; padding: 4px 12px; border-radius: 999px; background: var(--orange); color: #fff; }
+.dept p { margin: 0; font-size: 15px; color: var(--muted); }
+.dept p b { color: var(--ink); font-weight: 500; }
+.dept a { color: var(--orange-deep); }
+
+/* talk */
+.talk { background: var(--ink); color: var(--cream); padding: clamp(64px, 9vw, 120px) 0; text-align: center; }
+.talk h2 { font-size: clamp(40px, 7vw, 96px); }
+.talk p { color: var(--muted-on-ink); margin: 18px auto 30px; max-width: 40ch; }
+.talk .hero__row { justify-content: center; }
+.talk .btn--line { border-color: var(--cream); color: var(--cream); }
+.talk small { display: block; margin-top: 26px; color: var(--muted-on-ink); font-size: 14px; }
+footer { padding: 28px var(--pad); text-align: center; font-size: 14px; color: var(--muted); }
+
+/* entrance motion */
+@media (prefers-reduced-motion: no-preference) {
+  .rise { animation: rise .9s var(--ease) both; }
+  .rise--2 { animation-delay: .12s; }
+  .rise--3 { animation-delay: .24s; }
+  @keyframes rise { from { transform: translateY(28px); opacity: 0; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+@media (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proof ul { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .proof ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nav__links a:not(.btn) { display: none; }
+  .hero__row .btn { width: 100%; }
+  .film__frame { border-radius: 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../">Shashwat Jain</a>
+  <div class="nav__links">
+    <a href="../#work">Work</a>
+    <a href="../skills.html">Free skills</a>
+    <a class="btn btn--ink" href="mailto:shashwatj05@gmail.com?subject=Founder%27s%20office%20role">Email me</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="rise">One hire. <span>A whole company.</span></h1>
+      <p class="rise rise--2">I got tired of explaining my resume, so I made it a video. Two minutes, every part of it real.</p>
+      <div class="hero__row rise rise--3">
+        <a class="btn btn--orange" href="#film">Watch the video</a>
+        <a class="btn btn--line" href="mailto:shashwatj05@gmail.com?subject=Founder%27s%20office%20role">Worth 15 minutes this week?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="film" id="film" aria-label="Video resume">
+    <div class="wrap">
+      <div class="film__frame">
+        <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Better Hire Shashwat, a 2-minute video resume">
+          <source src="better-hire-shashwat.mp4" type="video/mp4">
+          Your browser cannot play this video. <a href="better-hire-shashwat.mp4">Download it here.</a>
+        </video>
+      </div>
+      <p class="film__note">Made by me, with AI tools: script, voice, motion design and sound.</p>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Numbers from the video">
+    <div class="wrap">
+      <ul>
+        <li>₹50,000<small>profit in 4 months, my first business on Amazon</small></li>
+        <li>+14%<small>on-time deliveries, pharma logistics in Lagos</small></li>
+        <li>99%<small>accuracy on 50+ listings a day</small></li>
+        <li>+40%<small>qualified sales pipeline</small></li>
+        <li>22<small>open-source Claude skills</small></li>
+        <li>8<small>websites, one per trade</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="depts" aria-labelledby="depts-title">
+    <div class="wrap">
+      <h2 id="depts-title">Eight departments. One person.</h2>
+      <p>Each one is something I have actually done, with the numbers to back it.</p>
+      <div class="grid">
+        <article class="dept"><span class="dept__tag">Sales</span><h3>Closes</h3><p><b>Top cold caller</b> and a 40% bigger qualified pipeline as Sales Manager at Spacer Realty.</p></article>
+        <article class="dept"><span class="dept__tag">Operations</span><h3>Runs it</h3><p>Ran <b>warehouse operations, audits and vendor contracts</b> at Krishat Pharma Industries, Lagos.</p></article>
+        <article class="dept"><span class="dept__tag">Logistics</span><h3>Delivers</h3><p>On-time pharma deliveries <b>up 14%</b>, costs <b>down 7%</b>.</p></article>
+        <article class="dept"><span class="dept__tag">Support</span><h3>Gets it right</h3><p><b>50+ listings a day at 99% accuracy</b>, 20% faster, at Teleperformance.</p></article>
+        <article class="dept"><span class="dept__tag">Marketing</span><h3>Builds brands</h3><p>Launched my own clothing brand with a <b>full Instagram identity</b>, on a ₹2 lakh budget.</p></article>
+        <article class="dept"><span class="dept__tag">Design</span><h3>Makes it look made</h3><p><b>8 concept websites</b>, each in its own style. <a href="../#work">See the work</a>.</p></article>
+        <article class="dept"><span class="dept__tag">Engineering</span><h3>Ships</h3><p><b>50+ scripts</b> tested on every change, and open-source web tools anyone can use.</p></article>
+        <article class="dept"><span class="dept__tag">AI</span><h3>Automates</h3><p><b>22 open-source Claude skills</b>, used every day. <a href="https://github.com/Shash-Builds/shash.builds">On GitHub</a>.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="talk" aria-labelledby="talk-title">
+    <div class="wrap">
+      <h2 id="talk-title">Worth 15 minutes this week?</h2>
+      <p>I'm looking for a founder's office role at a brand that's getting it right. Immediate joiner: Gurugram, Bengaluru after relocating, or remote.</p>
+      <div class="hero__row">
+        <a class="btn btn--orange" href="mailto:shashwatj05@gmail.com?subject=Founder%27s%20office%20role">shashwatj05@gmail.com</a>
+        <a class="btn btn--line" href="https://github.com/Shash-Builds/shash.builds">See what I've built</a>
+      </div>
+      <small>Anything else, websites or tools: shash.builds@gmail.com</small>
+    </div>
+  </section>
+</main>
+
+<footer>Shashwat Jain · shash.builds</footer>
+</body>
+</html>
