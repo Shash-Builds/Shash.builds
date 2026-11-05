@@ -23,3 +23,6 @@ leads/
 
 # Portfolio scroll videos (silent, small) are deliverables
 !portfolio/*/shots/scroll.mp4
+
+# Better Hire video fallback (under 5 MB), approved by Shashwat 2026-11-05
+!briefs/seed/site/hire/better-hire-shashwat-small.mp4

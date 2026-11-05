@@ -13,6 +13,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Onest:wght@400;500&display=swap">
 <style>
+/* hallmark · theme: site's own system (by request) · genre: editorial · signature: the video resume, first screen */
+/* critique: hand audit against the 16-rule floor; sloplint not run (blocked in this session) */
 :root {
   --orange: #e8572c;
   --orange-deep: #c9431c;
@@ -25,6 +27,8 @@
   --muted: #7a6f60;
   --muted-on-ink: #b9ad9c;
   --good: #2c8150;
+  --on-accent: #fff;
+  --glow: rgba(201, 67, 28, .45);
   --f-display: "Bricolage Grotesque", "Arial Narrow", ui-sans-serif, sans-serif;
   --f-body: "Onest", ui-sans-serif, system-ui, sans-serif;
   --pad: clamp(16px, 5vw, 72px);
@@ -49,7 +53,7 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -.
 .btn:hover { transform: translateY(-2px); }
 .btn--ink { background: var(--ink); color: var(--cream); }
 .btn--ink:hover { background: var(--ink-2); }
-.btn--orange { background: var(--orange); color: #fff; }
+.btn--orange { background: var(--orange); color: var(--on-accent); }
 .btn--orange:hover { background: var(--orange-deep); }
 .btn--line { border: 1.5px solid var(--ink); }
 
@@ -71,7 +75,7 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -.
 .film { padding-bottom: clamp(40px, 6vw, 80px); }
 .film__frame {
   position: relative; border-radius: 22px; overflow: hidden; background: var(--ink);
-  box-shadow: 0 30px 80px -30px rgba(201, 67, 28, .45); aspect-ratio: 16 / 9;
+  box-shadow: 0 30px 80px -30px var(--glow); aspect-ratio: 16 / 9;
 }
 .film__frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .film__note { font-size: 14px; color: var(--muted); margin-top: 12px; }
@@ -89,12 +93,12 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -.
 .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
 .dept {
   background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px;
-  display: flex; flex-direction: column; gap: 10px; min-height: 190px;
+  display: flex; flex-direction: column; gap: 10px; min-height: 150px;
   transition: transform .3s var(--ease), border-color .3s var(--ease);
 }
 .dept:hover { transform: translateY(-4px); border-color: var(--peach); }
-.dept h3 { font-size: 24px; }
-.dept__tag { align-self: flex-start; font-size: 13px; padding: 4px 12px; border-radius: 999px; background: var(--orange); color: #fff; }
+.dept h3 { font-size: 21px; line-height: 1.15; }
+.dept__tag { align-self: flex-start; font-size: 13px; padding: 4px 12px; border-radius: 999px; background: var(--orange); color: var(--on-accent); }
 .dept p { margin: 0; font-size: 15px; color: var(--muted); }
 .dept p b { color: var(--ink); font-weight: 500; }
 .dept a { color: var(--orange-deep); }
@@ -159,6 +163,8 @@ footer { padding: 28px var(--pad); text-align: center; font-size: 14px; color: v
       <div class="film__frame">
         <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Better Hire Shashwat, a 2-minute video resume">
           <source src="better-hire-shashwat.mp4" type="video/mp4">
+          <source src="https://github.com/Shash-Builds/Shash.builds/releases/download/better-hire-v1/better-hire-shashwat.mp4" type="video/mp4">
+          <source src="better-hire-shashwat-small.mp4" type="video/mp4">
           Your browser cannot play this video. <a href="better-hire-shashwat.mp4">Download it here.</a>
         </video>
       </div>
@@ -184,14 +190,14 @@ footer { padding: 28px var(--pad); text-align: center; font-size: 14px; color: v
       <h2 id="depts-title">Eight departments. One person.</h2>
       <p>Each one is something I have actually done, with the numbers to back it.</p>
       <div class="grid">
-        <article class="dept"><span class="dept__tag">Sales</span><h3>Closes</h3><p><b>Top cold caller</b> and a 40% bigger qualified pipeline as Sales Manager at Spacer Realty.</p></article>
-        <article class="dept"><span class="dept__tag">Operations</span><h3>Runs it</h3><p>Ran <b>warehouse operations, audits and vendor contracts</b> at Krishat Pharma Industries, Lagos.</p></article>
-        <article class="dept"><span class="dept__tag">Logistics</span><h3>Delivers</h3><p>On-time pharma deliveries <b>up 14%</b>, costs <b>down 7%</b>.</p></article>
-        <article class="dept"><span class="dept__tag">Support</span><h3>Gets it right</h3><p><b>50+ listings a day at 99% accuracy</b>, 20% faster, at Teleperformance.</p></article>
-        <article class="dept"><span class="dept__tag">Marketing</span><h3>Builds brands</h3><p>Launched my own clothing brand with a <b>full Instagram identity</b>, on a ₹2 lakh budget.</p></article>
-        <article class="dept"><span class="dept__tag">Design</span><h3>Makes it look made</h3><p><b>8 concept websites</b>, each in its own style. <a href="../#work">See the work</a>.</p></article>
-        <article class="dept"><span class="dept__tag">Engineering</span><h3>Ships</h3><p><b>50+ scripts</b> tested on every change, and open-source web tools anyone can use.</p></article>
-        <article class="dept"><span class="dept__tag">AI</span><h3>Automates</h3><p><b>22 open-source Claude skills</b>, used every day. <a href="https://github.com/Shash-Builds/shash.builds">On GitHub</a>.</p></article>
+        <article class="dept"><span class="dept__tag">Sales</span><h3>Top cold caller, +40% pipeline</h3><p>Spacer Realty</p></article>
+        <article class="dept"><span class="dept__tag">Operations</span><h3>Warehouse, audits, vendors</h3><p>Krishat Pharma, Lagos</p></article>
+        <article class="dept"><span class="dept__tag">Logistics</span><h3>+14% on time, -7% costs</h3><p>Krishat Pharma</p></article>
+        <article class="dept"><span class="dept__tag">Support</span><h3>50+ a day at 99% accuracy</h3><p>Teleperformance</p></article>
+        <article class="dept"><span class="dept__tag">Marketing</span><h3>A whole brand identity for ₹2 lakh</h3><p>my clothing brand</p></article>
+        <article class="dept"><span class="dept__tag">Design</span><h3>8 concept websites</h3><p><a href="../#work">see the work</a></p></article>
+        <article class="dept"><span class="dept__tag">Engineering</span><h3>50+ tested scripts, open tools</h3><p>shash.builds</p></article>
+        <article class="dept"><span class="dept__tag">AI</span><h3>22 open-source Claude skills</h3><p><a href="https://github.com/Shash-Builds/shash.builds">on GitHub</a></p></article>
       </div>
     </div>
   </section>
@@ -209,6 +215,6 @@ footer { padding: 28px var(--pad); text-align: center; font-size: 14px; color: v
   </section>
 </main>
 
-<footer>Shashwat Jain · shash.builds</footer>
+<footer>Shashwat Jain, shash.builds</footer>
 </body>
 </html>
