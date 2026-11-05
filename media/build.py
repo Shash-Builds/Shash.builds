@@ -179,12 +179,12 @@ def banner():
     w, h = 1280, 440
     body = [f'<rect width="{w}" height="{h}" fill="{INK}"/>', dots(w, h)]
     body.append(wordmark(128, 72, 210))
-    body.append(text(BODY, "One-page websites for US service businesses.", 34, 76, 286, CREAM))
+    body.append(text(BODY, "Stuff I built, shipped in public.", 34, 76, 286, CREAM))
     body.append(text(BODY, "Free Claude skills and web tools, built in public.", 34, 76, 332, MUTED))
     body.append(f'<g transform="translate(900 70) scale(1.5)">{tab_group(True)}</g>')
     body.append(f'<rect y="{h-10}" width="{w}" height="10" fill="{ORANGE}"/>')
     return svg(w, h, "".join(body), "shash.builds",
-               "Banner: the shash.builds wordmark next to Tab, the mascot. One-page websites for US service businesses. Free Claude skills and web tools, built in public.",
+               "Banner: the shash.builds wordmark next to Tab, the mascot. Stuff I built, shipped in public. Free Claude skills and web tools, built in public.",
                TAB_CSS)
 
 
@@ -192,7 +192,7 @@ def social():
     w, h = 1280, 640
     body = [f'<rect width="{w}" height="{h}" fill="{INK}"/>', dots(w, h)]
     body.append(wordmark(150, 80, 300))
-    body.append(text(BODY, "One-page websites for US service businesses.", 38, 84, 384, CREAM))
+    body.append(text(BODY, "Stuff I built, shipped in public.", 38, 84, 384, CREAM))
     body.append(text(BODY, "Free Claude skills and web tools, built in public.", 38, 84, 436, MUTED))
     body.append(text(BODY_BOLD, "github.com/Shash-Builds/shash.builds", 28, 84, 548, ORANGE))
     body.append(f'<g transform="translate(910 150) scale(1.6)">{tab_group(False)}</g>')
@@ -205,14 +205,14 @@ def profile_header():
     w, h = 1280, 360
     body = [f'<rect width="{w}" height="{h}" fill="{INK}"/>', dots(w, h)]
     body.append(text(DISPLAY, "Shashwat Jain", 104, 72, 170, CREAM, tracking=-0.02))
-    body.append(text(BODY, "I build one-page websites for US service businesses.", 32, 76, 236, CREAM))
+    body.append(text(BODY, "I build things: a brand, websites and AI tools.", 32, 76, 236, CREAM))
     body.append(text(BODY, "Free Claude skills too. Built in public at", 32, 76, 282, MUTED))
     x = 76 + BODY.width("Free Claude skills too. Built in public at ", 32)
     body.append(wordmark(32, x, 282))
     body.append(f'<g transform="translate(1000 70) scale(1.15)">{tab_group(True)}</g>')
     body.append(f'<rect y="{h-10}" width="{w}" height="10" fill="{ORANGE}"/>')
     return svg(w, h, "".join(body), "Shashwat Jain, shash.builds",
-               "Shashwat Jain builds one-page websites for US service businesses and free Claude skills, in public at shash.builds. Tab the mascot waves from the right.",
+               "Shashwat Jain builds things: a brand, websites and free Claude skills, in public at shash.builds. Tab the mascot waves from the right.",
                TAB_CSS)
 
 

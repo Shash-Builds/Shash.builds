@@ -84,6 +84,6 @@ On claude.ai: download `ai-visuals-skill.zip` from [Releases](https://github.com
 
 ---
 
-Made by [shash.builds](../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../README.md#hire-me).
+Made by [shash.builds](../../README.md). See [everything I've built](../../README.md#everything-in-here).
 
 MIT licensed, copyright Shashwat Jain. See [LICENSE.md](LICENSE.md).

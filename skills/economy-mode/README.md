@@ -74,6 +74,6 @@ Economy Mode works in Claude Code only. It needs Claude Code's subagents, so the
 
 ---
 
-Made by [shash.builds](../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../README.md#hire-me).
+Made by [shash.builds](../../README.md). See [everything I've built](../../README.md#everything-in-here).
 
 MIT licensed, copyright Shashwat Jain. See [LICENSE.md](LICENSE.md).

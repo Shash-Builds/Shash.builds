@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="media/banner.svg" width="100%" alt="shash.builds banner: the wordmark next to Tab, a smiling browser-window mascot with calendar rings and an orange AI spark. One-page websites for US service businesses. Free Claude skills and web tools, built in public.">
+  <img src="media/banner.svg" width="100%" alt="shash.builds banner: the wordmark next to Tab, a smiling browser-window mascot with calendar rings and an orange AI spark. Stuff I built, shipped in public. Free Claude skills and web tools, built in public.">
 </p>
 
 <p align="center">
-  <b>I build one-page websites for US service businesses. Everything else I make, I give away here.</b>
+  <b>Stuff I built: free Claude skills and web tools, shipped in public.</b>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 <p align="center">
   <a href="#quick-start">Quick start</a> &nbsp;|&nbsp;
   <a href="#everything-in-here">Skills and tools</a> &nbsp;|&nbsp;
-  <a href="#hire-me">Hire me</a> &nbsp;|&nbsp;
+  <a href="#say-hello">Say hello</a> &nbsp;|&nbsp;
   <a href="STATUS.md">Build log</a> &nbsp;|&nbsp;
   <a href="CONTRIBUTING.md">Contribute</a>
 </p>
@@ -28,11 +28,9 @@
 
 ## What this is
 
-I'm Shashwat Jain. I'm a web designer in India and I work US hours, 8:30 am to 6:30 pm ET.
+I'm Shashwat Jain. I build things: a clothing brand, websites, and the AI tools in this repo.
 
-My paid work is simple: **a one-page website for a US service business. $400 flat. Live in 7 days.**
-
-This repo is everything around that work, shipped in the open:
+This repo is everything I've built, shipped in the open:
 
 - **19 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
 - **Web tools and templates** you can copy, fork and ship today.
@@ -129,17 +127,9 @@ Every day I post a 2-minute video about what I built that day. The scripts and p
 
 Meet <img src="media/tab-static.svg" width="22" alt="Tab, the mascot"> **Tab**, the mascot: a browser tab (websites), an AI spark (Claude) and calendar rings (shipped on a schedule).
 
-## Hire me
+## Say hello
 
-<img src="media/icons/hire.svg" width="28" align="left" alt="Hire icon: a cream briefcase on an orange tile.">
-
-**One-page website for your service business. $400 flat. Live in 7 days.**
-
-Cleaners, landscapers, painters, contractors, detailers, coaches. If customers find you on Google and call you, you need one clean page that turns that visit into a call.
-
-- Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com),
-- Message me on [LinkedIn](https://www.linkedin.com/in/shashbuilds), or
-- [Open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml) with your business name and current site. Keep phone numbers and emails out of it: issues are public. I'll reply there.
+Want to talk about something here, or something you're building? Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com) or message me on [LinkedIn](https://www.linkedin.com/in/shashbuilds).
 
 ## Follow the build
 

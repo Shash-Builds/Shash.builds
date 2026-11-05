@@ -6,5 +6,4 @@ Download `lead-tracker.zip` below, or read the 3-step setup: https://github.com/
 
 ---
 
-Free and open source by shash.builds. Need a one-page website for your service business?
-$400 flat, live in 7 days: https://github.com/Shash-Builds/shash.builds#hire-me
+Free and open source by shash.builds.

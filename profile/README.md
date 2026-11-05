@@ -2,12 +2,12 @@
      Image paths point at the shash.builds repo so the banner has one source. -->
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Shash-Builds/shash.builds/HEAD/media/profile-header.svg" width="100%" alt="Shashwat Jain. I build one-page websites for US service businesses. Free Claude skills too. Built in public at shash.builds. Tab, a smiling browser-window mascot, sits on the right.">
+  <img src="https://raw.githubusercontent.com/Shash-Builds/shash.builds/HEAD/media/profile-header.svg" width="100%" alt="Shashwat Jain. I build things: a brand, websites and AI tools. Built in public at shash.builds. Tab, a smiling browser-window mascot, sits on the right.">
 </p>
 
 ### Hi, I'm Shashwat.
 
-I'm a web designer in India working US hours, 8:30 am to 6:30 pm ET. I build **one-page websites for US service businesses: $400 flat, live in 7 days.** I also make free Claude skills and web tools, and I build all of it in public.
+I build things: a clothing brand, websites, and the free Claude skills and web tools in **shash.builds**. I build all of it in public.
 
 ### What's shipped
 
@@ -17,11 +17,9 @@ Everything lives in **[shash.builds](https://github.com/Shash-Builds/shash.build
 
 A new free skill or tool every 1 to 2 days, and a 2-minute "Built in Bed" video every day about what got built.
 
-### Hire me
+### Say hello
 
-Cleaner, landscaper, painter, contractor, detailer? You get one clean page that turns Google visitors into calls. $400 flat, live in 7 days.
-
-Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com), [message me on LinkedIn](https://www.linkedin.com/in/shashbuilds) or [open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml).
+Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com) or [message me on LinkedIn](https://www.linkedin.com/in/shashbuilds).
 
 ### Follow the build
 

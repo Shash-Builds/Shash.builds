@@ -4,6 +4,7 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-05. Front door is now "stuff I built".** Removed the $400 website offer and the "Hire me" section from the README, profile README, `llms.txt`, `catalog.json`, the 19 skill README footers and the release notes. Deleted the hire issue form. Banner, social preview SVG and profile header rebuilt with the new line. The sales-kit skills keep their own default offer text. `media/social-preview.png` was not regenerated.
 - **2026-11-03. Level-Up Dashboard app v1:** phone-first page in [`docs/level-up/`](docs/level-up/index.html) (daily log, level, XP, streak, money vs pace) on top of Shashwat's Sheet through [`apps-script/Code.gs`](tools/level-up-dashboard/apps-script/Code.gs). Passphrase on every read and write; nothing personal in the repo. Goals, pace and XP weights come from the Sheet's `config` tab, ready for the generic "Role Model" version. Served by GitHub Pages from `/docs` on this branch.
 - **2026-11-03. Seed export + Niche Research** (from branch chat 2), merged after a privacy, brand and size review (30 binaries, 2.7 MB total, none over 500 KB).
   - [`briefs/seed/`](briefs/seed): the site (index, lookbook, skills page), the booked-one-pager skill draft, Tab mascot stills and loops, trailer scenes, Built in Bed graphics. See its `MANIFEST.md` for sources and the 5 open items.
