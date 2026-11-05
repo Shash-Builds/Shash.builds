@@ -4,6 +4,7 @@ Last update: 2026-11-03
 
 ## Done
 
+- **2026-11-05. Front door reframed as "stuff I built".** README tagline, "What this is", profile README, `llms.txt` and the banner, social preview and profile header no longer say web design is the paid work. The portfolio, templates and the "Hire me" section stay, so a site can still be bought.
 - **2026-11-04. Portfolio:** 8 concept sites, one per trade and style, with case cards, screenshots, scroll videos and a marketplace pack. Gallery: https://shash-builds.github.io/Shash.builds/portfolio/ (source in `portfolio/`, Pages copy in `docs/portfolio/`).
 - **2026-11-04. Comment Drafter skill** ([`skills/comment-drafter`](skills/comment-drafter)): two comment drafts per post for LinkedIn, X or Instagram, in the user's voice; drafts only, never posts or logs in. Routed from the Marketing head. 22 skills now.
 - **2026-11-04. Brutal Review skill** ([`skills/brutal-review`](skills/brutal-review)): a blunt second opinion from a different model, original code and prompts, privacy redaction, tests and chaos inputs. 21 skills now.

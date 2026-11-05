@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="media/banner.svg" width="100%" alt="shash.builds banner: the wordmark next to Tab, a smiling browser-window mascot with calendar rings and an orange AI spark. One-page websites for US service businesses. Free Claude skills and web tools, built in public.">
+  <img src="media/banner.svg" width="100%" alt="shash.builds banner: the wordmark next to Tab, a smiling browser-window mascot with calendar rings and an orange AI spark. Stuff I built, shipped in public. Free Claude skills and web tools, built in public.">
 </p>
 
 <p align="center">
-  <b>I build one-page websites for US service businesses. Everything else I make, I give away here.</b>
+  <b>Stuff I built: Claude skills, web tools and websites, shipped in public.</b>
 </p>
 
 <p align="center">
@@ -28,14 +28,13 @@
 
 ## What this is
 
-I'm Shashwat Jain. I'm a web designer in India and I work US hours, 8:30 am to 6:30 pm ET.
+I'm Shashwat Jain. I build things: a clothing brand, websites, and the AI tools in this repo.
 
-My paid work is simple: **a one-page website for a US service business. $400 flat. Live in 7 days.**
-
-This repo is everything around that work, shipped in the open:
+This repo is everything I've built, shipped in the open:
 
 - **22 Claude skills** that do real jobs: a harsh buyer, a humanizer, a head of social media, a motion designer and more.
 - **Web tools and templates** you can copy, fork and ship today.
+- **8 concept websites**, one per trade, in the [portfolio gallery](https://shash-builds.github.io/Shash.builds/portfolio/).
 - **The build log.** What I built, what broke, what's next. Every day.
 
 All of it is free. Take what helps.

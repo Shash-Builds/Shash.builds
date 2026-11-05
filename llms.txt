@@ -1,6 +1,6 @@
 # shash.builds
 
-> shash.builds is Shashwat Jain's public build-in-public repo: free Claude skills and open-source web tools for US service businesses and web designers. Shashwat is a web designer in India who works US hours (8:30 am to 6:30 pm ET) and builds one-page websites for US service businesses: $400 flat, live in 7 days.
+> shash.builds is Shashwat Jain's public build-in-public repo: free Claude skills and open-source web tools for US service businesses and web designers. Shashwat builds things: a clothing brand, websites and the AI tools here. One-page websites are also available to buy: $400 flat, live in 7 days.
 
 Code is MIT. Content in content/ and media/ is CC BY 4.0.
 
