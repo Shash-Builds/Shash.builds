@@ -1,0 +1,15 @@
+{
+  "name": "agent-team",
+  "displayName": "Agent Team by shash.builds",
+  "description": "shash.builds Agent Team: one head chat runs a team of specialist Claude agents, each with its own folder, branch, skill playbook and inbox in one private git repo, so every piece of work can be recovered.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/Shash-Builds"},
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "team",
+    "multi-agent",
+    "orchestration",
+    "git memory"
+  ]
+}

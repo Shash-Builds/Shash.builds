@@ -1,6 +1,6 @@
 {
   "name": "shashbuilds",
-  "description": "shash.builds: 22 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
+  "description": "shash.builds: 23 free Claude skills for founders, creators and web designers, built in public by Shashwat Jain",
   "owner": {
     "name": "Shashwat Jain",
     "url": "https://github.com/Shash-Builds"
@@ -115,6 +115,11 @@
       "name": "comment-drafter",
       "source": "./skills/comment-drafter",
       "description": "shash.builds Comment Drafter: thoughtful comment drafts for a batch of LinkedIn, X or Instagram posts, two options each in your voice, with no filler or pitch. Drafts only: it never posts, likes, logs in or automates."
+    },
+    {
+      "name": "agent-team",
+      "source": "./skills/agent-team",
+      "description": "shash.builds Agent Team: one head chat runs a team of specialist Claude agents, each with its own folder, branch, skill playbook and inbox in one private git repo, so every piece of work can be recovered."
     }
   ]
 }

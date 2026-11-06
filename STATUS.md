@@ -1,9 +1,10 @@
 # Build log
 
-Last update: 2026-11-03
+Last update: 2026-11-06
 
 ## Done
 
+- **2026-11-06. Agent Team skill** ([`skills/agent-team`](skills/agent-team)): one head chat runs a team of specialist Claude agents, each with its own folder, git branch, best-of skill playbook and inbox in one private repo; a training block for every agent; daily briefing and hard review by the head. Templates in `templates.md`. Routed from the Marketing head. 23 skills now.
 - **2026-11-05. Front door reframed as "stuff I built".** README tagline, "What this is", profile README, `llms.txt` and the banner, social preview and profile header no longer say web design is the paid work. The portfolio, templates and the "Hire me" section stay, so a site can still be bought.
 - **2026-11-04. Portfolio:** 8 concept sites, one per trade and style, with case cards, screenshots, scroll videos and a marketplace pack. Gallery: https://shash-builds.github.io/Shash.builds/portfolio/ (source in `portfolio/`, Pages copy in `docs/portfolio/`).
 - **2026-11-04. Comment Drafter skill** ([`skills/comment-drafter`](skills/comment-drafter)): two comment drafts per post for LinkedIn, X or Instagram, in the user's voice; drafts only, never posts or logs in. Routed from the Marketing head. 22 skills now.

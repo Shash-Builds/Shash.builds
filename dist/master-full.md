@@ -50,6 +50,7 @@ tools below. When a head needs one:
 | ai-resume | One-page, ATS-safe resumes and CVs from true facts, with design and humanizer checks | `skills/ai-resume/skills/ai-resume/SKILL.md` |
 | brutal-review | A blunt second opinion from a different AI model on plans, pitches, resumes and code | `skills/brutal-review/skills/brutal-review/SKILL.md` |
 | comment-drafter | Comment drafts for a batch of LinkedIn, X or Instagram posts, drafts only | `skills/comment-drafter/skills/comment-drafter/SKILL.md` |
+| agent-team | Running daily content and outreach as a team of agent chats with one shared git repo | `skills/agent-team/skills/agent-team/SKILL.md` |
 | Video workflow | Making or editing a video (the Design head's video path) | `skills/master/skills/master/workflows/video.md` |
 | Sound library | Free, licence-checked sound effects and music for videos (`scripts/get_sounds.py`), picked by video type, with credit lines | `skills/master/skills/master/sounds/README.md` |
 | Product head | Competitors, market, pricing decisions, positioning, launch readiness | `skills/master/skills/master/heads/product.md` |
@@ -212,7 +213,7 @@ skill (invoke the skill if it isn't loaded).
 | Other work: writing, code, docs, plans | None (careful-mode if high-stakes; economy-mode if long) |
 | Competitors, market, pricing decisions, positioning, launch readiness, feedback on a product idea | Product (competitor-research, harsh-buyer-review, ecom economics) |
 | Listings, product images, store numbers, ads, returns, stock, sale events | Ecom (ecom, harsh-buyer-review, humanizer, ai-visuals) |
-| Social media, LinkedIn, content, YouTube, clipping, campaigns | Marketing (social-media, niche-research, linkedin, clipper, humanizer, ai-visuals, harsh-buyer-review, transcriber) |
+| Social media, LinkedIn, content, YouTube, clipping, campaigns | Marketing (social-media, niche-research, linkedin, clipper, humanizer, ai-visuals, harsh-buyer-review, transcriber, agent-team) |
 | Make or edit a video, AI image or clip, product graphic, sound | Design (video workflow and its sound library, ai-visuals, motion-design-taste, audio-review, transcriber) |
 | Leads, site audits, mocks, cold emails | Sales (lead-finder, site-audit, mock-builder, cold-email-drafter) |
 | Review or feedback on finished work: listing, ad, copy, video, audio, image, post | Review (harsh-buyer-review, motion-design-taste, audio-review, ai-visuals) |
@@ -3494,6 +3495,127 @@ A numbered list: post, then the two options, ready to copy. Remind the user once
 
 ---
 
+## Skill: `skills/agent-team/skills/agent-team/SKILL.md`
+
+# Agent Team
+
+You are the **head chat**. You build a small team of specialist agents and run
+it: you plan the day, give each agent its job, review everything hard, and talk
+to the founder in plain words. Every agent's work lives in one private git
+repo, so nothing is lost between chats and any file can be brought back from
+any day.
+
+The templates are in `templates.md`, next to this SKILL.md
+(Claude Code: `${CLAUDE_SKILL_DIR}/templates.md`). Read only the template you
+need at each step.
+
+## 1. Ask once, then build
+
+Ask everything in one message, and offer the default where there is one:
+
+- **The roles.** Default team, if they have none: 1 Head (plans, briefs,
+  reviews, final okay), 2 Top-of-funnel content, 3 Middle-of-funnel content,
+  4 Sales content, 5 Comments and stories, 6 Scheduler (the only one that
+  talks to 2 to 5), 7 a revenue role (for example websites for sale),
+  8 a personal goal (for example the job hunt). Fewer roles is fine and cheaper.
+- **The daily checklist**: what has to be made or sent every day, with numbers.
+- **The repo**: a private GitHub repo the session can push to. Never use a
+  public one for this; it will hold names, plans and drafts.
+- **The briefing time** and time zone, and how agents may reach the head
+  (default: only if the founder has been away 30+ minutes while an agent waits,
+  or 1 hour after its work is done).
+- **Plan size**: which Claude plan they are on. Many agents at once use a lot
+  of it; say so plainly and suggest starting with 3 agents.
+
+Write the founder's brief into `plans/brief-<date>.md` word for word, so the
+original instructions can never be lost.
+
+## 2. The repo layout
+
+Create this on `main` (templates for each file are in `templates.md`):
+
+| Folder | What |
+|---|---|
+| `memory/` | one memory sheet (CSV) of decisions, facts, preferences and tasks |
+| `updates/` | `inbox/<agent>/` (one file per message, moved to `done/` when handled) and `status/<agent>.md` |
+| `agents/<n-role>/` | `AGENT.md` (the job), `skills.md` (its best-of playbook), `notes.md`, `work/` |
+| `plans/` | the brief, the agent table, week plans |
+| `daily/` | one checklist per day, ticked with proof |
+
+Branches: `main` is the approved state and only the head merges into it. Each
+agent works on `agent/<n-role>`. One exception: messages in `updates/` go
+straight to `main` so every agent sees them at once; new file names never
+clash. Push after every block of work so it can be recovered.
+
+## 3. Write each agent
+
+For each role, write `AGENT.md` from the template: role, daily job, who it may
+talk to, and the shared rules. Then `skills.md`: the installed skills it should
+use and the references to learn from, with their licenses (some "free" skill
+packs forbid resale or repackaging; note it). Keep every agent's talk rules
+in its own file and in `updates/README.md`.
+
+## 4. Training block
+
+Before any real work, each agent does one training block (prompt template in
+`templates.md`):
+
+1. Read the brief, its `AGENT.md`, `skills.md`, `notes.md`, the pinned memory
+   and its inbox.
+2. Study its skills and references, read-only. Use cheaper helper models for
+   bulk reading if economy mode is installed.
+3. Rewrite `skills.md` as its best-of playbook: the rules, checklists and
+   formats it will actually use, each with a source, under about 150 lines.
+4. Practise on drafts only, judge them with the matching review skill, and
+   write the lessons in `notes.md`.
+5. Push to its branch, update its status line, and leave one message in its
+   manager's inbox: what it learned, what it made, what it needs.
+
+After that, each agent adds one dated line to its `skills.md` log every day:
+what worked and what to change.
+
+## 5. Start the agents
+
+- **Where this session can start other sessions** (Claude Code on the web has
+  a tool to create a session on a repo and branch): start one session per
+  agent on its own branch, with its training prompt. Record each session id in
+  `plans/agents.md`.
+- **Otherwise:** give the founder one ready prompt per agent to paste into a
+  new chat opened on the repo, and record them in `plans/agents.md`.
+
+Then set yourself a check-in (a scheduled message or a reminder) to review the
+training, because a session that finishes cleanly does not report back.
+
+## 6. Run the day
+
+- **Briefing** at the agreed time: what was done, what is planned, what needs
+  the founder, in words a child would follow. No file paths or technical
+  status lines.
+- **Review**: read the inboxes and status board, fetch each agent branch, and
+  judge the work hard: a score, the top problems, the exact fixes. You judge;
+  you never fix an agent's work for it.
+- **Merge** only what passes into `main`. Nothing goes public without your okay.
+- **Daily checklist**: `daily/<date>.md`, prepared by the scheduler and
+  ticked with proof (a link or a screenshot name).
+
+## 7. Rules for every agent
+
+- Plain words to the founder; agents do not contact the founder directly.
+- Never post, send, log in or pay. Prepare it; the founder presses send.
+- True claims only: no invented numbers, people, quotes or reviews.
+- Every message, page or post a person will read goes through the humanizer
+  if it is installed.
+- Keep it cheap: one training block, short daily blocks, and only the agents
+  the work needs. Stop agents that have nothing to do.
+
+## 8. Hand back
+
+Tell the founder, in a short list: the agents that exist and what each is
+doing now, where to see their work (the repo and branch names), when the next
+briefing is, and the questions they need to answer. Nothing else.
+
+---
+
 ## Skill: `skills/master/skills/master/workflows/video.md`
 
 # Video workflow (part of the shash.builds Master Skill)
@@ -4079,19 +4201,19 @@ YouTube, analytics, replies and campaigns.
 
 | Sub-skill | Used for |
 |---|---|
-| niche-research | Sourced niche research before a plan: accounts, posts, gaps, ranked topics |
-| social-media | The core: brand memory, strategy, creation, the 100-point scorecard, analytics, YouTube tools |
+| niche-research | Sourced research before a plan: accounts, posts, gaps, ranked topics |
+| social-media | The core: brand memory, strategy, creation, the 100-point scorecard, analytics |
 | ai-visuals | AI-made images and clips for posts: fixed prompt and scorecard |
-| harsh-buyer-review | Posts and ads that sell a product |
+| harsh-buyer-review | Posts and ads that sell |
 | humanizer | Every post, caption and script sounds like the founder; facts unchanged |
 | linkedin | LinkedIn posts, profile, DMs, plan |
 | comment-drafter | Comment drafts only |
 | transcriber | Video, podcast or voice note into text, captions and quotes |
-| clipper | Clipping campaigns, and Shorts, Reels and TikToks cut from a long video |
+| clipper | Clipping campaigns; Shorts and Reels from a long video |
+| agent-team | A team of agents running the daily plan |
 
 Foundation: careful-mode on claims, numbers and anything customers see;
-economy-mode for bulk work (a month's calendar, many replies); the memory
-sheet.
+economy-mode for bulk work; the memory sheet.
 
 ## 3. Workflow
 

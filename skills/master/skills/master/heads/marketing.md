@@ -12,19 +12,19 @@ YouTube, analytics, replies and campaigns.
 
 | Sub-skill | Used for |
 |---|---|
-| niche-research | Sourced niche research before a plan: accounts, posts, gaps, ranked topics |
-| social-media | The core: brand memory, strategy, creation, the 100-point scorecard, analytics, YouTube tools |
+| niche-research | Sourced research before a plan: accounts, posts, gaps, ranked topics |
+| social-media | The core: brand memory, strategy, creation, the 100-point scorecard, analytics |
 | ai-visuals | AI-made images and clips for posts: fixed prompt and scorecard |
-| harsh-buyer-review | Posts and ads that sell a product |
+| harsh-buyer-review | Posts and ads that sell |
 | humanizer | Every post, caption and script sounds like the founder; facts unchanged |
 | linkedin | LinkedIn posts, profile, DMs, plan |
 | comment-drafter | Comment drafts only |
 | transcriber | Video, podcast or voice note into text, captions and quotes |
-| clipper | Clipping campaigns, and Shorts, Reels and TikToks cut from a long video |
+| clipper | Clipping campaigns; Shorts and Reels from a long video |
+| agent-team | A team of agents running the daily plan |
 
 Foundation: careful-mode on claims, numbers and anything customers see;
-economy-mode for bulk work (a month's calendar, many replies); the memory
-sheet.
+economy-mode for bulk work; the memory sheet.
 
 ## 3. Workflow
 

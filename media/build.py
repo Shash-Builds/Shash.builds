@@ -261,7 +261,7 @@ def build_all():
     out = {
         "banner.svg": banner(), "social-preview.svg": social(), "profile-header.svg": profile_header(),
         "tab.svg": tab(True), "tab-static.svg": tab(False),
-        "header-skills.svg": header("Claude skills", "skill", "19 free Claude specialists that work together."),
+        "header-skills.svg": header("Claude skills", "skill", "23 free Claude specialists that work together."),
     }
     out.update({f"icons/{k}.svg": icon(k) for k in ICONS})
     for name, data in out.items():

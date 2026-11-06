@@ -278,6 +278,18 @@
       }
     },
     {
+      "name": "Agent Team",
+      "slug": "agent-team",
+      "kind": "skill",
+      "path": "skills/agent-team",
+      "summary": "A head chat runs a team of Claude agents. One git repo remembers.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install agent-team@shashbuilds",
+        "claude_ai": "Paste skills/agent-team/skills/agent-team/SKILL.md (sub chats need Claude Code)"
+      }
+    },
+    {
       "name": "One-Page Starter",
       "slug": "one-page-starter",
       "kind": "tool",

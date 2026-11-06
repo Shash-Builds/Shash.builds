@@ -28,6 +28,7 @@ Install in Claude Code: `/plugin marketplace add Shash-Builds/shash.builds` then
 - [AI Resume](https://github.com/Shash-Builds/shash.builds/tree/main/skills/ai-resume): One true page that a recruiter and an ATS can both read.
 - [Brutal Review](https://github.com/Shash-Builds/shash.builds/tree/main/skills/brutal-review): A blunt second opinion from a different AI model.
 - [Comment Drafter](https://github.com/Shash-Builds/shash.builds/tree/main/skills/comment-drafter): Comment drafts for LinkedIn, X or Instagram posts. Never posts.
+- [Agent Team](https://github.com/Shash-Builds/shash.builds/tree/main/skills/agent-team): A head chat runs a team of Claude agents. One git repo remembers.
 - [Careful Mode](https://github.com/Shash-Builds/shash.builds/tree/main/skills/careful-mode): Every piece of work checked three times before you see it.
 - [Economy Mode](https://github.com/Shash-Builds/shash.builds/tree/main/skills/economy-mode): Cheap models for simple work, and a memory sheet.
 - [Lead Finder](https://github.com/Shash-Builds/shash.builds/tree/main/skills/lead-finder): Local businesses by trade and city, audited.
