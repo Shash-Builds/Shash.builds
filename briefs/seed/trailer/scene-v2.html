@@ -83,7 +83,7 @@ window.renderFrame = t => {
   } else if (b < 32) {
     // D. the drop: half-beat cuts. On the beat a fact slams in; on the off-beat a wall of all 8 sites flies past
     const i = Math.floor(b - 24), half = (b - 24) % 1, on = half < .5, lh = on ? half / .5 : (half - .5) / .5;
-    const FACTS = [['$400', 'flat price'], ['7 days', 'to go live'], ['2 rounds', 'of changes'], ['Booking', 'built in'], ['Yours', 'to keep'], ['US hours', '8:30 to 6:30 ET']];
+    const FACTS = [['$400', 'flat price'], ['7 days', 'to go live'], ['2 rounds', 'of changes'], ['Booking', 'built in'], ['Yours', 'to keep'], ['Your hours', 'Mon to Fri']];
     const pal = [[C.k, C.o, C.c], [C.o, C.k, C.c], [C.c, C.k, C.o]][i % 3];
     if (i >= 6) {
       // free Claude skill: the card spins in on beat 30 and holds

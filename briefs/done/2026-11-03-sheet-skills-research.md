@@ -10,7 +10,7 @@ From Mother chat, relayed through a branch chat.
 2. `skills/site-audit/`: business URL in; JSON and markdown out with a weak-site score 0-100 and the 3 most specific provable problems. Plain sentences. Facts only. Respect robots.txt.
 3. `skills/mock-builder/`: business name, trade, city (optional logo and colors) in; a single-file one-page mock out, placeholder content marked as sample, no fake reviews.
 4. `skills/cold-email-drafter/`: audit plus mock link in; first email of 90 words or fewer plus follow-ups on day 3 and day 7. CAN-SPAM: real sender, address line, opt-out.
-5. `skills/lead-finder/`: US service businesses by trade and city from public sources, piped through site-audit, CSV out. Never commit a lead list.
+5. `skills/lead-finder/`: service businesses by trade and city from public sources, piped through site-audit, CSV out. Never commit a lead list.
 6. `research/cold-email-us.md`: CAN-SPAM, Gmail limits, deliverability, safe ramp to 50 a day.
 7. `research/marketplace-kit.md`: Upwork, Contra, Fiverr profiles and the $400 listing.
 8. `research/course-platforms.md`: where to list a course, ranked by reach per hour of setup.

@@ -84,7 +84,7 @@
     {
       "name": "lead-finder",
       "source": "./skills/lead-finder",
-      "description": "shash.builds Lead Finder: finds US service businesses by trade and city from OpenStreetMap (or Google Places with your own key), runs each website through Site Audit, and writes a private CSV ranked weakest site first."
+      "description": "shash.builds Lead Finder: finds service businesses by trade and city from OpenStreetMap (or Google Places with your own key), runs each website through Site Audit, and writes a private CSV ranked weakest site first."
     },
     {
       "name": "mock-builder",

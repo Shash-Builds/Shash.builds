@@ -1,6 +1,6 @@
 ---
 name: lead-finder
-description: Find US service businesses (plumbers, roofers, HVAC, cleaners, salons, dentists and more) by trade and city from public sources (OpenStreetMap, or Google Places with your key), audit each site, and write a private CSV ranked weakest first. Use for "find leads", "prospects in <city>".
+description: Find service businesses (plumbers, roofers, HVAC, cleaners, salons, dentists and more) by trade and city from public sources (OpenStreetMap, or Google Places with your key), audit each site, and write a private CSV ranked weakest first. Use for "find leads", "prospects in <city>".
 ---
 
 This lets the tool work in sessions opened inside this repository. The real

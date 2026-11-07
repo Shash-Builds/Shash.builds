@@ -1,11 +1,11 @@
 ---
 name: lead-finder
-description: Find US service businesses (plumbers, roofers, HVAC, cleaners, salons, dentists and more) by trade and city from public sources (OpenStreetMap, or Google Places with your key), audit each site, and write a private CSV ranked weakest first. Use for "find leads", "prospects in <city>".
+description: Find service businesses (plumbers, roofers, HVAC, cleaners, salons, dentists and more) by trade and city from public sources (OpenStreetMap, or Google Places with your key), audit each site, and write a private CSV ranked weakest first. Use for "find leads", "prospects in <city>".
 ---
 
 # Lead Finder
 
-Find local US service businesses from sources that allow it, audit each website, and hand
+Find local service businesses from sources that allow it, audit each website, and hand
 back a CSV ranked weakest site first. The list belongs to the user: never commit it, never
 publish it.
 
@@ -20,7 +20,8 @@ roofer, cleaner, landscaper, painter, carpenter, handyman, locksmith, pest contr
 barber, dentist, auto repair, car wash, pet grooming, flooring.
 
 - Default source: OpenStreetMap (Nominatim finds the city, Overpass finds businesses). Free,
-  no key. Credit "© OpenStreetMap contributors". Coverage varies by city.
+  no key. Credit "© OpenStreetMap contributors". Coverage varies by city. The city lookup
+  is currently limited to US cities.
 - `--source places`: Google Places API with the user's own `GOOGLE_PLACES_API_KEY`. Google
   bills for it; follow Google's terms on storing results.
 - Never scrape Google Maps or any site whose terms forbid it.

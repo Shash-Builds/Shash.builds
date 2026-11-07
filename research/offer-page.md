@@ -1,6 +1,6 @@
 # Offer page copy: shash.builds
 
-Draft for Shashwat Jain. Offer: one-page website for US service businesses, $400 flat, live in 7 days.
+Draft for Shashwat Jain. Offer: one-page website for service businesses, $400 flat, live in 7 days.
 
 Confirmed by Shashwat on 2026-11-03: 50% deposit, the rest at launch; 2 revisions included; hosting free for the first month, then $10/month, cancel any time; the refund rule in section 7. Items still marked [[REAL: confirm ...]] are not confirmed. Do not publish those lines until he confirms or changes them.
 
@@ -69,7 +69,7 @@ The 7 days start when Shashwat has your materials. Late materials stop the clock
 - The lead sheet is set up and the form is connected.
 
 **Day 3: First review**
-- You get the draft link. You send changes by the end of day 4 (reply within the 8:30 am to 6:30 pm ET window).
+- You get the draft link. You send changes by the end of day 4 (reply within the working-hours window).
 
 **Day 4: Round one changes**
 - Changes from your first review go in.
@@ -143,10 +143,10 @@ I set up basic search details: page titles, descriptions, headings, your city an
 A low price does not prove a scam. A few things you can check before you pay: the sample page is live (it is a made-up cleaning business, labeled as a sample), and the lead sheet demo is live. You only pay 50% to start. If the site is not live in 7 days, or anything on the included list is missing, you get back everything you paid. [[REAL: confirm the sample links before using this]]
 
 **"You are overseas. Can I trust you?"**
-Yes, and I will say so up front. I work from outside the US. Your site goes on your own domain, with your own Google Sheet. You see the draft before launch. You pay the second 50% only after the site is live, and if I miss the 7-day deadline or leave out anything on the included list, you get back everything you paid.
+Yes, and I will say so up front. I work from India. Your site goes on your own domain, with your own Google Sheet. You see the draft before launch. You pay the second 50% only after the site is live, and if I miss the 7-day deadline or leave out anything on the included list, you get back everything you paid.
 
 **"What time zone are you in?"**
-I work US Eastern hours: 8:30 am to 6:30 pm ET, Monday to Friday. [[REAL: confirm working days and the reply time]] Calls are booked inside that window.
+I work your hours, Monday to Friday. [[REAL: confirm working days and the reply time]] Calls are booked inside that window.
 
 **"How many revisions do I get?"**
 Two rounds of changes. A round is a set of changes to text, photos, colors or layout within the agreed page. New pages and new features are extra.
@@ -186,8 +186,8 @@ Basic setup only: page titles, descriptions, headings, your city and service are
 ## 8. Do not say
 
 - Do not add testimonials, client quotes, client logos or "trusted by" lines until real ones exist and the clients agree to them.
-- Do not give a US address, US phone number, or US office. Do not use a US city as the base location.
-- Do not say "US-based", "local to you" or "your neighbor" unless it is true.
+- Do not give a local address, local phone number, or local office. Do not use a client city as the base location.
+- Do not say "based near you", "local to you" or "your neighbor" unless it is true.
 - Do not say "best in the world", "the best" or "number one" in any form.
 - Do not promise a ranking, "page one on Google" or a number of leads or jobs.
 - Do not invent numbers such as "3x more leads", "40% more calls" or "10,000 sites built".

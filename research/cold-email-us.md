@@ -1,4 +1,4 @@
-# Cold email to US small service businesses: compliance and deliverability notes
+# Cold email to small service businesses: compliance and deliverability notes
 
 Research date: 2026-11-03. Facts are checked against official sources unless marked "unverified" or "folklore." Links are in section 8.
 

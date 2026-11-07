@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lead finder: US service businesses by trade and city, from public sources, each run
+"""Lead finder: service businesses by trade and city, from public sources, each run
 through site-audit. Writes a CSV. The CSV is yours: keep it private, never commit it.
 
     python3 find_leads.py --trade plumber --city "Austin, TX" --out leads/austin-plumbers.leads.csv
@@ -105,7 +105,7 @@ def places(trade, city, limit):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Find US service businesses and audit their websites.")
+    ap = argparse.ArgumentParser(description="Find service businesses and audit their websites.")
     ap.add_argument("--trade", required=True, help="one of: " + ", ".join(TRADES))
     ap.add_argument("--city", required=True, help='"City, ST", for example "Austin, TX"')
     ap.add_argument("--limit", type=int, default=25)

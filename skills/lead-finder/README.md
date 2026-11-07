@@ -1,8 +1,8 @@
-<p align="center"><img src="header.svg" width="100%" alt="Lead Finder header: a shash.builds Claude skill. Finds US service businesses by trade and city, audits each website and writes a private CSV ranked weakest first."></p>
+<p align="center"><img src="header.svg" width="100%" alt="Lead Finder header: a shash.builds Claude skill. Finds service businesses by trade and city, audits each website and writes a private CSV ranked weakest first."></p>
 
 # Lead Finder
 
-**Finds US service businesses by trade and city from public sources, audits each website, and writes a private CSV ranked with the weakest site first. Built for web designers and freelancers who sell to local businesses.**
+**Finds service businesses by trade and city from public sources, audits each website, and writes a private CSV ranked with the weakest site first. Built for web designers and freelancers who sell to local businesses.**
 
 This is step 1 of a four-skill sales kit: **lead-finder** -> [site-audit](../site-audit) -> [mock-builder](../mock-builder) -> [cold-email-drafter](../cold-email-drafter). The Master Skill's Sales head runs them in order, and each one also works alone.
 
@@ -70,6 +70,8 @@ Install [site-audit](../site-audit) too, because the audit step needs it next to
 ## FAQ
 
 **Does it cost anything?** The skill is free and MIT licensed. OpenStreetMap is free. Google Places is billed by Google.
+
+**Which countries does it cover?** The OpenStreetMap city lookup is currently limited to US cities (use "City, ST").
 
 **Why are there so few results in my town?** OpenStreetMap coverage of small businesses varies by city. Try a bigger nearby city or the Google Places source.
 

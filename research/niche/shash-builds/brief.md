@@ -1,8 +1,8 @@
 # Brief: shash.builds
 
-- Niche: building in public as a solo web designer who uses Claude and AI to ship one-page websites for US service businesses, plus free Claude skills.
+- Niche: building in public as a solo web designer who uses Claude and AI to ship one-page websites for service businesses, plus free Claude skills.
 - Audiences:
-  - `a`: US service-business owners who need a website (coaches, dentists, gyms, salons, realtors, therapists, lawyers, contractors, cleaners, photographers).
+  - `a`: service-business owners who need a website (coaches, dentists, gyms, salons, realtors, therapists, lawyers, contractors, cleaners, photographers).
   - `b`: designers, freelancers and developers who want to use Claude skills and AI in their work.
 - Platforms:
   - LinkedIn: a daily build log.

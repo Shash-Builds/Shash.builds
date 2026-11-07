@@ -95,6 +95,6 @@ Rough estimate: about 22% of the weekly limit used this week (front door, media 
 
 ### Paste-ready repo settings
 
-- **Description:** Free Claude skills and open-source web tools for US service businesses and web designers. Built in public by Shashwat Jain.
+- **Description:** Free Claude skills and open-source web tools for service businesses and web designers. Built in public by Shashwat Jain.
 - **Topics:** `claude` `claude-code` `claude-skills` `anthropic` `ai-agents` `web-design` `one-page-website` `website-templates` `small-business` `local-seo` `build-in-public` `open-source` `freelance` `html-css`
 - **Social preview:** upload `media/social-preview.png`.

@@ -1,6 +1,6 @@
 # shash.builds
 
-Shashwat Jain's public build-in-public repo: free Claude skills and web tools for US
+Shashwat Jain's public build-in-public repo: free Claude skills and web tools for
 service businesses and web designers. `README.md` is the front door and
 `skills/README.md` is the skills guide; keep both accurate whenever anything changes.
 

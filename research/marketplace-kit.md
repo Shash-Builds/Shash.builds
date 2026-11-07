@@ -1,6 +1,6 @@
 # Marketplace kit: Upwork, Contra, Fiverr
 
-Prepared 2026-11-03 for Shashwat Jain (shash.builds). Offer: one-page website for US service businesses, $400 flat, live in 7 days.
+Prepared 2026-11-03 for Shashwat Jain (shash.builds). Offer: one-page website for service businesses, $400 flat, live in 7 days.
 
 ## Read this first
 
@@ -27,7 +27,7 @@ Prepared 2026-11-03 for Shashwat Jain (shash.builds). Offer: one-page website fo
 
 **Overview** (575 characters; Upwork limit 5,000, from Upwork's beginner guide excerpt. Only the first lines show before "Read more", so the opening sentence matters most.)
 
-> I build one-page websites for service businesses in the US, such as cleaning, landscaping, painting, contracting and consulting.
+> I build one-page websites for service businesses, such as cleaning, landscaping, painting, contracting and consulting.
 >
 > What you get for a flat $400:
 > - A one-page website on your own domain
@@ -84,7 +84,7 @@ Upwork service listings are a separate product, and their availability for your 
 ### 1c. First job on Upwork
 
 1. **Finish the profile before you bid.** Only the first part of the overview shows in search results (about 250 characters, support excerpt). Put the trade and the 7-day offer in those lines. Source: [How to build your freelancer profile](https://support.upwork.com/hc/en-us/articles/360016252373-How-to-build-your-freelancer-profile-the-essentials) (search result, not opened).
-2. **Bid early on narrow jobs.** Look for "website for [trade]" posts from US businesses with a stated budget near $400. Apply in the first hours, when few proposals are in. Judgment, not sourced.
+2. **Bid early on narrow jobs.** Look for "website for [trade]" posts from businesses with a stated budget near $400. Apply in the first hours, when few proposals are in. Judgment, not sourced.
 3. **Answer the client's question in the first two lines.** Name the trade, the page you will build, and the delivery date. Keep it short. Judgment, not sourced.
 4. **Link one relevant portfolio item.** Use the open-source starter or the lead tracker, and say which one fits the job. Judgment, not sourced.
 5. **Use Connects on a small budget.** Set a weekly cap, for example 10 Connects, and track which proposals get replies. Connects cost $0.15 each, so 10 Connects is $1.50. Source: Connects excerpt above.
@@ -103,7 +103,7 @@ Upwork service listings are a separate product, and their availability for your 
 
 **Bio** (238 characters; Contra limit 400, opened: [Bios on Contra](https://help.contra.com/en/articles/9322626-bios-on-contra))
 
-> I build one-page websites for service businesses in the US. Your site goes on your own domain. The price is a flat $400, and it goes live in 7 days. I started from my own open-source site starter, and I also built the online side of my own clothing brand.
+> I build one-page websites for service businesses. Your site goes on your own domain. The price is a flat $400, and it goes live in 7 days. I started from my own open-source site starter, and I also built the online side of my own clothing brand.
 
 **Skill tags**
 

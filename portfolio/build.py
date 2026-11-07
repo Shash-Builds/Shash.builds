@@ -273,9 +273,9 @@ def build_gallery(slugs):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Concept sites by shash.builds</title>
-<meta name="description" content="Eight one-page website concepts for US service businesses: roofer, house cleaner, HVAC, landscaper, plumber, barber, dentist and auto repair. Each in its own style, by shash.builds.">
+<meta name="description" content="Eight one-page website concepts for service businesses: roofer, house cleaner, HVAC, landscaper, plumber, barber, dentist and auto repair. Each in its own style, by shash.builds.">
 <meta property="og:title" content="Concept sites by shash.builds">
-<meta property="og:description" content="Eight one-page website concepts for US service businesses, each in its own style.">
+<meta property="og:description" content="Eight one-page website concepts for service businesses, each in its own style.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{LIVE}roofer-tx/shots/desktop-1280x720.jpg">
 <meta name="theme-color" content="#e8572c">
@@ -326,7 +326,7 @@ img {{ display: block; max-width: 100%; height: auto; }}
 <header class="top"><div class="wrap top-in"><a class="brand" href="https://github.com/Shash-Builds/Shash.builds">shash.builds</a><a class="hire" href="https://github.com/Shash-Builds/Shash.builds#hire-me">Get a site like this</a></div></header>
 <main>
 <section class="head"><div class="wrap"><h1>Concept sites for service businesses.</h1>
-<p>{len(slugs)} one-page websites for made-up US businesses, each in a different style. Every one has a call button in the first screen, a sticky call bar on phones and a quote form.</p></div></section>
+<p>{len(slugs)} one-page websites for made-up businesses, each in a different style. Every one has a call button in the first screen, a sticky call bar on phones and a quote form.</p></div></section>
 <div class="wrap">
 <div class="filters" role="group" aria-label="Filter by trade">{chips}</div>
 <ul class="grid" id="grid">{"".join(cards)}</ul>

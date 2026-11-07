@@ -9,7 +9,7 @@
 A real run, for this repo's own niche: [research/niche/shash-builds/report.md](../../research/niche/shash-builds/report.md).
 
 ```
-You: Research my niche. I'm a solo web designer building one-page sites for US
+You: Research my niche. I'm a solo web designer building one-page sites for
 service businesses with Claude, and I share free Claude skills. Audiences: owners
 who need a site, and designers who want Claude skills. LinkedIn, Instagram reels,
 YouTube, GitHub. Goal: leads.

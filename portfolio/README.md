@@ -1,6 +1,6 @@
 # Portfolio: concept sites by shash.builds
 
-Sample one-page websites for made-up US service businesses, built the way a paid $400 site is built. Every business, phone number (555 numbers) and line of copy is sample content, and every page says so. No fake reviews or ratings: each page has an empty "Reviews go here" panel instead.
+Sample one-page websites for made-up service businesses, built the way a paid $400 site is built. Every business, phone number (555 numbers) and line of copy is sample content, and every page says so. No fake reviews or ratings: each page has an empty "Reviews go here" panel instead.
 
 | Sample | Trade | Place | Style |
 | --- | --- | --- | --- |
