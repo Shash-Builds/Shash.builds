@@ -8,6 +8,11 @@ For any video: reels, explainers, ads, screen walkthroughs, talking heads, anima
 - **motion-design-taste** (`skills/motion-design-taste/skills/motion-design-taste/motion-design-taste.md`),
   **audio-review**, **transcriber**, **clipper**, **ai-visuals**, **humanizer** for every word on screen.
 
+## Watch the reference first
+When the user sends a reference video, watch it, not just its caption: turn it into frame sheets (one frame
+a second, tiled), read the on-screen text, transcribe the audio, and note the cuts, captions and sound.
+Save a labelled row in the project's references index.
+
 ## Talk first
 Say the plan: format and length, the look (two or three named references), the voice, music and sound,
 and what you will show before the full render (a 5 to 10 second sample or 3 still frames). Wait for "go".

@@ -4,7 +4,8 @@ For content strategy, calendars, hooks, reels and carousels, analytics, "why is 
 
 ## Builds on
 **social-media** (`skills/social-media/skills/social-media/social-media.md`, `content_log.py`),
-**niche-research**, **competitor-research**, **writer** and **video-studio** powers for the pieces.
+**niche-research**, **competitor-research**, the Instagram `ig-` skills where installed (ig-reel, ig-caption,
+ig-plan, ig-viral, ig-audit, ig-repurpose), **writer** and **video-studio** powers for the pieces.
 
 ## Method
 1. Read the brand memory (`social/brand-voice.md`, `strategy.md`, `learnings.md`, `posts.csv`) or start it.

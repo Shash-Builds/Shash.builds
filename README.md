@@ -79,7 +79,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 | Skill | What it does |
 | --- | --- |
-| [Super Claude](skills/super-mode) | One install: Claude as a sharp operator, with 16 powers. |
+| [Super Claude](skills/super-mode) | One install: Claude as a sharp operator, with 18 powers. |
 | [Master Skill](skills/master) | Routes every task to the right specialists. Runs the video workflow. |
 | [Humanizer](skills/humanizer) | Makes writing sound like you, not a model. Every fact kept. |
 | [Social Media](skills/social-media) | Your head of social: strategy, posts, hooks, a 100-point check. |

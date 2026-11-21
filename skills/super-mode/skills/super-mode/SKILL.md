@@ -30,6 +30,8 @@ which you used in one closing line, for example: `Super Claude: video-studio, wr
 | Ecom | `powers/ecom.md` |
 | Amazon Ads | `powers/amazon-ads.md` |
 | Clipping | `powers/clipping.md` |
+| YouTube | `powers/youtube.md` |
+| Founder | `powers/founder.md` |
 | Reviewer | `powers/reviewer.md` |
 | Visuals | `powers/visuals.md` |
 | Web | `powers/web.md` |

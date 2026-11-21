@@ -1,8 +1,8 @@
-<p align="center"><img src="header.svg" width="100%" alt="Super Claude header: a shash.builds Claude skill. One install. Claude as a sharp operator, with 16 powers."></p>
+<p align="center"><img src="header.svg" width="100%" alt="Super Claude header: a shash.builds Claude skill. One install. Claude as a sharp operator, with 18 powers."></p>
 
 # Super Claude
 
-**One install that makes Claude work like a sharp operator in every session. It talks before it acts, sends grunt work to cheap helpers, checks everything three times, remembers your decisions, and loads one of 16 powers only when a task needs it.**
+**One install that makes Claude work like a sharp operator in every session. It talks before it acts, sends grunt work to cheap helpers, checks everything three times, remembers your decisions, and loads one of 18 powers only when a task needs it.**
 
 ## What it looks like
 
@@ -30,7 +30,7 @@ Super Claude: career, writer. 3 helpers on Haiku.
 | Careful | Right, complete, what could go wrong: three checks before anything goes out |
 | Memory | Searches `memory/memory.csv` before asking and saves every decision the moment it is made |
 
-## The 16 powers
+## The 18 powers
 
 | Power | For | Builds on |
 |---|---|---|
@@ -43,6 +43,8 @@ Super Claude: career, writer. 3 helpers on Haiku.
 | Ecom | Listings, images, fees, margins | ecom |
 | Amazon Ads | Search terms, negatives, bids, the Ads API | ecom |
 | Clipping | Paid clipping campaigns, Shorts | clipper |
+| YouTube | Packaging, scripts, retention, Shorts, SEO | (youtube-agent-skill ideas) |
+| Founder | Testing a business idea before money goes in | (research, numbers, reviewer) |
 | Reviewer | Scores, ranked fixes, second opinions | harsh-buyer-review, brutal-review |
 | Visuals | AI images and video prompts | ai-visuals |
 | Web | Sites, landing pages, deploys | mock-builder |
@@ -74,4 +76,4 @@ run on cheaper models.
 
 ## Changelog
 
-- 21 Nov 2026: first release, 4 modes and 16 powers.
+- 21 Nov 2026: first release, 4 modes and 18 powers.
