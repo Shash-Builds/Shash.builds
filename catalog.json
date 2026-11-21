@@ -12,7 +12,7 @@
       "slug": "super-mode",
       "kind": "skill",
       "path": "skills/super-mode",
-      "summary": "One install. Claude as a sharp operator, with 18 powers.",
+      "summary": "One install. Claude as a sharp operator, with 19 powers.",
       "version": "1.0.0",
       "install": {
         "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install super-mode@shashbuilds",

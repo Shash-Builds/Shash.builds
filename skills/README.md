@@ -13,7 +13,7 @@ chat** as a paste-in prompt.
 
 | Skill | What you get | Use it when |
 | --- | --- | --- |
-| [Super Claude](super-mode) | One install that makes Claude a sharp operator: talks first, uses cheap helpers, checks three times, remembers decisions, and loads 18 powers on demand | Everyone: start here |
+| [Super Claude](super-mode) | One install that makes Claude a sharp operator: talks first, uses cheap helpers, checks three times, remembers decisions, and loads 19 powers on demand | Everyone: start here |
 | [Master Skill](master) | Hands each task to one of five heads (Product, Ecom, Marketing, Design, Review) that call only the skills that task needs. Videos run the full workflow: plan, build, review as a buyer and a motion designer, check the sound, fix and re-render until the video scores 85 out of 100 | Always on. Install it with the others |
 | [Humanizer](humanizer) | Rewrites posts, listings, emails, scripts and replies to sound like you. Flags machine phrasing line by line, follows a guide per channel, checks no fact or price changed | Before anything goes public |
 | [Social Media](social-media) | Strategy, calendars, posts, hooks, carousels and reel scripts for Instagram, TikTok, YouTube, LinkedIn and X. Every post passes a 100-point scorecard first | Planning, writing or reviewing social content |

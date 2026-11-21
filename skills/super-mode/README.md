@@ -1,8 +1,8 @@
-<p align="center"><img src="header.svg" width="100%" alt="Super Claude header: a shash.builds Claude skill. One install. Claude as a sharp operator, with 18 powers."></p>
+<p align="center"><img src="header.svg" width="100%" alt="Super Claude header: a shash.builds Claude skill. One install. Claude as a sharp operator, with 19 powers."></p>
 
 # Super Claude
 
-**One install that makes Claude work like a sharp operator in every session. It talks before it acts, sends grunt work to cheap helpers, checks everything three times, remembers your decisions, and loads one of 18 powers only when a task needs it.**
+**One install that makes Claude work like a sharp operator in every session. It talks before it acts, sends grunt work to cheap helpers, checks everything three times, remembers your decisions, and loads one of 19 powers only when a task needs it.**
 
 ## What it looks like
 
@@ -30,7 +30,7 @@ Super Claude: career, writer. 3 helpers on Haiku.
 | Careful | Right, complete, what could go wrong: three checks before anything goes out |
 | Memory | Searches `memory/memory.csv` before asking and saves every decision the moment it is made |
 
-## The 18 powers
+## The 19 powers
 
 | Power | For | Builds on |
 |---|---|---|
@@ -52,6 +52,7 @@ Super Claude: career, writer. 3 helpers on Haiku.
 | Numbers | Pricing, budgets, offers, forecasts | (code, always) |
 | Docs | Docs, sheets, decks, link lists | (connected tools) |
 | Helper | Fixing a device one step at a time | (plain steps) |
+| Dashboard | Your goals, work and to-dos on one page, kept current | `scripts/dashboard.py` |
 
 ## Install in 3 steps
 
@@ -76,4 +77,4 @@ run on cheaper models.
 
 ## Changelog
 
-- 21 Nov 2026: first release, 4 modes and 18 powers.
+- 21 Nov 2026: first release, 4 modes and 19 powers.

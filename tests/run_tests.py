@@ -281,6 +281,29 @@ def check_structure() -> None:
         assert bad.returncode == 2 and "Traceback" not in bad.stderr
 
     @test
+    def test_super_claude_dashboard_tracks_sums_latest_and_todos():
+        tool = PLUGINS / "super-mode/skills/super-mode/scripts/dashboard.py"
+        with tempfile.TemporaryDirectory() as tmp:
+            d = str(Path(tmp) / "db")
+            def dash(*a):
+                return run([sys.executable, str(tool), *a, "--dir", d, "--today", "2026-11-21"])
+            dash("init", "--track", "Applications:50:emails:month:sum", "--track", "Followers:1000::all:last")
+            dash("log", "Applications", "3", "--date", "2026-11-20")
+            dash("log", "Applications", "2", "--date", "2026-10-30")  # last month: not counted
+            dash("log", "Followers", "400", "--date", "2026-11-01")
+            dash("log", "Followers", "426", "--date", "2026-11-21")
+            dash("todo", "Text Sahaj", "--due", "2026-11-27")
+            out = dash("show").stdout
+            assert "Applications: 3 of 50 emails (month)" in out, out
+            assert "Followers: 426 of 1,000 (all)" in out and "To do: 1 open" in out, out
+            dash("todo", "--done", "sahaj")
+            dash("build")
+            page = (Path(d) / "index.html").read_text(encoding="utf-8")
+            assert "Applications" in page and "All clear." in page and "<script" not in page
+            bad = subprocess.run([sys.executable, str(tool), "log", "Nope", "1", "--dir", d], capture_output=True, text=True)
+            assert bad.returncode == 2 and "not tracked" in bad.stdout and "Traceback" not in bad.stderr
+
+    @test
     def test_python_and_node_scripts_compile():
         for py in list(ROOT.glob("**/*.py")):
             if ".git" not in py.parts:

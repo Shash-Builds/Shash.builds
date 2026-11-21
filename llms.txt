@@ -12,7 +12,7 @@ Code is MIT. Content in content/ and media/ is CC BY 4.0.
 
 ## Skills
 Install in Claude Code: `/plugin marketplace add Shash-Builds/shash.builds` then `/plugin install <slug>@shashbuilds`.
-- [Super Claude](https://github.com/Shash-Builds/shash.builds/tree/main/skills/super-mode): One install. Claude as a sharp operator, with 18 powers.
+- [Super Claude](https://github.com/Shash-Builds/shash.builds/tree/main/skills/super-mode): One install. Claude as a sharp operator, with 19 powers.
 - [Master Skill](https://github.com/Shash-Builds/shash.builds/tree/main/skills/master): Routes every task to the right specialists. Runs the video workflow.
 - [Humanizer](https://github.com/Shash-Builds/shash.builds/tree/main/skills/humanizer): Makes writing sound like you, not a model. Every fact kept.
 - [Social Media](https://github.com/Shash-Builds/shash.builds/tree/main/skills/social-media): Your head of social: strategy, posts, hooks, a 100-point check.
