@@ -5,13 +5,13 @@
   "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%234b4fd0'/%3E%3Cpath d='M16 6c1 5 4 8 9 10-5 1-8 4-9 9-1-5-4-8-9-9 5-2 8-5 9-10z' fill='%23fff'/%3E%3C/svg%3E",
   "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' rx='9' fill='currentColor'/><path d='M16 6c1 5 4 8 9 10-5 1-8 4-9 9-1-5-4-8-9-9 5-2 8-5 9-10z' fill='#fff'/></svg>",
   "business": {
-    "name": "Saltbreeze Home Cleaning",
+    "name": "Example Home Cleaning",
     "trade_title": "House cleaning",
     "city": "Tampa",
     "state": "FL",
     "phone": "(813) 555-0162"
   },
-  "meta": "Concept site for Saltbreeze Home Cleaning, a made-up Tampa house cleaner: recurring, deep and move-out cleans with an instant price check. Designed by shash.builds.",
+  "meta": "Concept site for Example Home Cleaning, a made-up Tampa house cleaner: recurring, deep and move-out cleans with an instant price check. Designed by shash.builds.",
   "book_first": true,
   "book_label": "Get my price",
   "call_label": "Call (813) 555-0162",

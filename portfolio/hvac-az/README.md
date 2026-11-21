@@ -1,8 +1,8 @@
-# Coolwash Air Co. (concept work)
+# Example Air Co. (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Coolwash Air Co. concept site on desktop: a dark page with a soft blue glow, the headline Cold air back on, before the afternoon peak, a gradient Call button and a glowing thermostat dial reading 72 degrees, cooling.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Air Co. concept site on desktop: a dark page with a soft blue glow, the headline Cold air back on, before the afternoon peak, a gradient Call button and a glowing thermostat dial reading 72 degrees, cooling.">
 
-**Concept work.** Coolwash Air Co. is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
+**Concept work.** Example Air Co. is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
 
 | | |
 | --- | --- |

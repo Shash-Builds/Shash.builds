@@ -3,18 +3,17 @@
 
 | Sample | Trade | Place | Style |
 | --- | --- | --- | --- |
-| [Caliche Ridge Roofing](roofer-tx/) | Roofing | San Antonio, TX | S-01 Swiss grid |
-| [Saltbreeze Home Cleaning](cleaner-fl/) | House cleaning | Tampa, FL | S-05 Glass |
-| [Coolwash Air Co.](hvac-az/) | AC and heating | Mesa, AZ | S-02 Night glow |
-| [Red Clay & Fern Landscapes](landscaper-ga/) | Landscaping | Athens, GA | S-03 Organic |
-| [Bluejay Plumbing Co.](plumber-oh/) | Plumbing | Dayton, OH | S-04 Playful blocks |
-| [Lantern Row Barbershop](barber-ca/) | Barbershop | Long Beach, CA | S-08 Luxe |
-| [Wrenfield Family Dentistry](dentist-nc/) | Dentist | Raleigh, NC | S-06 Editorial |
-| [Quarter Turn Auto Repair](auto-repair-mi/) | Auto repair | Grand Rapids, MI | S-07 Brutal |
+| [Example Roofing](roofer-tx/) | Roofing | San Antonio, TX | S-01 Swiss grid |
+| [Example Home Cleaning](cleaner-fl/) | House cleaning | Tampa, FL | S-05 Glass |
+| [Example Air Co.](hvac-az/) | AC and heating | Mesa, AZ | S-02 Night glow |
+| [Example Landscapes](landscaper-ga/) | Landscaping | Athens, GA | S-03 Organic |
+| [Example Plumbing Co.](plumber-oh/) | Plumbing | Dayton, OH | S-04 Playful blocks |
+| [Example Barbershop](barber-ca/) | Barbershop | Long Beach, CA | S-08 Luxe |
+| [Example Family Dentistry](dentist-nc/) | Dentist | Raleigh, NC | S-06 Editorial |
+| [Example Auto Repair](auto-repair-mi/) | Auto repair | Grand Rapids, MI | S-07 Brutal |
 
 Each folder's `README.md` is its case card. Browse them all on the [live gallery](https://shash-builds.github.io/Shash.builds/portfolio/) ([`index.html`](index.html)).
 
-For Upwork, Contra, Fiverr, Dribbble and Instagram, the [marketplace pack](marketplace-pack.md) ([PDF](marketplace-pack.pdf)) has a title, a two-line description, tags, the live link and the cover image to upload for each sample.
 
 ## How they're built
 

@@ -1,8 +1,8 @@
-# Lantern Row Barbershop (concept work)
+# Example Barbershop (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Lantern Row Barbershop concept site on desktop: a near-black page with a cream serif headline, Sharp cuts. Hot towels. No rush., a gold Book a chair button and a full-height photo of a barber pole on a brick wall inside a thin gold frame.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Barbershop concept site on desktop: a near-black page with a cream serif headline, Sharp cuts. Hot towels. No rush., a gold Book a chair button and a full-height photo of a barber pole on a brick wall inside a thin gold frame.">
 
-**Concept work.** Lantern Row Barbershop is a made-up business. The phone number is a 555 number, the prices on the menu are sample numbers and every line of copy is sample content. No reviews or ratings are claimed.
+**Concept work.** Example Barbershop is a made-up business. The phone number is a 555 number, the prices on the menu are sample numbers and every line of copy is sample content. No reviews or ratings are claimed.
 
 | | |
 | --- | --- |

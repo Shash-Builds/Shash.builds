@@ -6,8 +6,8 @@
   "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e0d0b'/%3E%3Crect x='12' y='5' width='8' height='22' rx='4' fill='none' stroke='%23c8a35a' stroke-width='2'/%3E%3Cpath d='M12 11l8 4M12 17l8 4' stroke='%23c8a35a' stroke-width='2'/%3E%3C/svg%3E",
   "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect x='12' y='4' width='8' height='24' rx='4' fill='none' stroke='#c8a35a' stroke-width='2'/><path d='M12 10l8 4M12 16l8 4' stroke='#c8a35a' stroke-width='2'/></svg>",
   "hero_layout": "cover",
-  "business": {"name": "Lantern Row Barbershop", "trade_title": "Barbershop", "city": "Long Beach", "state": "CA", "phone": "(562) 555-0138"},
-  "meta": "Concept site for Lantern Row Barbershop, a made-up Long Beach, California barbershop: classic cuts, skin fades and hot towel shaves, booked online. Designed by shash.builds.",
+  "business": {"name": "Example Barbershop", "trade_title": "Barbershop", "city": "Long Beach", "state": "CA", "phone": "(562) 555-0138"},
+  "meta": "Concept site for Example Barbershop, a made-up Long Beach, California barbershop: classic cuts, skin fades and hot towel shaves, booked online. Designed by shash.builds.",
   "book_first": true,
   "book_label": "Book a chair",
   "hero": {

@@ -1,8 +1,8 @@
-# Bluejay Plumbing Co. (concept work)
+# Example Plumbing Co. (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Bluejay Plumbing Co. concept site on desktop: a butter-yellow page with thick black outlines, a kitchen sink photo on the left with a tilted Same day in Dayton sticker, and the headline Leaks fixed. Drains cleared. Today. with coral and mint buttons.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Plumbing Co. concept site on desktop: a butter-yellow page with thick black outlines, a kitchen sink photo on the left with a tilted Same day in Dayton sticker, and the headline Leaks fixed. Drains cleared. Today. with coral and mint buttons.">
 
-**Concept work.** Bluejay Plumbing Co. is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
+**Concept work.** Example Plumbing Co. is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
 
 | | |
 | --- | --- |

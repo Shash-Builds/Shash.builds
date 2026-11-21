@@ -1,8 +1,8 @@
-# Saltbreeze Home Cleaning (concept work)
+# Example Home Cleaning (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Saltbreeze Home Cleaning concept site on desktop: a frosted header over a soft blue and lilac wash, the headline Come home to a clean house, Get my price and Call buttons, and a photo of a bright white kitchen.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Home Cleaning concept site on desktop: a frosted header over a soft blue and lilac wash, the headline Come home to a clean house, Get my price and Call buttons, and a photo of a bright white kitchen.">
 
-**Concept work.** Saltbreeze Home Cleaning is a made-up business. The phone number is a 555 number, the prices in the price checker are sample numbers and every line of copy is sample content. No reviews or ratings are claimed.
+**Concept work.** Example Home Cleaning is a made-up business. The phone number is a 555 number, the prices in the price checker are sample numbers and every line of copy is sample content. No reviews or ratings are claimed.
 
 | | |
 | --- | --- |

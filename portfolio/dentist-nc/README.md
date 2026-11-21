@@ -1,8 +1,8 @@
-# Wrenfield Family Dentistry (concept work)
+# Example Family Dentistry (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Wrenfield Family Dentistry concept site on desktop: a warm paper page laid out like a magazine, the italic serif headline Calm, unhurried dental care for the whole family across the top, a photo of a bright empty dental room below it, and a teal Book an appointment button in a ruled side column.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Family Dentistry concept site on desktop: a warm paper page laid out like a magazine, the italic serif headline Calm, unhurried dental care for the whole family across the top, a photo of a bright empty dental room below it, and a teal Book an appointment button in a ruled side column.">
 
-**Concept work.** Wrenfield Family Dentistry is a made-up practice. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings, credentials or awards are claimed.
+**Concept work.** Example Family Dentistry is a made-up practice. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings, credentials or awards are claimed.
 
 | | |
 | --- | --- |

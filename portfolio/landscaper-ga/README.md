@@ -1,8 +1,8 @@
-# Red Clay & Fern Landscapes (concept work)
+# Example Landscapes (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Red Clay and Fern Landscapes concept site on desktop: a centred serif headline, A yard you'll actually want to sit in, a terracotta Book a free yard walk button and a wide arch-shaped photo of a lawn with white garden chairs between clipped hedges.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Landscapes concept site on desktop: a centred serif headline, A yard you'll actually want to sit in, a terracotta Book a free yard walk button and a wide arch-shaped photo of a lawn with white garden chairs between clipped hedges.">
 
-**Concept work.** Red Clay & Fern Landscapes is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
+**Concept work.** Example Landscapes is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
 
 | | |
 | --- | --- |

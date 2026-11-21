@@ -6,8 +6,8 @@
   "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2323301f'/%3E%3Cpath d='M16 25V12M16 18c-5 0-7-4-7-8 5 0 7 3 7 8zm0-2c4 0 7-3 7-7-4 0-7 3-7 7z' fill='%23d9a46c' stroke='%23d9a46c'/%3E%3C/svg%3E",
   "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' rx='16' fill='#23301f'/><path d='M16 25V12M16 18c-5 0-7-4-7-8 5 0 7 3 7 8zm0-2c4 0 7-3 7-7-4 0-7 3-7 7z' fill='#d9a46c' stroke='#d9a46c'/></svg>",
   "hero_layout": "stacked",
-  "business": {"name": "Red Clay & Fern Landscapes", "trade_title": "Landscaping", "city": "Athens", "state": "GA", "phone": "(706) 555-0183"},
-  "meta": "Concept site for Red Clay & Fern Landscapes, a made-up Athens, Georgia landscaper: design, native planting, lawn care and drainage for clay soil. Designed by shash.builds.",
+  "business": {"name": "Example Landscapes", "trade_title": "Landscaping", "city": "Athens", "state": "GA", "phone": "(706) 555-0183"},
+  "meta": "Concept site for Example Landscapes, a made-up Athens, Georgia landscaper: design, native planting, lawn care and drainage for clay soil. Designed by shash.builds.",
   "book_first": true,
   "book_label": "Book a free yard walk",
   "hero": {

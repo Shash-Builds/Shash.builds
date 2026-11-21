@@ -5,13 +5,13 @@
   "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Cpath d='M5 20 16 9l11 11' fill='none' stroke='%23d81e14' stroke-width='4'/%3E%3C/svg%3E",
   "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' fill='#111'/><path d='M5 21 16 10l11 11' fill='none' stroke='currentColor' stroke-width='4'/></svg>",
   "business": {
-    "name": "Caliche Ridge Roofing",
+    "name": "Example Roofing",
     "trade_title": "Roofing",
     "city": "San Antonio",
     "state": "TX",
     "phone": "(210) 555-0147"
   },
-  "meta": "Concept site for Caliche Ridge Roofing, a made-up San Antonio roofer: free inspections, hail and storm repairs, metal roofs and full replacements. Designed by shash.builds.",
+  "meta": "Concept site for Example Roofing, a made-up San Antonio roofer: free inspections, hail and storm repairs, metal roofs and full replacements. Designed by shash.builds.",
   "book_label": "Book a free inspection",
   "hero": {
     "eyebrow": "Roofing · San Antonio, TX",

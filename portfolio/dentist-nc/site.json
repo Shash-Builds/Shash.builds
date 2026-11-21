@@ -6,8 +6,8 @@
   "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f0e8'/%3E%3Cpath d='M10 7c-3 0-5 3-4 7 1 3 2 5 2 9 0 2 2 3 3 1l2-6c1-2 5-2 6 0l2 6c1 2 3 1 3-1 0-4 1-6 2-9 1-4-1-7-4-7-2 0-4 2-6 2s-4-2-6-2z' fill='none' stroke='%231d5c63' stroke-width='2'/%3E%3C/svg%3E",
   "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><path d='M10 7c-3 0-5 3-4 7 1 3 2 5 2 9 0 2 2 3 3 1l2-6c1-2 5-2 6 0l2 6c1 2 3 1 3-1 0-4 1-6 2-9 1-4-1-7-4-7-2 0-4 2-6 2s-4-2-6-2z' fill='none' stroke='currentColor' stroke-width='2'/></svg>",
   "hero_layout": "magazine",
-  "business": {"name": "Wrenfield Family Dentistry", "trade_title": "Family dentist", "city": "Raleigh", "state": "NC", "phone": "(919) 555-0156"},
-  "meta": "Concept site for Wrenfield Family Dentistry, a made-up Raleigh, North Carolina family dentist: cleanings, fillings, crowns, whitening and calm first visits. Designed by shash.builds.",
+  "business": {"name": "Example Family Dentistry", "trade_title": "Family dentist", "city": "Raleigh", "state": "NC", "phone": "(919) 555-0156"},
+  "meta": "Concept site for Example Family Dentistry, a made-up Raleigh, North Carolina family dentist: cleanings, fillings, crowns, whitening and calm first visits. Designed by shash.builds.",
   "book_first": true,
   "book_label": "Book an appointment",
   "hero": {

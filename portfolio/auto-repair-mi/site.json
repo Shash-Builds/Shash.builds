@@ -6,8 +6,8 @@
   "favicon": "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffe600'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%230b0b0b' stroke-width='4'/%3E%3Cpath d='M16 16V5' stroke='%230b0b0b' stroke-width='4'/%3E%3C/svg%3E",
   "logo_svg": "<svg viewBox='0 0 32 32' aria-hidden='true'><rect width='32' height='32' fill='#ffe600' stroke='#0b0b0b' stroke-width='3'/><circle cx='16' cy='16' r='8' fill='none' stroke='#0b0b0b' stroke-width='3.5'/><path d='M16 16V6' stroke='#0b0b0b' stroke-width='3.5'/></svg>",
   "hero_layout": "poster",
-  "business": {"name": "Quarter Turn Auto Repair", "trade_title": "Auto repair", "city": "Grand Rapids", "state": "MI", "phone": "(616) 555-0192"},
-  "meta": "Concept site for Quarter Turn Auto Repair, a made-up Grand Rapids, Michigan auto repair shop: brakes, diagnostics, oil changes, suspension and winter prep at posted prices. Designed by shash.builds.",
+  "business": {"name": "Example Auto Repair", "trade_title": "Auto repair", "city": "Grand Rapids", "state": "MI", "phone": "(616) 555-0192"},
+  "meta": "Concept site for Example Auto Repair, a made-up Grand Rapids, Michigan auto repair shop: brakes, diagnostics, oil changes, suspension and winter prep at posted prices. Designed by shash.builds.",
   "book_label": "Book a repair",
   "hero": {
     "eyebrow": "Auto repair · Grand Rapids, MI",

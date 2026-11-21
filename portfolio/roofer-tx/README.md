@@ -1,8 +1,8 @@
-# Caliche Ridge Roofing (concept work)
+# Example Roofing (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Caliche Ridge Roofing concept site on desktop: a red rule over the uppercase headline Roofs built for Texas hail and heat, a red Call button, a Book a free inspection button and a photo of a dark house with a steep metal roof.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Roofing concept site on desktop: a red rule over the uppercase headline Roofs built for Texas hail and heat, a red Call button, a Book a free inspection button and a photo of a dark house with a steep metal roof.">
 
-**Concept work.** Caliche Ridge Roofing is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
+**Concept work.** Example Roofing is a made-up business. The phone number is a 555 number and every line of copy is sample content. No reviews, ratings or licenses are claimed.
 
 | | |
 | --- | --- |

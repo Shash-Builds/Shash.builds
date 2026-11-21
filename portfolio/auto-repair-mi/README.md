@@ -1,8 +1,8 @@
-# Quarter Turn Auto Repair (concept work)
+# Example Auto Repair (concept work)
 
-<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Quarter Turn Auto Repair concept site on desktop: a safety-yellow poster with the huge condensed headline Fixed right. Priced up front., a wide black and white strip of a socket set and ratchet, and a black Call button beside short monospace text.">
+<img src="shots/desktop-1600x1200.jpg" width="100%" alt="Example Auto Repair concept site on desktop: a safety-yellow poster with the huge condensed headline Fixed right. Priced up front., a wide black and white strip of a socket set and ratchet, and a black Call button beside short monospace text.">
 
-**Concept work.** Quarter Turn Auto Repair is a made-up business. The phone number is a 555 number, the prices on the price board are sample numbers and every line of copy is sample content. No reviews, ratings or certifications are claimed.
+**Concept work.** Example Auto Repair is a made-up business. The phone number is a 555 number, the prices on the price board are sample numbers and every line of copy is sample content. No reviews, ratings or certifications are claimed.
 
 | | |
 | --- | --- |
