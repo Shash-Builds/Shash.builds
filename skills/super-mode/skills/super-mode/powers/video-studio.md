@@ -52,6 +52,14 @@ and what you will show before the full render (a 5 to 10 second sample or 3 stil
   the outgoing speed and settles. Effects land on the exact frame of their motion.
 - Cuts every 0.3 to 2.3 s in fast films; the end card holds 0.6 to 1.4 s, not longer.
 
+## Free voice and 3D (optional tools)
+- **Voiceover without a voice actor:** Chatterbox (MIT, github.com/resemble-ai/chatterbox) reads a script
+  aloud for free on the user's own machine. Clone a voice only with that person's clear permission (their
+  own voice is fine), and say in the delivery note that the voice is generated.
+- **Captions:** faster-whisper, which the transcriber skill already uses, with word-level timing.
+- **Real 3D:** Blender MCP (MIT, github.com/ahujasid/mcp-for-blender) lets Claude drive Blender for 3D shots.
+  Use it only when the user asks for 3D; the default look stays 2D with depth.
+
 ## Sound
 - One accent every 1 to 2 seconds on reels (whoosh on transitions, pop or tick on small elements, one
   impact for the big moment), synced to cuts, about 10 dB under the voice.
