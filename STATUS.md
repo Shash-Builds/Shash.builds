@@ -5,8 +5,8 @@ Last update: 2026-11-06
 ## Done
 
 - **2026-11-06. Agent Team skill** ([`skills/agent-team`](skills/agent-team)): one head chat runs a team of specialist Claude agents, each with its own folder, git branch, best-of skill playbook and inbox in one private repo; a training block for every agent; daily briefing and hard review by the head. Templates in `templates.md`. Routed from the Marketing head. 23 skills now.
+- **2026-11-21. Website demos removed.** The 8 concept sites and their gallery are gone: shash.builds no longer sells websites.
 - **2026-11-05. Front door reframed as "stuff I built".** README tagline, "What this is", profile README, `llms.txt` and the banner, social preview and profile header no longer say web design is the paid work. The portfolio, templates and the "Hire me" section stay, so a site can still be bought.
-- **2026-11-04. Portfolio:** 8 concept sites, one per trade and style, with case cards, screenshots, scroll videos and a marketplace pack. Gallery: https://shash-builds.github.io/Shash.builds/portfolio/ (source in `portfolio/`, Pages copy in `docs/portfolio/`).
 - **2026-11-04. Comment Drafter skill** ([`skills/comment-drafter`](skills/comment-drafter)): two comment drafts per post for LinkedIn, X or Instagram, in the user's voice; drafts only, never posts or logs in. Routed from the Marketing head. 22 skills now.
 - **2026-11-04. Brutal Review skill** ([`skills/brutal-review`](skills/brutal-review)): a blunt second opinion from a different model, original code and prompts, privacy redaction, tests and chaos inputs. 21 skills now.
 - **2026-11-04. AI Resume skill** ([`skills/ai-resume`](skills/ai-resume)): true, one-page, ATS-safe resumes with Hallmark and humanizer checks; sample resume with made-up data; routed by the Master Design head. 20 skills now.
@@ -79,7 +79,6 @@ Rough estimate: about 22% of the weekly limit used this week (front door, media 
 
 ## Questions for Mother chat
 
-- **Binary exception (approved by Shashwat, 2026-11-03):** `scroll.mp4` files under `portfolio/*/shots/` stay in git (8 files, about 11 MB). Everything else keeps the rule: no video or audio in git, and flag any batch over about 15 MB.
 - **Windows test of the toolbox** (checklist in the toolbox branch chat).
 - **Releases to cut after the rename:** `skills-v1.0.0`, `one-page-starter-v1.0.0`, `lead-tracker-v1.0.0`, and `transcribe`, `cut-silence`, `video-build`, `repurpose`, `photo-kit` at `-v0.1.0`.
 - **Dashboard columns.** The Sheet template uses default headers (listed in its README). Send the dashboard's real column list if it differs.
