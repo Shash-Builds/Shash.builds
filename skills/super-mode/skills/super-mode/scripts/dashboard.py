@@ -154,7 +154,7 @@ def sparkline(vals: list) -> str:
     lo, hi = min(pts), max(pts)
     span = (hi - lo) or 1
     coords = [f"{i * 10},{28 - 26 * ((v - lo) / span):.1f}" for i, v in enumerate(vals) if v is not None]
-    return f'<svg class="spark" viewBox="0 0 140 30" aria-hidden="true"><polyline points="{" ".join(coords)}" fill="none" stroke="currentColor" stroke-width="2"/></svg>'
+    return f'<svg class="spark" viewBox="0 0 140 30" aria-hidden="true"><polyline points="{" ".join(coords)}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 
 def build_html(cfg: dict, cards: list, log: list, todos: list, today: dt.date) -> str:
@@ -164,7 +164,7 @@ def build_html(cfg: dict, cards: list, log: list, todos: list, today: dt.date) -
     for c in cards:
         bar = "" if c["pct"] is None else f'<div class="bar" role="progressbar" aria-valuenow="{c["pct"]:.0f}" aria-valuemin="0" aria-valuemax="100"><span style="width:{c["pct"]:.0f}%"></span></div>'
         goal = "" if c.get("target") is None else f' / {fmt(c["target"])}'
-        card_html.append(f'<section class="card"><h2>{e(c["name"])}</h2><p class="big">{fmt(c["now"])}<small>{e(goal)} {e(c.get("unit") or "")}</small></p>'
+        card_html.append(f'<section class="card glass"><h2>{e(c["name"])}</h2><p class="big">{fmt(c["now"])}<small>{e(goal)} {e(c.get("unit") or "")}</small></p>'
                          f'{bar}<p class="meta">{e(c.get("period", "all"))} · {c["entries"]} entries</p>{sparkline(c["spark"])}</section>')
     recent = sorted(log, key=lambda r: str(r.get("date", "")), reverse=True)[:12]
     log_rows = "".join(f'<tr><td>{e(str(r.get("date", "")))}</td><td>{e(str(r.get("metric", "")))}</td><td>{e(fmt(number(r.get("value"))) if number(r.get("value")) is not None else str(r.get("value", "")))}</td><td>{e(str(r.get("note", "")))}</td></tr>' for r in recent)
@@ -174,22 +174,41 @@ def build_html(cfg: dict, cards: list, log: list, todos: list, today: dt.date) -
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <style>
-:root{{--bg:#15120f;--card:#211c17;--ink:#f6efe3;--mute:#b9ad9c;--accent:#e8572c}}
-*{{box-sizing:border-box}} body{{margin:0;font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}}
-main{{max-width:1100px;margin:0 auto;padding:28px 18px}} h1{{margin:0 0 4px;font-size:28px}} .sub{{color:var(--mute);margin:0 0 22px}}
-.grid{{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}}
-.card{{background:var(--card);border-radius:14px;padding:16px}} .card h2{{margin:0;font-size:15px;color:var(--mute);font-weight:600}}
-.big{{font-size:34px;font-weight:700;margin:6px 0}} .big small{{font-size:15px;color:var(--mute);font-weight:500;margin-left:4px}}
-.bar{{height:8px;background:#3a322a;border-radius:9px;overflow:hidden}} .bar span{{display:block;height:100%;background:var(--accent)}}
-.meta{{color:var(--mute);font-size:13px;margin:8px 0 4px}} .spark{{width:100%;height:30px;color:var(--accent)}}
-.two{{display:grid;gap:14px;grid-template-columns:1fr;margin-top:14px}} @media(min-width:800px){{.two{{grid-template-columns:2fr 1fr}}}}
-table{{width:100%;border-collapse:collapse;font-size:14px}} td{{padding:6px 4px;border-top:1px solid #3a322a;vertical-align:top}}
-ul{{list-style:none;margin:0;padding:0}} li{{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1px solid #3a322a}} time{{color:var(--mute);white-space:nowrap}}
+:root{{--ink:#1d1d1f;--mute:#6e6e73;--glass:rgba(255,255,255,.55);--edge:rgba(255,255,255,.7);--line:rgba(0,0,0,.08);
+--track:rgba(0,0,0,.08);--accent:#0a84ff;--bg1:#f5f5f7;--blob1:#a5c8ff;--blob2:#ffc6e0;--blob3:#c8f2dc}}
+@media (prefers-color-scheme:dark){{:root{{--ink:#f5f5f7;--mute:#a1a1a6;--glass:rgba(40,40,46,.55);--edge:rgba(255,255,255,.12);
+--line:rgba(255,255,255,.08);--track:rgba(255,255,255,.12);--bg1:#000;--blob1:#1f3a8a;--blob2:#6b1d4f;--blob3:#0f5132}}}}
+*{{box-sizing:border-box}}
+body{{margin:0;min-height:100vh;color:var(--ink);background:var(--bg1);
+font:15px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Inter,"Segoe UI",sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}}
+body::before,body::after,main::before{{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.75}}
+body::before{{width:520px;height:520px;background:var(--blob1);top:-140px;left:-120px}}
+body::after{{width:460px;height:460px;background:var(--blob2);bottom:-160px;right:-100px}}
+main::before{{width:380px;height:380px;background:var(--blob3);top:40%;left:45%}}
+main{{max-width:1120px;margin:0 auto;padding:44px 22px 60px}}
+h1{{margin:0;font-size:34px;font-weight:700;letter-spacing:-.02em}} .sub{{color:var(--mute);margin:6px 0 26px}}
+.glass{{background:var(--glass);border:1px solid var(--edge);border-radius:22px;
+backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);
+box-shadow:0 1px 1px rgba(0,0,0,.04),0 12px 40px rgba(0,0,0,.08)}}
+.grid{{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}}
+.card{{padding:20px 20px 16px}} .card h2{{margin:0;font-size:13px;font-weight:600;color:var(--mute);letter-spacing:.01em}}
+.big{{font-size:40px;font-weight:700;letter-spacing:-.03em;margin:8px 0 12px;font-variant-numeric:tabular-nums}}
+.big small{{font-size:15px;font-weight:500;color:var(--mute);letter-spacing:0;margin-left:6px}}
+.bar{{height:6px;background:var(--track);border-radius:99px;overflow:hidden}}
+.bar span{{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#5ac8fa,var(--accent))}}
+.meta{{color:var(--mute);font-size:12px;margin:10px 0 2px}} .spark{{width:100%;height:34px;color:var(--accent);margin-top:4px}}
+.two{{display:grid;gap:16px;grid-template-columns:1fr;margin-top:16px}} @media(min-width:820px){{.two{{grid-template-columns:2fr 1fr}}}}
+table{{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;font-variant-numeric:tabular-nums}}
+td{{padding:9px 6px;border-top:1px solid var(--line);vertical-align:top}} td:first-child{{color:var(--mute);white-space:nowrap}}
+ul{{list-style:none;margin:10px 0 0;padding:0}} li{{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}}
+li::before{{content:"";flex:none;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--mute);margin-top:2px}}
+li span{{flex:1}} time{{color:var(--mute);white-space:nowrap;font-size:13px}}
 </style></head><body><main>
 <h1>{title}</h1><p class="sub">Updated {today.isoformat()} · built by Super Claude from your own files</p>
-<div class="grid">{"".join(card_html) or '<section class="card"><h2>Nothing tracked yet</h2><p class="meta">Tell Super Claude what to track.</p></section>'}</div>
-<div class="two"><section class="card"><h2>Latest entries</h2><table>{log_rows or '<tr><td>No entries yet.</td></tr>'}</table></section>
-<section class="card"><h2>To do ({len(open_todos)})</h2><ul>{todo_rows or '<li>All clear.</li>'}</ul></section></div>
+<div class="grid">{"".join(card_html) or '<section class="card glass"><h2>Nothing tracked yet</h2><p class="meta">Tell Super Claude what to track.</p></section>'}</div>
+<div class="two"><section class="card glass"><h2>Latest entries</h2><table>{log_rows or '<tr><td>No entries yet.</td></tr>'}</table></section>
+<section class="card glass"><h2>To do ({len(open_todos)})</h2><ul>{todo_rows or '<li>All clear.</li>'}</ul></section></div>
 </main></body></html>
 """
 
