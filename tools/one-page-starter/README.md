@@ -63,6 +63,6 @@ Each page gets a slim ribbon: "A free preview made for <business> by Your Studio
 
 ---
 
-Made by [shash.builds](../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../README.md#hire-me).
+Made by [shash.builds](../../README.md). Questions or ideas? [Contact me](../../README.md#contact).
 
 MIT licensed, copyright Shashwat Jain. Stand-in photo credit is printed on every page.

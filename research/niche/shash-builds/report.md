@@ -7,7 +7,6 @@ Niche: building in public as a solo web designer who uses Claude to ship one-pag
 1. **Who to watch:** Nick Saraev (a-023, posts about 6 times a week to both audiences), Flux Academy (a-014) and Darrel Wilson (3 of the 24 best posts: p-009, p-010, p-019) on YouTube, plus `anthropics/skills` (a-001) and `everything-claude-code` (a-003) on GitHub.
 2. **What works:** how-to hooks (8 of 24 best posts) and number hooks (5). A price in the title shows up again and again: "$10K websites" (p-003, 785,948 views), "$500 website" (p-008, p-020), "$0" (p-010), an income figure (p-007). The median best post has 29,154 views.
 3. **Biggest gap:** owners of service businesses are burned by designers who take payment and go quiet, and by fees they didn't expect (g-001, g-002, 14 rows). None of the 24 best posts speaks to the owner about this. Most of them teach people to build or sell sites; none shows the buyer what a fair project looks like.
-4. **First three videos:** what a small business site really costs per year (k-001), a $400 one-page site from call to launch (k-002), and five questions to ask a web designer before you pay (k-003).
 5. **When to post:** LinkedIn Tue to Thu 10:00 to 12:00 ET (h-002); Instagram Thu 09:00 or Wed 12:00 (h-005, h-006); YouTube Wed or Thu 15:00 to 17:00 (h-009). Only h-002 and h-003 state ET; the Instagram and YouTube slots are the studies' audience-local times, which match ET for an East Coast audience.
 
 ## Per platform
@@ -23,7 +22,6 @@ The two audiences search differently. Owners type "how much does a website cost 
 
 ## What not to do
 
-- **Don't promise "$10K websites" or income.** Big-number titles get views (p-003, p-007) but pull people who want to sell sites, not owners who want one. For a leads goal, a true price ("$400") speaks to the buyer.
 - **Don't make another "Claude skills explained" video alone.** It's the most crowded topic (t-032 to t-041 and many existing videos). Pair it with a real skill and a real use (k-009, k-012).
 - **Don't fake numbers.** Hooks with `[[REAL: N]]` wait for real counts from real work.
 - **Don't drop links in Reddit threads.** The owner and designer questions live there, but the helpers couldn't read Reddit this run, so its rules weren't checked. Read each subreddit's rules first.
@@ -201,7 +199,6 @@ Run date: 2026-11-03. Every row links its source and the date it was checked.
 | Rank | Topic | Hook | Audience | Platform | Format | D x G x F | Evidence |
 |---|---|---|---|---|---|---|---|
 | 1 | What a small business website really costs per year | "Your website bill doesn't end at launch. Here's the full year." | a | youtube | 2-min video | 5x5x5 = 125 | t-223 t-227 t-222 v-001 v-006 v-018 |
-| 2 | Building a $400 one-page site live, from call to launch | "One page, $400, seven days. Watch the whole build." | a | youtube | 2-min video | 4x5x5 = 100 | t-128 t-215 p-020 p-008 v-002 v-012 |
 | 3 | A free Claude skill that builds one-page sites for service businesses | "I open-sourced the Claude skill I use for client sites." | b | github | repo | 5x4x5 = 100 | t-044 t-048 t-051 t-057 t-065 a-001 |
 | 4 | Five questions to ask a web designer before you pay | "Ask these five things before you pay any web designer." | a | instagram | reel | 4x5x5 = 100 | v-008 v-009 v-015 v-016 v-031 |
 | 5 | Make a Claude skill that actually triggers | "Your Claude skill never fires? The description is usually why." | b | youtube | 2-min video | 5x5x4 = 100 | v-201 v-204 v-210 v-211 t-050 |
@@ -219,7 +216,6 @@ Run date: 2026-11-03. Every row links its source and the date it was checked.
 | 17 | The day-by-day log of one client site (day 1, 3, 7) | "Day 1: a 15-minute call. Day 7: live. Here's day 3." | a | linkedin | text post | 3x5x5 = 75 | v-002 v-010 v-017 t-274 t-286 |
 | 18 | Claude Code website design: my exact prompt and skill | "The exact prompt and skill I use for client sites." | b | youtube | 2-min video | 5x3x5 = 75 | t-053 t-059 t-068 p-014 p-016 |
 | 19 | Is a free website good enough for my business? | "Free website builders aren't free. Here's the real catch." | a | youtube | 2-min video | 4x4x4 = 64 | v-028 t-114 t-123 t-106 v-026 |
-| 20 | Pricing a one-page site as a freelancer | "Why I charge $400 for a one-page site, line by line." | b | linkedin | text post | 4x4x4 = 64 | t-245 t-244 p-020 p-008 |
 | 21 | Making AI sites not look like AI sites | "Every AI website looks the same. Three fixes that change that." | b | instagram | reel | 4x4x4 = 64 | p-016 p-023 t-058 |
 | 22 | Before and after: a real service business homepage | "Before: a menu of everything. After: one button that books." | a | instagram | reel | 4x4x4 = 64 | p-006 p-024 t-119 |
 | 23 | Website for small business owners: what to ask for | "Owners: ask for these three things, skip the rest." | a | youtube | 2-min video | 4x4x4 = 64 | t-113 t-126 v-030 |

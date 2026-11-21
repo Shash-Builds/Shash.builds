@@ -23,7 +23,7 @@ python3 ${CLAUDE_SKILL_DIR}/scripts/email_tool.py draft --audit audit.json --moc
 
 (`scripts/email_tool.py` is next to this SKILL.md.) Then rewrite the personal line so it
 sounds like a person who looked: one specific, provable thing from the audit, in plain
-words. Keep the rest short. The offer line stays: "Want it live in 7 days for $400?" unless
+words. Keep the rest short. The offer line stays: "[your offer, e.g. Want it live in 7 days?]" unless
 the user's offer differs.
 
 ## 3. Rules

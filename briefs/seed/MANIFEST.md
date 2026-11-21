@@ -66,7 +66,6 @@ From `private:content/built-in-bed/`.
 | --- | --- |
 | `brand/logo-cream.png`, `brand/logo-ink.png` | Series wordmark with Tab |
 | `brand/title-sting.webm` | 2.4 s opener |
-| `overlays/sticker-*.png` (7 files) | $400, 7 DAYS, FREE, BOOKED, IN BED, AI DID THIS, 0 CODE |
 | `overlays/lower-third.webm` | Name strip with Shashwat's public name, no photo |
 | `overlays/prompt-1-build.webm`, `prompt-2-bolder.webm`, `prompt-3-booking.webm` | "YOU TYPE" prompt cards |
 | `overlays/cta-comment-site.webm`, `cta-dm-site.webm` | End cards with Tab |

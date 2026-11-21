@@ -21,7 +21,7 @@ I looked at Demo Plumbing Co's website and noticed one thing: there is no tap-to
 So I mocked up a cleaner one-page site for you. Take a look:
 https://demo-site.example/previews/demo-plumbing-co/
 
-Want it live in 7 days for $400?
+[Your offer line, e.g. Want it live in 7 days?]
 
 Your Name
 [[YOUR POSTAL ADDRESS: street, city, country]]
@@ -66,7 +66,7 @@ If the audit score is under 30, the draft step warns you that the site is alread
 - **Follow-ups** on day 3 and day 7 are shorter, use the same thread subject and carry no guilt. Send them as replies in the same thread.
 - **Plain text.** One link. No attachments, no images, no tracking pixels.
 - **One provable thing.** The personal line comes from the audit and names something the owner can check.
-- **Honest.** No em dashes, no hype, no fake familiarity, no claims about results. The offer line stays "Want it live in 7 days for $400?" unless your offer differs.
+- **Honest.** No em dashes, no hype, no fake familiarity, no claims about results. The offer line stays "[Your offer line, e.g. Want it live in 7 days?]" unless your offer differs.
 
 ## CAN-SPAM basics
 
@@ -133,6 +133,6 @@ On claude.ai: download `cold-email-drafter-skill.zip` from [Releases](https://gi
 
 ---
 
-Made by [shash.builds](../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../README.md#hire-me).
+Made by [shash.builds](../../README.md). Questions or ideas? [Contact me](../../README.md#contact).
 
 MIT licensed, copyright Shashwat Jain. See [LICENSE.md](LICENSE.md).

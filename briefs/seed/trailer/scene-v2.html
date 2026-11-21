@@ -52,7 +52,7 @@ window.renderFrame = t => {
     h += `<img src="caps/tab.png" style="position:absolute;left:50%;top:${mix(1300, 470, r)}px;width:820px;transform:translateX(-50%) scale(${1 + b * .01})">`;
     const band = out((b - 3.8) / .45);
     h += `<div style="position:absolute;left:0;right:0;bottom:0;height:500px;background:${C.k};transform:translateY(${(1 - band) * 520}px)"></div>`;
-    h += `<div class="abs disp" style="top:1500px;font-size:132px">${reveal('$400', (b - 4) / .5, C.c)} ${reveal('websites', (b - 4.25) / .5, C.c)}</div>`;
+    h += `<div class="abs disp" style="top:1500px;font-size:132px">${reveal('FREE', (b - 4) / .5, C.c)} ${reveal('websites', (b - 4.25) / .5, C.c)}</div>`;
     h += `<div class="abs disp" style="top:1650px;font-size:108px">${reveal('that get you', (b - 6) / .5, C.c)} ${reveal('booked.', (b - 6.3) / .5, C.o)}</div>`;
     const w = inn((b - 7.6) / .4); camT = `translateY(${-w * 1920}px)`; cam.style.filter = `blur(${w * 18}px)`;
     if (b < .25) shake = (1 - b / .25) * 16;
@@ -83,7 +83,7 @@ window.renderFrame = t => {
   } else if (b < 32) {
     // D. the drop: half-beat cuts. On the beat a fact slams in; on the off-beat a wall of all 8 sites flies past
     const i = Math.floor(b - 24), half = (b - 24) % 1, on = half < .5, lh = on ? half / .5 : (half - .5) / .5;
-    const FACTS = [['$400', 'flat price'], ['7 days', 'to go live'], ['2 rounds', 'of changes'], ['Booking', 'built in'], ['Yours', 'to keep'], ['Your hours', 'Mon to Fri']];
+    const FACTS = [['Free', 'open source'], ['7 days', 'to go live'], ['2 rounds', 'of changes'], ['Booking', 'built in'], ['Yours', 'to keep'], ['Your hours', 'Mon to Fri']];
     const pal = [[C.k, C.o, C.c], [C.o, C.k, C.c], [C.c, C.k, C.o]][i % 3];
     if (i >= 6) {
       // free Claude skill: the card spins in on beat 30 and holds

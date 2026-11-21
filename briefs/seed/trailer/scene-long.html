@@ -157,7 +157,7 @@ window.renderFrame = function (t) {
   } else if (b < 96) {
     // 90–96: the drop
     const j = Math.min(2, Math.floor((b - 90) / 2)), local = b - 90 - j * 2;
-    const set = [[C.k, C.o, '$400', 'flat price'], [C.o, C.k, '7 days', 'to go live'], [C.c, C.k, 'Your hours', 'Mon to Fri']][j];
+    const set = [[C.k, C.o, 'Free', 'open source'], [C.o, C.k, '7 days', 'to go live'], [C.c, C.k, 'Your hours', 'Mon to Fri']][j];
     bg = set[0];
     const g = $('big'); g.style.opacity = 1; g.style.color = set[1]; g.style.fontSize = (j === 2 ? 250 : 330) + 'px'; g.style.lineHeight = '.86';
     g.style.top = (j === 2 ? 760 : 700) + 'px'; g.innerHTML = set[2];

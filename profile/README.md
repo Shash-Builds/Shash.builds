@@ -19,9 +19,7 @@ A new free skill or tool every 1 to 2 days, and a 2-minute "Built in Bed" video 
 
 ### Hire me
 
-Cleaner, landscaper, painter, contractor, detailer? You get one clean page that turns Google visitors into calls. $400 flat, live in 7 days.
 
-Email [shash.builds@gmail.com](mailto:shash.builds@gmail.com), or [open a hire request](https://github.com/Shash-Builds/shash.builds/issues/new?template=hire.yml).
 
 ### Follow the build
 

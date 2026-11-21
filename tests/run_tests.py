@@ -750,7 +750,7 @@ def check_niche_research(tmp: Path) -> None:
         add("terms", [["t-001", "#webdesign", "hashtag", "instagram", "on 4 posts", u, d]])
         add("times", [["h-001", "linkedin", "Tue-Thu", "09:00-11:00", "study, ET", u, d]])
         add("gaps", [["g-001", "Prices nobody shows", "a", "v-001 p-001", "agencies hide prices"]])
-        add("topics", [[f"k-{i:03}", f"Topic {i}", "What a $400 site gets you", "a", "youtube", "2-min video",
+        add("topics", [[f"k-{i:03}", f"Topic {i}", "What a one-page site gets you", "a", "youtube", "2-min video",
                         str(i % 5 + 1), "3", "4", "v-001"] for i in range(1, 21)])
         for cmd in ("merge", "check", "tables", "rank", "report", "check"):
             run([sys.executable, str(ledger), cmd, str(folder)])

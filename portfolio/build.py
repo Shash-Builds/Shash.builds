@@ -323,7 +323,7 @@ img {{ display: block; max-width: 100%; height: auto; }}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap top-in"><a class="brand" href="https://github.com/Shash-Builds/Shash.builds">shash.builds</a><a class="hire" href="https://github.com/Shash-Builds/Shash.builds#hire-me">Get a site like this</a></div></header>
+<header class="top"><div class="wrap top-in"><a class="brand" href="https://github.com/Shash-Builds/Shash.builds">shash.builds</a></div></header>
 <main>
 <section class="head"><div class="wrap"><h1>Concept sites for service businesses.</h1>
 <p>{len(slugs)} one-page websites for made-up businesses, each in a different style. Every one has a call button in the first screen, a sticky call bar on phones and a quote form.</p></div></section>
@@ -331,7 +331,7 @@ img {{ display: block; max-width: 100%; height: auto; }}
 <div class="filters" role="group" aria-label="Filter by trade">{chips}</div>
 <ul class="grid" id="grid">{"".join(cards)}</ul>
 <div class="note"><p><b>These are concept sites.</b> The businesses, phone numbers (555 numbers), prices and copy are made up, and none of the pages shows reviews: each has an empty "Reviews go here" panel, because we never write fake ones. Photos are CC0 or public domain, with no people in them.</p>
-<p>A real site like these is $400 flat and live in 7 days. <a href="https://github.com/Shash-Builds/Shash.builds#hire-me">See how to hire me</a>.</p></div>
+<p>Sample sites built in public.</p></div>
 </div>
 </main>
 <script>

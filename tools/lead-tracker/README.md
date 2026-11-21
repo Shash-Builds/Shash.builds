@@ -4,7 +4,6 @@
 
 **Every form fill on a website lands in a Google Sheet with where the visitor came from: Google, Google Ads, Facebook, Instagram, AI search, a referral or direct. A Dashboard tab shows leads, wins, win rate and revenue by source.**
 
-<p align="center"><img src="demo.jpg" width="100%" alt="Two tabs of the demo Sheet with sample data. Dashboard: Google brought 3 leads and 2 wins worth $770, Facebook 2 leads and $400, Referral 2 leads and $180, a total of 8 leads, 4 won, $1,350. Leads tab: each row has date, name, job, source in orange, status and value."></p>
 
 Free. No paid tools, no monthly fee. A Google account and a website are all you need.
 
@@ -52,6 +51,6 @@ Using [One-Page Starter](../one-page-starter)? Skip step 3: pass `--sheet-url` a
 
 ---
 
-Made by [shash.builds](../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../README.md#hire-me).
+Made by [shash.builds](../../README.md). Questions or ideas? [Contact me](../../README.md#contact).
 
 MIT licensed, copyright Shashwat Jain.
