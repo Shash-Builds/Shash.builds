@@ -42,6 +42,30 @@ is never worth a wrong result on something that matters.
 - For a one-off that does not fit either agent, you may use the general-purpose
   agent with the Agent tool's `model` parameter set to `"haiku"` or `"sonnet"`.
 
+## Step 2b: fan out big jobs
+
+For a big low-tier job (many pages, posts, files or messages to read, search
+or screen), run helpers in parallel instead of one long helper:
+- **Split it.** Cut the input into 2 to 4 even slices (by source, place or
+  batch, for example 236 job posts into 3 files of about 80) and start one
+  helper per slice in the same turn, in the background. Give each the same
+  rules and the same return format, so the results merge cleanly.
+- **Fetch for them when they can't.** If helpers can't reach a site (their
+  page reader is blocked), fetch the pages yourself once, save them as plain
+  text files in the scratchpad, and point each helper at its file. Don't
+  rerun a helper against a source that already failed for it.
+- **Steer, don't restart.** If the user changes the filter while helpers run,
+  send each one the new rule with SendMessage instead of starting again.
+- **Ask for evidence.** Helpers return a fixed table, quote the line that
+  proves each claim, write "not found" instead of guessing, and list what
+  they could not read.
+- **Check before showing.** Merge the results yourself, drop duplicates,
+  spot-check a few rows against the source, and never pass on an email, name,
+  date or number a helper could not show. Picking, writing and anything the
+  user will send stay with you.
+- **Save the decision.** When the user sets a new rule along the way (a
+  filter, a format, a no-go), add it to the memory sheet straight away.
+
 ## Step 3: check and escalate
 
 - Skim every subagent result before using it.
