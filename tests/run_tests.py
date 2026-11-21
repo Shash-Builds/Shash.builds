@@ -601,8 +601,8 @@ def check_media(tmp: Path) -> None:
         run(["node", str(vm / "scripts/render_html_video.cjs"), str(vm / "templates/scene-template.html"),
              str(out), "--from", "0", "--to", "1", "--width", "640", "--height", "360"], timeout=300)
         frames = run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
-                      "stream=nb_read_frames,width,height", "-of", "csv=p=0", str(out)]).stdout.strip()
-        assert frames == "640,360,30", frames
+                      "stream=nb_read_frames,width,height", "-of", "csv=p=0", str(out)]).stdout.strip().strip(",")
+        assert frames == "640,360,30", frames  # ffprobe 8 adds a trailing comma
 
 
 def check_scripts(tmp: Path) -> None:

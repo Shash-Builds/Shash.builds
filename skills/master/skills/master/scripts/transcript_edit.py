@@ -145,6 +145,23 @@ def media_duration(path):
         sys.exit(f"{path} has no playable length: is it a video or audio file?")
 
 
+def trim_concat(keep, has_video, has_audio=True):
+    """filter_complex that keeps only the given (start, end) spans and joins them. Uses trim/atrim and concat,
+    which behave the same on every ffmpeg version (aselect changed in ffmpeg 8)."""
+    parts, joins = [], ""
+    for i, (a, b) in enumerate(keep):
+        if has_video:
+            parts.append(f"[0:v]trim=start={a:.3f}:end={b:.3f},setpts=PTS-STARTPTS[v{i}]")
+            joins += f"[v{i}]"
+        if has_audio:
+            parts.append(f"[0:a]atrim=start={a:.3f}:end={b:.3f},asetpts=PTS-STARTPTS[a{i}]")
+            joins += f"[a{i}]"
+    outs = ("[v]" if has_video else "") + ("[a]" if has_audio else "")
+    parts.append(f"{joins}concat=n={len(keep)}:v={1 if has_video else 0}:a={1 if has_audio else 0}{outs}")
+    maps = (["-map", "[v]"] if has_video else []) + (["-map", "[a]"] if has_audio else [])
+    return ";".join(parts), maps
+
+
 def apply(spans, src, dst):
     if not (shutil.which("ffmpeg") and shutil.which("ffprobe")):
         sys.exit("--apply needs ffmpeg: install it (Mac: brew install ffmpeg; Windows: winget install "
@@ -156,12 +173,18 @@ def apply(spans, src, dst):
     if not keep:
         sys.exit("every second would be cut: check the edit list against the footage")
     os.makedirs(os.path.dirname(os.path.abspath(dst)), exist_ok=True)
-    expr = "+".join(f"between(t,{a:.3f},{b:.3f})" for a, b in keep)
-    cmd = ["ffmpeg", "-v", "error", "-y", "-i", src,
-           "-vf", f"select='{expr}',setpts=N/FRAME_RATE/TB",
-           "-af", f"aselect='{expr}',asetpts=N/SR/TB",
-           "-c:v", "libx264", "-crf", "17", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
-           "-movflags", "+faststart", dst]
+    kinds = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type", "-of", "csv=p=0", src],
+                           capture_output=True, text=True).stdout.split()
+    has_video, has_audio = "video" in kinds, "audio" in kinds
+    if not (has_video or has_audio):
+        sys.exit(f"{src} has no video or audio to cut")
+    graph, maps = trim_concat(keep, has_video, has_audio)
+    cmd = ["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", graph, *maps]
+    if has_video:
+        cmd += ["-c:v", "libx264", "-crf", "17", "-pix_fmt", "yuv420p"]
+    if has_audio:
+        cmd += ["-c:a", "aac", "-b:a", "192k"]
+    cmd += ["-movflags", "+faststart", dst]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         sys.exit(f"ffmpeg failed: {r.stderr.strip()[-800:]}")
