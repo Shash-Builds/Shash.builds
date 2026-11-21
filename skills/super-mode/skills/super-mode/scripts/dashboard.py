@@ -19,12 +19,14 @@ import html
 import io
 import json
 import math
+import re
 import os
 import sys
 from pathlib import Path
 
 PERIODS = {"day", "week", "month", "all"}
 HOWS = {"sum", "last"}
+THEMES = {"glass", "jarvis"}
 
 
 def fail(msg: str) -> None:
@@ -123,21 +125,35 @@ def summarise(cfg: dict, log: list, today: dt.date) -> list:
     for t in cfg.get("track", []):
         if not isinstance(t, dict) or not t.get("name"):
             continue
-        entries = sorted(((day(r.get("date")), number(r.get("value"))) for r in log if r.get("metric") == t["name"]),
-                         key=lambda e: (e[0] or dt.date.min))
-        entries = [(d, v) for d, v in entries if d and v is not None]
+        hist = sorted(((day(r.get("date")), number(r.get("value")), str(r.get("note") or "")) for r in log
+                       if r.get("metric") == t["name"]), key=lambda e: (e[0] or dt.date.min))
+        hist = [(d, v, n) for d, v, n in hist if d and v is not None]
+        entries = [(d, v) for d, v, _ in hist]
         start = window_start(t.get("period", "all"), today)
         inside = [v for d, v in entries if (start is None or d >= start) and d <= today]
         how = t.get("how", "sum")
         now = (sum(inside) if how == "sum" else (inside[-1] if inside else None)) if inside else (0 if how == "sum" else None)
         target = number(t.get("target"))
         pct = None if (target in (None, 0) or now is None) else max(0.0, min(100.0, 100 * now / target))
-        spark = []
-        for i in range(13, -1, -1):
-            dd = today - dt.timedelta(days=i)
+
+        def per_day(dd):
             vals = [v for d, v in entries if d == dd]
-            spark.append(sum(vals) if how == "sum" else (vals[-1] if vals else None))
-        out.append({**t, "now": now, "pct": pct, "spark": spark, "entries": len(entries)})
+            return (sum(vals) if how == "sum" else vals[-1]) if vals else None
+
+        spark = [per_day(today - dt.timedelta(days=i)) for i in range(13, -1, -1)]
+        month = [per_day(today - dt.timedelta(days=i)) for i in range(29, -1, -1)]
+        days = sorted({d for d, _ in entries if d <= today})
+        streak, cur = 0, today
+        while cur in set(days):
+            streak += 1
+            cur -= dt.timedelta(days=1)
+        daily = [x for x in (per_day(d) for d in days) if x is not None]
+        stats = {"all": (sum(v for _, v in entries) if how == "sum" else (entries[-1][1] if entries else None)),
+                 "avg": (sum(daily) / len(daily)) if daily else None,
+                 "best": max(daily) if daily else None, "days": len(days), "streak": streak}
+        slug = re.sub(r"[^a-z0-9]+", "-", t["name"].lower()).strip("-") or "metric"
+        out.append({**t, "now": now, "pct": pct, "spark": spark, "month": month, "entries": len(entries),
+                    "hist": hist, "stats": stats, "slug": f"m-{slug}-{len(out)}"})
     return out
 
 
@@ -157,16 +173,49 @@ def sparkline(vals: list) -> str:
     return f'<svg class="spark" viewBox="0 0 140 30" aria-hidden="true"><polyline points="{" ".join(coords)}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 
-def build_html(cfg: dict, cards: list, log: list, todos: list, today: dt.date) -> str:
+def ring(pct) -> str:
+    p = 0 if pct is None else pct
+    c = 2 * math.pi * 26
+    return (f'<svg class="ring" viewBox="0 0 64 64" role="img" aria-label="{p:.0f}% of target"><circle cx="32" cy="32" r="26" class="ring-bg"/>'
+            f'<circle cx="32" cy="32" r="26" class="ring-fg" stroke-dasharray="{c * p / 100:.1f} {c:.1f}" transform="rotate(-90 32 32)"/>'
+            f'<text x="32" y="36" text-anchor="middle">{p:.0f}%</text></svg>')
+
+
+def bars(vals: list) -> str:
+    pts = [v for v in vals if v is not None]
+    hi = max([abs(v) for v in pts] + [1])
+    w = 300 / max(len(vals), 1)
+    rects = "".join(f'<rect x="{i * w + 1:.1f}" y="{98 - 90 * abs(v) / hi:.1f}" width="{w - 2:.1f}" height="{90 * abs(v) / hi:.1f}" rx="2"/>'
+                    for i, v in enumerate(vals) if v)
+    return f'<svg class="bars" viewBox="0 0 300 100" preserveAspectRatio="none" role="img" aria-label="Last 30 days">{rects}</svg>'
+
+
+def build_html(cfg: dict, cards: list, log: list, todos: list, today: dt.date, theme: str = "glass") -> str:
     e = html.escape
     title = e(str(cfg.get("title") or "My dashboard"))
-    card_html = []
+    card_html, details = [], []
     for c in cards:
         bar = "" if c["pct"] is None else f'<div class="bar" role="progressbar" aria-valuenow="{c["pct"]:.0f}" aria-valuemin="0" aria-valuemax="100"><span style="width:{c["pct"]:.0f}%"></span></div>'
         goal = "" if c.get("target") is None else f' / {fmt(c["target"])}'
-        card_html.append(f'<section class="card glass"><h2>{e(c["name"])}</h2><p class="big">{fmt(c["now"])}<small>{e(goal)} {e(c.get("unit") or "")}</small></p>'
-                         f'{bar}<p class="meta">{e(c.get("period", "all"))} · {c["entries"]} entries</p>{sparkline(c["spark"])}</section>')
-    recent = sorted(log, key=lambda r: str(r.get("date", "")), reverse=True)[:12]
+        gauge = (ring(c["pct"]) if c["pct"] is not None else "") if theme == "jarvis" else bar
+        card_html.append(f'<section class="card glass"><h2>{e(c["name"])}</h2><div class="head"><p class="big">{fmt(c["now"])}<small>{e(goal)} {e(c.get("unit") or "")}</small></p>{gauge if theme == "jarvis" else ""}</div>'
+                         f'{"" if theme == "jarvis" else bar}<p class="meta">{e(c.get("period", "all"))} · {c["entries"]} entries</p>{sparkline(c["spark"])}'
+                         f'<a class="more" href="#{c["slug"]}">Details <span aria-hidden="true">&rsaquo;</span></a></section>')
+        st = c["stats"]
+        label_all = "All-time total" if c.get("how", "sum") == "sum" else "Latest"
+        tiles = "".join(f'<div class="tile glass"><span>{k}</span><b>{v}</b></div>' for k, v in [
+            (f"This {c.get('period', 'all') if c.get('period') != 'all' else 'total'}", fmt(c["now"]) + e(goal)),
+            (label_all, fmt(st["all"])), ("Average per day logged", fmt(st["avg"])), ("Best day", fmt(st["best"])),
+            ("Days logged", str(st["days"])), ("Current streak", f'{st["streak"]} day{"s" if st["streak"] != 1 else ""}')])
+        prog = f'<div class="card glass wide"><h2>Progress to target</h2>{bar}</div>' if bar else ""
+        empty_row = "<tr><td>No entries yet.</td></tr>"
+        rows_h = "".join(f'<tr><td>{d.isoformat()}</td><td>{fmt(v)}</td><td>{e(n)}</td></tr>' for d, v, n in reversed(c["hist"]))
+        details.append(f'<section class="detail" id="{c["slug"]}"><a class="back" href="#top"><span aria-hidden="true">&lsaquo;</span> Overview</a>'
+                       f'<h1>{e(c["name"])}</h1><p class="sub">{e(c.get("unit") or "")} · {e(c.get("period", "all"))} · {"adds up" if c.get("how", "sum") == "sum" else "latest value counts"}</p>'
+                       f'<div class="tiles">{tiles}</div>{prog}'
+                       f'<div class="card glass wide"><h2>Last 30 days</h2>{bars(c["month"])}</div>'
+                       f'<div class="card glass wide"><h2>Every entry ({len(c["hist"])})</h2><table>{rows_h or empty_row}</table></div></section>')
+    recent = sorted(log, key=lambda r: str(r.get("date", "")), reverse=True)[:6]
     log_rows = "".join(f'<tr><td>{e(str(r.get("date", "")))}</td><td>{e(str(r.get("metric", "")))}</td><td>{e(fmt(number(r.get("value"))) if number(r.get("value")) is not None else str(r.get("value", "")))}</td><td>{e(str(r.get("note", "")))}</td></tr>' for r in recent)
     open_todos = [t for t in todos if str(t.get("status", "open")).strip().lower() != "done"]
     todo_rows = "".join(f'<li><span>{e(str(t.get("item", "")))}</span><time>{e(str(t.get("due", "")))}</time></li>' for t in sorted(open_todos, key=lambda t: str(t.get("due") or "9999")))
@@ -204,11 +253,40 @@ td{{padding:9px 6px;border-top:1px solid var(--line);vertical-align:top}} td:fir
 ul{{list-style:none;margin:10px 0 0;padding:0}} li{{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}}
 li::before{{content:"";flex:none;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--mute);margin-top:2px}}
 li span{{flex:1}} time{{color:var(--mute);white-space:nowrap;font-size:13px}}
-</style></head><body><main>
-<h1>{title}</h1><p class="sub">Updated {today.isoformat()} · built by Super Claude from your own files</p>
+.more{{display:inline-flex;gap:4px;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;padding:6px 12px;border-radius:99px;background:rgba(10,132,255,.12)}}
+.more:hover{{background:rgba(10,132,255,.2)}} .back{{display:inline-flex;gap:6px;color:var(--accent);text-decoration:none;font-weight:600;margin-bottom:14px}}
+.detail{{display:none}} .detail:target{{display:block}} main:has(.detail:target) .overview{{display:none}}
+.tiles{{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}} .tile{{padding:14px 16px;border-radius:18px}}
+.tile span{{display:block;font-size:12px;color:var(--mute)}} .tile b{{display:block;font-size:24px;letter-spacing:-.02em;margin-top:4px;font-variant-numeric:tabular-nums}}
+.wide{{margin-top:16px}} .bars{{width:100%;height:120px;margin-top:12px;fill:var(--accent)}}
+
+.jarvis{{--ink:#d9fbff;--mute:#6fb7c4;--glass:rgba(4,22,34,.62);--edge:rgba(0,229,255,.35);--line:rgba(0,229,255,.14);
+--track:rgba(0,229,255,.12);--accent:#00e5ff;--bg1:#02080f}}
+.jarvis body,body.jarvis{{background:radial-gradient(1200px 700px at 50% -10%,#06324a 0%,#02080f 60%) fixed,
+linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px) 0 0/40px 40px,#02080f;
+font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;color:var(--ink)}}
+body.jarvis::before,body.jarvis::after,body.jarvis main::before{{display:none}}
+body.jarvis h1{{text-transform:uppercase;letter-spacing:.18em;font-size:26px;text-shadow:0 0 18px rgba(0,229,255,.55)}}
+body.jarvis .sub{{letter-spacing:.08em;text-transform:uppercase;font-size:12px}}
+body.jarvis .glass{{border-radius:6px;position:relative;box-shadow:0 0 0 1px rgba(0,229,255,.12) inset,0 0 30px rgba(0,229,255,.08)}}
+body.jarvis .glass::before,body.jarvis .glass::after{{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--accent);pointer-events:none}}
+body.jarvis .glass::before{{top:-1px;left:-1px;border-right:0;border-bottom:0}} body.jarvis .glass::after{{bottom:-1px;right:-1px;border-left:0;border-top:0}}
+body.jarvis .card h2{{text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:var(--accent)}}
+body.jarvis .head{{display:flex;align-items:center;justify-content:space-between;gap:8px}}
+body.jarvis .big{{text-shadow:0 0 14px rgba(0,229,255,.45);margin:6px 0}} body.jarvis .big small{{display:block;margin:2px 0 0;font-size:13px}}
+.ring{{width:74px;height:74px;flex:none}} .ring-bg{{fill:none;stroke:var(--track);stroke-width:5}}
+.ring-fg{{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 0 4px var(--accent))}}
+.ring text{{fill:var(--ink);font-size:13px;font-family:inherit}}
+body.jarvis .spark{{filter:drop-shadow(0 0 4px var(--accent))}} body.jarvis .bars{{filter:drop-shadow(0 0 6px rgba(0,229,255,.6))}}
+body.jarvis .more{{border-radius:4px;background:rgba(0,229,255,.1);border:1px solid var(--edge);text-transform:uppercase;letter-spacing:.12em;font-size:11px}}
+body.jarvis li::before{{border-radius:2px;border-color:var(--accent)}} body.jarvis td:first-child{{color:var(--accent)}}
+body.jarvis .tile{{border-radius:6px}} body.jarvis .tile span{{text-transform:uppercase;letter-spacing:.12em;font-size:10px;color:var(--accent)}}
+</style></head><body class="{theme}"><main>
+<div class="overview" id="top"><h1>{title}</h1><p class="sub">Updated {today.isoformat()} · built by Super Claude from your own files</p>
 <div class="grid">{"".join(card_html) or '<section class="card glass"><h2>Nothing tracked yet</h2><p class="meta">Tell Super Claude what to track.</p></section>'}</div>
 <div class="two"><section class="card glass"><h2>Latest entries</h2><table>{log_rows or '<tr><td>No entries yet.</td></tr>'}</table></section>
-<section class="card glass"><h2>To do ({len(open_todos)})</h2><ul>{todo_rows or '<li>All clear.</li>'}</ul></section></div>
+<section class="card glass"><h2>To do ({len(open_todos)})</h2><ul>{todo_rows or '<li>All clear.</li>'}</ul></section></div></div>
+{"".join(details)}
 </main></body></html>
 """
 
@@ -225,6 +303,7 @@ def main(argv: list) -> int:
     ap.add_argument("--due", default="")
     ap.add_argument("--done", default="")
     ap.add_argument("--out", default="")
+    ap.add_argument("--theme", default="", help="glass (Apple-style, default) or jarvis (HUD)")
     ap.add_argument("--today", default="", help=argparse.SUPPRESS)
     try:
         a = ap.parse_args(argv)
@@ -237,7 +316,7 @@ def main(argv: list) -> int:
             if (d / "config.json").exists():
                 fail(f"{d} already has a dashboard. Use another --dir, or edit {d / 'config.json'}.")
             d.mkdir(parents=True, exist_ok=True)
-            cfg = {"title": a.title, "track": [parse_track(s) for s in a.track]}
+            cfg = {"title": a.title, "theme": a.theme if a.theme in THEMES else "glass", "track": [parse_track(s) for s in a.track]}
             (d / "config.json").write_text(json.dumps(cfg, indent=2), encoding="utf-8")
             print(f"Dashboard created in {d} tracking {len(cfg['track'])} things.")
             return 0
@@ -289,7 +368,8 @@ def main(argv: list) -> int:
             return 0
         out = Path(a.out) if a.out else d / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(build_html(cfg, cards, log, todos, today), encoding="utf-8")
+        theme = a.theme if a.theme in THEMES else (cfg.get("theme") if cfg.get("theme") in THEMES else "glass")
+        out.write_text(build_html(cfg, cards, log, todos, today, theme), encoding="utf-8")
         print(f"Dashboard written to {out}")
         return 0
     except OSError as exc:

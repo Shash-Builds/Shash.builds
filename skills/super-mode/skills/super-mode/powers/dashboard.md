@@ -14,7 +14,10 @@ to-dos. Their own files, one page, kept up to date by every session.
 3. **Create it** with `scripts/dashboard.py` next to the super-mode SKILL.md
    (`${CLAUDE_SKILL_DIR}/scripts/dashboard.py`):
    `python3 dashboard.py init --dir dashboard --title "<their name>'s dashboard" --track "Applications sent:50:emails:month:sum" ...`
-   then `build`, and show the page. On claude.ai, build the same page as an artifact from their data.
+   then `build`, and show the page. Two looks: `--theme glass` (Apple-style frosted glass, light and dark,
+   the default) or `--theme jarvis` (dark HUD with glowing gauges); ask which they want. Each card has a
+   Details button that opens a full page for that area (totals, average, best day, streak, 30-day chart,
+   every entry); the main screen stays a simple overview. On claude.ai, build the same page as an artifact from their data.
 
 ## Keep it current (every session)
 - When something tracked happens in any chat (an application sent, a post published, a payment, a habit

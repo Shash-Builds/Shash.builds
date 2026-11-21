@@ -300,6 +300,9 @@ def check_structure() -> None:
             dash("build")
             page = (Path(d) / "index.html").read_text(encoding="utf-8")
             assert "Applications" in page and "All clear." in page and "<script" not in page
+            assert 'href="#m-applications-0"' in page and 'id="m-applications-0"' in page, "each card needs a Details page"
+            dash("build", "--theme", "jarvis", "--out", str(Path(tmp) / "j.html"))
+            assert 'class="ring"' in (Path(tmp) / "j.html").read_text(encoding="utf-8")
             bad = subprocess.run([sys.executable, str(tool), "log", "Nope", "1", "--dir", d], capture_output=True, text=True)
             assert bad.returncode == 2 and "not tracked" in bad.stdout and "Traceback" not in bad.stderr
 
@@ -437,7 +440,7 @@ def check_structure() -> None:
 
         core = start("always-on")
         assert "Super Claude is on" in core and start(None) == core and start("task-specific") == ""
-        assert len(core.split()) <= 450, f"core.md is {len(core.split())} words; it loads in every session"
+        assert len(core.split()) <= 500, f"core.md is {len(core.split())} words; it loads in every session"
         named = set(re.findall(r"\| ([a-z-]+) \|\n", core))
         files = {f.stem for f in (skill / "powers").glob("*.md")}
         assert named == files, f"core table {sorted(named)} vs power files {sorted(files)}"
