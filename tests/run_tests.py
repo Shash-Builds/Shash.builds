@@ -271,6 +271,16 @@ def check_structure() -> None:
         assert not problems, "\n".join(problems)
 
     @test
+    def test_setup_script_checks_without_changing_anything():
+        r = run([sys.executable, "scripts/setup.py"], cwd=ROOT)
+        out = r.stdout
+        assert "nothing changed" in out, out[-300:]
+        missing = [n for n in plugin_names() if f"/plugin install {n}@shashbuilds" not in out]
+        assert not missing, f"setup.py does not list: {missing}"
+        bad = subprocess.run([sys.executable, "scripts/setup.py", "--nope"], capture_output=True, text=True, cwd=ROOT)
+        assert bad.returncode == 2 and "Traceback" not in bad.stderr
+
+    @test
     def test_python_and_node_scripts_compile():
         for py in list(ROOT.glob("**/*.py")):
             if ".git" not in py.parts:

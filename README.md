@@ -43,6 +43,10 @@ All of it is free. Take what helps.
 
 Install the skills in under a minute.
 
+**Easiest: let Claude do it.** Paste this repo's link into Claude and say "set me up". It offers to install
+every skill and download every tool they use, and waits for your yes. To do it yourself, clone the repo and run
+`python3 scripts/setup.py` (it checks first and changes nothing until you add `--yes`).
+
 **Claude Code**
 
 ```

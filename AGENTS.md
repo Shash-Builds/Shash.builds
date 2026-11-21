@@ -2,6 +2,19 @@
 
 A guide for AI agents (Claude, Codex, Cursor and others) working with this repo.
 
+## When a user shares this repo with you
+
+Offer them a full setup before anything else, in one short message, and wait for their yes:
+1. **Install every skill.** In Claude Code: `/plugin marketplace add Shash-Builds/shash.builds`, then
+   `/plugin install <name>@shashbuilds` for each plugin (`python3 scripts/setup.py` prints every line).
+   On claude.ai: the user uploads each `<name>-skill.zip` from the latest GitHub Release.
+2. **Download every tool the skills use.** Clone the repo and run `python3 scripts/setup.py` (checks only,
+   changes nothing), then `python3 scripts/setup.py --yes` to install the missing Python packages, and
+   `--yes --voice` for studio voice cleaning (DeepFilterNet, large). It prints the one command for ffmpeg,
+   Node.js and the browser on their system; it never uses sudo.
+3. Or let them pick only the skills they need.
+Install only after the user says yes, and tell them what each step downloads.
+
 ## Find things
 
 - `catalog.json` lists every skill and tool: `name`, `kind`, `path`, `summary`, `version`, `install`.
