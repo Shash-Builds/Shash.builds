@@ -8,15 +8,16 @@
 //
 // Needs Node.js and Playwright with Chromium. It never logs in, and reports
 // {"blocked": true} instead of getting around a consent or bot page.
-let chromium;
-try { ({ chromium } = require("playwright")); } catch (e) {
-  console.log(JSON.stringify({ error: "Playwright is not installed: npm i playwright, then npx playwright install chromium" }));
-  process.exit(1);
-}
+// Check the address first, so a wrong site is refused even where Playwright is missing.
 const url = process.argv[2];
 if (!url || !/^https:\/\/(www\.|m\.)?youtube\.com\//.test(url)) {
   console.log(JSON.stringify({ error: "give one https://www.youtube.com/ URL" }));
   process.exit(2);
+}
+let chromium;
+try { ({ chromium } = require("playwright")); } catch (e) {
+  console.log(JSON.stringify({ error: "Playwright is not installed: npm i playwright, then npx playwright install chromium" }));
+  process.exit(1);
 }
 
 (async () => {
