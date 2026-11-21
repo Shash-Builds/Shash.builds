@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="media/banner.svg" width="100%" alt="shash.builds banner: the wordmark next to Tab, a smiling browser-window mascot with calendar rings and an orange AI spark. Stuff I built, shipped in public. Free Claude skills and web tools, built in public.">
+  <img src="media/banner.svg" width="100%" alt="shash.builds banner: the wordmark next to Tab, a smiling browser-window mascot with calendar rings and a cyan AI spark, in a dark Jarvis-style palette. Stuff I built, shipped in public. Free Claude skills and web tools, built in public.">
 </p>
 
 <p align="center">
@@ -7,10 +7,10 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img alt="License: MIT for code, CC BY 4.0 for content" src="https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-e8572c?style=flat-square&labelColor=15120f"></a>
-  <a href="https://github.com/Shash-Builds/shash.builds/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Shash-Builds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
-  <a href="https://github.com/Shash-Builds/shash.builds/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Shash-Builds/shash.builds?style=flat-square&color=e8572c&labelColor=15120f"></a>
-  <a href="STATUS.md"><img alt="Built in public: read the build log" src="https://img.shields.io/badge/built%20in-public-f6efe3?style=flat-square&labelColor=15120f"></a>
+  <a href="LICENSE"><img alt="License: MIT for code, CC BY 4.0 for content" src="https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-00e5ff?style=flat-square&labelColor=02080f"></a>
+  <a href="https://github.com/Shash-Builds/shash.builds/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Shash-Builds/shash.builds?style=flat-square&color=00e5ff&labelColor=02080f"></a>
+  <a href="https://github.com/Shash-Builds/shash.builds/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Shash-Builds/shash.builds?style=flat-square&color=00e5ff&labelColor=02080f"></a>
+  <a href="STATUS.md"><img alt="Built in public: read the build log" src="https://img.shields.io/badge/built%20in-public-d9fbff?style=flat-square&labelColor=02080f"></a>
 </p>
 
 <p align="center">
@@ -84,7 +84,7 @@ anything goes out), memory (every decision saved).
 
 ## Contact
 
-<p><a href="mailto:shash.builds@gmail.com,shashwatj05@gmail.com?subject=Hello%20from%20shash.builds"><img alt="Contact me" src="https://img.shields.io/badge/Contact%20me-email-e8572c?style=for-the-badge&labelColor=15120f"></a></p>
+<p><a href="mailto:shash.builds@gmail.com,shashwatj05@gmail.com?subject=Hello%20from%20shash.builds"><img alt="Contact me" src="https://img.shields.io/badge/Contact%20me-email-00e5ff?style=for-the-badge&labelColor=02080f"></a></p>
 
 Or write to [shash.builds@gmail.com](mailto:shash.builds@gmail.com) or [shashwatj05@gmail.com](mailto:shashwatj05@gmail.com).
 

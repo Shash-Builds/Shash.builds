@@ -29,8 +29,8 @@ FONT_URLS = {
     "onest": "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/onest/Onest%5Bwght%5D.ttf",
 }
 
-ORANGE, INK, CREAM = "#e8572c", "#15120f", "#f6efe3"
-MUTED = "#b9ad9c"  # cream at roughly 70% on ink, for secondary lines
+ORANGE, INK, CREAM = "#00e5ff", "#02080f", "#d9fbff"  # Jarvis: cyan accent, deep navy, ice white
+MUTED = "#6fb7c4"  # ice white at roughly 70% on navy, for secondary lines
 
 
 # ---------- text to outlines ----------

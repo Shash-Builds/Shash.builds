@@ -190,7 +190,7 @@ def bars(vals: list) -> str:
     return f'<svg class="bars" viewBox="0 0 300 100" preserveAspectRatio="none" role="img" aria-label="Last 30 days">{rects}</svg>'
 
 
-def build_html(cfg: dict, cards: list, log: list, todos: list, today: dt.date, theme: str = "glass") -> str:
+def build_html(cfg: dict, cards: list, log: list, todos: list, today: dt.date, theme: str = "jarvis") -> str:
     e = html.escape
     title = e(str(cfg.get("title") or "My dashboard"))
     card_html, details = [], []
@@ -303,7 +303,7 @@ def main(argv: list) -> int:
     ap.add_argument("--due", default="")
     ap.add_argument("--done", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--theme", default="", help="glass (Apple-style, default) or jarvis (HUD)")
+    ap.add_argument("--theme", default="", help="jarvis (HUD, default) or glass (Apple-style)")
     ap.add_argument("--today", default="", help=argparse.SUPPRESS)
     try:
         a = ap.parse_args(argv)
@@ -316,7 +316,7 @@ def main(argv: list) -> int:
             if (d / "config.json").exists():
                 fail(f"{d} already has a dashboard. Use another --dir, or edit {d / 'config.json'}.")
             d.mkdir(parents=True, exist_ok=True)
-            cfg = {"title": a.title, "theme": a.theme if a.theme in THEMES else "glass", "track": [parse_track(s) for s in a.track]}
+            cfg = {"title": a.title, "theme": a.theme if a.theme in THEMES else "jarvis", "track": [parse_track(s) for s in a.track]}
             (d / "config.json").write_text(json.dumps(cfg, indent=2), encoding="utf-8")
             print(f"Dashboard created in {d} tracking {len(cfg['track'])} things.")
             return 0
@@ -368,7 +368,7 @@ def main(argv: list) -> int:
             return 0
         out = Path(a.out) if a.out else d / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        theme = a.theme if a.theme in THEMES else (cfg.get("theme") if cfg.get("theme") in THEMES else "glass")
+        theme = a.theme if a.theme in THEMES else (cfg.get("theme") if cfg.get("theme") in THEMES else "jarvis")
         out.write_text(build_html(cfg, cards, log, todos, today, theme), encoding="utf-8")
         print(f"Dashboard written to {out}")
         return 0
