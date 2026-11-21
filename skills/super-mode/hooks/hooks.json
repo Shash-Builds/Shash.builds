@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"$CLAUDE_PLUGIN_OPTION_MODE\" != \"task-specific\" ]; then cat \"${CLAUDE_PLUGIN_ROOT}/skills/super-mode/core.md\"; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

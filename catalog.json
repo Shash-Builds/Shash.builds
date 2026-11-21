@@ -14,6 +14,18 @@
   },
   "items": [
     {
+      "name": "Super Claude",
+      "slug": "super-mode",
+      "kind": "skill",
+      "path": "skills/super-mode",
+      "summary": "One install. Claude as a sharp operator, with 16 powers.",
+      "version": "1.0.0",
+      "install": {
+        "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install super-mode@shashbuilds",
+        "claude_ai": "super-mode-skill.zip from the latest GitHub Release"
+      }
+    },
+    {
       "name": "Master Skill",
       "slug": "master",
       "kind": "skill",

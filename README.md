@@ -51,6 +51,7 @@ every skill and download every tool they use, and waits for your yes. To do it y
 
 ```
 /plugin marketplace add Shash-Builds/shash.builds
+/plugin install super-mode@shashbuilds
 /plugin install master@shashbuilds
 /plugin install humanizer@shashbuilds
 ```
@@ -78,6 +79,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 | Skill | What it does |
 | --- | --- |
+| [Super Claude](skills/super-mode) | One install: Claude as a sharp operator, with 16 powers. |
 | [Master Skill](skills/master) | Routes every task to the right specialists. Runs the video workflow. |
 | [Humanizer](skills/humanizer) | Makes writing sound like you, not a model. Every fact kept. |
 | [Social Media](skills/social-media) | Your head of social: strategy, posts, hooks, a 100-point check. |
