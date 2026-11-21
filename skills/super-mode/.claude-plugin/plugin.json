@@ -1,0 +1,18 @@
+{
+  "name": "super-mode",
+  "displayName": "Super Claude by shash.builds",
+  "description": "shash.builds Super Claude: one install that makes Claude work like a sharp operator in every session. It talks first, uses cheap helpers for grunt work, checks everything three times, remembers your decisions, and loads one of 18 powers (video, writing, social, research, sales, career, ecom, Amazon ads, clipping, web and more) only when a task needs it.",
+  "author": {"name": "Shashwat Jain", "url": "https://github.com/Shash-Builds"},
+  "homepage": "https://github.com/Shash-Builds/shash.builds",
+  "license": "MIT",
+  "keywords": ["super claude", "all-in-one", "operator", "memory", "economy", "careful", "video", "writing", "research", "sales", "career"],
+  "userConfig": {
+    "mode": {
+      "type": "string",
+      "title": "When to use Super Claude",
+      "description": "always-on (recommended): the short core loads in every session. task-specific: nothing loads at start; Super Claude runs only when you ask for it or a power fits.",
+      "options": ["always-on", "task-specific"],
+      "default": "always-on"
+    }
+  }
+}

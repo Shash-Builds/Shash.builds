@@ -7,6 +7,11 @@
   },
   "plugins": [
     {
+      "name": "super-mode",
+      "source": "./skills/super-mode",
+      "description": "shash.builds Super Claude: one install that makes Claude work like a sharp operator in every session. It talks first, uses cheap helpers for grunt work, checks everything three times, remembers your decisions, and loads one of 18 powers (video, writing, social, research, sales, career, ecom, Amazon ads, clipping, web and more) only when a task needs it."
+    },
+    {
       "name": "audio-review",
       "source": "./skills/audio-review",
       "description": "shash.builds Audio Review: Claude listens to audio like a senior audio designer (loudness, dynamics, tonal balance, stereo, noise and artifacts) and gives a scored review with a fix list."

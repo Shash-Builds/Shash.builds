@@ -43,10 +43,15 @@ All of it is free. Take what helps.
 
 Install the skills in under a minute.
 
+**Easiest: let Claude do it.** Paste this repo's link into Claude and say "set me up". It offers to install
+every skill and download every tool they use, and waits for your yes. To do it yourself, clone the repo and run
+`python3 scripts/setup.py` (it checks first and changes nothing until you add `--yes`).
+
 **Claude Code**
 
 ```
 /plugin marketplace add Shash-Builds/shash.builds
+/plugin install super-mode@shashbuilds
 /plugin install master@shashbuilds
 /plugin install humanizer@shashbuilds
 ```
@@ -74,6 +79,7 @@ Add any other skill the same way, or run `/plugin` and pick from the list. Then 
 
 | Skill | What it does |
 | --- | --- |
+| [Super Claude](skills/super-mode) | One install: Claude as a sharp operator, with 18 powers. |
 | [Master Skill](skills/master) | Routes every task to the right specialists. Runs the video workflow. |
 | [Humanizer](skills/humanizer) | Makes writing sound like you, not a model. Every fact kept. |
 | [Social Media](skills/social-media) | Your head of social: strategy, posts, hooks, a 100-point check. |

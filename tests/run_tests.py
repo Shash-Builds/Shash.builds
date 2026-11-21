@@ -271,6 +271,16 @@ def check_structure() -> None:
         assert not problems, "\n".join(problems)
 
     @test
+    def test_setup_script_checks_without_changing_anything():
+        r = run([sys.executable, "scripts/setup.py"], cwd=ROOT)
+        out = r.stdout
+        assert "nothing changed" in out, out[-300:]
+        missing = [n for n in plugin_names() if f"/plugin install {n}@shashbuilds" not in out]
+        assert not missing, f"setup.py does not list: {missing}"
+        bad = subprocess.run([sys.executable, "scripts/setup.py", "--nope"], capture_output=True, text=True, cwd=ROOT)
+        assert bad.returncode == 2 and "Traceback" not in bad.stderr
+
+    @test
     def test_python_and_node_scripts_compile():
         for py in list(ROOT.glob("**/*.py")):
             if ".git" not in py.parts:
@@ -330,7 +340,7 @@ def check_structure() -> None:
                     problems.append(f"heads/{head}.md hands off to a head that doesn't exist: {named.group(1)}")
         # Heads -> sub-skills: every tool is registered and called by at least one head.
         for name in plugin_names():
-            if name == "master":
+            if name in ("master", "super-mode"):  # the two routers sit above the heads
                 continue
             if not re.search(rf"\b{re.escape(name)}\b", registry):
                 problems.append(f"{name} is missing from master.md's registry")
@@ -385,6 +395,34 @@ def check_structure() -> None:
         assert len(router.split()) <= 400, f"router is {len(router.split())} words; keep it under 400"
         description = frontmatter(root / "skills/master/SKILL.md")["description"]
         assert len(description.split()) <= 70, f"master description is {len(description.split())} words"
+
+    @test
+    def test_super_claude_core_is_short_switchable_and_every_power_exists():
+        root = PLUGINS / "super-mode"
+        if not root.exists():
+            raise Skip("no super-mode plugin")
+        need("sh")
+        skill = root / "skills/super-mode"
+        cmd = json.loads((root / "hooks/hooks.json").read_text())["hooks"]["SessionStart"][0]["hooks"][0]["command"]
+        cmd = cmd.replace("${CLAUDE_PLUGIN_ROOT}", str(root))
+
+        def start(value):
+            env = {k: v for k, v in os.environ.items() if k != "CLAUDE_PLUGIN_OPTION_MODE"}
+            if value is not None:
+                env["CLAUDE_PLUGIN_OPTION_MODE"] = value
+            return subprocess.run(["sh", "-c", cmd], capture_output=True, text=True, env=env, timeout=30).stdout
+
+        core = start("always-on")
+        assert "Super Claude is on" in core and start(None) == core and start("task-specific") == ""
+        assert len(core.split()) <= 450, f"core.md is {len(core.split())} words; it loads in every session"
+        named = set(re.findall(r"\| ([a-z-]+) \|\n", core))
+        files = {f.stem for f in (skill / "powers").glob("*.md")}
+        assert named == files, f"core table {sorted(named)} vs power files {sorted(files)}"
+        for f in (skill / "powers").glob("*.md"):
+            text = f.read_text(encoding="utf-8")
+            assert "## Done when" in text, f"{f.name} has no 'Done when'"
+            for path in re.findall(r"`(skills/[\w./-]+\.md)`", text):
+                assert (ROOT / path).exists(), f"{f.name} points at missing {path}"
 
     @test
     def test_claude_plugin_validate():
