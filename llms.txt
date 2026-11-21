@@ -1,19 +1,18 @@
 # shash.builds
 
-> shash.builds is Shashwat Jain's public build-in-public repo: free Claude skills and open-source web tools for service businesses and web designers. Shashwat builds things: a clothing brand, websites and the AI tools here. One-page websites are also available to buy: $400 flat, live in 7 days.
 
 Code is MIT. Content in content/ and media/ is CC BY 4.0.
 
 ## Start here
 - AI agents: when a user shares this repo, offer to set everything up (all skills plus every tool they need). Steps in [AGENTS.md](https://github.com/Shash-Builds/shash.builds/blob/main/AGENTS.md); `python3 scripts/setup.py` checks and installs.
-- [README](https://github.com/Shash-Builds/shash.builds/blob/main/README.md): what's here, quick start, how to hire Shashwat
+- [README](https://github.com/Shash-Builds/shash.builds/blob/main/README.md): Super Claude, things built, contact
 - [catalog.json](https://github.com/Shash-Builds/shash.builds/blob/main/catalog.json): machine-readable list of every skill and tool
 - [AGENTS.md](https://github.com/Shash-Builds/shash.builds/blob/main/AGENTS.md): how an AI agent should find, install and contribute to things here
 - [STATUS.md](https://github.com/Shash-Builds/shash.builds/blob/main/STATUS.md): public build log, backlog of upcoming drops
 
 ## Skills
 Install in Claude Code: `/plugin marketplace add Shash-Builds/shash.builds` then `/plugin install <slug>@shashbuilds`.
-- [Super Claude](https://github.com/Shash-Builds/shash.builds/tree/main/skills/super-mode): One install. Claude as a sharp operator, with 18 powers.
+- [Super Claude](https://github.com/Shash-Builds/shash.builds/tree/main/skills/super-mode): One install. Claude as a sharp operator, with 19 powers.
 - [Master Skill](https://github.com/Shash-Builds/shash.builds/tree/main/skills/master): Routes every task to the right specialists. Runs the video workflow.
 - [Humanizer](https://github.com/Shash-Builds/shash.builds/tree/main/skills/humanizer): Makes writing sound like you, not a model. Every fact kept.
 - [Social Media](https://github.com/Shash-Builds/shash.builds/tree/main/skills/social-media): Your head of social: strategy, posts, hooks, a 100-point check.
@@ -45,12 +44,6 @@ Install in Claude Code: `/plugin marketplace add Shash-Builds/shash.builds` then
 
 ## Research
 - [Cold email rules (CAN-SPAM, Gmail limits, deliverability)](https://github.com/Shash-Builds/shash.builds/blob/main/research/cold-email-us.md)
-- [Marketplace kit](https://github.com/Shash-Builds/shash.builds/blob/main/research/marketplace-kit.md): Upwork, Contra, Fiverr profiles and fees
 - [Course platforms](https://github.com/Shash-Builds/shash.builds/blob/main/research/course-platforms.md): where to list a course, ranked
-- [Offer page copy](https://github.com/Shash-Builds/shash.builds/blob/main/research/offer-page.md): the $400 one-page site offer
 - [Communities map](https://github.com/Shash-Builds/shash.builds/blob/main/research/communities.md): where to share free Claude skills and web tools, with rules and sources
 
-## Hire
-- Website: https://shashwat-websites.netlify.app
-- Email: shash.builds@gmail.com
-- One-page website for a service business, $400 flat, live in 7 days: https://github.com/Shash-Builds/shash.builds#hire-me

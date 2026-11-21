@@ -102,7 +102,7 @@ window.renderFrame = function (t) {
   } else if (b < 30) {
     // D. the drop: price, speed, hours
     const j = Math.min(2, Math.floor((b - 24) / 2)), local = b - 24 - j * 2;
-    const set = [[C.k, C.o, '$400', 'flat price'], [C.o, C.k, '7 days', 'to go live'], [C.c, C.k, 'Your hours', 'Mon to Fri']][j];
+    const set = [[C.k, C.o, 'Free', 'open source'], [C.o, C.k, '7 days', 'to go live'], [C.c, C.k, 'Your hours', 'Mon to Fri']][j];
     bg = set[0];
     const p = spring(local / .7);
     const g = $('big'); g.style.opacity = 1; g.style.color = set[1]; g.style.fontSize = (j === 2 ? 250 : 330) + 'px'; g.style.lineHeight = '.86';

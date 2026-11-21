@@ -35,7 +35,7 @@ jobs:
           done
           exit 1
       - name: Install Python packages
-        run: pip install -r skills/audio-review/skills/audio-review/requirements.txt
+        run: pip install -r skills/audio-review/skills/audio-review/requirements.txt pillow
       - name: Install Playwright, Chromium and Claude Code
         run: |
           npm install -g playwright @anthropic-ai/claude-code

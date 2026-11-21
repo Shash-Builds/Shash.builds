@@ -1,16 +1,10 @@
 {
   "name": "shash.builds",
-  "description": "Free Claude skills and open-source web tools for service businesses and web designers, built in public by Shashwat Jain.",
+  "description": "Super Claude and free Claude skills and tools, built in public by Shashwat Jain.",
   "repo": "https://github.com/Shash-Builds/shash.builds",
   "license": {
     "code": "MIT",
     "content": "CC BY 4.0"
-  },
-  "hire": {
-    "offer": "One-page website for a service business",
-    "price_usd": 400,
-    "delivery_days": 7,
-    "link": "https://github.com/Shash-Builds/shash.builds#hire-me"
   },
   "items": [
     {
@@ -18,7 +12,7 @@
       "slug": "super-mode",
       "kind": "skill",
       "path": "skills/super-mode",
-      "summary": "One install. Claude as a sharp operator, with 18 powers.",
+      "summary": "One install. Claude as a sharp operator, with 19 powers.",
       "version": "1.0.0",
       "install": {
         "claude_code": "/plugin marketplace add Shash-Builds/shash.builds && /plugin install super-mode@shashbuilds",

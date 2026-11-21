@@ -339,6 +339,25 @@ def text_tools():
 
 
 
+def dashboard_tool():
+    DB = R / "super-mode/skills/super-mode/scripts/dashboard.py"
+    d = W / "dash folder ü"
+    run("dashboard show without init", [P, str(DB), "show", "--dir", str(d)])
+    run("dashboard init bad track", [P, str(DB), "init", "--dir", str(d), "--track", ":::"])
+    run("dashboard init bad period", [P, str(DB), "init", "--dir", str(d), "--track", "A:1:x:year:sum"])
+    run("dashboard init", [P, str(DB), "init", "--dir", str(d), "--track", "A:nan::month:sum", "--track", "B:1e309::all:last"])
+    for args in (["log", "A", "nan"], ["log", "A", "1e400"], ["log", "A", "-5"], ["log", "A"], ["log", "A", "1", "--date", "21/11/2026"],
+                 ["todo"], ["todo", "--done", "nothing"], ["todo", "x", "--due", "soon"]):
+        run(f"dashboard {' '.join(args)}", [P, str(DB), *args, "--dir", str(d)])
+    (d / "log.csv").write_bytes(bytes(range(256)) * 10)
+    run("dashboard build binary log", [P, str(DB), "build", "--dir", str(d)])
+    (d / "log.csv").write_text("date;metric;value;note\n2026-11-01;A;3,5;Caf\u00e9\n;;;\n", encoding="cp1252")
+    (d / "todo.csv").write_text("item\n", encoding="utf-8")
+    run("dashboard build semicolon cp1252", [P, str(DB), "build", "--dir", str(d)])
+    (d / "config.json").write_text("[1,2,3]")
+    run("dashboard broken config", [P, str(DB), "show", "--dir", str(d)])
+
+
 def media_tools():
     if not (shutil.which("ffmpeg") and shutil.which("ffprobe") and shutil.which("node")):
         print("SKIP media chaos: needs ffmpeg, ffprobe and node")
@@ -441,6 +460,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix="shash_chaos_") as tmp:
         W = Path(tmp)
         text_tools()
+        dashboard_tool()
         if "--no-media" not in sys.argv:
             media_tools()
     bad = [r for r in results if r[0] != "ok"]

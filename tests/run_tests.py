@@ -281,6 +281,32 @@ def check_structure() -> None:
         assert bad.returncode == 2 and "Traceback" not in bad.stderr
 
     @test
+    def test_super_claude_dashboard_tracks_sums_latest_and_todos():
+        tool = PLUGINS / "super-mode/skills/super-mode/scripts/dashboard.py"
+        with tempfile.TemporaryDirectory() as tmp:
+            d = str(Path(tmp) / "db")
+            def dash(*a):
+                return run([sys.executable, str(tool), *a, "--dir", d, "--today", "2026-11-21"])
+            dash("init", "--track", "Applications:50:emails:month:sum", "--track", "Followers:1000::all:last")
+            dash("log", "Applications", "3", "--date", "2026-11-20")
+            dash("log", "Applications", "2", "--date", "2026-10-30")  # last month: not counted
+            dash("log", "Followers", "400", "--date", "2026-11-01")
+            dash("log", "Followers", "426", "--date", "2026-11-21")
+            dash("todo", "Text Sahaj", "--due", "2026-11-27")
+            out = dash("show").stdout
+            assert "Applications: 3 of 50 emails (month)" in out, out
+            assert "Followers: 426 of 1,000 (all)" in out and "To do: 1 open" in out, out
+            dash("todo", "--done", "sahaj")
+            dash("build")
+            page = (Path(d) / "index.html").read_text(encoding="utf-8")
+            assert "Applications" in page and "All clear." in page and "<script" not in page
+            assert 'href="#m-applications-0"' in page and 'id="m-applications-0"' in page, "each card needs a Details page"
+            dash("build", "--theme", "jarvis", "--out", str(Path(tmp) / "j.html"))
+            assert 'class="ring"' in (Path(tmp) / "j.html").read_text(encoding="utf-8")
+            bad = subprocess.run([sys.executable, str(tool), "log", "Nope", "1", "--dir", d], capture_output=True, text=True)
+            assert bad.returncode == 2 and "not tracked" in bad.stdout and "Traceback" not in bad.stderr
+
+    @test
     def test_python_and_node_scripts_compile():
         for py in list(ROOT.glob("**/*.py")):
             if ".git" not in py.parts:
@@ -414,7 +440,7 @@ def check_structure() -> None:
 
         core = start("always-on")
         assert "Super Claude is on" in core and start(None) == core and start("task-specific") == ""
-        assert len(core.split()) <= 450, f"core.md is {len(core.split())} words; it loads in every session"
+        assert len(core.split()) <= 500, f"core.md is {len(core.split())} words; it loads in every session"
         named = set(re.findall(r"\| ([a-z-]+) \|\n", core))
         files = {f.stem for f in (skill / "powers").glob("*.md")}
         assert named == files, f"core table {sorted(named)} vs power files {sorted(files)}"
@@ -575,8 +601,8 @@ def check_media(tmp: Path) -> None:
         run(["node", str(vm / "scripts/render_html_video.cjs"), str(vm / "templates/scene-template.html"),
              str(out), "--from", "0", "--to", "1", "--width", "640", "--height", "360"], timeout=300)
         frames = run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
-                      "stream=nb_read_frames,width,height", "-of", "csv=p=0", str(out)]).stdout.strip()
-        assert frames == "640,360,30", frames
+                      "stream=nb_read_frames,width,height", "-of", "csv=p=0", str(out)]).stdout.strip().strip(",")
+        assert frames == "640,360,30", frames  # ffprobe 8 adds a trailing comma
 
 
 def check_scripts(tmp: Path) -> None:
@@ -750,7 +776,7 @@ def check_niche_research(tmp: Path) -> None:
         add("terms", [["t-001", "#webdesign", "hashtag", "instagram", "on 4 posts", u, d]])
         add("times", [["h-001", "linkedin", "Tue-Thu", "09:00-11:00", "study, ET", u, d]])
         add("gaps", [["g-001", "Prices nobody shows", "a", "v-001 p-001", "agencies hide prices"]])
-        add("topics", [[f"k-{i:03}", f"Topic {i}", "What a $400 site gets you", "a", "youtube", "2-min video",
+        add("topics", [[f"k-{i:03}", f"Topic {i}", "What a one-page site gets you", "a", "youtube", "2-min video",
                         str(i % 5 + 1), "3", "4", "v-001"] for i in range(1, 21)])
         for cmd in ("merge", "check", "tables", "rank", "report", "check"):
             run([sys.executable, str(ledger), cmd, str(folder)])

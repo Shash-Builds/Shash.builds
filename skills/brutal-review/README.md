@@ -15,7 +15,6 @@ Verdict: A good offer aimed at nobody in particular.
 Score: 41/100
 1. [critical] No named first buyer: the plan says "small businesses".
    Fix: Pick one trade in one city and list 50 of them by name this week.
-2. [major] Price has no anchor: $400 with nothing to compare it to.
    Fix: Show what an agency charges for the same page.
 3. [minor] The timeline skips client feedback days.
    Fix: Add two buffer days to the 7-day promise.
@@ -87,6 +86,6 @@ Inspired by the idea in [zaripych/skills-brutal](https://github.com/zaripych/ski
 
 ---
 
-Made by [shash.builds](../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../README.md#hire-me).
+Made by [shash.builds](../../README.md). Questions or ideas? [Contact me](../../README.md#contact).
 
 MIT licensed, copyright Shashwat Jain. See [LICENSE.md](LICENSE.md).

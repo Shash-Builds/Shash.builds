@@ -53,7 +53,7 @@ def draft(a):
 So I mocked up {better} for you. Take a look:
 {a.mock}
 
-Want it live in 7 days for $400?
+Want it live in 7 days?
 
 {sign}"""
     e2 = f"""Subject: Re: {a.business} homepage idea

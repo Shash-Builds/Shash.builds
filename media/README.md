@@ -23,15 +23,15 @@ python3 media/build.py
 
 | Token | Value | Use |
 | --- | --- | --- |
-| Signal orange | `#e8572c` | The dot in the wordmark, accents, one per view |
-| Ink | `#15120f` | Backgrounds, outlines |
-| Cream | `#f6efe3` | Text on ink, Tab's body |
+| Jarvis cyan | `#00e5ff` | The dot in the wordmark, accents, one per view |
+| Deep navy | `#02080f` | Backgrounds, outlines |
+| Ice white | `#d9fbff` | Text on navy, Tab's body |
 | Display font | Bricolage Grotesque 800 | Wordmark and titles |
 | Body font | Onest 400 and 600 | Everything else |
 
-**Name:** always "shash.builds", lowercase, with the dot in orange. Where a dot isn't allowed, "shashbuilds".
+**Name:** always "shash.builds", lowercase, with the dot in cyan. Where a dot isn't allowed, "shashbuilds".
 
-**Tab:** a browser tab (websites), an AI spark (Claude) and calendar rings (ships on a schedule). Keep the spark orange and the face simple.
+**Tab:** a browser tab (websites), an AI spark (Claude) and calendar rings (ships on a schedule). Keep the spark cyan and the face simple.
 
 ## Credits
 

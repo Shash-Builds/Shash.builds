@@ -4,7 +4,7 @@
 
 **Turn one row of a spreadsheet into a fast one-page website for a local service business: name, call button, services, hours, service area, Google rating, real reviews and a quote form.**
 
-<p align="center"><img src="demo.jpg" width="100%" alt="The sample site for Bright Oak Cleaning, a made-up Austin house cleaner, on a laptop and a phone. Headline: House cleaning in Austin, done right. Call now and Get a free quote buttons, a 4.9 Google rating, and a sticky call bar on the phone."></p>
+<p align="center"><img src="demo.jpg" width="100%" alt="The sample site for Example Cleaning Co., a made-up Austin house cleaner, on desktop. Headline: House cleaning in Austin, done right, with Call now and Get a free quote buttons and a 4.9 Google rating."></p>
 
 See the built sample: [`demo/sample-cleaning/index.html`](demo/sample-cleaning/index.html) (download and open it, or deploy the folder).
 
@@ -63,6 +63,6 @@ Each page gets a slim ribbon: "A free preview made for <business> by Your Studio
 
 ---
 
-Made by [shash.builds](../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../README.md#hire-me).
+Made by [shash.builds](../../README.md). Questions or ideas? [Contact me](../../README.md#contact).
 
 MIT licensed, copyright Shashwat Jain. Stand-in photo credit is printed on every page.

@@ -1,6 +1,5 @@
 rank,score,id,topic,hook,audience,platform,format,demand,gap,fit,evidence
 1,125,k-001,What a small business website really costs per year,Your website bill doesn't end at launch. Here's the full year.,a,youtube,2-min video,5,5,5,t-223 t-227 t-222 v-001 v-006 v-018
-2,100,k-002,"Building a $400 one-page site live, from call to launch","One page, $400, seven days. Watch the whole build.",a,youtube,2-min video,4,5,5,t-128 t-215 p-020 p-008 v-002 v-012
 3,100,k-012,A free Claude skill that builds one-page sites for service businesses,I open-sourced the Claude skill I use for client sites.,b,github,repo,5,4,5,t-044 t-048 t-051 t-057 t-065 a-001
 4,100,k-003,Five questions to ask a web designer before you pay,Ask these five things before you pay any web designer.,a,instagram,reel,4,5,5,v-008 v-009 v-015 v-016 v-031
 5,100,k-008,Make a Claude skill that actually triggers,Your Claude skill never fires? The description is usually why.,b,youtube,2-min video,5,5,4,v-201 v-204 v-210 v-211 t-050
@@ -18,7 +17,6 @@ rank,score,id,topic,hook,audience,platform,format,demand,gap,fit,evidence
 17,75,k-006,"The day-by-day log of one client site (day 1, 3, 7)",Day 1: a 15-minute call. Day 7: live. Here's day 3.,a,linkedin,text post,3,5,5,v-002 v-010 v-017 t-274 t-286
 18,75,k-024,Claude Code website design: my exact prompt and skill,The exact prompt and skill I use for client sites.,b,youtube,2-min video,5,3,5,t-053 t-059 t-068 p-014 p-016
 19,64,k-021,Is a free website good enough for my business?,Free website builders aren't free. Here's the real catch.,a,youtube,2-min video,4,4,4,v-028 t-114 t-123 t-106 v-026
-20,64,k-028,Pricing a one-page site as a freelancer,"Why I charge $400 for a one-page site, line by line.",b,linkedin,text post,4,4,4,t-245 t-244 p-020 p-008
 21,64,k-026,Making AI sites not look like AI sites,Every AI website looks the same. Three fixes that change that.,b,instagram,reel,4,4,4,p-016 p-023 t-058
 22,64,k-031,Before and after: a real service business homepage,Before: a menu of everything. After: one button that books.,a,instagram,reel,4,4,4,p-006 p-024 t-119
 23,64,k-043,Website for small business owners: what to ask for,"Owners: ask for these three things, skip the rest.",a,youtube,2-min video,4,4,4,t-113 t-126 v-030

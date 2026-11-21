@@ -57,7 +57,7 @@ The test video is a test pattern with a synthetic flite voice, made with ffmpeg.
 
 ## How it works
 
-ffmpeg's `silencedetect` finds every pause; filler words come from the transcript's word timings. Cuts that touch, or that have no real word between them, are merged, then each cut is shrunk by the pad on both sides. The kept parts are joined with ffmpeg's `select` and `aselect` filters and re-encoded (H.264, CRF 18, AAC 192k).
+ffmpeg's `silencedetect` finds every pause; filler words come from the transcript's word timings. Cuts that touch, or that have no real word between them, are merged, then each cut is shrunk by the pad on both sides. The kept parts are cut out with ffmpeg's `trim` and `atrim` filters, joined with `concat` (the same on every ffmpeg version, including 8) and re-encoded (H.264, CRF 18, AAC 192k).
 
 Why not auto-editor? It's a fine tool, but ffmpeg alone keeps the install to one dependency and works the same on Windows, macOS and Linux.
 
@@ -88,4 +88,4 @@ This tool: MIT, like the rest of the repo.
 
 ---
 
-Made by [shash.builds](../../../README.md). Need a one-page website for your service business? [$400 flat, live in 7 days](../../../README.md#hire-me).
+Made by [shash.builds](../../../README.md). Questions or ideas? [Contact me](../../../README.md#contact).

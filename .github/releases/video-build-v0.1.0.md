@@ -18,4 +18,3 @@
 ---
 
 Free and open source by shash.builds. Need a one-page website for your service business?
-$400 flat, live in 7 days: https://github.com/Shash-Builds/shash.builds#hire-me

@@ -122,14 +122,26 @@ def plan(duration: float, removals: list[tuple[float, float]], pad: float, min_c
     return keep, removed
 
 
+def trim_concat(keep, has_video, has_audio=True):
+    """filter_complex that keeps only the given (start, end) spans and joins them. Uses trim/atrim and concat,
+    which behave the same on every ffmpeg version (aselect changed in ffmpeg 8)."""
+    parts, joins = [], ""
+    for i, (a, b) in enumerate(keep):
+        if has_video:
+            parts.append(f"[0:v]trim=start={a:.3f}:end={b:.3f},setpts=PTS-STARTPTS[v{i}]")
+            joins += f"[v{i}]"
+        if has_audio:
+            parts.append(f"[0:a]atrim=start={a:.3f}:end={b:.3f},asetpts=PTS-STARTPTS[a{i}]")
+            joins += f"[a{i}]"
+    outs = ("[v]" if has_video else "") + ("[a]" if has_audio else "")
+    parts.append(f"{joins}concat=n={len(keep)}:v={1 if has_video else 0}:a={1 if has_audio else 0}{outs}")
+    maps = (["-map", "[v]"] if has_video else []) + (["-map", "[a]"] if has_audio else [])
+    return ";".join(parts), maps
+
+
 def render(src: Path, dst: Path, keep: list[tuple[float, float]], has_video: bool) -> None:
-    expr = "+".join(f"between(t,{a:.3f},{b:.3f})" for a, b in keep)
-    parts = [f"[0:a]aselect='{expr}',asetpts=N/SR/TB[a]"]
-    maps = ["-map", "[a]"]
-    if has_video:
-        parts.insert(0, f"[0:v]select='{expr}',setpts=N/FRAME_RATE/TB[v]")
-        maps = ["-map", "[v]"] + maps
-    cmd = ["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(src), "-filter_complex", ";".join(parts), *maps]
+    graph, maps = trim_concat(keep, has_video)
+    cmd = ["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(src), "-filter_complex", graph, *maps]
     if has_video:
         cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k"]
         if dst.suffix.lower() in {".mp4", ".mov", ".m4v"}:
