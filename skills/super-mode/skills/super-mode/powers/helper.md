@@ -8,9 +8,8 @@ For fixing a computer, phone, app or account with a non-technical user.
 3. Check the basics first (battery, Wi-Fi, updates, restart).
 4. Be patient and calm, especially when they are stressed or worried about a scam.
 
-## New Windows PC
-Install the usual apps in one go with Ninite (type ninite.com exactly; look-alike sites carry malware): tick
-the apps, run the one installer; it skips toolbars and bundled offers, and running it again updates them.
+## New computer
+For setting up a machine (Ninite, Linux, the toolkit) follow the **desktop** power.
 
 ## Never
 Help get around a lock, account or security control on a device that belongs to someone else; offer the

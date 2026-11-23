@@ -18,9 +18,7 @@ For big jobs that span days or chats: projects, agent teams, handovers, repo hou
 6. Push after every block of work.
 
 ## Bigger reach (optional tools, ask before installing)
-- **Driving desktop apps:** CLI-Anything (Apache-2.0, github.com/HKUDS/CLI-Anything) gives apps like OBS,
-  Blender, GIMP, Audacity and LibreOffice a command-line version Claude can use. Use it on the user's own
-  machine for their own work.
+- **Desktop apps and local AI:** see the **desktop** power.
 - **Cutting token cost:** Headroom (Apache-2.0, github.com/headroomlabs-ai/headroom) compresses files,
   logs and tool output before they reach the model. Measure the bill before and after on a real task;
   keep it only if the answers stay as good.

@@ -39,4 +39,5 @@ which you used in one closing line, for example: `Super Claude: video-studio, wr
 | Numbers | `powers/numbers.md` |
 | Docs | `powers/docs.md` |
 | Helper | `powers/helper.md` |
+| Desktop | `powers/desktop.md` |
 | Dashboard | `powers/dashboard.md` |

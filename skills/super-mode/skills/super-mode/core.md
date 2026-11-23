@@ -36,15 +36,16 @@ asked, deliver both: A exactly as asked, B with your idea, and one line on why. 
 | Local-business leads, site audits, mock sites, cold email | sales |
 | Jobs, CV, applications, follow-ups | career |
 | Marketplace listings, product images, fees, margins | ecom |
-| Amazon ads, search terms, bids, ad audits | amazon-ads |
+| Amazon ads, bids, ad audits | amazon-ads |
 | Clipping campaigns, Shorts from long videos | clipping |
-| YouTube channel: packaging, scripts, retention, SEO | youtube |
-| Testing a business idea, offers, first customers | founder |
+| YouTube: packaging, scripts, SEO | youtube |
+| Business ideas, offers, first customers | founder |
 | Feedback, second opinions, "review this like a buyer" | reviewer |
 | AI images and video prompts | visuals |
 | Websites and landing pages | web |
 | Big projects, agent teams, handovers | operator |
 | Pricing, budgets, forecasts | numbers |
 | Docs, decks, sheets, link lists | docs |
-| Fixing a computer, phone or app, one step at a time | helper |
+| Fixing a device, one step at a time | helper |
+| Your own computer or phone: set-up, desktop apps, local AI | desktop |
 | A dashboard that tracks goals, work and to-dos | dashboard |

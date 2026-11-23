@@ -26,7 +26,7 @@
 
 **One install that makes Claude work like a sharp operator in every session.** It talks before it acts,
 sends grunt work to cheap helpers, checks everything three times, remembers your decisions, and loads one
-of 19 powers only when a task needs it. Full guide: [skills/super-mode](skills/super-mode).
+of 20 powers only when a task needs it. Full guide: [skills/super-mode](skills/super-mode).
 
 **Install (Claude Code):**
 
@@ -45,7 +45,7 @@ everything and download every tool the powers use, and waits for your yes. Or cl
 **Four modes, always on:** talk first, economy (cheap helpers in parallel), careful (three checks before
 anything goes out), memory (every decision saved).
 
-**19 powers, loaded on demand:**
+**20 powers, loaded on demand:**
 
 | Power | For |
 |---|---|
@@ -67,6 +67,7 @@ anything goes out), memory (every decision saved).
 | Numbers | Every calculation done in code |
 | Docs | Docs, sheets, decks, link lists |
 | Helper | Fixing a computer or phone, one step at a time |
+| Desktop | Claude on your own computer and phone: set-up, desktop apps, local AI |
 | Dashboard | Your own dashboard of goals, work and to-dos, kept current by every session |
 
 ## Things I've built
