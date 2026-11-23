@@ -25,5 +25,15 @@ is already good, say so and suggest small refinements instead of a redesign.
 For the full method, install unslop by Damir Sokolovsky (CC BY 4.0, github.com/heydamir/unslop):
 `claude plugin install unslop --marketplace heydamir/unslop`.
 
+## Security pass (before anything goes live)
+Vibecoded apps leak in the same places. Check each one and fix or flag it: admin pages open to anyone
+(`/admin`); other users' data by changing an ID in the URL; secret keys visible in the browser or in the
+repo (`.env`, API keys); prices, quantities or totals the browser can change (negative or zero amounts);
+payments trusted without the provider's server-side confirmation; coupons or rewards that can be redeemed
+again and again; users able to make themselves admin at sign-up; login codes that can be guessed (no
+rate limit or expiry); AI features that obey "ignore your instructions" in user text; scripts saved in
+names or comments and run on the page; uploads that are not the file type they claim; database queries
+built from raw user text. Check only the user's own app, and report what you found in plain words.
+
 ## Done when
 It passes the unslop pass, works on a phone, every link and image is checked, the user approved before it went live.

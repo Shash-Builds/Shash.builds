@@ -74,6 +74,11 @@ and what you will show before the full render (a 5 to 10 second sample or 3 stil
   way to join them; never shrink quality without asking.
 - Say what you made in 3 lines and which checks it passed.
 
+## Review by timestamp
+For feedback rounds, give the user `templates/review.html` next to this SKILL.md (Claude Code: `${CLAUDE_SKILL_DIR}/templates/review.html`): they
+open their video in it, pause anywhere and type or speak a note, and it is stamped with that exact
+second. They copy the notes back as `0:12 - text` lines, and you fix each one at its time.
+
 ## Done when
 - The user approved the plan and the sample.
 - Voice clean and above the music; no fillers, dead air or waits over 3 s.
